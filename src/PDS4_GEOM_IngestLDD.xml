@@ -202,7 +202,9 @@
         - Changed the cardinality (maxoccurs) of Object_Orientation_RA_Dec in Image_Display_Geometry from 3 to unlimited to support 
                 request for MESSENGER MDIS migration to PDS4.
         version 1.7.0.0 2019-04-19     
-        - Set the element_flag to "true" for the Coordinate_Space_Reference class so that the class is exposed for others to use.   
+        - Set the element_flag to "true" for the Coordinate_Space_Reference class so that the class is exposed for others to use.
+        version 1.7.1.0 2020-04-06
+        - Add measurement_method attribute to Coordinate_Space_Definition class
     </comment>
 
     <last_modification_date_time>2019-04-19</last_modification_date_time>
@@ -2540,6 +2542,43 @@
             <value_meaning>Indicates that the elevation is measured positively downwards, i.e. the 
               zenith point would be at -90 degrees and the nadir point at +90 degrees.</value_meaning>
           </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>measurement_method</name>
+        <version_id>1.0</version_id>
+        <local_identifier>measurement_method</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>Specifies the method by which the coordinate space was measured. This 
+            provides an indication of the quality of the definition.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+            <DD_Permissible_Value>
+                <value>Unknown</value>
+                <value_meaning>Method is not known.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Tilt_Only</value>
+                <value_meaning>Coordinate space orientation was measured using tilt sensors only 
+                    (i.e. relative to the gravity vector).</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Sun_Find</value>
+                <value_meaning>Coordinate space orientation rotation was measured by finding the 
+                    location of the sun in one or more images and comparing that to where the sun 
+                    actually was at that time.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Bundle_Adjustment</value>
+                <value_meaning>Coordinate space position and/or orientation was refined using a 
+                    bundle adjustment process, minimizing error with respect to some fixed reference 
+                    (such as an orbital map).</value_meaning>
+            </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -8685,6 +8724,12 @@
         </DD_Association>
         <DD_Association>
             <identifier_reference>positive_elevation_direction</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>measurement_method</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
