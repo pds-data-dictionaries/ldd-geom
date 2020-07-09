@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Thu Jul 09 08:11:48 MST 2020
+   Time                   Thu Jul 09 08:23:32 MST 2020
    Common Schema          [PDS4_PDS_1D00.xsd]
    Common Schematron      [PDS4_PDS_1D00.sch]
    IM Version Id:         1.13.0.0
@@ -415,6 +415,8 @@ Parsed Input - Header:
         - Add measurement_method attribute to Coordinate_Space_Definition class
         version 1.7.2.0 2020-07-09
         - Added Interpolation class and needed attributes
+        - Updated Distances_Specific, Object_Orientation_Clock_Angles, Distances_Specific, Derived_Geometry
+          which had XSChoice but unbounded (appears to be not allowed). Changed to max occurance of 10 for all.
     
    Last Modification Time 2020-07-09
    PDS4 Merge Flag        false
@@ -2487,47 +2489,47 @@ Parsed Input - Classes:
 
       local identifier      celestial_north_clock_angle
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      celestial_east_clock_angle
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      ecliptic_north_clock_angle
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      ecliptic_east_clock_angle
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      central_body_north_pole_clock_angle
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      central_body_positive_pole_clock_angle
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      target_north_pole_clock_angle
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      target_positive_pole_clock_angle
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      sun_direction_clock_angle
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
    name                   Image_Display_Geometry
@@ -2708,47 +2710,47 @@ Parsed Input - Classes:
 
       local identifier      spacecraft_geocentric_distance
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      spacecraft_heliocentric_distance
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      spacecraft_central_body_distance
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      spacecraft_target_center_distance
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      spacecraft_target_boresight_intercept_distance
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      spacecraft_target_subspacecraft_distance
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      target_geocentric_distance
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      target_heliocentric_distance
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      target_ssb_distance
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
    name                   Distances_Min_Max
@@ -5051,47 +5053,47 @@ Parsed Input - Classes:
 
       local identifier      incidence_angle
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      emission_angle
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      phase_angle
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      instrument_azimuth
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      instrument_elevation
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      solar_azimuth
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      solar_elevation
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      start_azimuth
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      stop_azimuth
       minimum occurrences   1
-      maximum occurrences   *
+      maximum occurrences   10
       reference type        attribute_of
 
       local identifier      Coordinate_Space_Reference

@@ -207,6 +207,8 @@
         - Add measurement_method attribute to Coordinate_Space_Definition class
         version 1.7.2.0 2020-07-09
         - Added Interpolation class and needed attributes
+        - Updated Distances_Specific, Object_Orientation_Clock_Angles, Distances_Specific, Derived_Geometry
+          which had XSChoice but unbounded (appears to be not allowed). Changed to max occurance of 10 for all.
     </comment>
 
     <last_modification_date_time>2020-07-09</last_modification_date_time>
@@ -5415,7 +5417,7 @@
 
     <DD_Class>
         <name>Object_Orientation_Clock_Angles</name>
-        <version_id>1.0</version_id>
+        <version_id>1.1</version_id>
         <local_identifier>Object_Orientation_Clock_Angles</local_identifier>
         <submitter_name>Anne Raugh</submitter_name>
         <definition>The Object_Orientation_Clock_Angles class provides several 
@@ -5438,7 +5440,7 @@
            <identifier_reference>sun_direction_clock_angle</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>*</maximum_occurrences>
+            <maximum_occurrences>10</maximum_occurrences>
         </DD_Association>
    </DD_Class>
     
@@ -5712,7 +5714,7 @@
             <identifier_reference>target_ssb_distance</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>*</maximum_occurrences>
+            <maximum_occurrences>10</maximum_occurrences>
         </DD_Association>
     </DD_Class>
     
@@ -8854,7 +8856,7 @@
             <identifier_reference>stop_azimuth</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>*</maximum_occurrences>
+            <maximum_occurrences>10</maximum_occurrences>
         </DD_Association>
         <DD_Association>
             <identifier_reference>Coordinate_Space_Reference</identifier_reference>

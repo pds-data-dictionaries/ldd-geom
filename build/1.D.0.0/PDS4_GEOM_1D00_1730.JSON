@@ -3,7 +3,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.13.0.0" ,
-      "Date": "Thu Jul 09 08:11:48 MST 2020" ,
+      "Date": "Thu Jul 09 08:23:32 MST 2020" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -1404,7 +1404,7 @@
                 "isAny": "false" ,
                 "groupName": "XSChoice#27" ,
                 "minimumCardinality": "1" ,
-                "maximumCardinality": "*" ,
+                "maximumCardinality": "10" ,
                 "classOrder": "1020" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.Derived_Geometry.geom.incidence_angle",
@@ -2479,7 +2479,7 @@
                 "isAny": "false" ,
                 "groupName": "XSChoice#18" ,
                 "minimumCardinality": "1" ,
-                "maximumCardinality": "*" ,
+                "maximumCardinality": "10" ,
                 "classOrder": "1020" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.Distances_Specific.geom.spacecraft_geocentric_distance",
@@ -4647,7 +4647,7 @@
                 "isAny": "false" ,
                 "groupName": "XSChoice#15" ,
                 "minimumCardinality": "1" ,
-                "maximumCardinality": "*" ,
+                "maximumCardinality": "10" ,
                 "classOrder": "1020" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.Object_Orientation_Clock_Angles.geom.celestial_north_clock_angle",
