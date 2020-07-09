@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Thu Jul 09 08:23:32 MST 2020
+   Time                   Thu Jul 09 08:51:26 MST 2020
    Common Schema          [PDS4_PDS_1D00.xsd]
    Common Schematron      [PDS4_PDS_1D00.sch]
    IM Version Id:         1.13.0.0
@@ -31,7 +31,7 @@ Parameters:
 Summary:
    Classes                137
    Attributes             209
-   Associations           466
+   Associations           467
    Error messages         2
    Warning messages       2
    Information messages   172
@@ -417,6 +417,7 @@ Parsed Input - Header:
         - Added Interpolation class and needed attributes
         - Updated Distances_Specific, Object_Orientation_Clock_Angles, Distances_Specific, Derived_Geometry
           which had XSChoice but unbounded (appears to be not allowed). Changed to max occurance of 10 for all.
+        - TODO: Need to check LDDTool Errors for Frame_Identification_Base and Body_Identification_Base
     
    Last Modification Time 2020-07-09
    PDS4 Merge Flag        false
@@ -4825,6 +4826,34 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        parent_of
 
+   name                   Interpolation
+   description            The Interpolation class defines how the camera model was interpolated from the calibration models. Interpolation is used to create models in a variable space (e.g. focus, zoom) between points at which calibration was performed. If more than one dimension of variables were interpolated, multiple Interpolation objects can exist, with interpolation_sequence defining the order. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      interpolation_algorithm
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      interpolation_variable
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      interpolation_value
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      interpolation_sequence
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
    name                   Coordinate_Space_Present
    description            The Coordinate_Space_Present class includes the attributes that identifies the coordinate space presently being defined. 
    is abstract            false
@@ -4975,6 +5004,11 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        component_of
 
+      local identifier      Quaternion_Model_Transform
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
       local identifier      Reference_Frame_Identification
       minimum occurrences   1
       maximum occurrences   1
@@ -4985,9 +5019,9 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        component_of
 
-      local identifier      Quaternion_Model_Transform
+      local identifier      Interpolation
       minimum occurrences   0
-      maximum occurrences   1
+      maximum occurrences   *
       reference type        component_of
 
       local identifier      Vector_Model_Transform
@@ -5189,33 +5223,5 @@ Parsed Input - Classes:
       minimum occurrences   0
       maximum occurrences   *
       reference type        component_of
-
-   name                   Interpolation
-   description            The Interpolation class defines how the camera model was interpolated from the calibration models. Interpolation is used to create models in a variable space (e.g. focus, zoom) between points at which calibration was performed. If more than one dimension of variables were interpolated, multiple Interpolation objects can exist, with interpolation_sequence defining the order. 
-   is abstract            false
-   is choice              false
-   subclass of            USER
-
-   Associations
-
-      local identifier      interpolation_algorithm
-      minimum occurrences   1
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      interpolation_variable
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      interpolation_value
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      interpolation_sequence
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
 
 End of Report

@@ -209,6 +209,7 @@
         - Added Interpolation class and needed attributes
         - Updated Distances_Specific, Object_Orientation_Clock_Angles, Distances_Specific, Derived_Geometry
           which had XSChoice but unbounded (appears to be not allowed). Changed to max occurance of 10 for all.
+        - TODO: Need to check LDDTool Errors for Frame_Identification_Base and Body_Identification_Base
     </comment>
 
     <last_modification_date_time>2020-07-09</last_modification_date_time>
@@ -8575,6 +8576,45 @@
         </DD_Association>
     </DD_Class>
     
+    <DD_Class>
+        <name>Interpolation</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Interpolation</local_identifier>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>The Interpolation class defines how the camera model was interpolated from 
+            the calibration models. Interpolation is used to create models in a variable 
+            space (e.g. focus, zoom) between points at which calibration was performed. 
+            If more than one dimension of variables were interpolated, multiple Interpolation 
+            objects can exist, with interpolation_sequence defining the order.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>interpolation_algorithm</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>interpolation_variable</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>interpolation_value</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>interpolation_sequence</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
 <!-- Classes supporting  Coordinate_Space_Definition    -->   
     
     <DD_Class>
@@ -8746,6 +8786,12 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
+            <identifier_reference>Quaternion_Model_Transform</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
             <identifier_reference>XSChoice#</identifier_reference>
             <identifier_reference>Reference_Frame_Identification</identifier_reference>
             <identifier_reference>Coordinate_Space_Reference</identifier_reference>
@@ -8754,10 +8800,10 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>Quaternion_Model_Transform</identifier_reference>
+            <identifier_reference>Interpolation</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
         <DD_Association>
             <identifier_reference>Vector_Model_Transform</identifier_reference>
@@ -9000,47 +9046,6 @@
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>*</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-
-<!-- Interpolation class -->
-
-    <DD_Class>
-        <name>Interpolation</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Interpolation</local_identifier>
-        <submitter_name>Trent Hare</submitter_name>
-        <definition>The Interpolation class defines how the camera model was interpolated from 
-            the calibration models. Interpolation is used to create models in a variable 
-            space (e.g. focus, zoom) between points at which calibration was performed. 
-            If more than one dimension of variables were interpolated, multiple Interpolation 
-            objects can exist, with interpolation_sequence defining the order.
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>interpolation_algorithm</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>interpolation_variable</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>interpolation_value</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>interpolation_sequence</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
 
