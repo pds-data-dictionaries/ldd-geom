@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:geom  Version:1.7.2.0 - Wed May 06 15:59:20 CDT 2020 -->
+  <!-- PDS4 XML/Schema for Name Space Id:geom  Version:1.7.3.0 - Thu Jul 09 08:11:48 MST 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.13.0.0 - System Build 10a -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
-  <!-- 1.13.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.7.2.0 - geom: - Geometry Dictionary Full                                -->
-  <!--   file:ingest-PDS4_GEOM_1D00_1720.xml                                     -->
+  <!-- 1.13.0.0 - pds: - Common Dictionary - N/A                                 -->
+  <!-- 1.7.3.0 - geom: - Geometry Dictionary Full - PDS4_GEOM_IngestLDD.xml      -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://pds.nasa.gov/pds4/geom/v1"
@@ -14,7 +13,7 @@
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.7.2.0">
+    version="1.7.3.0">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.xsd"/>
  
@@ -211,13 +210,10 @@
                 request for MESSENGER MDIS migration to PDS4.
         version 1.7.0.0 2019-04-19     
         - Set the element_flag to "true" for the Coordinate_Space_Reference class so that the class is exposed for others to use.
-        version 1.7.1.0 2019-05-06
-        - Added attribute quaternion_measurement_method and included it in the Coordinate_Space_Definition class.
-        - Added local_identifier to the Articulation_Device_Parameters
-        version 1.7.2.0 2020-05-04
-        - Modified definitions for quaternion_measurment_method.
-        - Added the Interpolation class to support documentation of camera model interpolation. Included in the 
-               Camera_Model_Parameters class.
+        version 1.7.1.0 2020-04-06
+        - Add measurement_method attribute to Coordinate_Space_Definition class
+        version 1.7.2.0 2020-07-09
+        - Added Interpolation class and needed attributes
     
     </xs:documentation>
   </xs:annotation>
@@ -235,7 +231,6 @@
         scan platforms. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element ref="pds:local_identifier" minOccurs="0" maxOccurs="unbounded"> </xs:element>
       <xs:element name="device_id" type="geom:device_id" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="device_name" type="geom:device_name" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="device_mode" type="geom:device_mode" minOccurs="0" maxOccurs="1"> </xs:element>
@@ -358,7 +353,6 @@
       </xs:choice>
       <xs:element name="Quaternion_Model_Transform" type="geom:Quaternion_Model_Transform" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="Vector_Model_Transform" type="geom:Vector_Model_Transform" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="Interpolation" type="geom:Interpolation" minOccurs="0" maxOccurs="unbounded"> </xs:element>
     </xs:sequence>
   </xs:complexType>
 
@@ -391,16 +385,16 @@
       <xs:element ref="pds:local_identifier" minOccurs="1" maxOccurs="unbounded"> </xs:element>
       <xs:element name="positive_azimuth_direction" type="geom:positive_azimuth_direction" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="positive_elevation_direction" type="geom:positive_elevation_direction" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="measurement_method" type="geom:measurement_method" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="Coordinate_Space_Present" type="geom:Coordinate_Space_Present" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="Vector_Origin_Offset" type="geom:Vector_Origin_Offset" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="Quaternion_Plus_Direction" type="geom:Quaternion_Plus_Direction" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="quaternion_measurement_method" type="geom:quaternion_measurement_method" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element ref="geom:Coordinate_Space_Reference" minOccurs="1" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
     <!-- <xs:assert test="geom:positive_azimuth_direction = ('CCW', 'CW', 'Clockwise', 'Counterclockwise')"/> -->
     <!-- <xs:assert test="geom:positive_elevation_direction = ('Down', 'Nadir', 'Up', 'Zenith')"/> -->
-    <!-- <xs:assert test="geom:quaternion_measurement_method = ('Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown')"/> -->
+    <!-- <xs:assert test="geom:measurement_method = ('Bundle_Adjustment', 'Sun_Find', 'Tilt_Only', 'Unknown')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
@@ -558,7 +552,7 @@
         Reference Coordinate Space. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:choice minOccurs="1" maxOccurs="*">
         <xs:element name="incidence_angle" type="geom:incidence_angle"> </xs:element>
         <xs:element name="emission_angle" type="geom:emission_angle"> </xs:element>
         <xs:element name="phase_angle" type="geom:phase_angle"> </xs:element>
@@ -787,7 +781,7 @@
         </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:choice minOccurs="1" maxOccurs="*">
         <xs:element name="spacecraft_geocentric_distance" type="geom:spacecraft_geocentric_distance"> </xs:element>
         <xs:element name="spacecraft_heliocentric_distance" type="geom:spacecraft_heliocentric_distance"> </xs:element>
         <xs:element name="spacecraft_central_body_distance" type="geom:spacecraft_central_body_distance"> </xs:element>
@@ -1146,10 +1140,10 @@
     <xs:annotation>
       <xs:documentation>The Interpolation class defines how the camera
         model was interpolated from the calibration models.
-        Interpolation is used to create models in a variable space
-        (e.g., focus, zoom) between points at which calibration was
-        performed. If more than one dimension of variables were
-        interpolated, multiple Interpolation objects can exist, with
+        Interpolation is used to create models in a variable space (e.g.
+        focus, zoom) between points at which calibration was performed.
+        If more than one dimension of variables were interpolated,
+        multiple Interpolation objects can exist, with
         interpolation_sequence defining the order. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -1301,7 +1295,7 @@
         </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:choice minOccurs="1" maxOccurs="*">
         <xs:element name="celestial_north_clock_angle" type="geom:celestial_north_clock_angle"> </xs:element>
         <xs:element name="celestial_east_clock_angle" type="geom:celestial_east_clock_angle"> </xs:element>
         <xs:element name="ecliptic_north_clock_angle" type="geom:ecliptic_north_clock_angle"> </xs:element>
@@ -3962,12 +3956,12 @@
   <xs:simpleType name="interpolation_sequence">
     <xs:annotation>
       <xs:documentation>When more than one dimension is interpolated,
-        interpolation_sequence define the ordering. Sequence value 1 was
-        interpolated first, directly from calibration; sequence value 2
-        was interpolated from those results, etc. </xs:documentation>
+        interpolation_sequence defines the ordering. Sequence 1 was
+        interpolated first, directly from calibration; sequence 2 was
+        interpolated from those results, etc. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Integer">
-     <xs:minInclusive value="0"/>
+     <xs:minInclusive value="-9223372036854775808"/>
      <xs:maxInclusive value="9223372036854775807"/>
 	   </xs:restriction>
   </xs:simpleType>
@@ -3990,7 +3984,7 @@
     <xs:annotation>
       <xs:documentation>The interpolation_variable defines the parameter
         across which interpolation is being performed. Examples of
-        variables include Focus, Zoom, and Temperature.
+        variables include: Focus, Zoom, and Temperature.
         </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
@@ -4595,6 +4589,18 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+
+  <xs:simpleType name="measurement_method">
+    <xs:annotation>
+      <xs:documentation>Specifies the method by which the coordinate
+        space was measured. This provides an indication of the quality
+        of the definition. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
 
   <xs:simpleType name="minimum_emission_angle_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
@@ -5258,18 +5264,6 @@
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="quaternion_measurement_method">
-    <xs:annotation>
-      <xs:documentation>Specifies the method by which the coordinate
-        space was measured. This provides an indication of the quality
-        of the definition.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
-     <xs:minLength value="1"/>
-     <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -7225,4 +7219,21 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+ 
+  <xs:annotation>
+    <xs:documentation>
+[
+  {
+    "dataDictionary": {
+      "Title": "PDS4 Data Dictionary" ,
+      "Version": "1.13.0.0" ,
+      "Date": "Thu Jul 09 08:11:48 MST 2020" ,
+      "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
+      "PropertyMapDictionary": [
+      ]
+    }
+  }
+]
+    </xs:documentation>
+  </xs:annotation>
 </xs:schema>

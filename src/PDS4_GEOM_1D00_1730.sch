@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:geom  Version:1.7.2.0 - Wed May 06 15:59:20 CDT 2020 -->
+  <!-- PDS4 Schematron for Name Space Id:geom  Version:1.7.3.0 - Thu Jul 09 08:11:48 MST 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.13.0.0 - System Build 10a -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -387,6 +387,12 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:rule context="geom:Coordinate_Space_Definition/geom:measurement_method">
+      <sch:assert test=". = ('Bundle_Adjustment', 'Sun_Find', 'Tilt_Only', 'Unknown')">
+        The attribute geom:measurement_method must be equal to one of the following values 'Bundle_Adjustment', 'Sun_Find', 'Tilt_Only', 'Unknown'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:rule context="geom:Coordinate_Space_Definition/geom:positive_azimuth_direction">
       <sch:assert test=". = ('CCW', 'CW', 'Clockwise', 'Counterclockwise')">
         The attribute geom:positive_azimuth_direction must be equal to one of the following values 'CCW', 'CW', 'Clockwise', 'Counterclockwise'.</sch:assert>
@@ -396,12 +402,6 @@
     <sch:rule context="geom:Coordinate_Space_Definition/geom:positive_elevation_direction">
       <sch:assert test=". = ('Down', 'Nadir', 'Up', 'Zenith')">
         The attribute geom:positive_elevation_direction must be equal to one of the following values 'Down', 'Nadir', 'Up', 'Zenith'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="geom:Coordinate_Space_Definition/geom:quaternion_measurement_method">
-      <sch:assert test=". = ('Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown')">
-        The attribute geom:quaternion_measurement_method must be equal to one of the following values 'Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
