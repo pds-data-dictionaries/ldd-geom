@@ -3,7 +3,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.13.0.0" ,
-      "Date": "Thu Jul 09 08:51:26 MST 2020" ,
+      "Date": "Thu Jul 09 09:32:02 MST 2020" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -695,22 +695,6 @@
               }
             }
            , {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Camera_Model_Parameters.geom.Interpolation" ,
-                "title": "Interpolation" ,
-                "assocType": "component_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "0" ,
-                "maximumCardinality": "*" ,
-                "classOrder": "1130" ,
-                "classId": [
-                  "0001_NASA_PDS_1.geom.Interpolation"
-                 ]
-              }
-            }
-           , {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Camera_Model_Parameters.geom.Vector_Model_Transform" ,
                 "title": "Vector_Model_Transform" ,
                 "assocType": "component_of" ,
@@ -720,9 +704,25 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1140" ,
+                "classOrder": "1130" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Vector_Model_Transform"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Camera_Model_Parameters.geom.Interpolation" ,
+                "title": "Interpolation" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "*" ,
+                "classOrder": "1140" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Interpolation"
                  ]
               }
             }

@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Thu Jul 09 08:51:26 MST 2020
+   Time                   Thu Jul 09 09:32:02 MST 2020
    Common Schema          [PDS4_PDS_1D00.xsd]
    Common Schematron      [PDS4_PDS_1D00.sch]
    IM Version Id:         1.13.0.0
@@ -5019,14 +5019,14 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        component_of
 
-      local identifier      Interpolation
-      minimum occurrences   0
-      maximum occurrences   *
-      reference type        component_of
-
       local identifier      Vector_Model_Transform
       minimum occurrences   0
       maximum occurrences   1
+      reference type        component_of
+
+      local identifier      Interpolation
+      minimum occurrences   0
+      maximum occurrences   *
       reference type        component_of
 
    name                   Coordinate_Space_Definition
