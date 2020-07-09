@@ -8,7 +8,7 @@ Steward: [PDS Geosciences Node](https://pds-geosciences.wustl.edu/)
 
 Only one LDD source version is kept such that it can be managed by github.
 
-- [1.B.1.0](src)
+- [1.D.0.0](src)
 
 ## Versions
 
@@ -19,14 +19,9 @@ The build process insures compatiblity of the LDD with the core information mode
 
 This LDD has been built for the following versions of the PDS4 information models.
 
+- [1.D.0.0](build/1.D.0.0)
 - [1.B.1.0](build/1.B.1.0)
 - [1.B.0.0](build/1.B.0.0)
-
-## Tagged Releases
-
-This LDD has been tagged for release for the following versions of the PDS4 information model:
-
-- [PDS4 IM v1.B.1.0 (MSN LDD v1.7.0.0)](https://github.com/nasa-pds-data-dictionaries/ldd-geom/releases/tag/v1.7.0.0)
 
 ## Notes
 

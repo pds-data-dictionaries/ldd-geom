@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1B10.sch"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.sch"?>
 
 <Ingest_LDD 
  xmlns="http://pds.nasa.gov/pds4/pds/v1"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 
-                     https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1B10.xsd">
+                     https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.xsd">
 
     <name>Geometry Dictionary Full</name>
-    <ldd_version_id>1.7.0.0</ldd_version_id>
+    <ldd_version_id>1.7.3.0</ldd_version_id>
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
     <namespace_id>geom</namespace_id>
@@ -205,9 +205,13 @@
         - Set the element_flag to "true" for the Coordinate_Space_Reference class so that the class is exposed for others to use.
         version 1.7.1.0 2020-04-06
         - Add measurement_method attribute to Coordinate_Space_Definition class
+        version 1.7.2.0 2020-07-09
+        - Added Interpolation class and needed attributes
+        - Updated Distances_Specific, Object_Orientation_Clock_Angles, Distances_Specific, Derived_Geometry
+          which had XSChoice but unbounded (appears to be not allowed). Changed to max occurance of 10 for all.
     </comment>
 
-    <last_modification_date_time>2019-04-19</last_modification_date_time>
+    <last_modification_date_time>2020-07-09</last_modification_date_time>
 
 <!-- Attributes -->
     
@@ -4402,6 +4406,72 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+<!-- Components for Interpolation Class  -->
+
+    <DD_Attribute>
+        <name>interpolation_algorithm</name>
+        <version_id>1.0</version_id>
+        <local_identifier>interpolation_algorithm</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>The interpolation_algorithm defines how interpolation was performed. 
+            For example, "Piecewise Bilinear" does a piecewise bilinear interpolation 
+            between calibration models nearest to the interpolation_value.  
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    <DD_Attribute>
+        <name>interpolation_variable</name>
+        <version_id>1.0</version_id>
+        <local_identifier>interpolation_variable</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>The interpolation_variable defines the parameter across which 
+            interpolation is being performed. Examples of variables include: 
+            Focus, Zoom, and Temperature.  
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    <DD_Attribute>
+        <name>interpolation_value</name>
+        <version_id>1.0</version_id>
+        <local_identifier>interpolation_value</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>The interpolation_value specifies the value of the variable to 
+            which the model was interpolated. The interpretation of the value depends 
+            on what the variable is and should be documented in the mission documentation.
+        </definition>
+        <DD_Value_Domain>
+          <enumeration_flag>false</enumeration_flag>
+          <value_data_type>ASCII_Real</value_data_type>
+          <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+          <specified_unit_id>deg</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    <DD_Attribute>
+        <name>interpolation_sequence</name>
+        <version_id>1.0</version_id>
+        <local_identifier>interpolation_sequence</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>When more than one dimension is interpolated, interpolation_sequence 
+            defines the ordering. Sequence 1 was interpolated first, directly from 
+            calibration; sequence 2 was interpolated from those results, etc.
+        </definition>
+        <DD_Value_Domain>
+          <enumeration_flag>false</enumeration_flag>
+          <value_data_type>ASCII_Integer</value_data_type>
+          <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
 <!-- Classes Building Blocks section -->
 
 <!-- Global use classes  -->
@@ -5347,7 +5417,7 @@
 
     <DD_Class>
         <name>Object_Orientation_Clock_Angles</name>
-        <version_id>1.0</version_id>
+        <version_id>1.1</version_id>
         <local_identifier>Object_Orientation_Clock_Angles</local_identifier>
         <submitter_name>Anne Raugh</submitter_name>
         <definition>The Object_Orientation_Clock_Angles class provides several 
@@ -5370,7 +5440,7 @@
            <identifier_reference>sun_direction_clock_angle</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>*</maximum_occurrences>
+            <maximum_occurrences>10</maximum_occurrences>
         </DD_Association>
    </DD_Class>
     
@@ -5644,7 +5714,7 @@
             <identifier_reference>target_ssb_distance</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>*</maximum_occurrences>
+            <maximum_occurrences>10</maximum_occurrences>
         </DD_Association>
     </DD_Class>
     
@@ -8786,7 +8856,7 @@
             <identifier_reference>stop_azimuth</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>*</maximum_occurrences>
+            <maximum_occurrences>10</maximum_occurrences>
         </DD_Association>
         <DD_Association>
             <identifier_reference>Coordinate_Space_Reference</identifier_reference>
@@ -8882,6 +8952,8 @@
         </DD_Association>
     </DD_Class>
 
+<!-- Geometry class -->
+    
     <DD_Class>
         <name>Geometry</name>
         <version_id>1.0</version_id>
@@ -8930,7 +9002,48 @@
             <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
+<!-- Interpolation class -->
+
+    <DD_Class>
+        <name>Interpolation</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Interpolation</local_identifier>
+        <submitter_name>Trent Hare</submitter_name>
+        <definition>The Interpolation class defines how the camera model was interpolated from 
+            the calibration models. Interpolation is used to create models in a variable 
+            space (e.g. focus, zoom) between points at which calibration was performed. 
+            If more than one dimension of variables were interpolated, multiple Interpolation 
+            objects can exist, with interpolation_sequence defining the order.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>interpolation_algorithm</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>interpolation_variable</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>interpolation_value</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>interpolation_sequence</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
 <!-- Additional Schematron rules -->    
 
     <DD_Rule>
