@@ -126,5 +126,7 @@ jobs:
               git config --global push.default current
               #git branch
               git push
+            else
+              echo "Skipping push to master"
             fi
         if: ${{ success() }}
