@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:geom  Version:1.7.0.0 - Wed Jul 29 16:17:43 UTC 2020 -->
+  <!-- PDS4 Schematron for Name Space Id:geom  Version:1.8.0.0 - Fri Aug 07 17:04:51 UTC 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -387,9 +387,15 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="geom:Coordinate_Space_Definition/geom:measurement_method">
-      <sch:assert test=". = ('Bundle_Adjustment', 'Sun_Find', 'Tilt_Only', 'Unknown')">
-        The attribute geom:measurement_method must be equal to one of the following values 'Bundle_Adjustment', 'Sun_Find', 'Tilt_Only', 'Unknown'.</sch:assert>
+    <sch:rule context="geom:Camera_Model_Parameters/geom:model_type">
+      <sch:assert test=". = ('CAHV', 'CAHVOR', 'CAHVORE', 'PSPH')">
+        The attribute geom:model_type must be equal to one of the following values 'CAHV', 'CAHVOR', 'CAHVORE', 'PSPH'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:Commanded_Geometry/geom:command_type">
+      <sch:assert test=". = ('Angle_Absolute', 'Angle_Relative', 'Joint_Absolute', 'Joint_Relative', 'No_Motion', 'No_Motion_No_Arb', 'None', 'XYZ')">
+        The attribute geom:command_type must be equal to one of the following values 'Angle_Absolute', 'Angle_Relative', 'Joint_Absolute', 'Joint_Relative', 'No_Motion', 'No_Motion_No_Arb', 'None', 'XYZ'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -402,6 +408,24 @@
     <sch:rule context="geom:Coordinate_Space_Definition/geom:positive_elevation_direction">
       <sch:assert test=". = ('Down', 'Nadir', 'Up', 'Zenith')">
         The attribute geom:positive_elevation_direction must be equal to one of the following values 'Down', 'Nadir', 'Up', 'Zenith'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:Coordinate_Space_Definition/geom:quaternion_measurement_method">
+      <sch:assert test=". = ('Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown')">
+        The attribute geom:quaternion_measurement_method must be equal to one of the following values 'Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:Coordinate_Space_Quality/geom:attitude_propagation_duration">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr')">
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:Coordinate_Space_Quality/geom:quaternion_measurement_method">
+      <sch:assert test=". = ('Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown')">
+        The attribute geom:quaternion_measurement_method must be equal to one of the following values 'Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
