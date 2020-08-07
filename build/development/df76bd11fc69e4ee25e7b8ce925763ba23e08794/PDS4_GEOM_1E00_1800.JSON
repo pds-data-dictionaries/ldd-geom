@@ -3,7 +3,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.14.0.0" ,
-      "Date": "Wed Jul 29 16:17:43 UTC 2020" ,
+      "Date": "Fri Aug 07 17:04:51 UTC 2020" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -19,6 +19,22 @@
             "description": "The Articulation_Device_Parameters class contains those attributes and sub-classes that describe an articulation device. An articulation device is anything that can move independently of the spacecraft to which it is attached. Examples include mast heads, wheel bogies, arms, filter wheel, scan platforms. "
               , "associationList": [
              {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Articulation_Device_Parameters.pds.local_identifier" ,
+                "title": "local_identifier" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "*" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Articulation_Device_Parameters.pds.local_identifier"
+                 ]
+              }
+            }
+           , {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Articulation_Device_Parameters.geom.device_id" ,
                 "title": "device_id" ,
                 "assocType": "attribute_of" ,
@@ -28,7 +44,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1010" ,
+                "classOrder": "1020" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.Articulation_Device_Parameters.geom.device_id"
                  ]
@@ -44,7 +60,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1020" ,
+                "classOrder": "1030" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.Articulation_Device_Parameters.geom.device_name"
                  ]
@@ -60,7 +76,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1030" ,
+                "classOrder": "1040" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.Articulation_Device_Parameters.geom.device_mode"
                  ]
@@ -76,7 +92,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1040" ,
+                "classOrder": "1050" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.Articulation_Device_Parameters.geom.device_phase"
                  ]
@@ -92,7 +108,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1050" ,
+                "classOrder": "1060" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.Articulation_Device_Parameters.geom.selected_instrument_id"
                  ]
@@ -108,7 +124,7 @@
                 "groupName": "XSChoice#24" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "*" ,
-                "classOrder": "1070" ,
+                "classOrder": "1080" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Device_Angle",
                   "0001_NASA_PDS_1.geom.Device_Component_State",
@@ -116,7 +132,8 @@
                   "0001_NASA_PDS_1.geom.Vector_Device_Gravity",
                   "0001_NASA_PDS_1.geom.Device_Temperature",
                   "0001_NASA_PDS_1.geom.Coordinate_Space_Present",
-                  "0001_NASA_PDS_1.geom.Coordinate_Space_Reference"
+                  "0001_NASA_PDS_1.geom.Coordinate_Space_Reference",
+                  "0001_NASA_PDS_1.geom.Commanded_Geometry"
                  ]
               }
             }
@@ -657,7 +674,8 @@
                 "classId": [
                   "0001_NASA_PDS_1.geom.CAHV_Model",
                   "0001_NASA_PDS_1.geom.CAHVOR_Model",
-                  "0001_NASA_PDS_1.geom.CAHVORE_Model"
+                  "0001_NASA_PDS_1.geom.CAHVORE_Model",
+                  "0001_NASA_PDS_1.geom.PSPH_Model"
                  ]
               }
             }
@@ -671,7 +689,7 @@
                 "groupName": "XSChoice#26" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1100" ,
+                "classOrder": "1110" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Reference_Frame_Identification",
                   "0001_NASA_PDS_1.geom.Coordinate_Space_Reference"
@@ -688,7 +706,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1120" ,
+                "classOrder": "1130" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Quaternion_Model_Transform"
                  ]
@@ -704,9 +722,25 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1130" ,
+                "classOrder": "1140" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Vector_Model_Transform"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Camera_Model_Parameters.geom.Interpolation" ,
+                "title": "Interpolation" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "*" ,
+                "classOrder": "1150" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Interpolation"
                  ]
               }
             }
@@ -778,6 +812,164 @@
         }
       , {
           "class": {
+            "identifier": "0001_NASA_PDS_1.geom.Commanded_Geometry" ,
+            "title": "Commanded_Geometry" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " Specifies how the device was commanded in order to achieve the state represented in the enclosing Articulation_Device_Parameters. Commands are often at a higher level, e.g. point at this location or move to this XYZ, which is translated by flight software to the actual pose of the device. Certain forms of command are measured in a coordinate frame; this is specified by the Coordinate_Space_Reference in this class (if not present, the Coordinate_Space_Reference in the Articulation_Device_Parameters parent should be assumed). "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Commanded_Geometry.geom.command_type" ,
+                "title": "command_type" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Commanded_Geometry.geom.command_type"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Commanded_Geometry.geom.Device_Angle" ,
+                "title": "Device_Angle" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Device_Angle"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Commanded_Geometry.geom.Commanded_Position" ,
+                "title": "Commanded_Position" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Commanded_Position"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Commanded_Geometry.geom.Coordinate_Space_Reference" ,
+                "title": "Coordinate_Space_Reference" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1040" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Coordinate_Space_Reference"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.geom.Commanded_Position" ,
+            "title": "Commanded_Position" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " Specifies a Cartesian position used in commanding the device. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Commanded_Position.Vector_Cartesian_Position_Base.generalization" ,
+                "title": "Vector_Cartesian_Position_Base" ,
+                "assocType": "parent_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "0000" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base"
+                 ]
+              }
+            } ,
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
+                "title": "x_position" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.y_position" ,
+                "title": "y_position" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.y_position"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.z_position" ,
+                "title": "z_position" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.z_position"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
             "identifier": "0001_NASA_PDS_1.geom.Coordinate_Space_Definition" ,
             "title": "Coordinate_Space_Definition" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -837,8 +1029,8 @@
               }
             }
            , {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Coordinate_Space_Definition.geom.measurement_method" ,
-                "title": "measurement_method" ,
+                "identifier": "0001_NASA_PDS_1.geom.Coordinate_Space_Definition.geom.quaternion_measurement_method" ,
+                "title": "quaternion_measurement_method" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
@@ -846,9 +1038,9 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1040" ,
+                "classOrder": "1070" ,
                 "attributeId": [
-                  "0001_NASA_PDS_1.geom.Coordinate_Space_Definition.geom.measurement_method"
+                  "0001_NASA_PDS_1.geom.Coordinate_Space_Definition.geom.quaternion_measurement_method"
                  ]
               }
             }
@@ -862,7 +1054,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1050" ,
+                "classOrder": "1040" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Coordinate_Space_Present"
                  ]
@@ -878,7 +1070,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1060" ,
+                "classOrder": "1050" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Vector_Origin_Offset"
                  ]
@@ -894,7 +1086,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1070" ,
+                "classOrder": "1060" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Quaternion_Plus_Direction"
                  ]
@@ -913,6 +1105,22 @@
                 "classOrder": "1080" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Coordinate_Space_Reference"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Coordinate_Space_Definition.geom.Coordinate_Space_Quality" ,
+                "title": "Coordinate_Space_Quality" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1090" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Coordinate_Space_Quality"
                  ]
               }
             }
@@ -1123,6 +1331,69 @@
                   "0001_NASA_PDS_1.geom.Coordinate_Space_Indexed",
                   "0001_NASA_PDS_1.geom.Coordinate_Space_SPICE",
                   "0001_NASA_PDS_1.pds.Local_Internal_Reference"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.geom.Coordinate_Space_Quality" ,
+            "title": "Coordinate_Space_Quality" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": "Parameters that indicate the quality of the coordinate space knowledge. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Coordinate_Space_Quality.geom.quaternion_measurement_method" ,
+                "title": "quaternion_measurement_method" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Coordinate_Space_Quality.geom.quaternion_measurement_method"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Coordinate_Space_Quality.geom.attitude_propagation_counter" ,
+                "title": "attitude_propagation_counter" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Coordinate_Space_Quality.geom.attitude_propagation_counter"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Coordinate_Space_Quality.geom.attitude_propagation_duration" ,
+                "title": "attitude_propagation_duration" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Coordinate_Space_Quality.geom.attitude_propagation_duration"
                  ]
               }
             }
@@ -1420,6 +1691,22 @@
               }
             }
            , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Derived_Geometry.geom.Vector_Solar_Direction" ,
+                "title": "Vector_Solar_Direction" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1110" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Vector_Solar_Direction"
+                 ]
+              }
+            }
+           , {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Derived_Geometry.geom.Coordinate_Space_Reference" ,
                 "title": "Coordinate_Space_Reference" ,
                 "assocType": "component_of" ,
@@ -1429,7 +1716,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1110" ,
+                "classOrder": "1120" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Coordinate_Space_Reference"
                  ]
@@ -4047,6 +4334,85 @@
         }
       , {
           "class": {
+            "identifier": "0001_NASA_PDS_1.geom.Interpolation" ,
+            "title": "Interpolation" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": "The Interpolation class defines how the camera model was interpolated from the calibration models. Interpolation is used to create models in a variable space (e.g., focus, zoom) between points at which calibration was performed. If more than one dimension of variables were interpolated, multiple Interpolation objects can exist, with interpolation_sequence defining the order. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Interpolation.geom.interpolation_algorithm" ,
+                "title": "interpolation_algorithm" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Interpolation.geom.interpolation_algorithm"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Interpolation.geom.interpolation_variable" ,
+                "title": "interpolation_variable" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Interpolation.geom.interpolation_variable"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Interpolation.geom.interpolation_value" ,
+                "title": "interpolation_value" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Interpolation.geom.interpolation_value"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Interpolation.geom.interpolation_sequence" ,
+                "title": "interpolation_sequence" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1040" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Interpolation.geom.interpolation_sequence"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
             "identifier": "0001_NASA_PDS_1.geom.List_Index_Angle" ,
             "title": "List_Index_Angle" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -4882,6 +5248,133 @@
                 "classOrder": "1030" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Coordinate_System_Identification"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.geom.PSPH_Model" ,
+            "title": "PSPH_Model" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " A new camera model designed to perform better fisheye-image rectification prior to 1D stereo correlation. The primary innovation is the use of a unit projection sphere rather than an image plane. For epipolar alignment between stereo cameras the rows (for a left\/right pair) or the columns (for an up\/down pair) of both must lie along the same plane. Thus we use a pair of planes to define the rows and columns. Each plane will rotate around a static dedicated axis passing through the sphere center. Pixels will be located where the planes intersect with each other and the unit sphere. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.PSPH_Model.geom.psph_model_scale_x" ,
+                "title": "psph_model_scale_x" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1060" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.PSPH_Model.geom.psph_model_scale_x"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.PSPH_Model.geom.psph_model_scale_y" ,
+                "title": "psph_model_scale_y" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1070" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.PSPH_Model.geom.psph_model_scale_y"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.PSPH_Model.geom.Vector_Center" ,
+                "title": "Vector_Center" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Vector_Center"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.PSPH_Model.geom.Vector_Axis_X" ,
+                "title": "Vector_Axis_X" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Vector_Axis_X"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.PSPH_Model.geom.Vector_Axis_Y" ,
+                "title": "Vector_Axis_Y" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Vector_Axis_Y"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.PSPH_Model.geom.Vector_Normal_X" ,
+                "title": "Vector_Normal_X" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1040" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Vector_Normal_X"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.PSPH_Model.geom.Vector_Normal_Y" ,
+                "title": "Vector_Normal_Y" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1050" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Vector_Normal_Y"
                  ]
               }
             }
@@ -6946,6 +7439,164 @@
               , "associationList": [
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Axis.Vector_Cartesian_Unit.generalization" ,
+                "title": "Vector_Cartesian_Unit" ,
+                "assocType": "parent_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "0000" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit"
+                 ]
+              }
+            } ,
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.x_unit" ,
+                "title": "x_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.x_unit"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.y_unit" ,
+                "title": "y_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.y_unit"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.z_unit" ,
+                "title": "z_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.z_unit"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.geom.Vector_Axis_X" ,
+            "title": "Vector_Axis_X" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " Unit column-plane rotation axis, passing through the sphere center, typically vertical and pointing down so that positive rotations (by the right-hand rule) will rotate the forward half of the plane in the (rightward) direction of increasing column (as projected on the forward hemisphere). "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Axis_X.Vector_Cartesian_Unit.generalization" ,
+                "title": "Vector_Cartesian_Unit" ,
+                "assocType": "parent_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "0000" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit"
+                 ]
+              }
+            } ,
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.x_unit" ,
+                "title": "x_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.x_unit"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.y_unit" ,
+                "title": "y_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.y_unit"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.z_unit" ,
+                "title": "z_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.z_unit"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.geom.Vector_Axis_Y" ,
+            "title": "Vector_Axis_Y" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " Unit row-plane rotation axis, passing through the sphere center, typically horizontal and pointing left so that positive rotations (by the right-hand rule) will rotate the forward half of the plane in the (downward) direction of increasing row (as projected on the forward hemisphere). "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Axis_Y.Vector_Cartesian_Unit.generalization" ,
                 "title": "Vector_Cartesian_Unit" ,
                 "assocType": "parent_of" ,
                 "isAttribute": "false" ,
@@ -10911,6 +11562,164 @@
         }
       , {
           "class": {
+            "identifier": "0001_NASA_PDS_1.geom.Vector_Normal_X" ,
+            "title": "Vector_Normal_X" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " Unit normal vector to the column plane when x equals zero, pointing in the same direction as the cross product of axis x with an outward-pointing vector that also lies in the plane. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Normal_X.Vector_Cartesian_Unit.generalization" ,
+                "title": "Vector_Cartesian_Unit" ,
+                "assocType": "parent_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "0000" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit"
+                 ]
+              }
+            } ,
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.x_unit" ,
+                "title": "x_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.x_unit"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.y_unit" ,
+                "title": "y_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.y_unit"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.z_unit" ,
+                "title": "z_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.z_unit"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.geom.Vector_Normal_Y" ,
+            "title": "Vector_Normal_Y" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " Unit normal vector to the row plane when y equals zero, pointing in the same direction as the cross product of axis x with an outward-pointing vector that also lies in the plane. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Normal_Y.Vector_Cartesian_Unit.generalization" ,
+                "title": "Vector_Cartesian_Unit" ,
+                "assocType": "parent_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "0000" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit"
+                 ]
+              }
+            } ,
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.x_unit" ,
+                "title": "x_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.x_unit"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.y_unit" ,
+                "title": "y_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.y_unit"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.z_unit" ,
+                "title": "z_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.z_unit"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
             "identifier": "0001_NASA_PDS_1.geom.Vector_Optical" ,
             "title": "Vector_Optical" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -12369,6 +13178,85 @@
         }
       , {
           "class": {
+            "identifier": "0001_NASA_PDS_1.geom.Vector_Solar_Direction" ,
+            "title": "Vector_Solar_Direction" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": " Unit vector pointing in the direction of the Sun at the time of the observation. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Solar_Direction.Vector_Cartesian_Unit.generalization" ,
+                "title": "Vector_Cartesian_Unit" ,
+                "assocType": "parent_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "0000" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit"
+                 ]
+              }
+            } ,
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.x_unit" ,
+                "title": "x_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.x_unit"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.y_unit" ,
+                "title": "y_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.y_unit"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.z_unit" ,
+                "title": "z_unit" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.z_unit"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
             "identifier": "0001_NASA_PDS_1.geom.Vector_Vertical" ,
             "title": "Vector_Vertical" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -12742,6 +13630,31 @@
         }
       , {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Articulation_Device_Parameters.pds.local_identifier" ,
+            "title": "local_identifier" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "pds" ,
+            "steward": "pds" ,
+            "versionId": "1.14" ,
+            "description": "The local_identifier attribute provides a character string which uniquely identifies the containing object within the label." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Local_Identifier" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Local_Identifier" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.geom.Body_Identification_Base.geom.body_spice_name" ,
             "title": "body_spice_name" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -12875,7 +13788,7 @@
             "versionId": "1.14" ,
             "description": "The model_type attribute specifies an identifier for the type or kind of model. The value should be one of a well defined set, providing an application program with sufficient information to know how to handle the rest of the parameters within the model. This value will correlate directly with the specific camera model class that is a subclass of the Camera_Model_Parameters class. " ,
             "isNillable": "false" ,
-            "isEnumerated": "false" ,
+            "isEnumerated": "true" ,
             "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
@@ -12917,13 +13830,13 @@
         }
       , {
           "attribute": {
-            "identifier": "0001_NASA_PDS_1.geom.Coordinate_Space_Definition.geom.measurement_method" ,
-            "title": "measurement_method" ,
+            "identifier": "0001_NASA_PDS_1.geom.Commanded_Geometry.geom.command_type" ,
+            "title": "command_type" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "geom" ,
             "steward": "geo" ,
             "versionId": "1.14" ,
-            "description": "Specifies the method by which the coordinate space was measured. This provides an indication of the quality of the definition. " ,
+            "description": " Specifies how the device was commanded. " ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
             "isDeprecated": "false" ,
@@ -12974,6 +13887,31 @@
             "steward": "geo" ,
             "versionId": "1.14" ,
             "description": "The positive_elevation_direction attribute provides the direction in which elevation is measured in positive degrees for an observer on the surface of a body. The elevation is measured with respect to the azimuthal reference plane. A value of UP or ZENITH indicates that elevation is measured positively upwards, i.e., the zenith point would be at +90 degrees and the nadir point at -90 degrees. DOWN or NADIR indicates that the elevation is measured positively downwards; the zenith point would be at -90 degrees and the nadir point at +90 degrees. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "true" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Coordinate_Space_Definition.geom.quaternion_measurement_method" ,
+            "title": "quaternion_measurement_method" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.14" ,
+            "description": "Specifies the method by which the coordinate space was measured. This provides an indication of the quality of the definition." ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
             "isDeprecated": "false" ,
@@ -13051,6 +13989,81 @@
             "description": "The solution_id attribute specifies the unique identifier for the solution set to which the values in the group belong. For certain kinds of information, such as pointing correction (pointing models) and rover localization (coordinate system definitions), the \"true\" value is unknown and only estimates of the true value exist. Thus, more than one set of estimates may exist simultaneously, each valid for its intended purpose. Each of these sets is called a \"solution\" to the unknown true value. The solution_id attribute is used to identify which solution is being expressed by the containing group. No specific naming convention is defined here, however it is recommended that projects adopt one. The intent is to be able to identify who created the solution, and why. Possible components of the naming convention include user, institution, purpose, request ID, version, program, date\/time. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Coordinate_Space_Quality.geom.attitude_propagation_counter" ,
+            "title": "attitude_propagation_counter" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.14" ,
+            "description": "Count in clock units of how long it has been since the last IMU reset, which relates to how good the attitude measurement is due to IMU drift." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Integer" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Integer" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-9223372036854775808" ,
+            "maximumValue": "9223372036854775807" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Coordinate_Space_Quality.geom.attitude_propagation_duration" ,
+            "title": "attitude_propagation_duration" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.14" ,
+            "description": "The number of seconds for how long it has been since the last IMU reset, which relates to how good the attitude measurement is due to IMU drift." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Time" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Time" ,
+            "unitId": "day, hr, julian day, microseconds, min, ms, s, yr" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Coordinate_Space_Quality.geom.quaternion_measurement_method" ,
+            "title": "quaternion_measurement_method" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.14" ,
+            "description": "Specifies the method by which the coordinate space was measured. This provides an indication of the quality of the definition." ,
+            "isNillable": "false" ,
+            "isEnumerated": "true" ,
             "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
@@ -15592,6 +16605,106 @@
         }
       , {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Interpolation.geom.interpolation_algorithm" ,
+            "title": "interpolation_algorithm" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.14" ,
+            "description": "The interpolation_algorithm defines how interpolation was performed. For example, \"Piecewise Bilinear\" does a piecewise bilinear interpolation between calibration models nearest to the interpolation_value. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Interpolation.geom.interpolation_sequence" ,
+            "title": "interpolation_sequence" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.14" ,
+            "description": "When more than one dimension is interpolated, interpolation_sequence define the ordering. Sequence value 1 was interpolated first, directly from calibration; sequence value 2 was interpolated from those results, etc. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Integer" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Integer" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "0" ,
+            "maximumValue": "9223372036854775807" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Interpolation.geom.interpolation_value" ,
+            "title": "interpolation_value" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.14" ,
+            "description": "The interpolation_value specifies the value of the variable to which the model was interpolated. The interpretation of the value depends on what the variable is and should be documented in the mission documentation. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Interpolation.geom.interpolation_variable" ,
+            "title": "interpolation_variable" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.14" ,
+            "description": "The interpolation_variable defines the parameter across which interpolation is being performed. Examples of variables include Focus, Zoom, and Temperature. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.geom.List_Index_Angle.geom.index_value_angle" ,
             "title": "index_value_angle" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -16287,6 +17400,56 @@
             "unitOfMeasure": "Units_of_Time" ,
             "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Time" ,
             "unitId": "day, hr, julian day, microseconds, min, ms, s, yr" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.PSPH_Model.geom.psph_model_scale_x" ,
+            "title": "psph_model_scale_x" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.14" ,
+            "description": " Column scale factor to convert between x coordinate and rotation around axis x, expressed in radians\/pixel. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.PSPH_Model.geom.psph_model_scale_y" ,
+            "title": "psph_model_scale_y" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.14" ,
+            "description": " Column scale factor to convert between y coordinate and rotation around axis y, expressed in radians\/pixel. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
             "defaultUnitId": "null"
           }
         }

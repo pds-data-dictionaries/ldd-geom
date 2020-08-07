@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:geom  Version:1.7.0.0 - Wed Jul 29 16:17:43 UTC 2020 -->
+  <!-- PDS4 XML/Schema for Name Space Id:geom  Version:1.8.0.0 - Fri Aug 07 17:04:51 UTC 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.14.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.7.0.0 - geom: - Geometry Dictionary Full                                -->
+  <!-- 1.8.0.0 - geom: - Geometry Dictionary Full                                -->
   <!--   file:/home/runner/work/ldd-geom/ldd-geom/src/PDS4_GEOM_IngestLDD.xml    -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -14,13 +14,16 @@
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.7.0.0">
+    version="1.8.0.0">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd"/>
  
   <xs:annotation>
     <xs:documentation>
 
+        Build with: lddtool -pl ingest_file >log_file
+           add J switch if a JSON file is needed.
+           
     	Classes used from the PDS namespace
     	  - Local_Internal_Reference
     	  - Internal_Reference
@@ -211,8 +214,21 @@
                 request for MESSENGER MDIS migration to PDS4.
         version 1.7.0.0 2019-04-19     
         - Set the element_flag to "true" for the Coordinate_Space_Reference class so that the class is exposed for others to use.
-        version 1.7.1.0 2020-04-06
-        - Add measurement_method attribute to Coordinate_Space_Definition class
+        version 1.7.1.0 2019-05-06
+        - Added attribute quaternion_measurement_method and included it in the Coordinate_Space_Definition class.
+        - Added local_identifier to the Articulation_Device_Parameters
+        version 1.7.2.0 2020-05-04; 2020-07-10
+        - Modified definitions for quaternion_measurment_method.
+        - Added the Interpolation class to support documentation of camera model interpolation. Included in the 
+               Camera_Model_Parameters class.
+        - Added PSPH camera model (5 classes and 2 attributes); added enumerated list for model_type relative
+               to camera models.
+        version 1.8.0.0 2020-07-31
+        - Added Vector_Solar_Direction class to Derived_Geometry; made Vector_Axis_X/Y classes a restriction of the
+               Vector_Cartesian_Unit class.
+        - Added Coordinate_Space_Quality to Coordinate_Space_Definition.
+        - Added Commanded_Geometry to Articulation_Device_Parameters 
+        - have to edit schema to fix the "choice bug"
     
     </xs:documentation>
   </xs:annotation>
@@ -230,6 +246,7 @@
         scan platforms. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element ref="pds:local_identifier" minOccurs="0" maxOccurs="unbounded"> </xs:element>
       <xs:element name="device_id" type="geom:device_id" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="device_name" type="geom:device_name" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="device_mode" type="geom:device_mode" minOccurs="0" maxOccurs="1"> </xs:element>
@@ -243,6 +260,7 @@
         <xs:element name="Device_Temperature" type="geom:Device_Temperature"> </xs:element>
         <xs:element name="Coordinate_Space_Present" type="geom:Coordinate_Space_Present"> </xs:element>
         <xs:element ref="geom:Coordinate_Space_Reference"> </xs:element>
+        <xs:element name="Commanded_Geometry" type="geom:Commanded_Geometry"> </xs:element>
       </xs:choice>
     </xs:sequence>
   </xs:complexType>
@@ -347,12 +365,17 @@
         <xs:element name="CAHV_Model" type="geom:CAHV_Model"> </xs:element>
         <xs:element name="CAHVOR_Model" type="geom:CAHVOR_Model"> </xs:element>
         <xs:element name="CAHVORE_Model" type="geom:CAHVORE_Model"> </xs:element>
+        <xs:element name="PSPH_Model" type="geom:PSPH_Model"> </xs:element>
         <xs:element name="Reference_Frame_Identification" type="geom:Reference_Frame_Identification"> </xs:element>
         <xs:element ref="geom:Coordinate_Space_Reference"> </xs:element>
       </xs:choice>
       <xs:element name="Quaternion_Model_Transform" type="geom:Quaternion_Model_Transform" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="Vector_Model_Transform" type="geom:Vector_Model_Transform" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Interpolation" type="geom:Interpolation" minOccurs="0" maxOccurs="unbounded"> </xs:element>
     </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="geom:model_type = ('CAHV', 'CAHVOR', 'CAHVORE', 'PSPH')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
   <xs:complexType name="Central_Body_Identification">
@@ -373,6 +396,46 @@
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="Commanded_Geometry">
+    <xs:annotation>
+      <xs:documentation> Specifies how the device was commanded in order
+        to achieve the state represented in the enclosing
+        Articulation_Device_Parameters. Commands are often at a higher
+        level, e.g. point at this location or move to this XYZ, which is
+        translated by flight software to the actual pose of the device.
+        Certain forms of command are measured in a coordinate frame;
+        this is specified by the Coordinate_Space_Reference in this
+        class (if not present, the Coordinate_Space_Reference in the
+        Articulation_Device_Parameters parent should be assumed).
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="command_type" type="geom:command_type" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="Device_Angle" type="geom:Device_Angle" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Commanded_Position" type="geom:Commanded_Position" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element ref="geom:Coordinate_Space_Reference" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="geom:command_type = ('Angle_Absolute', 'Angle_Relative', 'Joint_Absolute', 'Joint_Relative', 'No_Motion', 'No_Motion_No_Arb', 'None', 'XYZ')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Commanded_Position">
+    <xs:annotation>
+      <xs:documentation> Specifies a Cartesian position used in
+        commanding the device. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="geom:Vector_Cartesian_Position_Base">
+        <xs:sequence>
+          <xs:element name="x_position" type="geom:x_position" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="y_position" type="geom:y_position" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="z_position" type="geom:z_position" minOccurs="1" maxOccurs="1"> </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType name="Coordinate_Space_Definition">
     <xs:annotation>
       <xs:documentation>The Coordinate_Space classes are typically used
@@ -384,16 +447,17 @@
       <xs:element ref="pds:local_identifier" minOccurs="1" maxOccurs="unbounded"> </xs:element>
       <xs:element name="positive_azimuth_direction" type="geom:positive_azimuth_direction" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="positive_elevation_direction" type="geom:positive_elevation_direction" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="measurement_method" type="geom:measurement_method" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="Coordinate_Space_Present" type="geom:Coordinate_Space_Present" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="Vector_Origin_Offset" type="geom:Vector_Origin_Offset" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="Quaternion_Plus_Direction" type="geom:Quaternion_Plus_Direction" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="quaternion_measurement_method" type="geom:quaternion_measurement_method" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element ref="geom:Coordinate_Space_Reference" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="Coordinate_Space_Quality" type="geom:Coordinate_Space_Quality" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
     <!-- <xs:assert test="geom:positive_azimuth_direction = ('CCW', 'CW', 'Clockwise', 'Counterclockwise')"/> -->
     <!-- <xs:assert test="geom:positive_elevation_direction = ('Down', 'Nadir', 'Up', 'Zenith')"/> -->
-    <!-- <xs:assert test="geom:measurement_method = ('Bundle_Adjustment', 'Sun_Find', 'Tilt_Only', 'Unknown')"/> -->
+    <!-- <xs:assert test="geom:quaternion_measurement_method = ('Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
@@ -462,6 +526,21 @@
         </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Coordinate_Space_Quality">
+    <xs:annotation>
+      <xs:documentation>Parameters that indicate the quality of the
+        coordinate space knowledge. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="quaternion_measurement_method" type="geom:quaternion_measurement_method" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="attitude_propagation_counter" type="geom:attitude_propagation_counter" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="attitude_propagation_duration" type="geom:attitude_propagation_duration" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="geom:quaternion_measurement_method = ('Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
   <xs:complexType name="Coordinate_Space_Reference">
@@ -562,6 +641,7 @@
         <xs:element name="start_azimuth" type="geom:start_azimuth"> </xs:element>
         <xs:element name="stop_azimuth" type="geom:stop_azimuth"> </xs:element>
       </xs:choice>
+      <xs:element name="Vector_Solar_Direction" type="geom:Vector_Solar_Direction" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element ref="geom:Coordinate_Space_Reference" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
   </xs:complexType>
@@ -1135,6 +1215,24 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="Interpolation">
+    <xs:annotation>
+      <xs:documentation>The Interpolation class defines how the camera
+        model was interpolated from the calibration models.
+        Interpolation is used to create models in a variable space
+        (e.g., focus, zoom) between points at which calibration was
+        performed. If more than one dimension of variables were
+        interpolated, multiple Interpolation objects can exist, with
+        interpolation_sequence defining the order. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="interpolation_algorithm" type="geom:interpolation_algorithm" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="interpolation_variable" type="geom:interpolation_variable" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="interpolation_value" type="geom:interpolation_value" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="interpolation_sequence" type="geom:interpolation_sequence" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="List_Index_Angle">
     <xs:annotation>
       <xs:documentation>Used when the list values are angles.
@@ -1357,6 +1455,30 @@
       <xs:element name="Central_Body_Identification" type="geom:Central_Body_Identification" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="Geometry_Target_Identification" type="geom:Geometry_Target_Identification" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="Coordinate_System_Identification" type="geom:Coordinate_System_Identification" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PSPH_Model">
+    <xs:annotation>
+      <xs:documentation> A new camera model designed to perform better
+        fisheye-image rectification prior to 1D stereo correlation. The
+        primary innovation is the use of a unit projection sphere rather
+        than an image plane. For epipolar alignment between stereo
+        cameras the rows (for a left/right pair) or the columns (for an
+        up/down pair) of both must lie along the same plane. Thus we use
+        a pair of planes to define the rows and columns. Each plane will
+        rotate around a static dedicated axis passing through the sphere
+        center. Pixels will be located where the planes intersect with
+        each other and the unit sphere. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Vector_Center" type="geom:Vector_Center" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="Vector_Axis_X" type="geom:Vector_Axis_X" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="Vector_Axis_Y" type="geom:Vector_Axis_Y" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="Vector_Normal_X" type="geom:Vector_Normal_X" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="Vector_Normal_Y" type="geom:Vector_Normal_Y" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="psph_model_scale_x" type="geom:psph_model_scale_x" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="psph_model_scale_y" type="geom:psph_model_scale_y" minOccurs="1" maxOccurs="1"> </xs:element>
     </xs:sequence>
   </xs:complexType>
 
@@ -1781,6 +1903,46 @@
       <xs:documentation>The Vector_Axis is a unit vector that describes
         the axis of the camera, defined as the normal to the image
         plane. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="geom:Vector_Cartesian_Unit">
+        <xs:sequence>
+          <xs:element name="x_unit" type="geom:x_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="y_unit" type="geom:y_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="z_unit" type="geom:z_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Vector_Axis_X">
+    <xs:annotation>
+      <xs:documentation> Unit column-plane rotation axis, passing
+        through the sphere center, typically vertical and pointing down
+        so that positive rotations (by the right-hand rule) will rotate
+        the forward half of the plane in the (rightward) direction of
+        increasing column (as projected on the forward hemisphere).
+        </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="geom:Vector_Cartesian_Unit">
+        <xs:sequence>
+          <xs:element name="x_unit" type="geom:x_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="y_unit" type="geom:y_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="z_unit" type="geom:z_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Vector_Axis_Y">
+    <xs:annotation>
+      <xs:documentation> Unit row-plane rotation axis, passing through
+        the sphere center, typically horizontal and pointing left so
+        that positive rotations (by the right-hand rule) will rotate the
+        forward half of the plane in the (downward) direction of
+        increasing row (as projected on the forward hemisphere).
+        </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:restriction base="geom:Vector_Cartesian_Unit">
@@ -2659,6 +2821,42 @@
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="Vector_Normal_X">
+    <xs:annotation>
+      <xs:documentation> Unit normal vector to the column plane when x
+        equals zero, pointing in the same direction as the cross product
+        of axis x with an outward-pointing vector that also lies in the
+        plane. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="geom:Vector_Cartesian_Unit">
+        <xs:sequence>
+          <xs:element name="x_unit" type="geom:x_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="y_unit" type="geom:y_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="z_unit" type="geom:z_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Vector_Normal_Y">
+    <xs:annotation>
+      <xs:documentation> Unit normal vector to the row plane when y
+        equals zero, pointing in the same direction as the cross product
+        of axis x with an outward-pointing vector that also lies in the
+        plane. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="geom:Vector_Cartesian_Unit">
+        <xs:sequence>
+          <xs:element name="x_unit" type="geom:x_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="y_unit" type="geom:y_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="z_unit" type="geom:z_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType name="Vector_Optical">
     <xs:annotation>
       <xs:documentation>The Vector_Optical is a unit vector that
@@ -2991,6 +3189,22 @@
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="Vector_Solar_Direction">
+    <xs:annotation>
+      <xs:documentation> Unit vector pointing in the direction of the
+        Sun at the time of the observation. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="geom:Vector_Cartesian_Unit">
+        <xs:sequence>
+          <xs:element name="x_unit" type="geom:x_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="y_unit" type="geom:y_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="z_unit" type="geom:z_unit" minOccurs="1" maxOccurs="1"> </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType name="Vector_Vertical">
     <xs:annotation>
       <xs:documentation>The Vector_Vertical is a composite vector
@@ -3085,6 +3299,38 @@
         common namespace.
       </xs:documentation>
     </xs:annotation>
+
+  <xs:simpleType name="attitude_propagation_counter">
+    <xs:annotation>
+      <xs:documentation>Count in clock units of how long it has been
+        since the last IMU reset, which relates to how good the attitude
+        measurement is due to IMU drift.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="attitude_propagation_duration_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="attitude_propagation_duration">
+    <xs:annotation>
+      <xs:documentation>The number of seconds for how long it has been
+        since the last IMU reset, which relates to how good the attitude
+        measurement is due to IMU drift.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="geom:attitude_propagation_duration_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <xs:simpleType name="body_spice_name">
     <xs:annotation>
@@ -3274,6 +3520,17 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+
+  <xs:simpleType name="command_type">
+    <xs:annotation>
+      <xs:documentation> Specifies how the device was commanded.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
 
   <xs:complexType name="coordinate_space_frame_type">
     <xs:annotation>
@@ -3921,6 +4178,59 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:simpleType name="interpolation_algorithm">
+    <xs:annotation>
+      <xs:documentation>The interpolation_algorithm defines how
+        interpolation was performed. For example, "Piecewise Bilinear"
+        does a piecewise bilinear interpolation between calibration
+        models nearest to the interpolation_value. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="interpolation_sequence">
+    <xs:annotation>
+      <xs:documentation>When more than one dimension is interpolated,
+        interpolation_sequence define the ordering. Sequence value 1 was
+        interpolated first, directly from calibration; sequence value 2
+        was interpolated from those results, etc. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="interpolation_value">
+    <xs:annotation>
+      <xs:documentation>The interpolation_value specifies the value of
+        the variable to which the model was interpolated. The
+        interpretation of the value depends on what the variable is and
+        should be documented in the mission documentation.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="interpolation_variable">
+    <xs:annotation>
+      <xs:documentation>The interpolation_variable defines the parameter
+        across which interpolation is being performed. Examples of
+        variables include Focus, Zoom, and Temperature.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="kernel_provenance">
     <xs:annotation>
       <xs:documentation>The kernel_provenance attribute indicates
@@ -4517,18 +4827,6 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-
-  <xs:simpleType name="measurement_method">
-    <xs:annotation>
-      <xs:documentation>Specifies the method by which the coordinate
-        space was measured. This provides an indication of the quality
-        of the definition. </xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
-     <xs:minLength value="1"/>
-     <xs:maxLength value="255"/>
-	   </xs:restriction>
-  </xs:simpleType>
 
   <xs:simpleType name="minimum_emission_angle_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
@@ -5144,6 +5442,30 @@
 	   </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="psph_model_scale_x">
+    <xs:annotation>
+      <xs:documentation> Column scale factor to convert between x
+        coordinate and rotation around axis x, expressed in
+        radians/pixel. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="psph_model_scale_y">
+    <xs:annotation>
+      <xs:documentation> Column scale factor to convert between y
+        coordinate and rotation around axis y, expressed in
+        radians/pixel. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="qcos">
     <xs:annotation>
       <xs:documentation>qcos is the scalar component of a quaternion.
@@ -5192,6 +5514,18 @@
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="quaternion_measurement_method">
+    <xs:annotation>
+      <xs:documentation>Specifies the method by which the coordinate
+        space was measured. This provides an indication of the quality
+        of the definition.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -7155,7 +7489,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.14.0.0" ,
-      "Date": "Wed Jul 29 16:17:43 UTC 2020" ,
+      "Date": "Fri Aug 07 17:04:51 UTC 2020" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "PropertyMapDictionary": [
       ]
