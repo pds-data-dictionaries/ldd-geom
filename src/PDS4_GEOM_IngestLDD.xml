@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.sch"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.sch"?>
 
 <Ingest_LDD 
  xmlns="http://pds.nasa.gov/pds4/pds/v1"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 
-                     https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.xsd">
+                     https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd">
 
     <name>Geometry Dictionary Full</name>
-    <ldd_version_id>1.7.3.0</ldd_version_id>
+    <ldd_version_id>1.8.0.0</ldd_version_id>
+    <dictionary_type>Discipline</dictionary_type>
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
     <namespace_id>geom</namespace_id>
     <comment>
+        Build with: lddtool -pl ingest_file >log_file
+           add J switch if a JSON file is needed.
+           
     	Classes used from the PDS namespace
     	  - Local_Internal_Reference
     	  - Internal_Reference
@@ -203,16 +207,24 @@
                 request for MESSENGER MDIS migration to PDS4.
         version 1.7.0.0 2019-04-19     
         - Set the element_flag to "true" for the Coordinate_Space_Reference class so that the class is exposed for others to use.
-        version 1.7.1.0 2020-04-06
-        - Add measurement_method attribute to Coordinate_Space_Definition class
-        version 1.7.2.0 2020-07-09
-        - Added Interpolation class and needed attributes
-        - Updated Distances_Specific, Object_Orientation_Clock_Angles, Distances_Specific, Derived_Geometry
-          which had XSChoice but unbounded (appears to be not allowed). Changed to max occurance of 10 for all.
-        - TODO: Need to check LDDTool Errors for Frame_Identification_Base and Body_Identification_Base
+        version 1.7.1.0 2019-05-06
+        - Added attribute quaternion_measurement_method and included it in the Coordinate_Space_Definition class.
+        - Added local_identifier to the Articulation_Device_Parameters
+        version 1.7.2.0 2020-05-04; 2020-07-10
+        - Modified definitions for quaternion_measurment_method.
+        - Added the Interpolation class to support documentation of camera model interpolation. Included in the 
+               Camera_Model_Parameters class.
+        - Added PSPH camera model (5 classes and 2 attributes); added enumerated list for model_type relative
+               to camera models.
+        version 1.8.0.0 2020-07-31
+        - Added Vector_Solar_Direction class to Derived_Geometry; made Vector_Axis_X/Y classes a restriction of the
+               Vector_Cartesian_Unit class.
+        - Added Coordinate_Space_Quality to Coordinate_Space_Definition.
+        - Added Commanded_Geometry to Articulation_Device_Parameters 
+        - have to edit schema to fix the "choice bug"
     </comment>
 
-    <last_modification_date_time>2020-07-09</last_modification_date_time>
+    <last_modification_date_time>2020-07-31</last_modification_date_time>
 
 <!-- Attributes -->
     
@@ -462,8 +474,7 @@
         <submitter_name>M. Gordon</submitter_name>
         <definition>The reference_location indicates the position to which 
           values in the containing class apply. If the reference location is on 
-          a target, the target is the one specified in the parent 
-          Geometry_Orbiter class.
+          a target, the target is the one specified in the parent Geometry_Orbiter class.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
@@ -482,8 +493,7 @@
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Target Center</value>
-                <value_meaning>Values were determined for the center of the designated 
-                  target. 
+                <value_meaning>Values were determined for the center of the designated target. 
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
@@ -738,7 +748,7 @@
         <definition>Assuming the image is displayed as defined by the Display_Direction 
                     class, the north_azimuth attribute provides the value of the angle 
                     between a line from the image center to the north pole and 
-                    a reference line in the image plane.  The reference line is 
+                    a reference line in the image plane. The reference line is 
                     a horizontal line from the image center to the middle right 
                     edge of the image. This angle is measured from the 
                     reference line and increases in a clockwise direction.
@@ -760,7 +770,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>Assuming the image is displayed as defined by the Display_Direction 
-                    class, the east_azimuth attribute provides the value of the angle 
+                  class, the east_azimuth attribute provides the value of the angle 
                   between a line from the image center to the east and a reference 
                   line in the image plane. The reference line is a horizontal line 
                   from the image center to the middle right edge of the image. This angle 
@@ -831,7 +841,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The declination_angle (Dec) attribute provides the value of an angle  
-                      on the celestial sphere, measured north from the celestial equator 
+                    on the celestial sphere, measured north from the celestial equator 
                     to the point in question. (For points south of the celestial 
                     equator, negative values are used.) Declination is used in 
                     conjunction with right ascension (right_ascension_angle or
@@ -1182,8 +1192,79 @@
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-
-<!-- Attributes for the pixel dimensions class.   -->
+    
+    <DD_Attribute>
+        <name>quaternion_measurement_method</name>
+        <version_id>1.1</version_id>
+        <local_identifier>quaternion_measurement_method</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Bob Deen</submitter_name>
+        <definition>Specifies the method by which the coordinate space was measured. This 
+            provides an indication of the quality of the definition.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>Unknown</value>
+                <value_meaning>The attitude should not be trusted.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Tilt_Only</value>
+                <value_meaning>The attitude estimate is only good for tilt (2-axis) determination.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Coarse</value>
+                <value_meaning>The attitude estimate is complete (3-axis), but crude.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Fine</value>
+                <value_meaning>The attitude estimate is complete.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Sun_Find</value>
+                <value_meaning>Coordinate space orientation rotation was measured by finding the 
+                    location of the sun in one or more images and comparing that to where the sun 
+                    actually was at that time.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Bundle_Adjustment</value>
+                <value_meaning>Coordinate space position and/or orientation was refined using a 
+                    bundle adjustment process, minimizing error with respect to some fixed reference 
+                    (such as an orbital map).</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>attitude_propagation_counter</name>
+        <version_id>1.0</version_id>
+        <local_identifier>attitude_propagation_counter</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Bob Dean</submitter_name>
+        <definition>Count in clock units of how long it has been since the last IMU reset,
+            which relates to how good the attitude measurement is due to IMU drift.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>attitude_propagation_duration</name>
+        <version_id>1.0</version_id>
+        <local_identifier>attitude_propagation_duration</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Bob Dean</submitter_name>
+        <definition>The number of seconds for how long it has been since the last IMU reset,
+            which relates to how good the attitude measurement is due to IMU drift.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <!-- Attributes for the pixel dimensions class.   -->
 
     <DD_Attribute>
         <name>horizontal_pixel_field_of_view</name>
@@ -2290,18 +2371,38 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The model_type attribute specifies an identifier for the 
-          type or kind of model. The value should be one of a well defined set, 
-          providing an application program with sufficient information to know 
-          how to handle the rest of the parameters within the model. This 
-          value will correlate directly with the specific camera model class 
-          that is a subclass of the Camera_Model_Parameters class.
+            type or kind of model. The value should be one of a well defined set, 
+            providing an application program with sufficient information to know 
+            how to handle the rest of the parameters within the model. This 
+            value will correlate directly with the specific camera model class 
+            that is a subclass of the Camera_Model_Parameters class.
         </definition>
         <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
+            <enumeration_flag>true</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>CAHV</value>
+                <value_meaning>The CAHV model is a linear, perspective-projection camera model
+                    (equivalent to a pinhole camera).</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>CAHVOR</value>
+                <value_meaning>The CAHVOR model is built upon CAHV (see CAHV_Model), adding
+                    radial (barrel or pincushion) distortion to the linear model.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>CAHVORE</value>
+                <value_meaning>The CAHVORE model is built upon CAHVOR (see CAHVOR_Model),
+                    adding support for fisheye lenses.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>PSPH</value>
+                <value_meaning>The PSPH model is designed to perform better fisheye-image
+                    rectification prior to 1D stereo correlation.</value_meaning>
+            </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>solution_id</name>
         <version_id>1.0</version_id>
@@ -2329,6 +2430,102 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
+    <DD_Attribute>
+        <name>interpolation_algorithm</name>
+        <version_id>1.0</version_id>
+        <local_identifier>interpolation_algorithm</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Bob Deen</submitter_name>
+        <definition>The interpolation_algorithm defines how interpolation was performed. For example,
+            "Piecewise Bilinear" does a piecewise bilinear interpolation between calibration models
+            nearest to the interpolation_value.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>interpolation_variable</name>
+        <version_id>1.0</version_id>
+        <local_identifier>interpolation_variable</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Bob Deen</submitter_name>
+        <definition>The interpolation_variable defines the parameter across which interpolation is 
+            being performed. Examples of variables include Focus, Zoom, and Temperature.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>interpolation_value</name>
+        <version_id>1.0</version_id>
+        <local_identifier>interpolation_value</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Bob Deen</submitter_name>
+        <definition>The interpolation_value specifies the value of the variable to which the model was
+            interpolated. The interpretation of the value depends on what the variable is and should
+            be documented in the mission documentation.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>interpolation_sequence</name>
+        <version_id>1.0</version_id>
+        <local_identifier>interpolation_sequence</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Bob Deen</submitter_name>
+        <definition>When more than one dimension is interpolated, interpolation_sequence define the
+            ordering. Sequence value 1 was interpolated first, directly from calibration; sequence value 2
+            was interpolated from those results, etc.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>psph_model_scale_x</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psph_model_scale_x</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Bob Deen</submitter_name>
+        <definition>
+            Column scale factor to convert between x coordinate and 
+            rotation around axis x, expressed in radians/pixel.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>psph_model_scale_y</name>
+        <version_id>1.0</version_id>
+        <local_identifier>psph_model_scale_y</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Bob Deen</submitter_name>
+        <definition>
+            Column scale factor to convert between y coordinate and 
+            rotation around axis y, expressed in radians/pixel.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+        
 <!-- Attributes for indexed list classes.   -->
     
     <DD_Attribute>
@@ -2338,7 +2535,7 @@
         <nillable_flag>true</nillable_flag>
         <submitter_name>Jordan Padams</submitter_name>
         <definition>The coordinate_space_frame_type attribute identifies the type of frame being
-            described, such as SITE, LOCAL_LEVEL, LANDER, ROVER, ARM, etc.  When combined with
+            described, such as SITE, LOCAL_LEVEL, LANDER, ROVER, ARM, etc. When combined with
             Coordinate_Space_Index and the optional solution_id in the Coordinate_Space_Indexed class,
             this serves to fully name an instance of a coordinate space. 
         </definition>
@@ -2547,43 +2744,6 @@
             <value_meaning>Indicates that the elevation is measured positively downwards, i.e. the 
               zenith point would be at -90 degrees and the nadir point at +90 degrees.</value_meaning>
           </DD_Permissible_Value>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute>
-        <name>measurement_method</name>
-        <version_id>1.0</version_id>
-        <local_identifier>measurement_method</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Trent Hare</submitter_name>
-        <definition>Specifies the method by which the coordinate space was measured. This 
-            provides an indication of the quality of the definition.
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>true</enumeration_flag>
-            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-            <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-            <DD_Permissible_Value>
-                <value>Unknown</value>
-                <value_meaning>Method is not known.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Tilt_Only</value>
-                <value_meaning>Coordinate space orientation was measured using tilt sensors only 
-                    (i.e. relative to the gravity vector).</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Sun_Find</value>
-                <value_meaning>Coordinate space orientation rotation was measured by finding the 
-                    location of the sun in one or more images and comparing that to where the sun 
-                    actually was at that time.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Bundle_Adjustment</value>
-                <value_meaning>Coordinate space position and/or orientation was refined using a 
-                    bundle adjustment process, minimizing error with respect to some fixed reference 
-                    (such as an orbital map).</value_meaning>
-            </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -4406,73 +4566,75 @@
           <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-
-<!-- Components for Interpolation Class  -->
-
-    <DD_Attribute>
-        <name>interpolation_algorithm</name>
-        <version_id>1.0</version_id>
-        <local_identifier>interpolation_algorithm</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Trent Hare</submitter_name>
-        <definition>The interpolation_algorithm defines how interpolation was performed. 
-            For example, "Piecewise Bilinear" does a piecewise bilinear interpolation 
-            between calibration models nearest to the interpolation_value.  
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-    <DD_Attribute>
-        <name>interpolation_variable</name>
-        <version_id>1.0</version_id>
-        <local_identifier>interpolation_variable</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Trent Hare</submitter_name>
-        <definition>The interpolation_variable defines the parameter across which 
-            interpolation is being performed. Examples of variables include: 
-            Focus, Zoom, and Temperature.  
-        </definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-    <DD_Attribute>
-        <name>interpolation_value</name>
-        <version_id>1.0</version_id>
-        <local_identifier>interpolation_value</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Trent Hare</submitter_name>
-        <definition>The interpolation_value specifies the value of the variable to 
-            which the model was interpolated. The interpretation of the value depends 
-            on what the variable is and should be documented in the mission documentation.
-        </definition>
-        <DD_Value_Domain>
-          <enumeration_flag>false</enumeration_flag>
-          <value_data_type>ASCII_Real</value_data_type>
-          <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-          <specified_unit_id>deg</specified_unit_id>
-        </DD_Value_Domain>
-    </DD_Attribute>
-    <DD_Attribute>
-        <name>interpolation_sequence</name>
-        <version_id>1.0</version_id>
-        <local_identifier>interpolation_sequence</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>Trent Hare</submitter_name>
-        <definition>When more than one dimension is interpolated, interpolation_sequence 
-            defines the ordering. Sequence 1 was interpolated first, directly from 
-            calibration; sequence 2 was interpolated from those results, etc.
-        </definition>
-        <DD_Value_Domain>
-          <enumeration_flag>false</enumeration_flag>
-          <value_data_type>ASCII_Integer</value_data_type>
-          <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
     
+    <DD_Attribute>
+        <name>command_type</name>
+        <version_id>1.0</version_id>
+        <local_identifier>command_type</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Bob Dean</submitter_name>
+        <definition>
+            Specifies how the device was commanded.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>Angle_Absolute</value>
+                <value_meaning>
+                    Specifies an absolute pointing direction for the device. 
+                    This is distinct from Joint_Absolute in that the angle is measured in a 
+                    coordinate frame rather than direct joint angles.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Angle_Relative</value>
+                <value_meaning>
+                    Specifies a pointing direction change relative to the prior
+                    pointing. This is distinct from Joint_Relative in that the angle is 
+                    measured in a coordinate frame rather than direct joint angles.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Joint_Absolute</value>
+                <value_meaning>
+                    Specifies absolute joint angles.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Joint_Relative</value>
+                <value_meaning>
+                    Specifies joint angles as a delta relative to the prior pointing.. 
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>XYZ</value>
+                <value_meaning>
+                    Specifies a pointing target as an XYZ coordinate in a given coordinate frame.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>No_Motion</value>
+                <value_meaning>
+                    Specifies no motion from the previous observation.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>No_Motion_No_Arb</value>
+                <value_meaning>
+                    Specifies no motion from the previous observation, but also does not 
+                    reserve the resource (thus no arbitration).
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>None</value>
+                <value_meaning>
+                    Unspecified commanding.
+                </value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
 <!-- Classes Building Blocks section -->
 
 <!-- Global use classes  -->
@@ -5418,7 +5580,7 @@
 
     <DD_Class>
         <name>Object_Orientation_Clock_Angles</name>
-        <version_id>1.1</version_id>
+        <version_id>1.0</version_id>
         <local_identifier>Object_Orientation_Clock_Angles</local_identifier>
         <submitter_name>Anne Raugh</submitter_name>
         <definition>The Object_Orientation_Clock_Angles class provides several 
@@ -5441,7 +5603,7 @@
            <identifier_reference>sun_direction_clock_angle</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>10</maximum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
    </DD_Class>
     
@@ -5715,7 +5877,7 @@
             <identifier_reference>target_ssb_distance</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>10</maximum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
     </DD_Class>
     
@@ -8125,7 +8287,68 @@
 
 <!-- Lander Geometry Section -->
 
-<!-- Classes supporting  Articulation_Device_Parameters -->
+<!-- Classes supporting Articulation_Device_Parameters -->
+    
+    <DD_Class>
+        <name>Commanded_Position</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Commanded_Position</local_identifier>
+        <submitter_name>Bob Dean</submitter_name>
+        <definition>
+            Specifies a Cartesian position used in commanding the device.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>Vector_Cartesian_Position_Base</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Commanded_Geometry</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Commanded_Geometry</local_identifier>
+        <submitter_name>Bob Dean</submitter_name>
+        <definition>
+            Specifies how the device was commanded in order to achieve the state
+            represented in the enclosing Articulation_Device_Parameters. Commands
+            are often at a higher level, e.g. point at this location or move to 
+            this XYZ, which is translated by flight software to the actual pose 
+            of the device. Certain forms of command are measured in a coordinate 
+            frame; this is specified by the Coordinate_Space_Reference in this class 
+            (if not present, the Coordinate_Space_Reference in the 
+            Articulation_Device_Parameters parent should be assumed).
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>command_type</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Device_Angle</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Commanded_Position</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Coordinate_Space_Reference</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
     
     <DD_Class>
         <name>Device_Angle_Index</name>
@@ -8456,6 +8679,109 @@
     </DD_Class>
     
     <DD_Class>
+        <name>Vector_Axis_X</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Vector_Axis_X</local_identifier>
+        <submitter_name>Bob Dean</submitter_name>
+        <definition>
+            Unit column-plane rotation axis, passing through the sphere center,
+            typically vertical and pointing down so that positive rotations
+            (by the right-hand rule) will rotate the forward half of the plane
+            in the (rightward) direction of increasing column (as projected on 
+            the forward hemisphere).
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>Vector_Cartesian_Unit</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Vector_Axis_Y</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Vector_Axis_Y</local_identifier>
+        <submitter_name>Bob Dean</submitter_name>
+        <definition>
+            Unit row-plane rotation axis, passing through the sphere center,
+            typically horizontal and pointing left so that positive rotations
+            (by the right-hand rule) will rotate the forward half of the plane
+            in the (downward) direction of increasing row (as projected on 
+            the forward hemisphere).
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>Vector_Cartesian_Unit</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Vector_Solar_Direction</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Vector_Solar_Direction</local_identifier>
+        <submitter_name>Bob Dean</submitter_name>
+        <definition>
+            Unit vector pointing in the direction of the Sun at the time of the observation.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>Vector_Cartesian_Unit</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Vector_Normal_X</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Vector_Normal_X</local_identifier>
+        <submitter_name>Bob Dean</submitter_name>
+        <definition>
+            Unit normal vector to the column plane when x equals zero,
+            pointing in the same direction as the cross product of axis x
+            with an outward-pointing vector that also lies in the plane.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>Vector_Cartesian_Unit</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Vector_Normal_Y</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Vector_Normal_Y</local_identifier>
+        <submitter_name>Bob Dean</submitter_name>
+        <definition>
+            Unit normal vector to the row plane when y equals zero,
+            pointing in the same direction as the cross product of
+            axis x with an outward-pointing vector that also lies in
+            the plane.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>Vector_Cartesian_Unit</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
         <name>CAHV_Model</name>
         <version_id>3.0</version_id>
         <local_identifier>CAHV_Model</local_identifier>
@@ -8577,15 +8903,76 @@
     </DD_Class>
     
     <DD_Class>
+        <name>PSPH_Model</name>
+        <version_id>1.0</version_id>
+        <local_identifier>PSPH_Model</local_identifier>
+        <submitter_name>Bob Dean</submitter_name>
+        <definition>
+            A new camera model designed to perform better fisheye-image rectification
+            prior to 1D stereo correlation. The primary innovation is the use of a 
+            unit projection sphere rather than an image plane. For epipolar alignment 
+            between stereo cameras the rows (for a left/right pair) or the columns
+            (for an up/down pair) of both must lie along the same plane. Thus we use 
+            a pair of planes to define the rows and columns. Each plane will rotate 
+            around a static dedicated axis passing through the sphere center. Pixels 
+            will be located where the planes intersect with each other and the unit sphere.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>Vector_Center</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Vector_Axis_X</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Vector_Axis_Y</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Vector_Normal_X</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Vector_Normal_Y</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>psph_model_scale_x</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>psph_model_scale_y</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
         <name>Interpolation</name>
         <version_id>1.0</version_id>
         <local_identifier>Interpolation</local_identifier>
-        <submitter_name>Trent Hare</submitter_name>
-        <definition>The Interpolation class defines how the camera model was interpolated from 
-            the calibration models. Interpolation is used to create models in a variable 
-            space (e.g. focus, zoom) between points at which calibration was performed. 
-            If more than one dimension of variables were interpolated, multiple Interpolation 
-            objects can exist, with interpolation_sequence defining the order.
+        <submitter_name>Bob Deen</submitter_name>
+        <definition>The Interpolation class defines how the camera model was interpolated from the 
+            calibration models. Interpolation is used to create models in a variable space (e.g., focus,
+            zoom) between points at which calibration was performed. If more than one dimension of
+            variables were interpolated, multiple Interpolation objects can exist, with interpolation_sequence
+            defining the order.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -8615,6 +9002,7 @@
         </DD_Association>
     </DD_Class>
     
+
 <!-- Classes supporting  Coordinate_Space_Definition    -->   
     
     <DD_Class>
@@ -8641,9 +9029,9 @@
         <local_identifier>Vector_Origin_Offset</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Vector_Origin_Offset class contains attributes that 
-          specify the offset from the reference coordinate system's origin 
-          to the origin of the coordinate system. It is the location of the 
-          current system's origin as measured in the reference system.
+            specify the offset from the reference coordinate system's origin 
+            to the origin of the coordinate system. It is the location of the 
+            current system's origin as measured in the reference system.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -8655,6 +9043,36 @@
         </DD_Association>
     </DD_Class>
 
+    <DD_Class>
+        <name>Coordinate_Space_Quality</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Coordinate_Space_Quality</local_identifier>
+        <submitter_name>Bob Dean</submitter_name>
+        <definition>Parameters that indicate the quality of the coordinate
+            space knowledge.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>quaternion_measurement_method</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>attitude_propagation_counter</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>attitude_propagation_duration</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
 <!-- Classes supporting  the Motion_Counter class -->   
     
     <DD_Class>
@@ -8694,6 +9112,12 @@
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
         <DD_Association>
+            <identifier_reference>pds.local_identifier</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
             <identifier_reference>device_id</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
@@ -8732,6 +9156,7 @@
             <identifier_reference>Device_Temperature</identifier_reference>
             <identifier_reference>Coordinate_Space_Present</identifier_reference>
             <identifier_reference>Coordinate_Space_Reference</identifier_reference>
+            <identifier_reference>Commanded_Geometry</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>*</maximum_occurrences>
@@ -8742,7 +9167,7 @@
 
     <DD_Class>
         <name>Camera_Model_Parameters</name>
-        <version_id>2.1</version_id>
+        <version_id>2.0</version_id>
         <local_identifier>Camera_Model_Parameters</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>A camera model describes the mathematical relationship
@@ -8781,14 +9206,9 @@
             <identifier_reference>CAHV_Model</identifier_reference>
             <identifier_reference>CAHVOR_Model</identifier_reference>
             <identifier_reference>CAHVORE_Model</identifier_reference>
+            <identifier_reference>PSPH_Model</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>Quaternion_Model_Transform</identifier_reference>
-            <reference_type>component_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
@@ -8797,6 +9217,12 @@
             <identifier_reference>Coordinate_Space_Reference</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Quaternion_Model_Transform</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
@@ -8845,12 +9271,6 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>measurement_method</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
             <identifier_reference>Coordinate_Space_Present</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
@@ -8869,13 +9289,25 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
+            <identifier_reference>quaternion_measurement_method</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
             <identifier_reference>Coordinate_Space_Reference</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
+        <DD_Association>
+            <identifier_reference>Coordinate_Space_Quality</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
     </DD_Class>
-       
+
 <!-- Derived_Geometry class --> 
 
     <DD_Class>
@@ -8902,7 +9334,13 @@
             <identifier_reference>stop_azimuth</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>10</maximum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Vector_Solar_Direction</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
             <identifier_reference>Coordinate_Space_Reference</identifier_reference>
@@ -8998,8 +9436,6 @@
         </DD_Association>
     </DD_Class>
 
-<!-- Geometry class -->
-    
     <DD_Class>
         <name>Geometry</name>
         <version_id>1.0</version_id>
@@ -9048,7 +9484,7 @@
             <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-
+    
 <!-- Additional Schematron rules -->    
 
     <DD_Rule>
