@@ -4,10 +4,17 @@ The Geometry dictionary contains all geometric information in the label.
 
 Steward: [PDS Geosciences Node](https://pds-geosciences.wustl.edu/)
 
+## Builds
+
+![LDD Automation with PDSEN CI Bot](https://github.com/pds-data-dictionaries/ldd-geom/workflows/LDD%20Automation%20with%20PDSEN%20CI%20Bot/badge.svg)
+
+* **Stable Release** (the latest released LDDs) - https://pds.nasa.gov/datastandards/dictionaries/
+* **Unstable Release** (the latest working, unstable build) - See the `build/development` 
+
 # Documentation
 
-**User Guide:** TBD
-**Other PDS Data Dictionaries Documentation:** https://pds-data-dictionaries.github.io/
+* **User Guide:** TBD
+* **Other PDS Data Dictionaries Documentation:** https://pds-data-dictionaries.github.io/
 
 ## Propose Updates
 
@@ -18,11 +25,6 @@ See the [LDD Update Process](https://pds-data-dictionaries.github.io/development
 To implement changes the LDD, simply update the IngestLDD under the `src/` directory, commit to a branch, push the branch to Github, and create a Pull Request. The [Github Action CI/CD](https://pds-data-dictionaries.github.io/development/ldd-build.html) will take care of the auto-generation of the schemas and schematrons.
 
 For more information see the [LDD Build Process](https://pds-data-dictionaries.github.io/development/ldd-build.html)
-
-## Releases
-
-**Stable Release** (the latest released LDDs) - https://pds.nasa.gov/datastandards/dictionaries/
-**Unstable Release** (the latest working, unstable build) - See the `build/development` 
 
 ## Notes
 
