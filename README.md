@@ -4,36 +4,39 @@ The Geometry dictionary contains all geometric information in the label.
 
 Steward: [PDS Geosciences Node](https://pds-geosciences.wustl.edu/)
 
-## Current Source
+# Documentation
 
-Only one LDD source version is kept such that it can be managed by github.
+**User Guide:** TBD
+**Other PDS Data Dictionaries Documentation:** https://pds-data-dictionaries.github.io/
 
-- [1.D.0.0](src)
+## Propose Updates
 
-## Versions
+See the [LDD Update Process](https://pds-data-dictionaries.github.io/development/ldd-update.html)
 
-A Local Data Dictionary (LDD) is built for selected versions of the [PDS4 Information Model](https://pds.nasa.gov/pds4/doc/im/).
-The build process insures compatiblity of the LDD with the core information model.
+## Implement
 
-## Builds
+To implement changes the LDD, simply update the IngestLDD under the `src/` directory, commit to a branch, push the branch to Github, and create a Pull Request. The [Github Action CI/CD](https://pds-data-dictionaries.github.io/development/ldd-build.html) will take care of the auto-generation of the schemas and schematrons.
 
-This LDD has been built for the following versions of the PDS4 information models.
+For more information see the [LDD Build Process](https://pds-data-dictionaries.github.io/development/ldd-build.html)
 
-- [1.D.0.0](build/1.D.0.0)
-- [1.B.1.0](build/1.B.1.0)
-- [1.B.0.0](build/1.B.0.0)
+## Releases
+
+**Stable Release** (the latest released LDDs) - https://pds.nasa.gov/datastandards/dictionaries/
+**Unstable Release** (the latest working, unstable build) - See the `build/development` 
 
 ## Notes
 
-Each build is generated using the [lddtool](https://pds.nasa.gov/tools/about/ldd/) specific to a version of the [PDS4 Information Model](https://pds.nasa.gov/datastandards/documents/im/). The build command used is:
+Each build is auto-generated using Github Actions, PDS4 LDDTool, and Validate Tool.
 
+
+You can manually run [LDDTool](https://nasa-pds.github.io/pds4-information-model/model-lddtool/index.html) on the IngestLDD using the following command:
 ```
-lddtool -lpsnJ ldd-file.xml
+lddtool -lpsnJ src/MY_IngestLDD.xml
 ```
 
 # Contribute
 
-Have a bug or feature request? Create one in the [PDS4 Issue Repo](https://github.com/pds-data-dictionaries/PDS4-LDD-Issue-Repo/issues/new/choose).
+* Have a bug or feature request? Create one in the [PDS4 Issue Repo](https://github.com/pds-data-dictionaries/PDS4-LDD-Issue-Repo/issues/new/choose).
 
 
 # Support
