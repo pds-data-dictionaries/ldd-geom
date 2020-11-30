@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:geom  Version:1.8.0.0 - Fri Aug 07 17:04:51 UTC 2020 -->
+  <!-- PDS4 XML/Schema for Name Space Id:geom  Version:1.9.0.0 - Mon Nov 30 18:10:21 UTC 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.14.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.8.0.0 - geom: - Geometry Dictionary Full                                -->
+  <!-- 1.9.0.0 - geom: - Geometry Dictionary Full                                -->
   <!--   file:/home/runner/work/ldd-geom/ldd-geom/src/PDS4_GEOM_IngestLDD.xml    -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -14,7 +14,7 @@
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.8.0.0">
+    version="1.9.0.0">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd"/>
  
@@ -30,6 +30,7 @@
     	Attributes used from the PDS namespace
     	  - local_identifier
     	  - name
+    	  - description
     	  - comment
     	  - kernel_type
     	  - local_reference_type
@@ -229,6 +230,17 @@
         - Added Coordinate_Space_Quality to Coordinate_Space_Definition.
         - Added Commanded_Geometry to Articulation_Device_Parameters 
         - have to edit schema to fix the "choice bug"
+        version 1.8.1.0 2020-08-14 thru 2020-08-28
+        - Added target_name, target_heliocentric_distance, and solar_image_clock_angle to the 
+               Derived_Geometry class in the Geometry_Lander section. 
+        - Changed attitude_propagation_counter data type from integer to real for M2020.
+        - Added new attribute geometry_state, pds:description, pds:local_identifier to the start
+               of the Geometry_Lander class
+        - Added a Vector_Device_Gravity_Magnitude class to Articulation_Device_Parameters to support M2020.
+        version 1.9.0.0 2020-10-16 thru 2020-11-30
+        - Made  celestial_north_clock_angle and ecliptic_north_clock_angle nillable. 
+               Added enumerated values for reference_type in Body_Identification_Base and Frame_Identification_Base.
+               Added enumerated values for coordinate_space_frame_type.
     
     </xs:documentation>
   </xs:annotation>
@@ -257,6 +269,7 @@
         <xs:element name="Device_Component_State" type="geom:Device_Component_State"> </xs:element>
         <xs:element name="Device_Motor_Counts" type="geom:Device_Motor_Counts"> </xs:element>
         <xs:element name="Vector_Device_Gravity" type="geom:Vector_Device_Gravity"> </xs:element>
+        <xs:element name="Vector_Device_Gravity_Magnitude" type="geom:Vector_Device_Gravity_Magnitude"> </xs:element>
         <xs:element name="Device_Temperature" type="geom:Device_Temperature"> </xs:element>
         <xs:element name="Coordinate_Space_Present" type="geom:Coordinate_Space_Present"> </xs:element>
         <xs:element ref="geom:Coordinate_Space_Reference"> </xs:element>
@@ -366,6 +379,8 @@
         <xs:element name="CAHVOR_Model" type="geom:CAHVOR_Model"> </xs:element>
         <xs:element name="CAHVORE_Model" type="geom:CAHVORE_Model"> </xs:element>
         <xs:element name="PSPH_Model" type="geom:PSPH_Model"> </xs:element>
+      </xs:choice>
+      <xs:choice minOccurs="1" maxOccurs="1">
         <xs:element name="Reference_Frame_Identification" type="geom:Reference_Frame_Identification"> </xs:element>
         <xs:element ref="geom:Coordinate_Space_Reference"> </xs:element>
       </xs:choice>
@@ -630,6 +645,7 @@
         Reference Coordinate Space. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="target_name" type="geom:target_name" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:choice minOccurs="1" maxOccurs="unbounded">
         <xs:element name="incidence_angle" type="geom:incidence_angle"> </xs:element>
         <xs:element name="emission_angle" type="geom:emission_angle"> </xs:element>
@@ -640,6 +656,8 @@
         <xs:element name="solar_elevation" type="geom:solar_elevation"> </xs:element>
         <xs:element name="start_azimuth" type="geom:start_azimuth"> </xs:element>
         <xs:element name="stop_azimuth" type="geom:stop_azimuth"> </xs:element>
+        <xs:element name="target_heliocentric_distance" type="geom:target_heliocentric_distance"> </xs:element>
+        <xs:element name="solar_image_clock_angle" type="geom:solar_image_clock_angle"> </xs:element>
       </xs:choice>
       <xs:element name="Vector_Solar_Direction" type="geom:Vector_Solar_Direction" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element ref="geom:Coordinate_Space_Reference" minOccurs="0" maxOccurs="1"> </xs:element>
@@ -1012,6 +1030,9 @@
         spacecraft, including rovers. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="geometry_state" type="geom:geometry_state" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="description" type="pds:description" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element ref="pds:local_identifier" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="Articulation_Device_Parameters" type="geom:Articulation_Device_Parameters" minOccurs="0" maxOccurs="unbounded"> </xs:element>
       <xs:element name="Camera_Model_Parameters" type="geom:Camera_Model_Parameters" minOccurs="0" maxOccurs="unbounded"> </xs:element>
       <xs:element name="Coordinate_Space_Definition" type="geom:Coordinate_Space_Definition" minOccurs="0" maxOccurs="unbounded"> </xs:element>
@@ -1375,9 +1396,9 @@
     </xs:annotation>
     <xs:sequence>
       <xs:choice minOccurs="1" maxOccurs="unbounded">
-        <xs:element name="celestial_north_clock_angle" type="geom:celestial_north_clock_angle"> </xs:element>
+        <xs:element name="celestial_north_clock_angle" nillable="true" type="geom:celestial_north_clock_angle"> </xs:element>
         <xs:element name="celestial_east_clock_angle" type="geom:celestial_east_clock_angle"> </xs:element>
-        <xs:element name="ecliptic_north_clock_angle" type="geom:ecliptic_north_clock_angle"> </xs:element>
+        <xs:element name="ecliptic_north_clock_angle" nillable="true" type="geom:ecliptic_north_clock_angle"> </xs:element>
         <xs:element name="ecliptic_east_clock_angle" type="geom:ecliptic_east_clock_angle"> </xs:element>
         <xs:element name="central_body_north_pole_clock_angle" type="geom:central_body_north_pole_clock_angle"> </xs:element>
         <xs:element name="central_body_positive_pole_clock_angle" type="geom:central_body_positive_pole_clock_angle"> </xs:element>
@@ -1418,8 +1439,8 @@
       </xs:choice>
       <xs:element name="declination_angle" type="geom:declination_angle" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:choice minOccurs="1" maxOccurs="2">
-        <xs:element name="celestial_north_clock_angle" type="geom:celestial_north_clock_angle"> </xs:element>
-        <xs:element name="ecliptic_north_clock_angle" type="geom:ecliptic_north_clock_angle"> </xs:element>
+        <xs:element name="celestial_north_clock_angle" nillable="true" type="geom:celestial_north_clock_angle"> </xs:element>
+        <xs:element name="ecliptic_north_clock_angle" nillable="true" type="geom:ecliptic_north_clock_angle"> </xs:element>
       </xs:choice>
       <xs:element name="Reference_Frame_Identification" type="geom:Reference_Frame_Identification" minOccurs="1" maxOccurs="1"> </xs:element>
     </xs:sequence>
@@ -2774,6 +2795,25 @@
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="Vector_Device_Gravity_Magnitude">
+    <xs:annotation>
+      <xs:documentation>The Vector_Device_Gravity_Magnitude class is a
+        vector (with magnitude) that specifies the direction of an
+        external force acting on the articulation device, in the
+        spacecraft's coordinate system, at the time the pose was
+        computed. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="geom:Vector_Cartesian_Acceleration_Base">
+        <xs:sequence>
+          <xs:element name="x_acceleration" type="geom:x_acceleration" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="y_acceleration" type="geom:y_acceleration" minOccurs="1" maxOccurs="1"> </xs:element>
+          <xs:element name="z_acceleration" type="geom:z_acceleration" minOccurs="1" maxOccurs="1"> </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType name="Vector_Horizontal">
     <xs:annotation>
       <xs:documentation>The Vector_Horizonal is a composite vector
@@ -3306,9 +3346,9 @@
         since the last IMU reset, which relates to how good the attitude
         measurement is due to IMU drift.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="pds:ASCII_Integer">
-     <xs:minInclusive value="-9223372036854775808"/>
-     <xs:maxInclusive value="9223372036854775807"/>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -3463,6 +3503,7 @@
     <xs:simpleContent>
       <xs:extension base="geom:celestial_north_clock_angle_WO_Units">
         <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -3731,6 +3772,7 @@
     <xs:simpleContent>
       <xs:extension base="geom:ecliptic_north_clock_angle_WO_Units">
         <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -3846,6 +3888,26 @@
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Date_Time_YMD_UTC">
   <!-- format="YYYY-MM-DDTHH:MM:SS.SSSSSSZ" -->
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="geometry_state">
+    <xs:annotation>
+      <xs:documentation>Specifies the state or configuration of this
+        instance of Geometry_Lander applies. Use of this attribute
+        enables multiple instances of Geometry_Lander, describing the
+        geometry under different conditions. Note that it is legal for
+        more than one instance to have the same geometry_state, in which
+        case the local_identifier should be used to differentiate the
+        instances, along with description. If not present, the semantics
+        of "Telemetry" should be assumed. It is not required that
+        instances be retained; a derived product may have an Adjusted
+        instance but remove the Telemetry one, for
+        example.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -5749,6 +5811,28 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:simpleType name="solar_image_clock_angle_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="solar_image_clock_angle">
+    <xs:annotation>
+      <xs:documentation>Describes the direction of the sun in terms of
+        the image plane, defined as a clock angle (clockwise) around the
+        center of the image with 0 pointing to the top of the image,
+        with respect to the display orientation (usually defined by
+        disp:vertical_display_direction). </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="geom:solar_image_clock_angle_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:simpleType name="solution_id">
     <xs:annotation>
       <xs:documentation>The solution_id attribute specifies the unique
@@ -7047,6 +7131,17 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:simpleType name="target_name">
+    <xs:annotation>
+      <xs:documentation>Specifies the name of the traget location for
+        items in this class.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="target_north_pole_clock_angle_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="0"/>
@@ -7481,21 +7576,4 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
- 
-  <xs:annotation>
-    <xs:documentation>
-[
-  {
-    "dataDictionary": {
-      "Title": "PDS4 Data Dictionary" ,
-      "Version": "1.14.0.0" ,
-      "Date": "Fri Aug 07 17:04:51 UTC 2020" ,
-      "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
-      "PropertyMapDictionary": [
-      ]
-    }
-  }
-]
-    </xs:documentation>
-  </xs:annotation>
 </xs:schema>
