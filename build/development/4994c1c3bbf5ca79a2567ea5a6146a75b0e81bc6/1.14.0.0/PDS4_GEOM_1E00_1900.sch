@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:geom  Version:1.8.0.0 - Fri Aug 07 17:04:51 UTC 2020 -->
+  <!-- PDS4 Schematron for Name Space Id:geom  Version:1.9.0.0 - Mon Nov 30 18:10:21 UTC 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -18,6 +18,14 @@
 		   <!--        lists. These two types of rules have been -->
 		   <!--        merged together in the rules below.       -->
 		   <!-- ================================================ -->
+  <sch:pattern>
+    <sch:rule context="//geom:Body_Identification_Base/pds:Internal_Reference">
+      <sch:assert test="pds:reference_type = 'geometry_to_body'
+            ">
+        For Internal_Reference in Body_Identification_Base, reference_type must equal 'geometry_to_body'
+            </sch:assert>
+    </sch:rule>
+  </sch:pattern>
   <sch:pattern>
     <sch:rule context="//geom:Central_Body_Identification">
       <sch:assert test="if (not(geom:body_spice_name) and not (geom:name) and not (pds:Internal_Reference))  then false() else true()">
@@ -145,6 +153,14 @@
       <sch:assert test="pds:local_reference_type = 'to_expanded_geometry'
             ">
         For Local_Internal_Reference in geom:Expanded_Geometry, local_reference_type must equal 'to_expanded_geometry'
+            </sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="//geom:Frame_Identification_Base/pds:Internal_Reference">
+      <sch:assert test="pds:reference_type = 'geometry_to_reference_frame'
+            ">
+        For Internal_Reference in geom:Frame_Identification_Base, reference_type must equal 'geometry_to_reference_frame'
             </sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -477,6 +493,12 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:rule context="geom:Derived_Geometry/geom:solar_image_clock_angle">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:rule context="geom:Derived_Geometry/geom:start_azimuth">
       <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
         The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
@@ -486,6 +508,12 @@
     <sch:rule context="geom:Derived_Geometry/geom:stop_azimuth">
       <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
         The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:Derived_Geometry/geom:target_heliocentric_distance">
+      <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
+        The attribute @unit must be equal to one of the following values 'AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
