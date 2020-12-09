@@ -230,13 +230,14 @@
         - Added new attribute geometry_state, pds:description, pds:local_identifier to the start
                of the Geometry_Lander class
         - Added a Vector_Device_Gravity_Magnitude class to Articulation_Device_Parameters to support M2020.
-        version 1.9.0.0 2020-10-16 thru 2020-11-30
+        version 1.9.0.0 2020-10-16 thru 2020-12-09
         - Made  celestial_north_clock_angle and ecliptic_north_clock_angle nillable. 
                Added enumerated values for reference_type in Body_Identification_Base and Frame_Identification_Base.
                Added enumerated values for coordinate_space_frame_type.
+               Changed enumerated flag to true for coordinate_space_frame_type
     </comment>
 
-    <last_modification_date_time>2020-11-30</last_modification_date_time>
+    <last_modification_date_time>2020-12-09</last_modification_date_time>
 
 <!-- Attributes -->
     
@@ -2562,7 +2563,7 @@
     
     <DD_Attribute>
         <name>coordinate_space_frame_type</name>
-        <version_id>1.0</version_id>
+        <version_id>1.1</version_id>
         <local_identifier>coordinate_space_frame_type</local_identifier>
         <nillable_flag>true</nillable_flag>
         <submitter_name>Jordan Padams</submitter_name>
@@ -2575,7 +2576,7 @@
 <!-- PDS3 styled names  -->
 
         <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
+            <enumeration_flag>true</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
             <DD_Permissible_Value>
              <value>APXS_Frame</value>
