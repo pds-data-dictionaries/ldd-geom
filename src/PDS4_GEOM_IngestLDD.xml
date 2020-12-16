@@ -8,7 +8,7 @@
                      https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd">
 
     <name>Geometry Dictionary Full</name>
-    <ldd_version_id>1.9.0.0</ldd_version_id>
+    <ldd_version_id>1.9.1.0</ldd_version_id>
     <dictionary_type>Discipline</dictionary_type>
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
@@ -235,9 +235,12 @@
                Added enumerated values for reference_type in Body_Identification_Base and Frame_Identification_Base.
                Added enumerated values for coordinate_space_frame_type.
                Changed enumerated flag to true for coordinate_space_frame_type
+        Version 1.9.1.0?? 2020-12-16
+        - Added enumerated value to coordinate_space_frame_type to support Mars2020.
+        - Added class Device_Pose to Articulation_Device_Parameters to support Mars 2020.
     </comment>
 
-    <last_modification_date_time>2020-12-09</last_modification_date_time>
+    <last_modification_date_time>2020-12-16</last_modification_date_time>
 
 <!-- Attributes -->
     
@@ -2696,6 +2699,11 @@
             <DD_Permissible_Value>
              <value>MCMF_FRAME</value>
              <value_meaning>Mars Centered Mars Fixed Frame defined with origin at the planet center.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+                <value>MCZ_CAL_PRIMARY</value>
+                <value_meaning>Primary Mastcam-Z calibration target.</value_meaning>
             </DD_Permissible_Value>
             
             <DD_Permissible_Value>
@@ -8837,7 +8845,7 @@
             <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+     
     <DD_Class>
         <name>Device_Motor_Counts_Index</name>
         <version_id>1.0</version_id>
@@ -8878,6 +8886,40 @@
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <!-- Device_Pose -->
+    <DD_Class>
+        <name>Device_Pose</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Device_Pose</local_identifier>
+        <submitter_name>Bob Deen</submitter_name>
+        <definition>Defines the pose of this articulation device. The name indicates 
+            what exactly is being measured and how, and disambiguates if there is more 
+            than one Device_Pose. For example, Mars 2020 has "arm_attitude_reference", 
+            which indicates the pose of the rover that was used to calculate gravity droop
+            of the arm. The interpretation of the pose is mission-specific; see the 
+            mission documentation.</definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>pds.name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Quaternion_Plus_Direction</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Vector_Origin_Offset</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
     
@@ -9574,6 +9616,7 @@
             <identifier_reference>Device_Angle</identifier_reference>
             <identifier_reference>Device_Component_State</identifier_reference>
             <identifier_reference>Device_Motor_Counts</identifier_reference>
+            <identifier_reference>Device_Pose</identifier_reference>
             <identifier_reference>Vector_Device_Gravity</identifier_reference>
             <identifier_reference>Vector_Device_Gravity_Magnitude</identifier_reference>
             <identifier_reference>Device_Temperature</identifier_reference>
