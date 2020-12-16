@@ -13,7 +13,7 @@
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
     <namespace_id>geom</namespace_id>
-    <comment>
+    <comment> 
         Build with: lddtool -pl ingest_file >log_file
            add J switch if a JSON file is needed.
            
