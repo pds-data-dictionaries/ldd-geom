@@ -3,7 +3,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.14.0.0" ,
-      "Date": "Mon Nov 30 18:10:21 UTC 2020" ,
+      "Date": "Wed Dec 16 19:40:40 UTC 2020" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -14295,7 +14295,7 @@
             "versionId": "1.14" ,
             "description": "The coordinate_space_frame_type attribute identifies the type of frame being described, such as SITE, LOCAL_LEVEL, LANDER, ROVER, ARM, etc. When combined with Coordinate_Space_Index and the optional solution_id in the Coordinate_Space_Indexed class, this serves to fully name an instance of a coordinate space. " ,
             "isNillable": "true" ,
-            "isEnumerated": "false" ,
+            "isEnumerated": "true" ,
             "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
