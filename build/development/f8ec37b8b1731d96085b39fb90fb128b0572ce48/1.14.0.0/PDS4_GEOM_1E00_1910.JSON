@@ -3,7 +3,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.14.0.0" ,
-      "Date": "Mon Nov 30 18:10:21 UTC 2020" ,
+      "Date": "Wed Dec 16 21:29:27 UTC 2020" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -129,6 +129,7 @@
                   "0001_NASA_PDS_1.geom.Device_Angle",
                   "0001_NASA_PDS_1.geom.Device_Component_State",
                   "0001_NASA_PDS_1.geom.Device_Motor_Counts",
+                  "0001_NASA_PDS_1.geom.Device_Pose",
                   "0001_NASA_PDS_1.geom.Vector_Device_Gravity",
                   "0001_NASA_PDS_1.geom.Vector_Device_Gravity_Magnitude",
                   "0001_NASA_PDS_1.geom.Device_Temperature",
@@ -2074,6 +2075,69 @@
                 "classOrder": "1020" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.List_Index_No_Units.geom.index_value_number"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.geom.Device_Pose" ,
+            "title": "Device_Pose" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": "Defines the pose of this articulation device. The name indicates what exactly is being measured and how, and disambiguates if there is more than one Device_Pose. For example, Mars 2020 has \"arm_attitude_reference\", which indicates the pose of the rover that was used to calculate gravity droop of the arm. The interpretation of the pose is mission-specific; see the mission documentation."
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Device_Pose.pds.name" ,
+                "title": "name" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Device_Pose.pds.name"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Device_Pose.geom.Quaternion_Plus_Direction" ,
+                "title": "Quaternion_Plus_Direction" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Quaternion_Plus_Direction"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Device_Pose.geom.Vector_Origin_Offset" ,
+                "title": "Vector_Origin_Offset" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Vector_Origin_Offset"
                  ]
               }
             }
@@ -14295,7 +14359,7 @@
             "versionId": "1.14" ,
             "description": "The coordinate_space_frame_type attribute identifies the type of frame being described, such as SITE, LOCAL_LEVEL, LANDER, ROVER, ARM, etc. When combined with Coordinate_Space_Index and the optional solution_id in the Coordinate_Space_Indexed class, this serves to fully name an instance of a coordinate space. " ,
             "isNillable": "true" ,
-            "isEnumerated": "false" ,
+            "isEnumerated": "true" ,
             "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
@@ -14594,6 +14658,12 @@
             , {"PermissibleValue": {
                   "value": "MCMF_Frame" ,
                   "valueMeaning": "Mars Centered Mars Fixed Frame defined with origin at the planet center." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "MCZ_CAL_PRIMARY" ,
+                  "valueMeaning": "Primary Mastcam-Z calibration target." ,
                   "isDeprecated": "false"
                 }
              }
@@ -15373,6 +15443,31 @@
             "isDeprecated": "false" ,
             "dataType": "ASCII_Local_Identifier" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Local_Identifier" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Device_Pose.pds.name" ,
+            "title": "name" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "pds" ,
+            "steward": "pds" ,
+            "versionId": "1.14" ,
+            "description": "The name attribute provides a word or combination of words by which the object is known." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "UTF8_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.UTF8_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
             "maximumCharacters": "255" ,
             "minimumValue": "Unbounded" ,
