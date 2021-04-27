@@ -3,7 +3,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.15.0.0" ,
-      "Date": "Tue Jan 12 00:43:20 UTC 2021" ,
+      "Date": "Tue Apr 27 16:22:24 UTC 2021" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -14572,6 +14572,12 @@
                 }
              }
             , {"PermissibleValue": {
+                  "value": "DRILL_BIT_TIP" ,
+                  "valueMeaning": "Frame centered on the tip of the drill." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
                   "value": "HELI_G_FRAME" ,
                   "valueMeaning": "Helicopter frame defined attached to the ground at takeoff." ,
                   "isDeprecated": "false"
@@ -14668,6 +14674,12 @@
                 }
              }
             , {"PermissibleValue": {
+                  "value": "MEDA_RDS" ,
+                  "valueMeaning": "Radiation and Dust Sensor for the MEDA instruments." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
                   "value": "MI_Frame" ,
                   "valueMeaning": "null" ,
                   "isDeprecated": "false"
@@ -14734,7 +14746,7 @@
                 }
              }
             , {"PermissibleValue": {
-                  "value": "RSM_Head_FramE" ,
+                  "value": "RSM_Head_Frame" ,
                   "valueMeaning": "Frame defining a Remote Sensing Mast." ,
                   "isDeprecated": "false"
                 }
@@ -14766,6 +14778,12 @@
             , {"PermissibleValue": {
                   "value": "SITE_FRAME" ,
                   "valueMeaning": "Instance of LOCAL_LEVEL_FRAME that is fixed to the ground. Used for local operations to reduce error propagation due to position uncertainty." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "SUN" ,
+                  "valueMeaning": "Frame centered on the sun. Generally used for pointing instruments at the sun, rather than 3D position." ,
                   "isDeprecated": "false"
                 }
              }
