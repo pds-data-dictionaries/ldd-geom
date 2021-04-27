@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:geom  Version:1.9.2.0 - Tue Apr 27 16:22:24 UTC 2021 -->
+  <!-- PDS4 XML/Schema for Name Space Id:geom  Version:1.9.2.0 - Tue Apr 27 20:16:38 UTC 2021 -->
   <!-- Generated from the PDS4 Information Model Version 1.15.0.0 - System Build 11a -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
@@ -38,7 +38,7 @@
     	
     	version 1.0.0 2015-04-30
         - Initial release.
-      version 1.1.0 2015-08-17 
+        version 1.1.0 2015-08-17 
         - Updated to IM version 1.4.1.0
         - Removed attributes body_spice_id and frame_spice_id. body_spice_name and frame_spice_name are the supported attributes.
         - Geometry_Identification_Base was replaced by Body_Identification_Base and Frame_Identification_Base. 
@@ -77,7 +77,7 @@
         - Removed pds:Local_Internal_Reference from Coordinate_Space_Index, Body_Identification_Base, Frame_Identification_Base.
         - Removed the quaternions from the Articulation_Device_Parameters class.
         - Cleaned up some more definitions.
-      version 1.2.0   2015-10-15
+        version 1.2.0   2015-10-15
         - Updated to IM version 1.5.0.0
         - Redefined the Display_Direction class and removed the import of the 
           Display dictionary.
@@ -120,7 +120,7 @@
           are Specific_Cartesian_Vectors and Specific_Planetocentric_Vectors.
         - Renamed 59 classes for clarity or to make the order of the class name segments consistent with SR requirements. See 
           the separate class-rename-20151016.txt document for the complete list.
-      version 1.2.1   2015-11-12 (this version not released for review)
+        version 1.2.1   2015-11-12 (this version not released for review)
         - Inserted a missing ")" in Schematron file to correct a typo.
         - changed several instances of a double underscore to a single underscore.
         - Removed Local_Reference_Type from geom:Display_Direction.
@@ -129,7 +129,7 @@
         - In Geometry_Orbiter, moved the class Geometry_Target_Identification ahead of the class Coordinate_System Identification. 
           This results in placing at the beginning of the class, the items most likely to have multiple  
           values and hence result in multiple instances of the Geometry_Orbiter class.
-      version 1.3.0.0   2016-07-15
+        version 1.3.0.0   2016-07-15
         - Updated to IM version 1.6.0.0
         - Changed to four place version number.
         - Added geometry_start_time and geometry_stop_time, and expanded the definitions for the three variations
@@ -171,13 +171,13 @@
         - Changed pds:Internal_Reference to geom:Internal_Reference
         - Changed pds:Local_Internal_Reference to geom:Local_Internal_Reference
         - In the Geometry class, removed the choice statement which made one of Geometry_Orbiter and Geometry_Lander required. Now both are optional.
-      version 1.3.1.0   2016-07-29
+        version 1.3.1.0   2016-07-29
         - Added the optional attribute kernel_provenance to the SPICE_Kernel_Identification class.
         - Renamed geometry_reference_time, geometry_start/stop_time, and coordinate_system_time, by appending _utc to the attribute name.
         - Added the optional attribute geometry_reference_time_tdb
         - Changed the cardinality of Quaternion_Plus_To_From in the Image_Display_Geometry to allow multiple instances.
         - Added the optional Expanded_Geometry class to the Geometry class
-      version 1.4.0.0   2016-09-26
+        version 1.4.0.0   2016-09-26
         - Verified that Internal_Reference and Local_Internal_Reference refer to the PDS namespace in class definitions
         - Edited Schematron rules to change geom:Internal_Reference to pds:Internal_Reference
         - Edited Schematron rules to match Internal_Reference contexts with reference_type rule_test
@@ -185,76 +185,71 @@
         - Remove reference_type and local_reference_type from Schematron rule contexts
         - Edited Schematron rules to change geom:Local_Internal_Reference to pds:Local_Internal_Reference
         - Edited Schematron rules to match Local_Internal_Reference contexts with local_reference_type rule_text
-      version 1.4.0.1  2016-11-10
+        version 1.4.0.1  2016-11-10
         - Changed pds:name to geom:name in the schematron rules 
-      version 1.5.0.0  2017-06-19
+        version 1.5.0.0  2017-06-19
         - Regenerated the schema and other files because of a bug in the LDDTool - This changed the classes:
                Coordinate_Space_Identification, Coordinate_Space_Present, Coordinate_Space_Reference
         - Changed the maxoccurs to unbounded for Coordinate_Space_Index in Coordinate_Space_Indexed
         - Changed the choice in Derived_Geometry to include all optional attributes. This was done to ensure that the class contained at least one
                attribute when included in a label.
-      version 1.5.1.0  2017-09-20
+        version 1.5.1.0  2017-09-20
         - Added index_value_number to List_Index_Temperature to specify DN temperature counts in addition to the EU temperature
         - Updated the definition for List_Index_Temperature to include that
         - Fixed bug with Vector_Entrance to use Vector_Cartesian_Unit instead of Vector_Cartesian_Position_Base
         - Updated for PDS model 1.9.0.0
-      version 1.5.2.0  2018-07-25
+        version 1.5.2.0  2018-07-25
         - Updated for PDS information model 1.10.0.0
         - In Image_Display_Geometry, moved Object_Orientation_Clock_Angles into the choice statement.
-      version 1.5.3.0  2018-07-25
+        version 1.5.3.0  2018-07-25
         - Updated for PDS information model 1.10.1.0
-      version 1.6.0.0  2018-07-27
+        version 1.6.0.0  2018-07-27
         - Changed Optical_Terms to Vector_Optical, reparented it to Vector_Cartesian_Unit, and fixed the definition.
         - Changed Vector_Entrance to Entrance_Terms, reparented it to Polynomial_Coefficients_3, and fixed the definition.
         - Rewrote definitions for CAHV_Model, CAHVOR_Model, CAHVORE_Model, Vector_Center, Vector_Horizontal, Vector_Vertical, and Radial_Terms.
         - Minor revisions to definitions for Camera_Model_Parameters, Coordinate_Space_Present, Coordinate_Space_Reference, instrument_azimuth,
                 instrument_elevation, Quaternion_Plus_Direction, solar_azimuth, geometry_start_time_utc, and geometry_stop_time_utc.
         - Minor changes to definitions of incidence_angle and phase_angle.
-      version 1.6.1.0 2018-12-05
+        version 1.6.1.0 2018-12-05
         - Changed the cardinality (maxoccurs) of Object_Orientation_RA_Dec in Image_Display_Geometry from 3 to unlimited to support 
                 request for MESSENGER MDIS migration to PDS4.
-      version 1.7.0.0 2019-04-19     
+        version 1.7.0.0 2019-04-19     
         - Set the element_flag to "true" for the Coordinate_Space_Reference class so that the class is exposed for others to use.
-      version 1.7.1.0 2019-05-06
+        version 1.7.1.0 2019-05-06
         - Added attribute quaternion_measurement_method and included it in the Coordinate_Space_Definition class.
         - Added local_identifier to the Articulation_Device_Parameters
-      version 1.7.2.0 2020-05-04; 2020-07-10
+        version 1.7.2.0 2020-05-04; 2020-07-10
         - Modified definitions for quaternion_measurment_method.
         - Added the Interpolation class to support documentation of camera model interpolation. Included in the 
                Camera_Model_Parameters class.
         - Added PSPH camera model (5 classes and 2 attributes); added enumerated list for model_type relative
                to camera models.
-      version 1.8.0.0 2020-07-31
+        version 1.8.0.0 2020-07-31
         - Added Vector_Solar_Direction class to Derived_Geometry; made Vector_Axis_X/Y classes a restriction of the
                Vector_Cartesian_Unit class.
         - Added Coordinate_Space_Quality to Coordinate_Space_Definition.
         - Added Commanded_Geometry to Articulation_Device_Parameters 
         - have to edit schema to fix the "choice bug"
-      version 1.8.1.0 2020-08-14 thru 2020-08-28
+        version 1.8.1.0 2020-08-14 thru 2020-08-28
         - Added target_name, target_heliocentric_distance, and solar_image_clock_angle to the 
                Derived_Geometry class in the Geometry_Lander section. 
         - Changed attitude_propagation_counter data type from integer to real for M2020.
         - Added new attribute geometry_state, pds:description, pds:local_identifier to the start
                of the Geometry_Lander class
         - Added a Vector_Device_Gravity_Magnitude class to Articulation_Device_Parameters to support M2020.
-      version 1.9.0.0 2020-10-16 thru 2020-12-09
+        version 1.9.0.0 2020-10-16 thru 2020-12-09
         - Made  celestial_north_clock_angle and ecliptic_north_clock_angle nillable. 
-        - Added Schematron rules to add geometry specific enumerated values for pds:Internal_Reference 
-          in Body_Identification_Base and Frame_Identification_Base.
-        - Added the initial set of enumerated values for coordinate_space_frame_type.
-        - Changed enumerated flag to true for coordinate_space_frame_type
-      version 1.9.1.0 2020-12-16
-        - Added enumerated value to coordinate_space_frame_type to support Mars2020:
-          - MCZ_CAL_PRIMARY
+               Added enumerated values for reference_type in Body_Identification_Base and Frame_Identification_Base.
+               Added enumerated values for coordinate_space_frame_type.
+               Changed enumerated flag to true for coordinate_space_frame_type
+        Version 1.9.1.0 2020-12-16
+        - Added enumerated value to coordinate_space_frame_type to support Mars2020.
         - Added class Device_Pose to Articulation_Device_Parameters to support Mars 2020.
-      version 1.9.2.0 2021-03-30
-        - Added enumerated values to coordinate_space_frame_type to support Mars2020:
-          - CINT_FRAME
-          - DRILL_BIT_TIP
-          - MEDA_RDS
-          - SUN   
-        - Corrected a typo in an enumerated value for coordinate_space_frame_type: 
-          from RSM_Head_FramE to RSM_Head_Frame.
+        Version 1.9.2.0 2021-03-30
+        - Added enumerated value to coordinate_space_frame_type to support Mars2020.
+        Version 1.9.2.0 2021-04-22
+        - Added three enumerated values (ROVER_FRAME, TOOL_FRAME, and Tool_Frame)
+               to coordinate_space_frame_type to support Mars2020.
     
     </xs:documentation>
   </xs:annotation>
@@ -538,7 +533,7 @@
       <xs:element name="solution_id" type="geom:solution_id" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
-    <!-- <xs:assert test="geom:coordinate_space_frame_type = ('APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame')"/> -->
+    <!-- <xs:assert test="geom:coordinate_space_frame_type = ('APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'ROVER_FRAME', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame', 'TOOL_FRAME', 'Tool_Frame')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
