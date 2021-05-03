@@ -2,9 +2,11 @@
   {
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
-      "Version": "1.14.0.0" ,
-      "Date": "Tue Jan 12 00:43:20 UTC 2021" ,
+      "IM Version": "1.14.0.0" ,
+      "LDD Version": "1.9.2.0" ,
+      "Date": "Mon May 03 18:25:13 UTC 2021" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
+      "namespaces": ["pds:", "geom:"] ,
       "classDictionary": [
         {
           "class": {
@@ -14572,6 +14574,12 @@
                 }
              }
             , {"PermissibleValue": {
+                  "value": "DRILL_BIT_TIP" ,
+                  "valueMeaning": "Frame centered on the tip of the drill." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
                   "value": "HELI_G_FRAME" ,
                   "valueMeaning": "Helicopter frame defined attached to the ground at takeoff." ,
                   "isDeprecated": "false"
@@ -14668,6 +14676,12 @@
                 }
              }
             , {"PermissibleValue": {
+                  "value": "MEDA_RDS" ,
+                  "valueMeaning": "Radiation and Dust Sensor for the MEDA instruments." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
                   "value": "MI_Frame" ,
                   "valueMeaning": "null" ,
                   "isDeprecated": "false"
@@ -14704,6 +14718,12 @@
                 }
              }
             , {"PermissibleValue": {
+                  "value": "ROVER_FRAME" ,
+                  "valueMeaning": "Frame that is attached to the rover and moves with the rover (in both position and orientation). Often synonymous with ROVER_NAV_FRAME." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
                   "value": "ROVER_MECH_FRAME" ,
                   "valueMeaning": "Frame generally similar to ROVER_NAV_FRAME but with different origin and possibly axis orientation that is more conducive to mechanical operations (\"MECH\" for \"Mechanical\"). The origin is typically (but not necessarily) tied to a specific bit of hardware." ,
                   "isDeprecated": "false"
@@ -14734,7 +14754,7 @@
                 }
              }
             , {"PermissibleValue": {
-                  "value": "RSM_Head_FramE" ,
+                  "value": "RSM_Head_Frame" ,
                   "valueMeaning": "Frame defining a Remote Sensing Mast." ,
                   "isDeprecated": "false"
                 }
@@ -14770,8 +14790,26 @@
                 }
              }
             , {"PermissibleValue": {
+                  "value": "SUN" ,
+                  "valueMeaning": "Frame centered on the sun. Generally used for pointing instruments at the sun, rather than 3D position." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
                   "value": "Site_Frame" ,
                   "valueMeaning": "Instance of LOCAL_LEVEL_FRAME that is fixed to the ground. Used for local operations to reduce error propagation due to position uncertainty." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "TOOL_FRAME" ,
+                  "valueMeaning": "Tool frame is used to indicate the frame associated with the currently selected (or activated) \"tool\", in contexts where the specific frame is unknown or does not matter. \"Tools\" are typically devices on an arm such as a drill, microscopic imager, contact spectrometer, etc." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Tool_Frame" ,
+                  "valueMeaning": "Tool frame is used to indicate the frame associated with the currently selected (or activated) \"tool\", in contexts where the specific frame is unknown or does not matter. \"Tools\" are typically devices on an arm such as a drill, microscopic imager, contact spectrometer, etc." ,
                   "isDeprecated": "false"
                 }
              }
