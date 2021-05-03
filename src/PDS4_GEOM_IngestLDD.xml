@@ -2733,7 +2733,7 @@
             
             <DD_Permissible_Value>
              <value>ROVER_FRAME</value>
-             <value_meaning>TBD</value_meaning>
+             <value_meaning>Frame that is attached to the rover and moves with the rover (in both position and orientation). Often synonymous with ROVER_NAV_FRAME.</value_meaning>
             </DD_Permissible_Value>
 
             <DD_Permissible_Value>
@@ -2769,7 +2769,7 @@
             
             <DD_Permissible_Value>
              <value>TOOL_FRAME</value>
-             <value_meaning>TBD</value_meaning>
+             <value_meaning>Tool frame is used to indicate the frame associated with the currently selected (or activated) "tool", in contexts where the specific frame is unknown or does not matter.  "Tools" are typically devices on an arm such as a drill, microscopic imager, contact spectrometer, etc.</value_meaning>
             </DD_Permissible_Value>
 
             <!-- Title case value names  -->
@@ -2956,7 +2956,7 @@
 
             <DD_Permissible_Value>
              <value>Tool_Frame</value>
-             <value_meaning>TBD</value_meaning>
+             <value_meaning>Tool frame is used to indicate the frame associated with the currently selected (or activated) "tool", in contexts where the specific frame is unknown or does not matter.  "Tools" are typically devices on an arm such as a drill, microscopic imager, contact spectrometer, etc.</value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
 
