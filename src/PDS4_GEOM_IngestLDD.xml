@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.sch"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.sch"?>
 
 <Ingest_LDD 
  xmlns="http://pds.nasa.gov/pds4/pds/v1"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 
-                     https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd">
+                     https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd">
 
     <name>Geometry Dictionary Full</name>
-    <ldd_version_id>1.9.2.0</ldd_version_id>
+    <ldd_version_id>1.9.3.0</ldd_version_id>
     <dictionary_type>Discipline</dictionary_type>
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
@@ -235,17 +235,20 @@
                Added enumerated values for reference_type in Body_Identification_Base and Frame_Identification_Base.
                Added enumerated values for coordinate_space_frame_type.
                Changed enumerated flag to true for coordinate_space_frame_type
-        Version 1.9.1.0 2020-12-16
+        Version 1.9.1.0?? 2020-12-16
         - Added enumerated value to coordinate_space_frame_type to support Mars2020.
         - Added class Device_Pose to Articulation_Device_Parameters to support Mars 2020.
         Version 1.9.2.0 2021-03-30
         - Added enumerated value to coordinate_space_frame_type to support Mars2020.
-        Version 1.9.2.0 2021-04-22
+        Version 1.9.x.0 2021-04-22
         - Added three enumerated values (ROVER_FRAME, TOOL_FRAME, and Tool_Frame)
                to coordinate_space_frame_type to support Mars2020.
+        Version 1.9.3.0 2021-07-13
+        - Added yet another enumerated value (TURRET_FRAME and title case version)
+               to coordinate_space_frame_type to support Mars2020.     
     </comment>
 
-    <last_modification_date_time>2021-04-22</last_modification_date_time>
+    <last_modification_date_time>2021-07-13</last_modification_date_time>
 
 <!-- Attributes -->
     
@@ -2733,7 +2736,7 @@
             
             <DD_Permissible_Value>
              <value>ROVER_FRAME</value>
-             <value_meaning>Frame that is attached to the rover and moves with the rover (in both position and orientation). Often synonymous with ROVER_NAV_FRAME.</value_meaning>
+             <value_meaning>TBD</value_meaning>
             </DD_Permissible_Value>
 
             <DD_Permissible_Value>
@@ -2769,7 +2772,12 @@
             
             <DD_Permissible_Value>
              <value>TOOL_FRAME</value>
-             <value_meaning>Tool frame is used to indicate the frame associated with the currently selected (or activated) "tool", in contexts where the specific frame is unknown or does not matter.  "Tools" are typically devices on an arm such as a drill, microscopic imager, contact spectrometer, etc.</value_meaning>
+             <value_meaning>TBD</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>TURRET_FRAME</value>
+             <value_meaning>Frame based on a turret mechanism.</value_meaning>
             </DD_Permissible_Value>
 
             <!-- Title case value names  -->
@@ -2956,11 +2964,14 @@
 
             <DD_Permissible_Value>
              <value>Tool_Frame</value>
-             <value_meaning>Tool frame is used to indicate the frame associated with the currently selected (or activated) "tool", in contexts where the specific frame is unknown or does not matter.  "Tools" are typically devices on an arm such as a drill, microscopic imager, contact spectrometer, etc.</value_meaning>
+             <value_meaning>TBD</value_meaning>
+            </DD_Permissible_Value>
+ 
+            <DD_Permissible_Value>
+               <value>Turret_Frame</value>
+               <value_meaning>Frame based on a turret mechanism.</value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
-
-
     </DD_Attribute>
     
     <DD_Attribute>
