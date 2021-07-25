@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:geom  Version:1.9.2.0 - Tue May 04 05:12:12 UTC 2021 -->
-  <!-- Generated from the PDS4 Information Model Version 1.16.0.0 - System Build 11.1 -->
+  <!-- PDS4 Schematron for Name Space Id:geom  Version:1.9.3.0 - Sun Jul 25 18:32:52 UTC 2021 -->
+  <!-- Generated from the PDS4 Information Model Version 1.15.0.0 - System Build 11a -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
@@ -555,16 +555,16 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Coordinate_Space_Indexed/geom:coordinate_space_frame_type">
-      <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'ROVER_FRAME', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame', 'TOOL_FRAME', 'Tool_Frame')))) then false() else true()">
+      <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'ROVER_FRAME', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame', 'TOOL_FRAME', 'TURRET_FRAME', 'Tool_Frame', 'Turret_Frame')))) then false() else true()">
         <title>geom:Coordinate_Space_Indexed/geom:coordinate_space_frame_type/geom:coordinate_space_frame_type</title>
-        The attribute geom:coordinate_space_frame_type must be nulled or equal to one of the following values 'APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'ROVER_FRAME', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame', 'TOOL_FRAME', 'Tool_Frame'.</sch:assert>
+        The attribute geom:coordinate_space_frame_type must be nulled or equal to one of the following values 'APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'ROVER_FRAME', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame', 'TOOL_FRAME', 'TURRET_FRAME', 'Tool_Frame', 'Turret_Frame'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Coordinate_Space_Quality/geom:attitude_propagation_duration">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr')">
         <title>geom:Coordinate_Space_Quality/geom:attitude_propagation_duration/geom:attitude_propagation_duration</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -996,9 +996,9 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Geometry_Orbiter/geom:geometry_reference_time_tdb">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr')">
         <title>geom:Geometry_Orbiter/geom:geometry_reference_time_tdb/geom:geometry_reference_time_tdb</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1290,9 +1290,9 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Object_Orientation_RA_Dec/geom:right_ascension_hour_angle">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr')">
         <title>geom:Object_Orientation_RA_Dec/geom:right_ascension_hour_angle/geom:right_ascension_hour_angle</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1374,16 +1374,16 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Reference_Pixel/geom:horizontal_coordinate_pixel">
-      <sch:assert test="@unit = ('DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel')">
+      <sch:assert test="@unit = ('DN', 'electron/DN', 'pixel')">
         <title>geom:Reference_Pixel/geom:horizontal_coordinate_pixel/geom:horizontal_coordinate_pixel</title>
-        The attribute @unit must be equal to one of the following values 'DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'DN', 'electron/DN', 'pixel'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Reference_Pixel/geom:vertical_coordinate_pixel">
-      <sch:assert test="@unit = ('DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel')">
+      <sch:assert test="@unit = ('DN', 'electron/DN', 'pixel')">
         <title>geom:Reference_Pixel/geom:vertical_coordinate_pixel/geom:vertical_coordinate_pixel</title>
-        The attribute @unit must be equal to one of the following values 'DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'DN', 'electron/DN', 'pixel'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
