@@ -245,10 +245,13 @@
                to coordinate_space_frame_type to support Mars2020.
         Version 1.9.3.0 2021-07-13
         - Added yet another enumerated value (TURRET_FRAME and title case version)
-               to coordinate_space_frame_type to support Mars2020.     
+               to coordinate_space_frame_type to support Mars2020.
+        Version 1.9.3.0 2021-04-27
+        - Added seven enumerated values in upper/lower case (PIXL_TOOL, WHEEL_RF, WHEEL_LF, WHEEL_RR, 
+               WHEEL_LR, WHEEL_RM, WHEEL_LM) to coordinate_space_frame_type for Mars2020.
     </comment>
 
-    <last_modification_date_time>2021-07-13</last_modification_date_time>
+    <last_modification_date_time>2021-04-27</last_modification_date_time>
 
 <!-- Attributes -->
     
@@ -2670,13 +2673,13 @@
             </DD_Permissible_Value>
             
             <DD_Permissible_Value>
-                <value>CINT_FRAME</value>
-                <value_meaning>Frame describing the LVS camera during descent.</value_meaning>
+             <value>CINT_FRAME</value>
+             <value_meaning>Frame describing the LVS camera during descent.</value_meaning>
             </DD_Permissible_Value>
             
             <DD_Permissible_Value>
-                <value>DRILL_BIT_TIP</value>
-                <value_meaning>Frame centered on the tip of the drill.</value_meaning>
+             <value>DRILL_BIT_TIP</value>
+             <value_meaning>Frame centered on the tip of the drill.</value_meaning>
             </DD_Permissible_Value>
             
             <DD_Permissible_Value>
@@ -2715,13 +2718,13 @@
             </DD_Permissible_Value>
             
             <DD_Permissible_Value>
-                <value>MCZ_CAL_PRIMARY</value>
-                <value_meaning>Primary Mastcam-Z calibration target.</value_meaning>
+             <value>MCZ_CAL_PRIMARY</value>
+             <value_meaning>Primary Mastcam-Z calibration target.</value_meaning>
             </DD_Permissible_Value>
             
             <DD_Permissible_Value>
-                <value>MEDA_RDS</value>
-                <value_meaning>Radiation and Dust Sensor for the MEDA instruments.</value_meaning>
+             <value>MEDA_RDS</value>
+             <value_meaning>Radiation and Dust Sensor for the MEDA instruments.</value_meaning>
             </DD_Permissible_Value>
             
             <DD_Permissible_Value>
@@ -2733,10 +2736,15 @@
              <value>PIXL_SENSOR_FRAME</value>
              <value_meaning>Frame describing the movable sensor head of the PIXL instrument.</value_meaning>
             </DD_Permissible_Value>
-            
+
+            <DD_Permissible_Value>
+             <value>PIXL_TOOL</value>
+             <value_meaning>Frame for PIXL instrument.</value_meaning>
+            </DD_Permissible_Value>
+
             <DD_Permissible_Value>
              <value>ROVER_FRAME</value>
-             <value_meaning>TBD</value_meaning>
+             <value_meaning>Frame that is attached to the rover and moves with the rover (in both position and orientation). Often synonymous with ROVER_NAV_FRAME.</value_meaning>
             </DD_Permissible_Value>
 
             <DD_Permissible_Value>
@@ -2760,24 +2768,54 @@
             </DD_Permissible_Value>
             
             <DD_Permissible_Value>
-                <value>SITE_FRAME</value>
-                <value_meaning>Instance of LOCAL_LEVEL_FRAME that is fixed to the ground. Used for local operations to reduce error propagation due to position uncertainty.</value_meaning>
+             <value>SITE_FRAME</value>
+             <value_meaning>Instance of LOCAL_LEVEL_FRAME that is fixed to the ground. Used for local operations to reduce error propagation due to position uncertainty.</value_meaning>
             </DD_Permissible_Value>
             
             <DD_Permissible_Value>
-                <value>SUN</value>
-                <value_meaning>Frame centered on the sun. Generally used for pointing instruments at the sun,
+             <value>SUN</value>
+             <value_meaning>Frame centered on the sun. Generally used for pointing instruments at the sun,
                     rather than 3D position.</value_meaning>
             </DD_Permissible_Value>
             
             <DD_Permissible_Value>
              <value>TOOL_FRAME</value>
-             <value_meaning>TBD</value_meaning>
+             <value_meaning>Tool frame is used to indicate the frame associated with the currently selected (or activated) "tool", in contexts where the specific frame is unknown or does not matter.  "Tools" are typically devices on an arm such as a drill, microscopic imager, contact spectrometer, etc.</value_meaning>
             </DD_Permissible_Value>
 
             <DD_Permissible_Value>
              <value>TURRET_FRAME</value>
              <value_meaning>Frame based on a turret mechanism.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>WHEEL_RF</value>
+             <value_meaning>Frame for right front wheel.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>WHEEL_LF</value>
+             <value_meaning>Frame for left front wheel.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>WHEEL_RR</value>
+             <value_meaning>Frame for right rear wheel.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>WHEEL_LR</value>
+             <value_meaning>Frame for left rear wheel.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>WHEEL_RM</value>
+             <value_meaning>Frame for right middle wheel.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>WHEEL_LM</value>
+             <value_meaning>Frame for left middle wheel.</value_meaning>
             </DD_Permissible_Value>
 
             <!-- Title case value names  -->
@@ -2926,6 +2964,11 @@
              <value>PIXL_Sensor_Frame</value>
              <value_meaning>Frame describing the movable sensor head of the PIXL instrument.</value_meaning>
             </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>PIXL_Tool</value>
+             <value_meaning>Frame for PIXL instrument.</value_meaning>
+            </DD_Permissible_Value>
             
             <DD_Permissible_Value>
              <value>Rat_Frame</value>
@@ -2964,14 +3007,46 @@
 
             <DD_Permissible_Value>
              <value>Tool_Frame</value>
-             <value_meaning>TBD</value_meaning>
+             <value_meaning>Tool frame is used to indicate the frame associated with the currently selected (or activated) "tool", in contexts where the specific frame is unknown or does not matter.  "Tools" are typically devices on an arm such as a drill, microscopic imager, contact spectrometer, etc.</value_meaning>
             </DD_Permissible_Value>
- 
+
             <DD_Permissible_Value>
-               <value>Turret_Frame</value>
-               <value_meaning>Frame based on a turret mechanism.</value_meaning>
+             <value>Turret_Frame</value>
+             <value_meaning>Frame based on a turret mechanism.</value_meaning>
             </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>Wheel_RF</value>
+             <value_meaning>Frame for right front wheel.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Wheel_LF</value>
+             <value_meaning>Frame for left front wheel.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Wheel_RR</value>
+             <value_meaning>Frame for right rear wheel.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Wheel_LR</value>
+             <value_meaning>Frame for left rear wheel.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Wheel_RM</value>
+             <value_meaning>Frame for right middle wheel.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Wheel_LM</value>
+             <value_meaning>Frame for left middle wheel.</value_meaning>
+            </DD_Permissible_Value>
+
         </DD_Value_Domain>
+
     </DD_Attribute>
     
     <DD_Attribute>
