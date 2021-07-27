@@ -249,6 +249,7 @@
         Version 1.9.3.0 2021-04-27
         - Added seven enumerated values in upper/lower case (PIXL_TOOL, WHEEL_RF, WHEEL_LF, WHEEL_RR, 
                WHEEL_LR, WHEEL_RM, WHEEL_LM) to coordinate_space_frame_type for Mars2020.
+        - fixed typo traget -> target
     </comment>
 
     <last_modification_date_time>2021-04-27</last_modification_date_time>
@@ -4932,7 +4933,7 @@
         <local_identifier>target_name</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Bob Deen</submitter_name>
-        <definition>Specifies the name of the traget location for items in this class.</definition>
+        <definition>Specifies the name of the target location for items in this class.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
