@@ -3,8 +3,8 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "IM Version": "1.15.0.0" ,
-      "LDD Version": "1.9.2.0" ,
-      "Date": "Tue May 04 05:12:20 UTC 2021" ,
+      "LDD Version": "1.9.3.0" ,
+      "Date": "Tue Aug 03 19:19:59 UTC 2021" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "namespaces": ["pds:", "geom:"] ,
       "classDictionary": [
@@ -14718,6 +14718,18 @@
                 }
              }
             , {"PermissibleValue": {
+                  "value": "PIXL_TOOL" ,
+                  "valueMeaning": "Frame for PIXL instrument." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "PIXL_Tool" ,
+                  "valueMeaning": "Frame for PIXL instrument." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
                   "value": "ROVER_FRAME" ,
                   "valueMeaning": "Frame that is attached to the rover and moves with the rover (in both position and orientation). Often synonymous with ROVER_NAV_FRAME." ,
                   "isDeprecated": "false"
@@ -14808,8 +14820,92 @@
                 }
              }
             , {"PermissibleValue": {
+                  "value": "TURRET_FRAME" ,
+                  "valueMeaning": "Frame based on a turret mechanism." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
                   "value": "Tool_Frame" ,
                   "valueMeaning": "Tool frame is used to indicate the frame associated with the currently selected (or activated) \"tool\", in contexts where the specific frame is unknown or does not matter. \"Tools\" are typically devices on an arm such as a drill, microscopic imager, contact spectrometer, etc." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Turret_Frame" ,
+                  "valueMeaning": "Frame based on a turret mechanism." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "WHEEL_LF" ,
+                  "valueMeaning": "Frame for left front wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "WHEEL_LM" ,
+                  "valueMeaning": "Frame for left middle wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "WHEEL_LR" ,
+                  "valueMeaning": "Frame for left rear wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "WHEEL_RF" ,
+                  "valueMeaning": "Frame for right front wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "WHEEL_RM" ,
+                  "valueMeaning": "Frame for right middle wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "WHEEL_RR" ,
+                  "valueMeaning": "Frame for right rear wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Wheel_LF" ,
+                  "valueMeaning": "Frame for left front wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Wheel_LM" ,
+                  "valueMeaning": "Frame for left middle wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Wheel_LR" ,
+                  "valueMeaning": "Frame for left rear wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Wheel_RF" ,
+                  "valueMeaning": "Frame for right front wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Wheel_RM" ,
+                  "valueMeaning": "Frame for right middle wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Wheel_RR" ,
+                  "valueMeaning": "Frame for right rear wheel." ,
                   "isDeprecated": "false"
                 }
              }
@@ -15400,7 +15496,7 @@
             "nameSpaceId": "geom" ,
             "steward": "geo" ,
             "versionId": "1.15" ,
-            "description": "Specifies the name of the traget location for items in this class." ,
+            "description": "Specifies the name of the target location for items in this class." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
