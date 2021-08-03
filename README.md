@@ -6,7 +6,7 @@ Steward: [PDS Geosciences Node](https://pds-geosciences.wustl.edu/)
 
 ## Builds
 
-![LDD Automation with PDSEN CI Bot](https://github.com/pds-data-dictionaries/ldd-geom/workflows/LDD%20Automation%20with%20PDSEN%20CI%20Bot/badge.svg)
+[![LDD Automation with PDSEN CI Bot](https://github.com/pds-data-dictionaries/ldd-geom/actions/workflows/ldd-ci.yml/badge.svg)](https://github.com/pds-data-dictionaries/ldd-geom/actions/workflows/ldd-ci.yml) [![Release and Tag LDD Release](https://github.com/pds-data-dictionaries/ldd-geom/actions/workflows/release-ldd.yml/badge.svg)](https://github.com/pds-data-dictionaries/ldd-geom/actions/workflows/release-ldd.yml)
 
 * **Stable Release** (the latest released LDDs) - https://pds.nasa.gov/datastandards/dictionaries/
 * **Unstable Release** (the latest working, unstable build) - See the `build/development` 
