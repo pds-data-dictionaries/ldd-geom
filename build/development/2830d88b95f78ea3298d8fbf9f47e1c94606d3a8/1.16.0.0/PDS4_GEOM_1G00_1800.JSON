@@ -3,10 +3,10 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "IM Version": "1.16.0.0" ,
-      "LDD Version": "1.9.3.0" ,
-      "Date": "Mon Oct 11 14:21:10 UTC 2021" ,
+      "LDD Version": "1.8.0.0" ,
+      "Date": "Mon Oct 11 16:20:19 UTC 2021" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
-      "namespaces": ["pds:", "geom:"] ,
+      "namespaces": ["pds:", "geom:", "geom:", "geom:", "geom:"] ,
       "classDictionary": [
         {
           "class": {
@@ -131,9 +131,7 @@
                   "0001_NASA_PDS_1.geom.Device_Angle",
                   "0001_NASA_PDS_1.geom.Device_Component_State",
                   "0001_NASA_PDS_1.geom.Device_Motor_Counts",
-                  "0001_NASA_PDS_1.geom.Device_Pose",
                   "0001_NASA_PDS_1.geom.Vector_Device_Gravity",
-                  "0001_NASA_PDS_1.geom.Vector_Device_Gravity_Magnitude",
                   "0001_NASA_PDS_1.geom.Device_Temperature",
                   "0001_NASA_PDS_1.geom.Coordinate_Space_Present",
                   "0001_NASA_PDS_1.geom.Coordinate_Space_Reference",
@@ -906,22 +904,6 @@
             "description": " Specifies a Cartesian position used in commanding the device. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Commanded_Position.Vector_Cartesian_Position_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
                 "assocType": "attribute_of" ,
@@ -1150,7 +1132,7 @@
                 "isAttribute": "false" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#11" ,
+                "groupName": "XSChoice#16" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "*" ,
                 "classOrder": "1020" ,
@@ -1199,7 +1181,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#12" ,
+                "groupName": "XSChoice#15" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "3" ,
                 "classOrder": "1020" ,
@@ -1327,7 +1309,7 @@
                 "isAttribute": "false" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#11" ,
+                "groupName": "XSChoice#16" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "*" ,
                 "classOrder": "1020" ,
@@ -1439,7 +1421,7 @@
                 "isAttribute": "false" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#11" ,
+                "groupName": "XSChoice#16" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "*" ,
                 "classOrder": "1020" ,
@@ -1671,22 +1653,6 @@
             "description": "The Derived_Geometry class is a container for surface based observations (lander or rover). It is used to provide some geometric quantities relative to a specific Reference Coordinate Space. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Derived_Geometry.geom.target_name" ,
-                "title": "target_name" ,
-                "assocType": "attribute_of" ,
-                "isAttribute": "true" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "0" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1010" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Derived_Geometry.geom.target_name"
-                 ]
-              }
-            }
-           , {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Derived_Geometry.geom.incidence_angle" ,
                 "title": "incidence_angle" ,
                 "assocType": "attribute_of" ,
@@ -1696,7 +1662,7 @@
                 "groupName": "XSChoice#27" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "*" ,
-                "classOrder": "1030" ,
+                "classOrder": "1020" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.Derived_Geometry.geom.incidence_angle",
                   "0001_NASA_PDS_1.geom.Derived_Geometry.geom.emission_angle",
@@ -1706,9 +1672,7 @@
                   "0001_NASA_PDS_1.geom.Derived_Geometry.geom.solar_azimuth",
                   "0001_NASA_PDS_1.geom.Derived_Geometry.geom.solar_elevation",
                   "0001_NASA_PDS_1.geom.Derived_Geometry.geom.start_azimuth",
-                  "0001_NASA_PDS_1.geom.Derived_Geometry.geom.stop_azimuth",
-                  "0001_NASA_PDS_1.geom.Derived_Geometry.geom.target_heliocentric_distance",
-                  "0001_NASA_PDS_1.geom.Derived_Geometry.geom.solar_image_clock_angle"
+                  "0001_NASA_PDS_1.geom.Derived_Geometry.geom.stop_azimuth"
                  ]
               }
             }
@@ -1722,7 +1686,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1140" ,
+                "classOrder": "1110" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Vector_Solar_Direction"
                  ]
@@ -1738,7 +1702,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1150" ,
+                "classOrder": "1120" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Coordinate_Space_Reference"
                  ]
@@ -1845,7 +1809,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#12" ,
+                "groupName": "XSChoice#15" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "3" ,
                 "classOrder": "1020" ,
@@ -1941,7 +1905,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#12" ,
+                "groupName": "XSChoice#15" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "3" ,
                 "classOrder": "1020" ,
@@ -2053,7 +2017,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#12" ,
+                "groupName": "XSChoice#15" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "3" ,
                 "classOrder": "1020" ,
@@ -2077,69 +2041,6 @@
                 "classOrder": "1020" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.List_Index_No_Units.geom.index_value_number"
-                 ]
-              }
-            }
-           ]
-          }
-        }
-      , {
-          "class": {
-            "identifier": "0001_NASA_PDS_1.geom.Device_Pose" ,
-            "title": "Device_Pose" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "geom" ,
-            "steward": "geo" ,
-            "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
-            "isDeprecated": "false" ,
-            "description": "Defines the pose of this articulation device. The name indicates what exactly is being measured and how, and disambiguates if there is more than one Device_Pose. For example, Mars 2020 has \"arm_attitude_reference\", which indicates the pose of the rover that was used to calculate gravity droop of the arm. The interpretation of the pose is mission-specific; see the mission documentation."
-              , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Device_Pose.pds.name" ,
-                "title": "name" ,
-                "assocType": "attribute_of" ,
-                "isAttribute": "true" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1010" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Device_Pose.pds.name"
-                 ]
-              }
-            }
-           , {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Device_Pose.geom.Quaternion_Plus_Direction" ,
-                "title": "Quaternion_Plus_Direction" ,
-                "assocType": "component_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "0" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1020" ,
-                "classId": [
-                  "0001_NASA_PDS_1.geom.Quaternion_Plus_Direction"
-                 ]
-              }
-            }
-           , {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Device_Pose.geom.Vector_Origin_Offset" ,
-                "title": "Vector_Origin_Offset" ,
-                "assocType": "component_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "0" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1030" ,
-                "classId": [
-                  "0001_NASA_PDS_1.geom.Vector_Origin_Offset"
                  ]
               }
             }
@@ -2228,7 +2129,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#12" ,
+                "groupName": "XSChoice#15" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "3" ,
                 "classOrder": "1020" ,
@@ -3337,7 +3238,7 @@
             "nameSpaceId": "geom" ,
             "steward": "geo" ,
             "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
+            "isAbstract": "true" ,
             "isDeprecated": "false" ,
             "description": "The Frame_Identification_Base class provides multiple attributes that can be used to identify a reference frame. At least one must be used. "
               , "associationList": [
@@ -3443,7 +3344,7 @@
                 "isAttribute": "false" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#22" ,
+                "groupName": "XSChoice#19" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "*" ,
                 "classOrder": "1030" ,
@@ -3567,54 +3468,6 @@
             "description": "The Geometry_Lander class is a container for all geometric information in the label relating to a landed spacecraft, including rovers. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Geometry_Lander.geom.geometry_state" ,
-                "title": "geometry_state" ,
-                "assocType": "attribute_of" ,
-                "isAttribute": "true" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "0" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1010" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Geometry_Lander.geom.geometry_state"
-                 ]
-              }
-            }
-           , {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Geometry_Lander.pds.description" ,
-                "title": "description" ,
-                "assocType": "attribute_of" ,
-                "isAttribute": "true" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "0" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1020" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Geometry_Lander.pds.description"
-                 ]
-              }
-            }
-           , {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Geometry_Lander.pds.local_identifier" ,
-                "title": "local_identifier" ,
-                "assocType": "attribute_of" ,
-                "isAttribute": "true" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "0" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1030" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Geometry_Lander.pds.local_identifier"
-                 ]
-              }
-            }
-           , {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Geometry_Lander.geom.Articulation_Device_Parameters" ,
                 "title": "Articulation_Device_Parameters" ,
                 "assocType": "component_of" ,
@@ -3624,7 +3477,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "*" ,
-                "classOrder": "1040" ,
+                "classOrder": "1010" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Articulation_Device_Parameters"
                  ]
@@ -3640,7 +3493,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "*" ,
-                "classOrder": "1050" ,
+                "classOrder": "1020" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Camera_Model_Parameters"
                  ]
@@ -3656,7 +3509,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "*" ,
-                "classOrder": "1060" ,
+                "classOrder": "1030" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Coordinate_Space_Definition"
                  ]
@@ -3672,7 +3525,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "*" ,
-                "classOrder": "1070" ,
+                "classOrder": "1040" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Derived_Geometry"
                  ]
@@ -3688,7 +3541,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "*" ,
-                "classOrder": "1080" ,
+                "classOrder": "1050" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Motion_Counter"
                  ]
@@ -3716,7 +3569,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#23" ,
+                "groupName": "XSChoice#17" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "3" ,
                 "classOrder": "1020" ,
@@ -4178,7 +4031,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#19" ,
+                "groupName": "XSChoice#20" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "4" ,
                 "classOrder": "1050" ,
@@ -4435,7 +4288,7 @@
                 "isAttribute": "false" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#16" ,
+                "groupName": "XSChoice#11" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "*" ,
                 "classOrder": "1060" ,
@@ -4595,7 +4448,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#12" ,
+                "groupName": "XSChoice#15" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "3" ,
                 "classOrder": "1020" ,
@@ -4628,7 +4481,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#12" ,
+                "groupName": "XSChoice#15" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "3" ,
                 "classOrder": "1020" ,
@@ -4677,7 +4530,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#12" ,
+                "groupName": "XSChoice#15" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "3" ,
                 "classOrder": "1020" ,
@@ -4742,7 +4595,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#12" ,
+                "groupName": "XSChoice#15" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "3" ,
                 "classOrder": "1020" ,
@@ -4807,7 +4660,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#12" ,
+                "groupName": "XSChoice#15" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "3" ,
                 "classOrder": "1020" ,
@@ -4888,7 +4741,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#12" ,
+                "groupName": "XSChoice#15" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "3" ,
                 "classOrder": "1020" ,
@@ -5016,7 +4869,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#12" ,
+                "groupName": "XSChoice#15" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "3" ,
                 "classOrder": "1020" ,
@@ -5065,7 +4918,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#15" ,
+                "groupName": "XSChoice#12" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "*" ,
                 "classOrder": "1020" ,
@@ -5691,7 +5544,7 @@
                 "isAttribute": "true" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#17" ,
+                "groupName": "XSChoice#21" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1020" ,
@@ -5730,84 +5583,6 @@
                 "classOrder": "1050" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.Pixel_Size_Projected.geom.vertical_pixel_footprint"
-                 ]
-              }
-            }
-           ]
-          }
-        }
-      , {
-          "class": {
-            "identifier": "0001_NASA_PDS_1.geom.Polynomial_Coefficients_1" ,
-            "title": "Polynomial_Coefficients_1" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "geom" ,
-            "steward": "geo" ,
-            "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
-            "isDeprecated": "false" ,
-            "description": "The Polynomial_Coefficients_1 class provides a one polynomial coefficient. "
-              , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Polynomial_Coefficients_1.geom.c0" ,
-                "title": "c0" ,
-                "assocType": "attribute_of" ,
-                "isAttribute": "true" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1010" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Polynomial_Coefficients_1.geom.c0"
-                 ]
-              }
-            }
-           ]
-          }
-        }
-      , {
-          "class": {
-            "identifier": "0001_NASA_PDS_1.geom.Polynomial_Coefficients_2" ,
-            "title": "Polynomial_Coefficients_2" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "geom" ,
-            "steward": "geo" ,
-            "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
-            "isDeprecated": "false" ,
-            "description": "The Polynomial_Coefficients_2 class provides two polynomial coefficients. "
-              , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Polynomial_Coefficients_2.geom.c0" ,
-                "title": "c0" ,
-                "assocType": "attribute_of" ,
-                "isAttribute": "true" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1010" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Polynomial_Coefficients_2.geom.c0"
-                 ]
-              }
-            }
-           , {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Polynomial_Coefficients_2.geom.c1" ,
-                "title": "c1" ,
-                "assocType": "attribute_of" ,
-                "isAttribute": "true" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1020" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Polynomial_Coefficients_2.geom.c1"
                  ]
               }
             }
@@ -6333,22 +6108,6 @@
             "description": "The Reference_Frame_Identification class is a base class for identifying reference frames. These are frames in the NAIF sense, i.e., three orthogonal axes with a specified orientation, but without a fixed origin. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Reference_Frame_Identification.Frame_Identification_Base.generalization" ,
-                "title": "Frame_Identification_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Frame_Identification_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Frame_Identification_Base.geom.frame_spice_name" ,
                 "title": "frame_spice_name" ,
                 "assocType": "attribute_of" ,
@@ -6475,22 +6234,6 @@
             "description": "A quaternion rotates one reference frame to another reference frame. The Rotate_From class identifies the initial frame. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Rotate_From.Frame_Identification_Base.generalization" ,
-                "title": "Frame_Identification_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Frame_Identification_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Frame_Identification_Base.geom.frame_spice_name" ,
                 "title": "frame_spice_name" ,
                 "assocType": "attribute_of" ,
@@ -6569,22 +6312,6 @@
             "isDeprecated": "false" ,
             "description": "A quaternion rotates a one reference frame to another reference frame. The Rotate_To class identifies the destination frame. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Rotate_To.Frame_Identification_Base.generalization" ,
-                "title": "Frame_Identification_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Frame_Identification_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Frame_Identification_Base.geom.frame_spice_name" ,
                 "title": "frame_spice_name" ,
@@ -7803,7 +7530,7 @@
             "nameSpaceId": "geom" ,
             "steward": "geo" ,
             "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
+            "isAbstract": "true" ,
             "isDeprecated": "false" ,
             "description": "The Vector_Cartesian_Acceleration_Base is a three dimensional, rectangular coordinates vector. Uses units of linear acceleration. The included attributes are not sufficient to identify the endpoints of the vector. "
               , "associationList": [
@@ -7866,26 +7593,10 @@
             "nameSpaceId": "geom" ,
             "steward": "geo" ,
             "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
+            "isAbstract": "true" ,
             "isDeprecated": "false" ,
             "description": "The Vector_Cartesian_Acceleration_Extended_Base is a three dimensional, rectangular coordinates vector. Uses units of linear acceleration. The included attributes are not sufficient to identify the endpoints of the vector. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Extended_Base.Vector_Cartesian_Acceleration_Base.generalization" ,
-                "title": "Vector_Cartesian_Acceleration_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base.geom.x_acceleration" ,
                 "title": "x_acceleration" ,
@@ -7981,22 +7692,6 @@
             "isDeprecated": "false" ,
             "description": "Vector_Cartesian_Acceleration_Generic is a three dimensional, rectangular coordinates vector. Uses units of linear acceleration. Includes attributes to identify the endpoints of the vector. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Generic.Vector_Cartesian_Acceleration_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Acceleration_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base.geom.x_acceleration" ,
                 "title": "x_acceleration" ,
@@ -8246,7 +7941,7 @@
             "nameSpaceId": "geom" ,
             "steward": "geo" ,
             "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
+            "isAbstract": "true" ,
             "isDeprecated": "false" ,
             "description": "The Vector_Cartesian_Position_Base is a three dimensional, rectangular coordinates vector. Uses units of length. The included attributes are not sufficient to identify the endpoints of the vector. "
               , "associationList": [
@@ -8313,22 +8008,6 @@
             "isDeprecated": "false" ,
             "description": "The Vector_Cartesian_Position_Central_Body_To_Spacecraft is a linear, rectangular coordinates vector from the center of mass of the central body (e.g., planet) to the spacecraft. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Central_Body_To_Spacecraft.Vector_Cartesian_Position_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
@@ -8425,22 +8104,6 @@
             "description": "The Vector_Cartesian_Position_Central_Body_To_Target is a linear, rectangular coordinates vector from the center of mass of the central body (e.g., planet) to the target specified in the parent Geometry_Orbiter class. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Central_Body_To_Target.Vector_Cartesian_Position_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
                 "assocType": "attribute_of" ,
@@ -8535,22 +8198,6 @@
             "isDeprecated": "false" ,
             "description": "The Vector_Cartesian_Position_Earth_To_Central_Body is a linear, rectangular coordinates vector from the Earth to the central body (e.g., planet). While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Earth_To_Central_Body.Vector_Cartesian_Position_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
@@ -8647,22 +8294,6 @@
             "description": "The Vector_Cartesian_Position_Earth_To_Spacecraft is a linear, rectangular coordinates vector from the Earth to the spacecraft. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Earth_To_Spacecraft.Vector_Cartesian_Position_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
                 "assocType": "attribute_of" ,
@@ -8758,22 +8389,6 @@
             "description": "The Vector_Cartesian_Position_Earth_To_Target is a linear, rectangular coordinates vector from the Earth to the target specified in the parent Geometry_Orbiter class. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Earth_To_Target.Vector_Cartesian_Position_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
                 "assocType": "attribute_of" ,
@@ -8864,26 +8479,10 @@
             "nameSpaceId": "geom" ,
             "steward": "geo" ,
             "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
+            "isAbstract": "true" ,
             "isDeprecated": "false" ,
             "description": "The Vector_Cartesian_Position_Extended_Base is a three dimensional, rectangular coordinates vector. Uses units of length. The included attributes are not sufficient to identify the endpoints of the vector. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Extended_Base.Vector_Cartesian_Position_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
@@ -8979,22 +8578,6 @@
             "isDeprecated": "false" ,
             "description": "Vector_Cartesian_Position_Generic is a three dimensional, rectangular coordinates vector. Uses units of length. Includes attributes to identify the endpoints of the vector. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Generic.Vector_Cartesian_Position_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
@@ -9123,22 +8706,6 @@
             "description": "The Vector_Cartesian_Position_SSB_To_Central_Body is a linear, rectangular coordinates vector from the Solar System Barycenter to the central body (e.g., planet). While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_SSB_To_Central_Body.Vector_Cartesian_Position_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
                 "assocType": "attribute_of" ,
@@ -9233,22 +8800,6 @@
             "isDeprecated": "false" ,
             "description": "The Vector_Cartesian_Position_SSB_To_Spacecraft is a linear, rectangular coordinates vector from the Solar System Barycenter to the spacecraft. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_SSB_To_Spacecraft.Vector_Cartesian_Position_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
@@ -9345,22 +8896,6 @@
             "description": "The Vector_Cartesian_Position_SSB_To_Target is a linear, rectangular coordinates vector from the Solar System Barycenter to the target specified in the parent Geometry_Orbiter class. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_SSB_To_Target.Vector_Cartesian_Position_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
                 "assocType": "attribute_of" ,
@@ -9455,22 +8990,6 @@
             "isDeprecated": "false" ,
             "description": "The Vector_Cartesian_Position_Spacecraft_To_Target is a linear, rectangular coordinates vector from the spacecraft to the target specified in the parent Geometry_Orbiter class. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Spacecraft_To_Target.Vector_Cartesian_Position_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
@@ -9567,22 +9086,6 @@
             "description": "The Vector_Cartesian_Position_Sun_To_Central_Body is a linear, rectangular coordinates vector from the Sun to the central body (e.g., planet). While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Sun_To_Central_Body.Vector_Cartesian_Position_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
                 "assocType": "attribute_of" ,
@@ -9678,22 +9181,6 @@
             "description": "The Vector_Cartesian_Position_Sun_To_Spacecraft is a linear, rectangular coordinates vector from the Sun to the spacecraft. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Sun_To_Spacecraft.Vector_Cartesian_Position_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
                 "assocType": "attribute_of" ,
@@ -9788,22 +9275,6 @@
             "isDeprecated": "false" ,
             "description": "The Vector_Cartesian_Position_Sun_To_Target is a linear, rectangular coordinates vector from the Sun to the target specified in the parent Geometry_Orbiter class. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Sun_To_Target.Vector_Cartesian_Position_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
@@ -9958,7 +9429,7 @@
             "nameSpaceId": "geom" ,
             "steward": "geo" ,
             "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
+            "isAbstract": "true" ,
             "isDeprecated": "false" ,
             "description": "The Vector_Cartesian_Velocity_Base is a three dimensional, rectangular coordinates vector. Uses units of linear velocity. The included attributes are not sufficient to identify the endpoints of the vector. "
               , "associationList": [
@@ -10021,26 +9492,10 @@
             "nameSpaceId": "geom" ,
             "steward": "geo" ,
             "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
+            "isAbstract": "true" ,
             "isDeprecated": "false" ,
             "description": "The Vector_Cartesian_Velocity_Extended_Base is a three dimensional, rectangular coordinates vector. Uses units of linear velocity. The included attributes are not sufficient to identify the endpoints of the vector. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Extended_Base.Vector_Cartesian_Velocity_Base.generalization" ,
-                "title": "Vector_Cartesian_Velocity_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Base.geom.x_velocity" ,
                 "title": "x_velocity" ,
@@ -10136,22 +9591,6 @@
             "isDeprecated": "false" ,
             "description": "Vector_Cartesian_Velocity_Generic is a three dimensional, rectangular coordinates vector. Uses units of linear velocity. Includes attributes to identify the endpoints of the vector. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Generic.Vector_Cartesian_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Base.geom.x_velocity" ,
                 "title": "x_velocity" ,
@@ -10280,22 +9719,6 @@
             "description": "The Vector_Cartesian_Velocity_Spacecraft_Relative_To_Central_Body is a velocity vector in rectangular coordinates that gives the velocity of the spacecraft with respect to the central body (e.g., planet). While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Spacecraft_Relative_To_Central_Body.Vector_Cartesian_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Base.geom.x_velocity" ,
                 "title": "x_velocity" ,
                 "assocType": "attribute_of" ,
@@ -10390,22 +9813,6 @@
             "isDeprecated": "false" ,
             "description": "The Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth is a velocity vector in rectangular coordinates that gives the velocity of the spacecraft with respect to Earth. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth.Vector_Cartesian_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Base.geom.x_velocity" ,
                 "title": "x_velocity" ,
@@ -10502,22 +9909,6 @@
             "description": "The Vector_Cartesian_Velocity_Spacecraft_Relative_To_SSB is a velocity vector in rectangular coordinates that gives the velocity of the spacecraft with respect to the Solar System Barycenter. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Spacecraft_Relative_To_SSB.Vector_Cartesian_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Base.geom.x_velocity" ,
                 "title": "x_velocity" ,
                 "assocType": "attribute_of" ,
@@ -10612,22 +10003,6 @@
             "isDeprecated": "false" ,
             "description": " Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun is a velocity vector in rectangular coordinates that gives the velocity of the spacecraft with respect to the center of the Sun. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun.Vector_Cartesian_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Base.geom.x_velocity" ,
                 "title": "x_velocity" ,
@@ -10724,22 +10099,6 @@
             "description": "The Vector_Cartesian_Velocity_Spacecraft_Relative_To_Target is a velocity vector in rectangular coordinates that gives the velocity of the spacecraft with respect to the target specified in the parent Geometry_Orbiter class. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Spacecraft_Relative_To_Target.Vector_Cartesian_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Base.geom.x_velocity" ,
                 "title": "x_velocity" ,
                 "assocType": "attribute_of" ,
@@ -10834,22 +10193,6 @@
             "isDeprecated": "false" ,
             "description": "The Vector_Cartesian_Velocity_Target_Relative_To_Central_Body is a velocity vector in rectangular coordinates that gives the velocity of the designated target with respect to the central body (e.g., planet). While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Target_Relative_To_Central_Body.Vector_Cartesian_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Base.geom.x_velocity" ,
                 "title": "x_velocity" ,
@@ -10946,22 +10289,6 @@
             "description": "The Vector_Cartesian_Velocity_Target_Relative_To_Earth is a velocity vector in rectangular coordinates that gives the velocity of the designated target with respect to Earth. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Target_Relative_To_Earth.Vector_Cartesian_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Base.geom.x_velocity" ,
                 "title": "x_velocity" ,
                 "assocType": "attribute_of" ,
@@ -11056,22 +10383,6 @@
             "isDeprecated": "false" ,
             "description": "The Vector_Cartesian_Velocity_Target_Relative_To_SSB is a velocity vector in rectangular coordinates that gives the velocity of the designated target with respect to the Solar System Barycenter. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Target_Relative_To_SSB.Vector_Cartesian_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Base.geom.x_velocity" ,
                 "title": "x_velocity" ,
@@ -11168,22 +10479,6 @@
             "description": "The Vector_Cartesian_Velocity_Target_Relative_To_Spacecraft is a velocity vector in rectangular coordinates that gives the velocity of the designated target with respect to the spacecraft. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Target_Relative_To_Spacecraft.Vector_Cartesian_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Base.geom.x_velocity" ,
                 "title": "x_velocity" ,
                 "assocType": "attribute_of" ,
@@ -11279,22 +10574,6 @@
             "description": " Vector_Cartesian_Velocity_Target_Relative_To_Sun is a velocity vector in rectangular coordinates that gives the velocity of the designated target with respect to the center of the sun. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Target_Relative_To_Sun.Vector_Cartesian_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Cartesian_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Velocity_Base.geom.x_velocity" ,
                 "title": "x_velocity" ,
                 "assocType": "attribute_of" ,
@@ -11389,22 +10668,6 @@
             "isDeprecated": "false" ,
             "description": "The Vector_Center describes the location of the entrance pupil of a camera. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Center.Vector_Cartesian_Position_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
@@ -11529,85 +10792,6 @@
                 "classOrder": "1030" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.Vector_Cartesian_Unit.geom.z_unit"
-                 ]
-              }
-            }
-           ]
-          }
-        }
-      , {
-          "class": {
-            "identifier": "0001_NASA_PDS_1.geom.Vector_Device_Gravity_Magnitude" ,
-            "title": "Vector_Device_Gravity_Magnitude" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "geom" ,
-            "steward": "geo" ,
-            "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
-            "isDeprecated": "false" ,
-            "description": "The Vector_Device_Gravity_Magnitude class is a vector (with magnitude) that specifies the direction of an external force acting on the articulation device, in the spacecraft's coordinate system, at the time the pose was computed. "
-              , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Device_Gravity_Magnitude.Vector_Cartesian_Acceleration_Base.generalization" ,
-                "title": "Vector_Cartesian_Acceleration_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base"
-                 ]
-              }
-            } ,
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base.geom.x_acceleration" ,
-                "title": "x_acceleration" ,
-                "assocType": "attribute_of" ,
-                "isAttribute": "true" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1010" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base.geom.x_acceleration"
-                 ]
-              }
-            }
-           , {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base.geom.y_acceleration" ,
-                "title": "y_acceleration" ,
-                "assocType": "attribute_of" ,
-                "isAttribute": "true" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1020" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base.geom.y_acceleration"
-                 ]
-              }
-            }
-           , {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base.geom.z_acceleration" ,
-                "title": "z_acceleration" ,
-                "assocType": "attribute_of" ,
-                "isAttribute": "true" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1030" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base.geom.z_acceleration"
                  ]
               }
             }
@@ -12022,22 +11206,6 @@
             "description": "The Vector_Origin_Offset class contains attributes that specify the offset from the reference coordinate system's origin to the origin of the coordinate system. It is the location of the current system's origin as measured in the reference system. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Origin_Offset.Vector_Cartesian_Position_Base.generalization" ,
-                "title": "Vector_Cartesian_Position_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Position_Base.geom.x_position" ,
                 "title": "x_position" ,
                 "assocType": "attribute_of" ,
@@ -12096,7 +11264,7 @@
             "nameSpaceId": "geom" ,
             "steward": "geo" ,
             "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
+            "isAbstract": "true" ,
             "isDeprecated": "false" ,
             "description": "The Vector_Planetocentric_Position_Base is a three dimensional spherical vector (radius, longitude, latitude) with the angular coordinates defined to be consistent with the Planetocentric coordinate system. Uses linear units for the radius dimension, and angular units for the other two dimensions. The included attributes are not sufficient to identify the endpoints of the vector. "
               , "associationList": [
@@ -12163,22 +11331,6 @@
             "isDeprecated": "false" ,
             "description": "The Vector_Planetocentric_Position_Central_Body_To_Spacecraft is a spherical position vector in Planetocentric coordinates. It extends from the center of mass of the central body (e.g., planet) to the spacecraft. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Central_Body_To_Spacecraft.Vector_Planetocentric_Position_Extended_Base.generalization" ,
-                "title": "Vector_Planetocentric_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Base.geom.radius_position" ,
                 "title": "radius_position" ,
@@ -12275,22 +11427,6 @@
             "description": "The Vector_Planetocentric_Position_Central_Body_To_Target is a spherical position vector in Planetocentric coordinates. It extends from the center of mass of the central body (e.g., planet) to the target specified in the parent Geometry_Orbiter class. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Central_Body_To_Target.Vector_Planetocentric_Position_Extended_Base.generalization" ,
-                "title": "Vector_Planetocentric_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Base.geom.radius_position" ,
                 "title": "radius_position" ,
                 "assocType": "attribute_of" ,
@@ -12381,26 +11517,10 @@
             "nameSpaceId": "geom" ,
             "steward": "geo" ,
             "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
+            "isAbstract": "true" ,
             "isDeprecated": "false" ,
             "description": "The Vector_Planetocentric_Position_Extended_Base is a three dimensional spherical vector (radius, longitude, latitude) with the angular coordinates defined to be consistent with the Planetocentric coordinate system. Uses linear units for the radius dimension, and angular units for the other two dimensions. The included attributes are not sufficient to identify the endpoints of the vector. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Extended_Base.Vector_Planetocentric_Position_Base.generalization" ,
-                "title": "Vector_Planetocentric_Position_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Base.geom.radius_position" ,
                 "title": "radius_position" ,
@@ -12496,22 +11616,6 @@
             "isDeprecated": "false" ,
             "description": "The Vector_Planetocentric_Position_Generic is a three dimensional spherical vector (radius, longitude, latitude) with the angular coordinates defined to be consistent with the Planetocentric coordinate system. Uses linear units for the radius dimension, and angular units for the other two dimensions. Includes attributes to identify the endpoints of the vector. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Generic.Vector_Planetocentric_Position_Extended_Base.generalization" ,
-                "title": "Vector_Planetocentric_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Base.geom.radius_position" ,
                 "title": "radius_position" ,
@@ -12640,22 +11744,6 @@
             "description": "The Vector_Planetocentric_Position_Spacecraft_To_Target is a spherical position vector in Planetocentric coordinates. It extends from the spacecraft to the target specified in the parent Geometry_Orbiter class. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Spacecraft_To_Target.Vector_Planetocentric_Position_Extended_Base.generalization" ,
-                "title": "Vector_Planetocentric_Position_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Position_Base.geom.radius_position" ,
                 "title": "radius_position" ,
                 "assocType": "attribute_of" ,
@@ -12746,7 +11834,7 @@
             "nameSpaceId": "geom" ,
             "steward": "geo" ,
             "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
+            "isAbstract": "true" ,
             "isDeprecated": "false" ,
             "description": "The Vector_Planetocentric_Velocity_Base is a three dimensional spherical vector (radius, longitude, latitude) with the angular coordinates defined to be consistent with the Planetocentric coordinate system. Uses linear velocity units for the radius dimension, and angular velocity units for the other two dimensions. The included attributes are not sufficient to identify the endpoints of the vector. "
               , "associationList": [
@@ -12809,26 +11897,10 @@
             "nameSpaceId": "geom" ,
             "steward": "geo" ,
             "versionId": "1.0.0.0" ,
-            "isAbstract": "false" ,
+            "isAbstract": "true" ,
             "isDeprecated": "false" ,
             "description": "The Vector_Planetocentric_Velocity_Extended_Base is a three dimensional spherical vector (radius, longitude, latitude) with the angular coordinates defined to be consistent with the Planetocentric coordinate system. Uses linear velocity units for the radius dimension, and angular velocity units for the other two dimensions. The included attributes are not sufficient to identify the endpoints of the vector. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Extended_Base.Vector_Planetocentric_Velocity_Base.generalization" ,
-                "title": "Vector_Planetocentric_Velocity_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Base.geom.radial_velocity" ,
                 "title": "radial_velocity" ,
@@ -12924,22 +11996,6 @@
             "isDeprecated": "false" ,
             "description": "The Vector_Planetocentric_Velocity_Generic is a three dimensional spherical vector (radius, longitude, latitude) with the angular coordinates defined to be consistent with the Planetocentric coordinate system. Uses linear velocity units for the radius dimension, and angular velocity units for the other two dimensions. Includes attributes to identify the endpoints of the vector. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Generic.Vector_Planetocentric_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Planetocentric_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Base.geom.radial_velocity" ,
                 "title": "radial_velocity" ,
@@ -13068,22 +12124,6 @@
             "description": "The Vector_Planetocentric_Velocity_Spacecraft_Relative_To_Target is a spherical velocity vector in Planetocentric coordinates that gives the velocity of the spacecraft with respect to the designated target. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Spacecraft_Relative_To_Target.Vector_Planetocentric_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Planetocentric_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Base.geom.radial_velocity" ,
                 "title": "radial_velocity" ,
                 "assocType": "attribute_of" ,
@@ -13179,22 +12219,6 @@
             "description": "The Vector_Planetocentric_Velocity_Target_Relative_To_Central_Body is a spherical velocity vector in Planetocentric coordinates that gives the velocity of the target with respect to the central body. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Target_Relative_To_Central_Body.Vector_Planetocentric_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Planetocentric_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
-             {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Base.geom.radial_velocity" ,
                 "title": "radial_velocity" ,
                 "assocType": "attribute_of" ,
@@ -13289,22 +12313,6 @@
             "isDeprecated": "false" ,
             "description": "The Vector_Planetocentric_Velocity_Target_Relative_To_Spacecraft is a spherical velocity vector in Planetocentric coordinates that gives the velocity of the target with respect to the spacecraft. While the class Coordinate_System_Identification is optional, it must be used here if the coordinate system has not been specified in the enclosing class. "
               , "associationList": [
-             {"association": {
-                "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Target_Relative_To_Spacecraft.Vector_Planetocentric_Velocity_Extended_Base.generalization" ,
-                "title": "Vector_Planetocentric_Velocity_Extended_Base" ,
-                "assocType": "parent_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "0000" ,
-                "attributeId": [
-                  "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Extended_Base"
-                 ]
-              }
-            } ,
              {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Vector_Planetocentric_Velocity_Base.geom.radial_velocity" ,
                 "title": "radial_velocity" ,
@@ -13644,7 +12652,7 @@
                 "isAttribute": "false" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#20" ,
+                "groupName": "XSChoice#22" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "*" ,
                 "classOrder": "1020" ,
@@ -13696,7 +12704,7 @@
                 "isAttribute": "false" ,
                 "isChoice": "true" ,
                 "isAny": "false" ,
-                "groupName": "XSChoice#21" ,
+                "groupName": "XSChoice#23" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "*" ,
                 "classOrder": "1020" ,
@@ -14361,7 +13369,7 @@
             "versionId": "1.16" ,
             "description": "The coordinate_space_frame_type attribute identifies the type of frame being described, such as SITE, LOCAL_LEVEL, LANDER, ROVER, ARM, etc. When combined with Coordinate_Space_Index and the optional solution_id in the Coordinate_Space_Indexed class, this serves to fully name an instance of a coordinate space. " ,
             "isNillable": "true" ,
-            "isEnumerated": "true" ,
+            "isEnumerated": "false" ,
             "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
@@ -14374,542 +13382,6 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
-          , "PermissibleValueList": [
-              {"PermissibleValue": {
-                  "value": "APXS_Frame" ,
-                  "valueMeaning": "Frame defining the APXS instrument on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_CUSTOM_TCP_FRAME" ,
-                  "valueMeaning": "Frame describing a user-defined Tool Control Point for a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_DOCKING_POST_FRAME" ,
-                  "valueMeaning": "Frame describing the docking post on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_DRILL_FRAME" ,
-                  "valueMeaning": "Frame describing the drill on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_DRT_FRAME" ,
-                  "valueMeaning": "Frame describing the Dust Removal Tool on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_FCS_FRAME" ,
-                  "valueMeaning": "Frame describing the FCS (Facility Contact Switch) device on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_FRAME" ,
-                  "valueMeaning": "Frame describing a defined portion of a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_GDRT_FRAME" ,
-                  "valueMeaning": "Frame describing the GDRT (Gaseous Dust Removal Tool) device on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_MAHLI_FRAME" ,
-                  "valueMeaning": "Frame describing the MAHLI instrument on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_PIXL_FRAME" ,
-                  "valueMeaning": "Frame describing the PIXL instrument on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_PORTION_FRAME" ,
-                  "valueMeaning": "Frame describing the sample portioner device on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_SCOOP_TCP_FRAME" ,
-                  "valueMeaning": "Frame describing the Tool Control Point for the scoop on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_SCOOP_TIP_FRAME" ,
-                  "valueMeaning": "Frame describing the tip of a scoop on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_SHERLOC_FRAME" ,
-                  "valueMeaning": "Frame describing the SHERLOC instrument on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_TURRET_FRAME" ,
-                  "valueMeaning": "Frame describing the turret on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ARM_WATSON_FRAME" ,
-                  "valueMeaning": "Frame describing the Watson instrument component on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_Custom_TCP_Frame" ,
-                  "valueMeaning": "Frame describing a user-defined Tool Control Point for a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_DRT_Frame" ,
-                  "valueMeaning": "Frame describing the Dust Removal Tool on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_Docking_Post_Frame" ,
-                  "valueMeaning": "Frame describing the docking post on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_Drill_Frame" ,
-                  "valueMeaning": "Frame describing the drill on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_FCS_Frame" ,
-                  "valueMeaning": "Frame describing the FCS (Facility Contact Switch) device on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_Frame" ,
-                  "valueMeaning": "Frame describing a defined portion of a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_GDRT_Frame" ,
-                  "valueMeaning": "Frame describing the GDRT (Gaseous Dust Removal Tool) device on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_MAHLI_Frame" ,
-                  "valueMeaning": "Frame describing the MAHLI instrument on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_PIXL_Frame" ,
-                  "valueMeaning": "Frame describing the PIXL instrument on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_Portion_Frame" ,
-                  "valueMeaning": "Frame describing the sample portioner device on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_SHERLOC_Frame" ,
-                  "valueMeaning": "Frame describing the SHERLOC instrument on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_Scoop_TCP_Frame" ,
-                  "valueMeaning": "Frame describing the Tool Control Point for the scoop on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_Scoop_TIP_Frame" ,
-                  "valueMeaning": "Frame describing the tip of a scoop on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_Turret_Frame" ,
-                  "valueMeaning": "Frame describing the turret on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Arm_WATSON_Frame" ,
-                  "valueMeaning": "Frame describing the Watson instrument component on a movable arm." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "CINT_FRAME" ,
-                  "valueMeaning": "Frame describing the LVS camera during descent." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "CINT_Frame" ,
-                  "valueMeaning": "Frame describing the LVS camera during descent." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "DRILL_BIT_TIP" ,
-                  "valueMeaning": "Frame centered on the tip of the drill." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "HELI_G_FRAME" ,
-                  "valueMeaning": "Helicopter frame defined attached to the ground at takeoff." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "HELI_M_FRAME" ,
-                  "valueMeaning": "Helicopter frame roughly analogous to ROVER_MECH_FRAME." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "HELI_S1_FRAME" ,
-                  "valueMeaning": "Helicopter frame roughly analogous to ROVER_NAV_FRAME defined for IMU #1." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "HELI_S2_FRAME" ,
-                  "valueMeaning": "Helicopter frame roughly analogous to ROVER_NAV_FRAME defined for IMU #2." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Heli_G_Frame" ,
-                  "valueMeaning": "Helicopter frame defined attached to the ground at takeoff." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Heli_M_Frame" ,
-                  "valueMeaning": "Helicopter frame roughly analogous to ROVER_MECH_FRAME." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Heli_S1_Frame" ,
-                  "valueMeaning": "Helicopter frame roughly analogous to ROVER_NAV_FRAME defined for IMU #1." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Heli_S2_Frame" ,
-                  "valueMeaning": "Helicopter frame roughly analogous to ROVER_NAV_FRAME defined for IMU #2." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "LANDER_FRAME" ,
-                  "valueMeaning": "Analogous to ROVER_NAV_FRAME for non-mobile missions." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "LOCAL_LEVEL_FRAME" ,
-                  "valueMeaning": "Frame coincident with ROVER_NAV\/LANDER_FRAME that is oriented according to cartographic directions and gravity." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Lander_Frame" ,
-                  "valueMeaning": "Analogous to ROVER_NAV_FRAME for non-mobile missions." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Local_Level_Frame" ,
-                  "valueMeaning": "Frame coincident with ROVER_NAV\/LANDER_FRAME that is oriented according to cartographic directions and gravity." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "MB_Frame" ,
-                  "valueMeaning": "null" ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "MCMF_FRAME" ,
-                  "valueMeaning": "Mars Centered Mars Fixed Frame defined with origin at the planet center." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "MCMF_Frame" ,
-                  "valueMeaning": "Mars Centered Mars Fixed Frame defined with origin at the planet center." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "MCZ_CAL_PRIMARY" ,
-                  "valueMeaning": "Primary Mastcam-Z calibration target." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "MEDA_RDS" ,
-                  "valueMeaning": "Radiation and Dust Sensor for the MEDA instruments." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "MI_Frame" ,
-                  "valueMeaning": "null" ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Mast_Frame" ,
-                  "valueMeaning": "null" ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "PIXL_BASE_FRAME" ,
-                  "valueMeaning": "Frame describing the base of the PIXL instrument." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "PIXL_Base_Frame" ,
-                  "valueMeaning": "Frame describing the base of the PIXL instrument." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "PIXL_SENSOR_FRAME" ,
-                  "valueMeaning": "Frame describing the movable sensor head of the PIXL instrument." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "PIXL_Sensor_Frame" ,
-                  "valueMeaning": "Frame describing the movable sensor head of the PIXL instrument." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "PIXL_TOOL" ,
-                  "valueMeaning": "Frame for PIXL instrument." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "PIXL_Tool" ,
-                  "valueMeaning": "Frame for PIXL instrument." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ROVER_FRAME" ,
-                  "valueMeaning": "Frame that is attached to the rover and moves with the rover (in both position and orientation). Often synonymous with ROVER_NAV_FRAME." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ROVER_MECH_FRAME" ,
-                  "valueMeaning": "Frame generally similar to ROVER_NAV_FRAME but with different origin and possibly axis orientation that is more conducive to mechanical operations (\"MECH\" for \"Mechanical\"). The origin is typically (but not necessarily) tied to a specific bit of hardware." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "ROVER_NAV_FRAME" ,
-                  "valueMeaning": "Frame attached to the rover oriented with respect to the rover that moves with the rover (\"NAV\" for \"Navigation\"). The origin is generally in a location conducive to navigation (e.g. at the center of turning between the middle wheels at nominal ground level on MSL\/M20 type rovers) which may not be attached to any physical hardware." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "RSM_FRAME" ,
-                  "valueMeaning": "Frame defining a Remote Sensing Mast." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "RSM_Frame" ,
-                  "valueMeaning": "Frame defining a Remote Sensing Mast." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "RSM_HEAD_FRAME" ,
-                  "valueMeaning": "Frame defining a Remote Sensing Mast." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "RSM_Head_Frame" ,
-                  "valueMeaning": "Frame defining a Remote Sensing Mast." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Rat_Frame" ,
-                  "valueMeaning": "null" ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Rover_Frame" ,
-                  "valueMeaning": "null" ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Rover_Mech_Frame" ,
-                  "valueMeaning": "Frame generally similar to ROVER_NAV_FRAME but with different origin and possibly axis orientation that is more conducive to mechanical operations (\"MECH\" for \"Mechanical\"). The origin is typically (but not necessarily) tied to a specific bit of hardware." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Rover_Nav_Frame" ,
-                  "valueMeaning": "Frame attached to the rover oriented with respect to the rover that moves with the rover (\"NAV\" for \"Navigation\"). The origin is generally in a location conducive to navigation (e.g. at the center of turning between the middle wheels at nominal ground level on MSL\/M20 type rovers) which may not be attached to any physical hardware." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "SITE_FRAME" ,
-                  "valueMeaning": "Instance of LOCAL_LEVEL_FRAME that is fixed to the ground. Used for local operations to reduce error propagation due to position uncertainty." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "SUN" ,
-                  "valueMeaning": "Frame centered on the sun. Generally used for pointing instruments at the sun, rather than 3D position." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Site_Frame" ,
-                  "valueMeaning": "Instance of LOCAL_LEVEL_FRAME that is fixed to the ground. Used for local operations to reduce error propagation due to position uncertainty." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "TOOL_FRAME" ,
-                  "valueMeaning": "Tool frame is used to indicate the frame associated with the currently selected (or activated) \"tool\", in contexts where the specific frame is unknown or does not matter. \"Tools\" are typically devices on an arm such as a drill, microscopic imager, contact spectrometer, etc." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "TURRET_FRAME" ,
-                  "valueMeaning": "Frame based on a turret mechanism." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Tool_Frame" ,
-                  "valueMeaning": "Tool frame is used to indicate the frame associated with the currently selected (or activated) \"tool\", in contexts where the specific frame is unknown or does not matter. \"Tools\" are typically devices on an arm such as a drill, microscopic imager, contact spectrometer, etc." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Turret_Frame" ,
-                  "valueMeaning": "Frame based on a turret mechanism." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "WHEEL_LF" ,
-                  "valueMeaning": "Frame for left front wheel." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "WHEEL_LM" ,
-                  "valueMeaning": "Frame for left middle wheel." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "WHEEL_LR" ,
-                  "valueMeaning": "Frame for left rear wheel." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "WHEEL_RF" ,
-                  "valueMeaning": "Frame for right front wheel." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "WHEEL_RM" ,
-                  "valueMeaning": "Frame for right middle wheel." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "WHEEL_RR" ,
-                  "valueMeaning": "Frame for right rear wheel." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Wheel_LF" ,
-                  "valueMeaning": "Frame for left front wheel." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Wheel_LM" ,
-                  "valueMeaning": "Frame for left middle wheel." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Wheel_LR" ,
-                  "valueMeaning": "Frame for left rear wheel." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Wheel_RF" ,
-                  "valueMeaning": "Frame for right front wheel." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Wheel_RM" ,
-                  "valueMeaning": "Frame for right middle wheel." ,
-                  "isDeprecated": "false"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Wheel_RR" ,
-                  "valueMeaning": "Frame for right rear wheel." ,
-                  "isDeprecated": "false"
-                }
-             }
-           ]
           }
         }
       , {
@@ -14949,12 +13421,12 @@
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
-            "dataType": "ASCII_Real" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "dataType": "ASCII_Integer" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Integer" ,
             "minimumCharacters": "Unbounded" ,
             "maximumCharacters": "Unbounded" ,
-            "minimumValue": "-1.7976931348623157e308" ,
-            "maximumValue": "1.7976931348623157e308" ,
+            "minimumValue": "-9223372036854775808" ,
+            "maximumValue": "9223372036854775807" ,
             "pattern": "null" ,
             "unitOfMeasure": "null" ,
             "unitOfMeasureId": "null" ,
@@ -15390,31 +13862,6 @@
         }
       , {
           "attribute": {
-            "identifier": "0001_NASA_PDS_1.geom.Derived_Geometry.geom.solar_image_clock_angle" ,
-            "title": "solar_image_clock_angle" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "geom" ,
-            "steward": "geo" ,
-            "versionId": "1.16" ,
-            "description": "Describes the direction of the sun in terms of the image plane, defined as a clock angle (clockwise) around the center of the image with 0 pointing to the top of the image, with respect to the display orientation (usually defined by disp:vertical_display_direction). " ,
-            "isNillable": "false" ,
-            "isEnumerated": "false" ,
-            "isDeprecated": "false" ,
-            "dataType": "ASCII_Real" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
-            "minimumCharacters": "Unbounded" ,
-            "maximumCharacters": "Unbounded" ,
-            "minimumValue": "-1.7976931348623157e308" ,
-            "maximumValue": "1.7976931348623157e308" ,
-            "pattern": "null" ,
-            "unitOfMeasure": "Units_of_Angle" ,
-            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
-            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
-            "defaultUnitId": "null"
-          }
-        }
-      , {
-          "attribute": {
             "identifier": "0001_NASA_PDS_1.geom.Derived_Geometry.geom.start_azimuth" ,
             "title": "start_azimuth" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -15460,56 +13907,6 @@
             "unitOfMeasure": "Units_of_Angle" ,
             "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
             "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
-            "defaultUnitId": "null"
-          }
-        }
-      , {
-          "attribute": {
-            "identifier": "0001_NASA_PDS_1.geom.Derived_Geometry.geom.target_heliocentric_distance" ,
-            "title": "target_heliocentric_distance" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "geom" ,
-            "steward": "geo" ,
-            "versionId": "1.16" ,
-            "description": "The target_heliocentric_distance attribute provides the scalar distance between the center of the target and the center of the Sun. " ,
-            "isNillable": "false" ,
-            "isEnumerated": "false" ,
-            "isDeprecated": "false" ,
-            "dataType": "ASCII_Real" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
-            "minimumCharacters": "Unbounded" ,
-            "maximumCharacters": "Unbounded" ,
-            "minimumValue": "-1.7976931348623157e308" ,
-            "maximumValue": "1.7976931348623157e308" ,
-            "pattern": "null" ,
-            "unitOfMeasure": "Units_of_Length" ,
-            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Length" ,
-            "unitId": "AU, Angstrom, cm, km, m, micrometer, mm, nm" ,
-            "defaultUnitId": "null"
-          }
-        }
-      , {
-          "attribute": {
-            "identifier": "0001_NASA_PDS_1.geom.Derived_Geometry.geom.target_name" ,
-            "title": "target_name" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "geom" ,
-            "steward": "geo" ,
-            "versionId": "1.16" ,
-            "description": "Specifies the name of the target location for items in this class." ,
-            "isNillable": "false" ,
-            "isEnumerated": "false" ,
-            "isDeprecated": "false" ,
-            "dataType": "ASCII_Short_String_Collapsed" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
-            "minimumCharacters": "1" ,
-            "maximumCharacters": "255" ,
-            "minimumValue": "Unbounded" ,
-            "maximumValue": "Unbounded" ,
-            "pattern": "null" ,
-            "unitOfMeasure": "null" ,
-            "unitOfMeasureId": "null" ,
-            "unitId": "null" ,
             "defaultUnitId": "null"
           }
         }
@@ -15577,31 +13974,6 @@
             "isDeprecated": "false" ,
             "dataType": "ASCII_Local_Identifier" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Local_Identifier" ,
-            "minimumCharacters": "1" ,
-            "maximumCharacters": "255" ,
-            "minimumValue": "Unbounded" ,
-            "maximumValue": "Unbounded" ,
-            "pattern": "null" ,
-            "unitOfMeasure": "null" ,
-            "unitOfMeasureId": "null" ,
-            "unitId": "null" ,
-            "defaultUnitId": "null"
-          }
-        }
-      , {
-          "attribute": {
-            "identifier": "0001_NASA_PDS_1.geom.Device_Pose.pds.name" ,
-            "title": "name" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "pds" ,
-            "steward": "pds" ,
-            "versionId": "1.16" ,
-            "description": "The name attribute provides a word or combination of words by which the object is known." ,
-            "isNillable": "false" ,
-            "isEnumerated": "false" ,
-            "isDeprecated": "false" ,
-            "dataType": "UTF8_Short_String_Collapsed" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.UTF8_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
             "maximumCharacters": "255" ,
             "minimumValue": "Unbounded" ,
@@ -17068,81 +15440,6 @@
         }
       , {
           "attribute": {
-            "identifier": "0001_NASA_PDS_1.geom.Geometry_Lander.geom.geometry_state" ,
-            "title": "geometry_state" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "geom" ,
-            "steward": "geo" ,
-            "versionId": "1.16" ,
-            "description": "Specifies the state or configuration of this instance of Geometry_Lander applies. Use of this attribute enables multiple instances of Geometry_Lander, describing the geometry under different conditions. Note that it is legal for more than one instance to have the same geometry_state, in which case the local_identifier should be used to differentiate the instances, along with description. If not present, the semantics of \"Telemetry\" should be assumed. It is not required that instances be retained; a derived product may have an Adjusted instance but remove the Telemetry one, for example." ,
-            "isNillable": "false" ,
-            "isEnumerated": "false" ,
-            "isDeprecated": "false" ,
-            "dataType": "ASCII_Short_String_Collapsed" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
-            "minimumCharacters": "1" ,
-            "maximumCharacters": "255" ,
-            "minimumValue": "Unbounded" ,
-            "maximumValue": "Unbounded" ,
-            "pattern": "null" ,
-            "unitOfMeasure": "null" ,
-            "unitOfMeasureId": "null" ,
-            "unitId": "null" ,
-            "defaultUnitId": "null"
-          }
-        }
-      , {
-          "attribute": {
-            "identifier": "0001_NASA_PDS_1.geom.Geometry_Lander.pds.description" ,
-            "title": "description" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "pds" ,
-            "steward": "pds" ,
-            "versionId": "1.16" ,
-            "description": "The description attribute provides a statement, picture in words, or account that describes or is otherwise relevant to the object." ,
-            "isNillable": "false" ,
-            "isEnumerated": "false" ,
-            "isDeprecated": "false" ,
-            "dataType": "UTF8_Text_Preserved" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.UTF8_Text_Preserved" ,
-            "minimumCharacters": "1" ,
-            "maximumCharacters": "Unbounded" ,
-            "minimumValue": "Unbounded" ,
-            "maximumValue": "Unbounded" ,
-            "pattern": "null" ,
-            "unitOfMeasure": "null" ,
-            "unitOfMeasureId": "null" ,
-            "unitId": "null" ,
-            "defaultUnitId": "null"
-          }
-        }
-      , {
-          "attribute": {
-            "identifier": "0001_NASA_PDS_1.geom.Geometry_Lander.pds.local_identifier" ,
-            "title": "local_identifier" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "pds" ,
-            "steward": "pds" ,
-            "versionId": "1.16" ,
-            "description": "The local_identifier attribute provides a character string which uniquely identifies the containing object within the label." ,
-            "isNillable": "false" ,
-            "isEnumerated": "false" ,
-            "isDeprecated": "false" ,
-            "dataType": "ASCII_Local_Identifier" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Local_Identifier" ,
-            "minimumCharacters": "1" ,
-            "maximumCharacters": "255" ,
-            "minimumValue": "Unbounded" ,
-            "maximumValue": "Unbounded" ,
-            "pattern": "null" ,
-            "unitOfMeasure": "null" ,
-            "unitOfMeasureId": "null" ,
-            "unitId": "null" ,
-            "defaultUnitId": "null"
-          }
-        }
-      , {
-          "attribute": {
             "identifier": "0001_NASA_PDS_1.geom.Geometry_Orbiter.geom.geometry_reference_time_tdb" ,
             "title": "geometry_reference_time_tdb" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -18283,7 +16580,7 @@
             "steward": "geo" ,
             "versionId": "1.16" ,
             "description": "The celestial_north_clock_angle attribute specifies the direction of celestial north at the center of an image. It is measured from the 'upward' direction, clockwise to the direction toward celestial north, assuming the image is displayed as defined by the Display_Direction class. " ,
-            "isNillable": "true" ,
+            "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
             "dataType": "ASCII_Real" ,
@@ -18383,7 +16680,7 @@
             "steward": "geo" ,
             "versionId": "1.16" ,
             "description": "The ecliptic_north_clock_angle attribute specifies the direction of ecliptic north at the center of an image. It is measured from the 'upward' direction, clockwise to the direction toward ecliptic north, assuming the image is displayed as defined by the Display_Direction class. " ,
-            "isNillable": "true" ,
+            "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
             "dataType": "ASCII_Real" ,
@@ -18533,7 +16830,7 @@
             "steward": "geo" ,
             "versionId": "1.16" ,
             "description": "The celestial_north_clock_angle attribute specifies the direction of celestial north at the center of an image. It is measured from the 'upward' direction, clockwise to the direction toward celestial north, assuming the image is displayed as defined by the Display_Direction class. " ,
-            "isNillable": "true" ,
+            "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
             "dataType": "ASCII_Real" ,
@@ -18583,7 +16880,7 @@
             "steward": "geo" ,
             "versionId": "1.16" ,
             "description": "The ecliptic_north_clock_angle attribute specifies the direction of ecliptic north at the center of an image. It is measured from the 'upward' direction, clockwise to the direction toward ecliptic north, assuming the image is displayed as defined by the Display_Direction class. " ,
-            "isNillable": "true" ,
+            "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
             "dataType": "ASCII_Real" ,
@@ -19081,81 +17378,6 @@
             "unitOfMeasure": "Units_of_Length" ,
             "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Length" ,
             "unitId": "AU, Angstrom, cm, km, m, micrometer, mm, nm" ,
-            "defaultUnitId": "null"
-          }
-        }
-      , {
-          "attribute": {
-            "identifier": "0001_NASA_PDS_1.geom.Polynomial_Coefficients_1.geom.c0" ,
-            "title": "c0" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "geom" ,
-            "steward": "geo" ,
-            "versionId": "1.16" ,
-            "description": "The first coefficient of a polynomial. " ,
-            "isNillable": "false" ,
-            "isEnumerated": "false" ,
-            "isDeprecated": "false" ,
-            "dataType": "ASCII_Real" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
-            "minimumCharacters": "Unbounded" ,
-            "maximumCharacters": "Unbounded" ,
-            "minimumValue": "-1.7976931348623157e308" ,
-            "maximumValue": "1.7976931348623157e308" ,
-            "pattern": "null" ,
-            "unitOfMeasure": "null" ,
-            "unitOfMeasureId": "null" ,
-            "unitId": "null" ,
-            "defaultUnitId": "null"
-          }
-        }
-      , {
-          "attribute": {
-            "identifier": "0001_NASA_PDS_1.geom.Polynomial_Coefficients_2.geom.c0" ,
-            "title": "c0" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "geom" ,
-            "steward": "geo" ,
-            "versionId": "1.16" ,
-            "description": "The first coefficient of a polynomial. " ,
-            "isNillable": "false" ,
-            "isEnumerated": "false" ,
-            "isDeprecated": "false" ,
-            "dataType": "ASCII_Real" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
-            "minimumCharacters": "Unbounded" ,
-            "maximumCharacters": "Unbounded" ,
-            "minimumValue": "-1.7976931348623157e308" ,
-            "maximumValue": "1.7976931348623157e308" ,
-            "pattern": "null" ,
-            "unitOfMeasure": "null" ,
-            "unitOfMeasureId": "null" ,
-            "unitId": "null" ,
-            "defaultUnitId": "null"
-          }
-        }
-      , {
-          "attribute": {
-            "identifier": "0001_NASA_PDS_1.geom.Polynomial_Coefficients_2.geom.c1" ,
-            "title": "c1" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "geom" ,
-            "steward": "geo" ,
-            "versionId": "1.16" ,
-            "description": "The second coefficient of a polynomial. " ,
-            "isNillable": "false" ,
-            "isEnumerated": "false" ,
-            "isDeprecated": "false" ,
-            "dataType": "ASCII_Real" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
-            "minimumCharacters": "Unbounded" ,
-            "maximumCharacters": "Unbounded" ,
-            "minimumValue": "-1.7976931348623157e308" ,
-            "maximumValue": "1.7976931348623157e308" ,
-            "pattern": "null" ,
-            "unitOfMeasure": "null" ,
-            "unitOfMeasureId": "null" ,
-            "unitId": "null" ,
             "defaultUnitId": "null"
           }
         }

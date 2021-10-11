@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:geom  Version:1.9.3.0 - Mon Oct 11 14:21:16 UTC 2021 -->
-  <!-- Generated from the PDS4 Information Model Version 1.15.0.0 - System Build 11a -->
+  <!-- PDS4 Schematron for Name Space Id:geom  Version:1.8.0.0 - Mon Oct 11 16:20:19 UTC 2021 -->
+  <!-- Generated from the PDS4 Information Model Version 1.16.0.0 - System Build 11.1 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
@@ -19,15 +19,6 @@
 		   <!--        merged together in the rules below.       -->
 		   <!-- ================================================ -->
   <sch:pattern>
-    <sch:rule context="//geom:Body_Identification_Base/pds:Internal_Reference">
-      <sch:assert test="pds:reference_type = 'geometry_to_body'
-            ">
-        <title>Body_Identification_Base_0/Rule</title>
-        For Internal_Reference in Body_Identification_Base, reference_type must equal 'geometry_to_body'
-            </sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:rule context="//geom:Central_Body_Identification">
       <sch:assert test="if (not(geom:body_spice_name) and not (geom:name) and not (pds:Internal_Reference))  then false() else true()">
         <title>Central_Body_Identification_0/Rule</title>
@@ -35,28 +26,10 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="//geom:Central_Body_Identification/pds:Internal_Reference">
-      <sch:assert test="pds:reference_type = 'geometry_to_body'
-            ">
-        <title>Central_Body_Identification_1/Rule</title>
-        For Internal_Reference in Central_Body_Identification, reference_type must equal 'geometry_to_body'
-            </sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:rule context="//geom:Coordinate_System_Origin_Identification">
       <sch:assert test="if (not(geom:body_spice_name) and not (geom:name) and not (pds:Internal_Reference))  then false() else true()">
         <title>Coordinate_System_Origin_Identification_0/Rule</title>
         At least one of the following must be present: geom:body_spice_name, geom:name, pds:Internal_Reference.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="//geom:Coordinate_System_Origin_Identification/pds:Internal_Reference">
-      <sch:assert test="pds:reference_type = 'geometry_to_body'
-            ">
-        <title>Coordinate_System_Origin_Identification_1/Rule</title>
-        For Internal_Reference in Coordinate_System_Origin_Identification, reference_type must equal 'geometry_to_body'
-            </sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -185,33 +158,6 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="geom:Expanded_Geometry/pds:Internal_Reference">
-      <sch:assert test="pds:reference_type = 'geometry_to_expanded_geometry'
-            ">
-        <title>Expanded_Geometry_1/Rule</title>
-        For Internal_Reference in Expanded_Geometry, reference_type must equal 'geometry_to_expanded_geometry'
-            </sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="geom:Expanded_Geometry/pds:Local_Internal_Reference">
-      <sch:assert test="pds:local_reference_type = 'to_expanded_geometry'
-            ">
-        <title>Expanded_Geometry_2/Rule</title>
-        For Local_Internal_Reference in geom:Expanded_Geometry, local_reference_type must equal 'to_expanded_geometry'
-            </sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="//geom:Frame_Identification_Base/pds:Internal_Reference">
-      <sch:assert test="pds:reference_type = 'geometry_to_reference_frame'
-            ">
-        <title>Frame_Identification_Base_0/Rule</title>
-        For Internal_Reference in geom:Frame_Identification_Base, reference_type must equal 'geometry_to_reference_frame'
-            </sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:rule context="geom:Geometry_Orbiter">
       <sch:assert test="if ((geom:geometry_start_time_utc) and not (geom:geometry_stop_time_utc))  then false() else true()">
         <title>Geometry_Orbiter_0/Rule</title>
@@ -226,15 +172,6 @@
       <sch:assert test="if (not(geom:body_spice_name) and not (geom:name) and not (pds:Internal_Reference))  then false() else true()">
         <title>Geometry_Target_Identification_0/Rule</title>
         At least one of the following must be present: geom:body_spice_name, geom:name, pds:Internal_Reference.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="//geom:Geometry_Target_Identification/pds:Internal_Reference">
-      <sch:assert test="pds:reference_type = 'geometry_to_body'
-            ">
-        <title>Geometry_Target_Identification_1/Rule</title>
-        For Internal_Reference in geom:Geometry_Target_Identification, reference_type must equal 'geometry_to_body'
-            </sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -304,28 +241,10 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="geom:Image_Display_Geometry/pds:Local_Internal_Reference">
-      <sch:assert test="pds:local_reference_type = 'display_to_data_object'
-            ">
-        <title>Image_Display_Geometry_0/Rule</title>
-        For Local_Internal_Reference in geom:Image_Display_Geometry, local_reference_type must equal 'display_to_data_object'.
-            </sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:rule context="//geom:Observer_Identification">
       <sch:assert test="if (not(geom:body_spice_name) and not (geom:name) and not (pds:Internal_Reference))  then false() else true()">
         <title>Observer_Identification_0/Rule</title>
         At least one of the following must be present: geom:body_spice_name, geom:name, pds:Internal_Reference.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="//geom:Observer_Identification/pds:Internal_Reference">
-      <sch:assert test="pds:reference_type = 'geometry_to_body'
-            ">
-        <title>Observer_Identification_1/Rule</title>
-        For Internal_Reference in geom:Observer_Identification, reference_type must equal 'geometry_to_body'
-            </sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -343,15 +262,6 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="//geom:Reference_Frame_Identification/pds:Internal_Reference">
-      <sch:assert test="pds:reference_type = 'geometry_to_reference_frame'
-            ">
-        <title>Reference_Frame_Identification_1/Rule</title>
-        For Internal_Reference in geom:Reference_Frame_Identification, reference_type must equal 'geometry_to_reference_frame'
-            </sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:rule context="//geom:Rotate_From">
       <sch:assert test="if (not(geom:frame_spice_name) and not (geom:name) and not (pds:Internal_Reference))  then false() else true()">
         <title>Rotate_From_0/Rule</title>
@@ -359,28 +269,10 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="//geom:Rotate_From/pds:Internal_Reference">
-      <sch:assert test="pds:reference_type = 'geometry_to_reference_frame'
-            ">
-        <title>Rotate_From_1/Rule</title>
-        For Internal_Reference in geom:Rotate_From, reference_type must equal 'geometry_to_reference_frame'
-            </sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:rule context="//geom:Rotate_To">
       <sch:assert test="if (not(geom:frame_spice_name) and not (geom:name) and not (pds:Internal_Reference))  then false() else true()">
         <title>Rotate_To_0/Rule</title>
         At least one of the following must be present: geom:frame_spice_name, geom:name, pds:Internal_Reference.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="//geom:Rotate_To/pds:Internal_Reference">
-      <sch:assert test="pds:reference_type = 'geometry_to_reference_frame'
-            ">
-        <title>Rotate_To_1/Rule</title>
-        For Internal_Reference in geom:Rotate_To, reference_type must equal 'geometry_to_reference_frame'
-            </sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -494,15 +386,6 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="geom:Camera_Model_Parameters/pds:Internal_Reference">
-      <sch:assert test="pds:reference_type = 'geometry_to_camera_model'
-            ">
-        <title>camera_model_parameters_0/Rule</title>
-        For Internal_Reference in Camera_Model_Parameters, reference_type must equal 'geometry_to_camera_model'.
-            </sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:rule context="//geom:Coordinate_Space_Reference/pds:Local_Internal_Reference">
       <sch:assert test="pds:local_reference_type = 'to_reference_coordinate_space'
             ">
@@ -523,6 +406,20 @@
       <sch:assert test=". = ('CAHV', 'CAHVOR', 'CAHVORE', 'PSPH')">
         <title>geom:Camera_Model_Parameters/geom:model_type/geom:model_type</title>
         The attribute geom:Camera_Model_Parameters/geom:model_type must be equal to one of the following values 'CAHV', 'CAHVOR', 'CAHVORE', 'PSPH'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:Camera_Model_Parameters/pds:Internal_Reference/pds:reference_type">
+      <sch:assert test=". = ('geometry_to_camera_model')">
+        <title>geom:Camera_Model_Parameters/pds:Internal_Reference/pds:reference_type/geom:Camera_Model_Parameters_Internal_Reference_reference_type</title>
+        The attribute geom:Camera_Model_Parameters/pds:Internal_Reference/pds:reference_type must be equal to the value 'geometry_to_camera_model'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:Central_Body_Identification/pds:Internal_Reference/pds:reference_type">
+      <sch:assert test=". = ('geometry_to_body')">
+        <title>geom:Central_Body_Identification/pds:Internal_Reference/pds:reference_type</title>
+        The attribute geom:Central_Body_Identification/pds:Internal_Reference/pds:reference_type must be equal to the value 'geometry_to_body'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -554,17 +451,10 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="geom:Coordinate_Space_Indexed/geom:coordinate_space_frame_type">
-      <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'PIXL_TOOL', 'PIXL_Tool', 'ROVER_FRAME', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame', 'TOOL_FRAME', 'TURRET_FRAME', 'Tool_Frame', 'Turret_Frame', 'WHEEL_LF', 'WHEEL_LM', 'WHEEL_LR', 'WHEEL_RF', 'WHEEL_RM', 'WHEEL_RR', 'Wheel_LF', 'Wheel_LM', 'Wheel_LR', 'Wheel_RF', 'Wheel_RM', 'Wheel_RR')))) then false() else true()">
-        <title>geom:Coordinate_Space_Indexed/geom:coordinate_space_frame_type/geom:coordinate_space_frame_type</title>
-        The attribute geom:Coordinate_Space_Indexed/geom:coordinate_space_frame_type must be nulled or equal to one of the following values 'APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'PIXL_TOOL', 'PIXL_Tool', 'ROVER_FRAME', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame', 'TOOL_FRAME', 'TURRET_FRAME', 'Tool_Frame', 'Turret_Frame', 'WHEEL_LF', 'WHEEL_LM', 'WHEEL_LR', 'WHEEL_RF', 'WHEEL_RM', 'WHEEL_RR', 'Wheel_LF', 'Wheel_LM', 'Wheel_LR', 'Wheel_RF', 'Wheel_RM', 'Wheel_RR'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:rule context="geom:Coordinate_Space_Quality/geom:attitude_propagation_duration">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr')">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
         <title>geom:Coordinate_Space_Quality/geom:attitude_propagation_duration/geom:attitude_propagation_duration</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -579,6 +469,13 @@
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('Azimuth-Elevation', 'Cartesian', 'Planetocentric', 'Planetodetic', 'Planetographic', 'Spherical')))) then false() else true()">
         <title>geom:Coordinate_System_Identification/geom:coordinate_system_type/geom:coordinate_system_type</title>
         The attribute geom:Coordinate_System_Identification/geom:coordinate_system_type must be nulled or equal to one of the following values 'Azimuth-Elevation', 'Cartesian', 'Planetocentric', 'Planetodetic', 'Planetographic', 'Spherical'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:Coordinate_System_Origin_Identification/pds:Internal_Reference/pds:reference_type">
+      <sch:assert test=". = ('geometry_to_body')">
+        <title>geom:Coordinate_System_Origin_Identification/pds:Internal_Reference/pds:reference_type</title>
+        The attribute geom:Coordinate_System_Origin_Identification/pds:Internal_Reference/pds:reference_type must be equal to the value 'geometry_to_body'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -631,13 +528,6 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="geom:Derived_Geometry/geom:solar_image_clock_angle">
-      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
-        <title>geom:Derived_Geometry/geom:solar_image_clock_angle/geom:solar_image_clock_angle</title>
-        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:rule context="geom:Derived_Geometry/geom:start_azimuth">
       <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
         <title>geom:Derived_Geometry/geom:start_azimuth/geom:start_azimuth</title>
@@ -649,13 +539,6 @@
       <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
         <title>geom:Derived_Geometry/geom:stop_azimuth/geom:stop_azimuth</title>
         The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="geom:Derived_Geometry/geom:target_heliocentric_distance">
-      <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
-        <title>geom:Derived_Geometry/geom:target_heliocentric_distance/geom:target_heliocentric_distance</title>
-        The attribute @unit must be equal to one of the following values 'AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -995,10 +878,31 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:rule context="geom:Expanded_Geometry/pds:Internal_Reference/pds:reference_type">
+      <sch:assert test=". = ('geometry_to_expanded_geometry')">
+        <title>geom:Expanded_Geometry/pds:Internal_Reference/pds:reference_type/geom:Expanded_Geometry_Internal_Reference_reference_type</title>
+        The attribute geom:Expanded_Geometry/pds:Internal_Reference/pds:reference_type must be equal to the value 'geometry_to_expanded_geometry'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:Expanded_Geometry/pds:Local_Internal_Reference/pds:local_reference_type">
+      <sch:assert test=". = ('to_expanded_geometry')">
+        <title>geom:Expanded_Geometry/pds:Local_Internal_Reference/pds:local_reference_type/geom:Expanded_Geometry_Local_Internal_Reference_local_reference_type</title>
+        The attribute geom:Expanded_Geometry/pds:Local_Internal_Reference/pds:local_reference_type must be equal to the value 'to_expanded_geometry'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:rule context="geom:Geometry_Orbiter/geom:geometry_reference_time_tdb">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr')">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
         <title>geom:Geometry_Orbiter/geom:geometry_reference_time_tdb/geom:geometry_reference_time_tdb</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:Geometry_Target_Identification/pds:Internal_Reference/pds:reference_type">
+      <sch:assert test=". = ('geometry_to_body')">
+        <title>geom:Geometry_Target_Identification/pds:Internal_Reference/pds:reference_type</title>
+        The attribute geom:Geometry_Target_Identification/pds:Internal_Reference/pds:reference_type must be equal to the value 'geometry_to_body'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1156,6 +1060,13 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:rule context="geom:Image_Display_Geometry/pds:Local_Internal_Reference/pds:reference_type">
+      <sch:assert test=". = ('display_to_data_object')">
+        <title>geom:Image_Display_Geometry/pds:Local_Internal_Reference/pds:reference_type/geom:Image_Display_Geometry_Local_Internal_Reference_reference_type</title>
+        The attribute geom:Image_Display_Geometry/pds:Local_Internal_Reference/pds:reference_type must be equal to the value 'display_to_data_object'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:rule context="geom:List_Index_Angle/geom:index_value_angle">
       <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
         <title>geom:List_Index_Angle/geom:index_value_angle/geom:index_value_angle</title>
@@ -1290,9 +1201,16 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Object_Orientation_RA_Dec/geom:right_ascension_hour_angle">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr')">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
         <title>geom:Object_Orientation_RA_Dec/geom:right_ascension_hour_angle/geom:right_ascension_hour_angle</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:Observer_Identification/pds:Internal_Reference/pds:reference_type">
+      <sch:assert test=". = ('geometry_to_body')">
+        <title>geom:Observer_Identification/pds:Internal_Reference/pds:reference_type</title>
+        The attribute geom:Observer_Identification/pds:Internal_Reference/pds:reference_type must be equal to the value 'geometry_to_body'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1373,17 +1291,38 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:rule context="geom:Reference_Frame_Identification/pds:Internal_Reference/pds:reference_type">
+      <sch:assert test=". = ('geometry_to_reference_frame')">
+        <title>geom:Reference_Frame_Identification/pds:Internal_Reference/pds:reference_type</title>
+        The attribute geom:Reference_Frame_Identification/pds:Internal_Reference/pds:reference_type must be equal to the value 'geometry_to_reference_frame'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:rule context="geom:Reference_Pixel/geom:horizontal_coordinate_pixel">
-      <sch:assert test="@unit = ('DN', 'electron/DN', 'pixel')">
+      <sch:assert test="@unit = ('DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel')">
         <title>geom:Reference_Pixel/geom:horizontal_coordinate_pixel/geom:horizontal_coordinate_pixel</title>
-        The attribute @unit must be equal to one of the following values 'DN', 'electron/DN', 'pixel'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Reference_Pixel/geom:vertical_coordinate_pixel">
-      <sch:assert test="@unit = ('DN', 'electron/DN', 'pixel')">
+      <sch:assert test="@unit = ('DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel')">
         <title>geom:Reference_Pixel/geom:vertical_coordinate_pixel/geom:vertical_coordinate_pixel</title>
-        The attribute @unit must be equal to one of the following values 'DN', 'electron/DN', 'pixel'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:Rotate_From/pds:Internal_Reference/pds:reference_type">
+      <sch:assert test=". = ('geometry_to_reference_frame')">
+        <title>geom:Rotate_From/pds:Internal_Reference/pds:reference_type</title>
+        The attribute geom:Rotate_From/pds:Internal_Reference/pds:reference_type must be equal to the value 'geometry_to_reference_frame'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:Rotate_To/pds:Internal_Reference/pds:reference_type">
+      <sch:assert test=". = ('geometry_to_reference_frame')">
+        <title>geom:Rotate_To/pds:Internal_Reference/pds:reference_type</title>
+        The attribute geom:Rotate_To/pds:Internal_Reference/pds:reference_type must be equal to the value 'geometry_to_reference_frame'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1391,6 +1330,13 @@
       <sch:assert test=". = ('Mixed', 'Predicted', 'Provenance Not Applicable', 'Reconstructed')">
         <title>geom:SPICE_Kernel_Identification/geom:kernel_provenance/geom:kernel_provenance</title>
         The attribute geom:SPICE_Kernel_Identification/geom:kernel_provenance must be equal to one of the following values 'Mixed', 'Predicted', 'Provenance Not Applicable', 'Reconstructed'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:SPICE_Kernel_Identification/pds:Internal_Reference/pds:reference_type">
+      <sch:assert test=". = ('geometry_to_SPICE_kernel')">
+        <title>geom:SPICE_Kernel_Identification/pds:Internal_Reference/pds:reference_type/geom:SPICE_Kernel_Identification_Internal_Reference_reference_type</title>
+        The attribute geom:SPICE_Kernel_Identification/pds:Internal_Reference/pds:reference_type must be equal to the value 'geometry_to_SPICE_kernel'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -2042,15 +1988,6 @@
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Planetocentric_Velocity_Target_Relative_To_Spacecraft/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
         The attribute geom:Vector_Planetocentric_Velocity_Target_Relative_To_Spacecraft/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="geom:SPICE_Kernel_Identification/pds:Internal_Reference">
-      <sch:assert test="pds:reference_type = 'geometry_to_SPICE_kernel'
-            ">
-        <title>spice_kernel_0/Rule</title>
-        For Internal_Reference in SPICE_Kernel_Identification, reference_type must equal 'geometry_to_SPICE_kernel'
-            </sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>
