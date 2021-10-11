@@ -1,0 +1,1585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.sch"?>
+
+<Ingest_LDD 
+ xmlns="http://pds.nasa.gov/pds4/pds/v1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 
+                     https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd">
+
+    <name>Geometry Dictionary Full</name>
+    <ldd_version_id>1.8.0.0</ldd_version_id>
+    <dictionary_type>Discipline</dictionary_type>
+    <full_name>Edward A. Guinness</full_name>
+    <steward_id>geo</steward_id>
+    <namespace_id>geom</namespace_id>
+    <comment>Cumulative comments removed to reduce annoyance...
+        
+        GeomMain - Geometry Main Section
+        
+        The Geometry namespace is divided into four major sections:
+           Main         This section
+           ImageDisplay Geometry mapped to a (properly) displayed image
+           Orbit        Orbiter and flyby classes
+           Lander       Lander and Rover classes
+           
+        The Main section of the Geometry namespace definition contains the definitions
+        of: 
+          o Classes and attributes comprising the exposed elements of the namespace;
+          o The Expanded_Geometry and SPICE_Kernel_Files major subclasses, which have 
+            very few attributes and subclasses of their own; 
+          o Definitions for abstract and base classes used in multiple sections of the
+            namespace; and
+          o Definitions of a handful of key scalar values that are either already 
+            referenced from multiple sections, or likely to be in future.
+    
+        Attributes are in alphanetical order. Classes are listed in alphabetical order
+        within subcategories based on how they are used. Anything defines in this file 
+        is available to other sections of the Geometry namespace
+        
+        This file should be listed LAST when building the Geometry namespace.
+    </comment>
+    
+    <last_modification_date_time>2021-08-20</last_modification_date_time>
+
+<!-- Attributes -->
+    
+    <!-- Observation Angles, used in multiple sections -->
+    
+    <DD_Attribute>
+        <name>emission_angle</name>
+        <version_id>1.0</version_id>
+        <local_identifier>emission_angle</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The emission_angle element provides the value of the angle between the surface
+            normal vector at the intercept point and a vector from the intercept point to the
+            spacecraft. The emission_angle varies from 0 degrees when the spacecraft is viewing the
+            subspacecraft point (nadir viewing) to 90 degrees when the intercept is tangent to the
+            surface of the target body. Thus, higher values of emission_angle indicate more oblique
+            viewing of the target. Values in the range of 90 to 180 degrees are possible for ring data.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>180</maximum_value>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>deg</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>incidence_angle</name>
+        <version_id>2.0</version_id>
+        <local_identifier>incidence_angle</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The incidence_angle element provides a measure of the lighting condition at
+            the intercept point. Incidence angle is the angle between the local vertical at the
+            intercept point (surface) and a vector from the intercept point to the sun. The incidence_angle
+            varies from 0 degrees when the intercept point coincides with the subsolar point to 90 degrees
+            when the intercept point is at the terminator (i.e., in the shadowed or dark portion of
+            the target body).
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>180</maximum_value>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>deg</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>phase_angle</name>
+        <version_id>2.0</version_id>
+        <local_identifier>phase_angle</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The phase_angle element provides a measure of the relationship between 
+            the instrument viewing position and incident illumination (such as solar 
+            light). Phase angle is measured at the target; it is the angle between 
+            a vector to the illumination source and a vector to the instrument. If 
+            illumination is from behind the instrument, phase_angle will be small.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>180</maximum_value>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>deg</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <!-- Attributes supporting classes used in multiple sections -->
+    
+    <DD_Attribute>
+        <name>body_spice_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>body_spice_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The body_spice_name attribute is a NAIF-recognized string 
+            identifier for a physical object (spacecraft, planet, instrument 
+            transmitter, system barycenter, etc.), associated with the data.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>coordinate_space_frame_type</name>
+        <version_id>1.0</version_id>
+        <local_identifier>coordinate_space_frame_type</local_identifier>
+        <nillable_flag>true</nillable_flag>
+        <submitter_name>Jordan Padams</submitter_name>
+        <definition>The coordinate_space_frame_type attribute identifies the type of frame being
+            described, such as SITE, LOCAL_LEVEL, LANDER, ROVER, ARM, etc. When combined with
+            Coordinate_Space_Index and the optional solution_id in the Coordinate_Space_Indexed class,
+            this serves to fully name an instance of a coordinate space. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>frame_spice_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>frame_spice_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The frame_spice_name attribute is a NAIF-recognized string 
+            identifier for a reference frame associated with the data.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>horizontal_coordinate_pixel</name>
+        <version_id>1.0</version_id>
+        <local_identifier>horizontal_coordinate_pixel</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>horizontal_coordinate_pixel (sample) is the horizontal coordinate of a specific pixel. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Misc</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>index_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>index_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The index_id attribute supplies a short name (identifier) 
+            for the associated value in a group of related values. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>index_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>index_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The index_name attribute supplies the formal name 
+            for the associated value in a group of related values. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>index_sequence_number</name>
+        <version_id>1.0</version_id>
+        <local_identifier>index_sequence_number</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The index_sequence_number attribute supplies the sequence 
+            identifier for the associated value in a group of related values. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>index_value_angle</name>
+        <version_id>1.0</version_id>
+        <local_identifier>index_value_angle</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The index_value_angle attribute provides the value 
+            of an angle as named by the associated index_id, index_name, 
+            or index_sequence_number. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>index_value_length</name>
+        <version_id>1.0</version_id>
+        <local_identifier>index_value_length</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The index_value_length attribute provides the value 
+            of a length as named by the associated index_id or index_name. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>index_value_number</name>
+        <version_id>1.0</version_id>
+        <local_identifier>index_value_number</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The index_value_number attribute provides the value with 
+            no applicable units as named by the associated index_id or index_name. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>index_value_string</name>
+        <version_id>1.0</version_id>
+        <local_identifier>index_value_string</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The index_value attribute provides the string value as 
+            named by the associated index_id or index_name. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>index_value_temperature</name>
+        <version_id>1.0</version_id>
+        <local_identifier>index_value_temperature</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The index_value_temperature attribute provides the value 
+            of a temperature as named by the associated index_id or index_name. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>kernel_provenance</name>
+        <version_id>1.0</version_id>
+        <local_identifier>kernel_provenance</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>M. Gordon</submitter_name>
+        <definition>The kernel_provenance attribute indicates whether a kernel file is a 
+            predict kernel, a reconstructed kernel, some combination of the two, or
+            a kernel for which the distinction is not applicable.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>Predicted</value>
+                <value_meaning>This kernel is a predict kernel (e.g. a pre-encounter 
+                    predicted spacecraft trajectory SPK ).
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Reconstructed</value>
+                <value_meaning>This kernel is reconstructed based on improved information 
+                    (e.g. a post-encounter reconstructed spacecraft trajectory SPK based on 
+                    improved navigation information).
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Mixed</value>
+                <value_meaning>This kernel contains both reconstructed and predicted portions 
+                    (e.g. a reconstructed spacecraft trajectory SPK with a run-out predicted tail).
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Provenance Not Applicable</value>
+                <value_meaning>This kernel does not fit into any of the other categories 
+                    (e.g., LSKs, SCLKs, text PCKs).
+                </value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>latitude_position</name>
+        <version_id>1.0</version_id>
+        <local_identifier>latitude_position</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The latitude component of a Planetocentric position vector. Planetocentric
+            latitude is the angle between the equator plane and a vector connecting the
+            point of interest and the origin of the coordinate system. Latitudes are defined
+            to be positive in the northern (as defined by the IAU) hemisphere.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>-90</minimum_value>
+            <maximum_value>90</maximum_value>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>deg</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>latitude_velocity</name>
+        <version_id>1.0</version_id>
+        <local_identifier>latitude_velocity</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The latitude component of a Planetocentric velocity vector. Planetocentric
+            latitude is the angle between the equator plane and a vector connecting the point
+            of interest and the origin of the coordinate system. Latitudes are defined to be
+            positive in the northern (as defined by the IAU) hemisphere.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Angular_Velocity</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>longitude_position</name>
+        <version_id>1.0</version_id>
+        <local_identifier>longitude_position</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The longitudinal component of a Planetocentric position vector. 
+            Planetocentric longitude is measured from the IAU approved prime 
+            meridian for the body and increases toward the east.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>360</maximum_value>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>deg</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>longitude_velocity</name>
+        <version_id>1.0</version_id>
+        <local_identifier>longitude_velocity</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The longitudinal component of a Planetocentric velocity vector.  
+            Planetocentric longitude is measured from the IAU approved prime 
+            meridian for the body and increases toward the east.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Angular_Velocity</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>qcos</name>
+        <version_id>1.0</version_id>
+        <local_identifier>qcos</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>qcos is the scalar component of a quaternion. 
+            qcos = cos(theta/2), where theta is the angle of rotation.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>qsin1</name>
+        <version_id>1.0</version_id>
+        <local_identifier>qsin1</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>qsin1 is the first element of the vector component
+            of a quaternion. qsin1 = x*sin(theta/2) where theta is the angle of 
+            rotation and (x,y,z) is the unit vector around which the rotation occurs.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>qsin2</name>
+        <version_id>1.0</version_id>
+        <local_identifier>qsin2</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>qsin2 is the second element of the vector component
+            of a quaternion. qsin2 = y*sin(theta/2) where theta is the angle of 
+            rotation and (x,y,z) is the unit vector around which the rotation occurs.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>qsin3</name>
+        <version_id>1.0</version_id>
+        <local_identifier>qsin3</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>qsin3 is the third element of the vector component
+            of a quaternion. qsin3 = z*sin(theta/2) where theta is the angle of 
+            rotation and (x,y,z) is the unit vector around which the rotation occurs.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>radial_velocity</name>
+        <version_id>1.0</version_id>
+        <local_identifier>radial_velocity</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The radial component of a spherical or cylindrical velocity vector.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Velocity</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>radius_position</name>
+        <version_id>1.0</version_id>
+        <local_identifier>radius_position</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The radial component of a spherical or cylindrical position vector
+            (e.g., the radius coordinate in Planetocentric coordinates).
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>reference_pixel_location</name>
+        <version_id>1.0</version_id>
+        <local_identifier>reference_pixel_location</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>M. Gordon</submitter_name>
+        <definition>The reference_pixel_location indicates the position 
+            of the pixel to which values in the containing class apply.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>Center</value>
+                <value_meaning>Values were determined for the intersection of a 
+                    vector through the center of the field of view 
+                    with the specified target.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Upper Left Corner</value>
+                <value_meaning>Values were determined for the intersection of a 
+                    vector through the upper left corner of the field 
+                    of view with the specified target.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Lower Left Corner</value>
+                <value_meaning>Values were determined for the intersection of a 
+                    vector through the lower left corner of the field  
+                    of view with the specified target.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Upper Right Corner</value>
+                <value_meaning>Values were determined for the intersection of a 
+                    vector through the upper right corner of the field 
+                    of view with the specified target.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Lower Right Corner</value>
+                <value_meaning>Values were determined for the intersection of a 
+                    vector through the lower right corner of the field 
+                    of view with the specified target.
+                </value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>solution_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>solution_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The solution_id attribute specifies the unique identifier 
+            for the solution set to which the values in the group belong. For 
+            certain kinds of information, such as pointing correction (pointing 
+            models) and rover localization (coordinate system definitions), the 
+            "true" value is unknown and only estimates of the true value exist. 
+            Thus, more than one set of estimates may exist simultaneously, each 
+            valid for its intended purpose. Each of these sets is called a 
+            "solution" to the unknown true value. The solution_id attribute is 
+            used to identify which solution is being expressed by the containing 
+            group. No specific naming convention is defined here, however it is 
+            recommended that projects adopt one. The intent is to be able to 
+            identify who created the solution, and why. Possible components of 
+            the naming convention include user, institution, purpose, request ID, 
+            version, program, date/time. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>spice_kernel_file_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>spice_kernel_file_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The spice_kernel_file_name attribute provides the file name of a SPICE 
+            kernel file used to process the data or to produce geometric quantities given 
+            in the label. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_File_Name</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>vertical_coordinate_pixel</name>
+        <version_id>1.0</version_id>
+        <local_identifier>vertical_coordinate_pixel</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>vertical_coordinate_pixel (line) is the vertical coordinate of a specific pixel. 
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Misc</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>x_acceleration</name>
+        <version_id>1.0</version_id>
+        <local_identifier>x_acceleration</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The x component of a Cartesian acceleration vector.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Acceleration</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>x_position</name>
+        <version_id>1.0</version_id>
+        <local_identifier>x_position</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The x component of a Cartesian position vector.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>x_velocity</name>
+        <version_id>1.0</version_id>
+        <local_identifier>x_velocity</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The x component of a Cartesian velocity vector.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Velocity</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>y_acceleration</name>
+        <version_id>1.0</version_id>
+        <local_identifier>y_acceleration</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The y component of a Cartesian acceleration vector.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Acceleration</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>y_position</name>
+        <version_id>1.0</version_id>
+        <local_identifier>y_position</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The y component of a Cartesian position vector.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>y_velocity</name>
+        <version_id>1.0</version_id>
+        <local_identifier>y_velocity</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The y component of a Cartesian velocity vector.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Velocity</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>z_acceleration</name>
+        <version_id>1.0</version_id>
+        <local_identifier>z_acceleration</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The z component of a Cartesian acceleration vector.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Acceleration</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>z_position</name>
+        <version_id>1.0</version_id>
+        <local_identifier>z_position</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The z component of a Cartesian position vector.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>z_velocity</name>
+        <version_id>1.0</version_id>
+        <local_identifier>z_velocity</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The z component of a Cartesian velocity vector.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Velocity</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+
+<!-- Classes Building Blocks section -->
+    
+    <!-- Abstract Classes -->
+    
+    <DD_Class> <!-- ABSTRACT [T] Body_Identification_Base-->
+        <name>Body_Identification_Base</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Body_Identification_Base</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The Body_Identification_Base class provides multiple attributes
+            that can be used to identify a physical object (spacecraft, planet 
+            instrument, transmitter, system barycenter, etc.). At least one must be used.
+        </definition>
+        <abstract_flag>true</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>body_spice_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>pds.name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Associate_External_Class>
+            <namespace_id>pds</namespace_id>
+            <class_name>Internal_Reference</class_name>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+            <DD_Context_Value_List>
+                <attribute_name>reference_type</attribute_name>
+                <attribute_relative_xpath>pds:Internal_Reference/pds:reference_type</attribute_relative_xpath>
+                <DD_Permissible_Value>
+                    <value>geometry_to_body</value>
+                    <value_meaning>The product describes a solar system body that is a reference point for the associated geometric value(s).</value_meaning>
+                </DD_Permissible_Value>
+            </DD_Context_Value_List>
+        </DD_Associate_External_Class>
+    </DD_Class>
+    
+    <DD_Class> <!-- ABSTRACT [T] Frame_Identification_Base -->
+        <name>Frame_Identification_Base</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Frame_Identification_Base</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The Frame_Identification_Base class provides multiple attributes
+            that can be used to identify a reference frame. At least one must be used.
+        </definition>
+        <abstract_flag>true</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>frame_spice_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>pds.name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>pds.comment</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Associate_External_Class>
+            <namespace_id>pds</namespace_id>
+            <class_name>Internal_Reference</class_name>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+            <DD_Context_Value_List>
+                <attribute_name>reference_type</attribute_name>
+                <attribute_relative_xpath>pds:Internal_Reference/pds:reference_type</attribute_relative_xpath>
+                <DD_Permissible_Value>
+                    <value>geometry_to_reference_frame</value>
+                    <value_meaning>The product indicated defines a reference frame for the associated geometric value(s).</value_meaning>
+                </DD_Permissible_Value>
+            </DD_Context_Value_List>
+        </DD_Associate_External_Class>
+    </DD_Class>
+    
+    <DD_Class> <!-- ABSTRACT [T] Vector_Cartesian_Acceleration_Base -->
+        <name>Vector_Cartesian_Acceleration_Base</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Vector_Cartesian_Acceleration_Base</local_identifier>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The Vector_Cartesian_Acceleration_Base is a three dimensional,  
+            rectangular coordinates vector. Uses units of linear acceleration.    
+            The included attributes are not sufficient to identify the endpoints of the vector.
+        </definition>
+        <abstract_flag>true</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>x_acceleration</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>y_acceleration</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>z_acceleration</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class> <!-- ABSTRACT [T] Vector_Cartesian_Position_Base -->
+        <name>Vector_Cartesian_Position_Base</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Vector_Cartesian_Position_Base</local_identifier>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The Vector_Cartesian_Position_Base is a three dimensional,  
+            rectangular coordinates vector. Uses units of length. The   
+            included attributes are not sufficient to identify the endpoints of the vector.
+        </definition>
+        <abstract_flag>true</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>x_position</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>y_position</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>z_position</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class> <!-- ABSTRACT [T] Vector_Cartesian_Velocity_Base -->
+        <name>Vector_Cartesian_Velocity_Base</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Vector_Cartesian_Velocity_Base</local_identifier>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The Vector_Cartesian_Velocity_Base is a three dimensional,  
+            rectangular coordinates vector. Uses units of linear velocity.    
+            The included attributes are not sufficient to identify the  
+            endpoints of the vector.
+        </definition>
+        <abstract_flag>true</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>x_velocity</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>y_velocity</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>z_velocity</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class> <!-- ABSTRACT [T] Vector_Planetocentric_Position_Base -->
+        <name>Vector_Planetocentric_Position_Base</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Vector_Planetocentric_Position_Base</local_identifier>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The Vector_Planetocentric_Position_Base is a three dimensional
+            spherical vector (radius, longitude, latitude) with the angular 
+            coordinates defined to be consistent with the Planetocentric 
+            coordinate system. Uses linear units for the radius dimension, and
+            angular units for the other two dimensions. The included 
+            attributes are not sufficient to identify the endpoints of the vector.
+        </definition>
+        <abstract_flag>true</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>radius_position</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>longitude_position</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>latitude_position</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class> <!-- ABSTRACT [T] Vector_Planetocentric_Velocity_Base -->
+        <name>Vector_Planetocentric_Velocity_Base</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Vector_Planetocentric_Velocity_Base</local_identifier>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The Vector_Planetocentric_Velocity_Base is a three dimensional
+            spherical vector (radius, longitude, latitude) with the angular 
+            coordinates defined to be consistent with the Planetocentric 
+            coordinate system. Uses linear velocity units for the radius dimension, 
+            and angular velocity units for the other two dimensions. The included 
+            attributes are not sufficient to identify the endpoints of the vector.
+        </definition>
+        <abstract_flag>true</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>radial_velocity</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>longitude_velocity</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>latitude_velocity</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <!-- Base Classes (not defined as "Abstract") -->
+    
+    <DD_Class>
+        <name>List_Index_Base</name>
+        <version_id>1.0</version_id>
+        <local_identifier>List_Index_Base</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The List_Index class is an abstract class designed to enable the use of
+            indexed lists. The minimum requirement is at least one of sequence number, name or "id", 
+            plus the set of values themselves.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>XSChoice#</identifier_reference>
+            <identifier_reference>index_sequence_number</identifier_reference>
+            <identifier_reference>index_name</identifier_reference>
+            <identifier_reference>index_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>3</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>List_Index_Angle</name>
+        <version_id>1.0</version_id>
+        <local_identifier>List_Index_Angle</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>Used when the list values are angles.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>List_Index_Base</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>index_value_angle</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>List_Index_Length</name>
+        <version_id>1.0</version_id>
+        <local_identifier>List_Index_Length</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>Used when the list values are lengths.</definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>List_Index_Base</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>index_value_length</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>List_Index_No_Units</name>
+        <version_id>1.0</version_id>
+        <local_identifier>List_Index_No_Units</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>Used when the list values have no units.</definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>List_Index_Base</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>index_value_number</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>List_Index_Text</name>
+        <version_id>1.0</version_id>
+        <local_identifier>List_Index_Text</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>Used when the list values are strings.</definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>List_Index_Base</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>index_value_string</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>List_Index_Temperature</name>
+        <version_id>1.0</version_id>
+        <local_identifier>List_Index_Temperature</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>Used when the list values are temperatures. They may also have accompanying
+            temperature counts using index_value_number.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>List_Index_Base</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>index_value_temperature</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>index_value_number</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Quaternion_Base</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Quaternion_Base</local_identifier>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The Quaternion_Base class defines a quaternion that represents
+            rotation between two right-handed reference frames. In this dictionary, quaternions 
+            are always constructed so that the application of the quaternion describes the 
+            rotation of one frame to a second frame. The two frames and the direction of 
+            rotation must be identified unambiguously in the enclosing classes.
+            
+            Quaternions are expressed as a set of four numbers in the order  
+            (qcos, qsin1, qsin2, qsin3), where qcos = cos(theta/2) and 
+            qsin(n) = sin(theta/2)*a(n). Theta is the angle of rotation and a is the
+            unit vector (x,y,z) around which the rotation occurs.
+            
+            A document providing the full mathematical basis for this construction, 
+            along with examples, and a summary of common pitfalls, is in preparation.
+            The current version can be obtained by contacting the PDS Engineering Node.
+            
+            In application you need to know the four elements of the quaternion, the two end 
+            point frames, and the direction of the rotation. This dictionary provides two 
+            extensions to this Base class. In the Quaternion_Plus_Direction class we require the direction of 
+            rotation. This class can only be used if the two end point frames are identified in 
+            the enclosing class. This is generally the case in the Lander section.
+            The Quaternion_Plus_To_From class requires the two frames be identified explicitly with one 
+            designated as the "from frame" and the other as the "to frame". 
+        </definition>
+        <abstract_flag>true</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>qcos</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>qsin1</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>qsin2</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>qsin3</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <!-- Common classes used in multiple Geometry namespace sections -->
+
+    <DD_Class>
+        <name>Central_Body_Identification</name>
+        <version_id>2.0</version_id>
+        <local_identifier>Central_Body_Identification</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The Central_Body_Identification class uniquely
+            identifies the body that is the central body associated
+            with an observation (e.g., Saturn for Saturn system observations).
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>Body_Identification_Base</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Coordinate_Space_Identification</name>
+        <version_id>2.0</version_id>
+        <local_identifier>Coordinate_Space_Identification</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The Coordinate_Space_Identification class uniquely identifies a coordinate
+            space (i.e., reference frame + position) with respect to which the values of the
+            attributes in the containing class are defined. 
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>XSChoice#</identifier_reference>
+            <identifier_reference>Coordinate_Space_Indexed</identifier_reference>
+            <identifier_reference>Coordinate_Space_SPICE</identifier_reference>
+            <identifier_reference>pds.Local_Internal_Reference</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Coordinate_Space_Index</name>
+        <version_id>2.0</version_id>
+        <local_identifier>Coordinate_Space_Index</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>Identifies a coordinate space using an index value given in an identified list.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>List_Index_No_Units</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Coordinate_Space_Indexed</name>
+        <version_id>4.0</version_id>
+        <local_identifier>Coordinate_Space_Indexed</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The Coordinate_Space_Indexed class contains the attributes and 
+            classes identifying the indexed coordinate space.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>coordinate_space_frame_type</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Coordinate_Space_Index</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>solution_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Geometry_Target_Identification</name>
+        <version_id>2.0</version_id>
+        <local_identifier>Geometry_Target_Identification</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The object to which the associated set of geometric parameters 
+            are given. Within the Geometry dictionary context, a "Target" is the body 
+            on the "to" end of a vector, or other translation through space.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>Body_Identification_Base</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Reference_Frame_Identification</name>
+        <version_id>2.0</version_id>
+        <local_identifier>Reference_Frame_Identification</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The Reference_Frame_Identification class is
+            a base class for identifying reference frames.  These 
+            are frames in the NAIF sense, i.e., three orthogonal
+            axes with a specified orientation, but without a fixed origin.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>Frame_Identification_Base</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Reference_Pixel</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Reference_Pixel</local_identifier>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The Reference_Pixel class provides the pixel coordinates, line and sample,
+            to which values in the containing class apply. Integer values indicate the
+            center of the pixel. Sub-pixel values are permitted. For pixel_sample, the leading
+            edge (left edge for sample increasing to the right) has a value 0.5 less than the 
+            integer value at the center, and the value for the trailing edge is the center integer
+            value + 0.5. For pixel_line, the leading and trailing edges (top and bottom respectively 
+            for line increasing downward) again are -0.5 and +0.5 with respect to the center integer value.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>vertical_coordinate_pixel</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>horizontal_coordinate_pixel</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <!-- Local Classes -->
+    
+    <DD_Class>
+        <name>Coordinate_Space_SPICE</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Coordinate_Space_SPICE</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>Identifies a coordinate space using SPICE names for the frame and origin.</definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>body_spice_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>frame_spice_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>SPICE_Kernel_Identification</name>
+        <version_id>2.0</version_id>
+        <local_identifier>SPICE_Kernel_Identification</local_identifier>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The SPICE_Kernel_Identification class optionally includes 
+            the SPICE kernel type and provides two alternatives for identifying 
+            the product: LIDVID using Internal_Reference, and the file name of 
+            the kernel file. Although optional, LIDVID should be given if one 
+            is available. The optional kernel_provenance attribute indicates 
+            whether the kernel is a predict or reconstructed kernel, or some 
+            combination of the two, or if it is a kernel type for which such 
+            distinctions do not apply.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>pds.kernel_type</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>spice_kernel_file_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>kernel_provenance</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Associate_External_Class>
+            <namespace_id>pds</namespace_id>
+            <class_name>Internal_Reference</class_name>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+            <DD_Context_Value_List>
+                <attribute_name>reference_type</attribute_name>
+                <attribute_relative_xpath>geom:SPICE_Kernel_Identification/pds:Internal_Reference/pds:reference_type</attribute_relative_xpath>
+                <DD_Permissible_Value>
+                    <value>geometry_to_SPICE_kernel</value>
+                    <value_meaning>The reference is to a PDS product containing a singe SPICE kernel.</value_meaning>
+                </DD_Permissible_Value>
+            </DD_Context_Value_List>
+        </DD_Associate_External_Class>
+    </DD_Class>
+    
+<!-- Major sub-classes  -->
+    
+    <DD_Class>
+        <name>Expanded_Geometry</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Expanded_Geometry</local_identifier>
+        <submitter_name>Mitch Gordon</submitter_name>
+        <definition>The Expanded_Geometry class provides a mechanism 
+            to reference additional geometric metadata contained in a separate 
+            object or product (e.g., a table of metadata).
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Associate_External_Class>
+            <namespace_id>pds</namespace_id>
+            <class_name>Local_Internal_Reference</class_name>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+            <DD_Context_Value_List>
+                <attribute_name>local_reference_type</attribute_name>
+                <attribute_relative_xpath>geom:Expanded_Geometry/pds:Local_Internal_Reference/pds:local_reference_type</attribute_relative_xpath>
+                <DD_Permissible_Value>
+                    <value>to_expanded_geometry</value>
+                    <value_meaning>The reference is to a part of this product containing geometry metadata</value_meaning>
+                </DD_Permissible_Value>
+            </DD_Context_Value_List>
+        </DD_Associate_External_Class>
+        <DD_Associate_External_Class>
+            <namespace_id>pds</namespace_id>
+            <class_name>Internal_Reference</class_name>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+            <DD_Context_Value_List>
+                <attribute_name>reference_type</attribute_name>
+                <attribute_relative_xpath>geom:Expanded_Geometry/pds:Internal_Reference/pds:reference_type</attribute_relative_xpath>
+                <DD_Permissible_Value>
+                    <value>geometry_to_expanded_geometry</value>
+                    <value_meaning>The reference is to another PDS product containing geometry metadata</value_meaning>
+                </DD_Permissible_Value>
+            </DD_Context_Value_List>
+        </DD_Associate_External_Class>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>SPICE_Kernel_Files</name>
+        <version_id>1.0</version_id>
+        <local_identifier>SPICE_Kernel_Files</local_identifier>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The SPICE_Kernel_Files class provides references to the
+            SPICE files used when calculating geometric values. 
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>SPICE_Kernel_Identification</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>pds.comment</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+<!-- Exposed Elements -->
+    
+    <DD_Class>
+        <name>Coordinate_Space_Reference</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Coordinate_Space_Reference</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The Coordinate_Space_Reference class includes the attributes 
+            that identify the coordinate space being used to express coordinates in
+            the class in which it appears.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>true</element_flag>
+        <DD_Association>
+            <identifier_reference>Coordinate_Space_Identification</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Geometry</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Geometry</local_identifier>
+        <submitter_name>Mitchell K. Gordon</submitter_name>
+        <definition>The Geometry class is a container for all geometric 
+            information in the label. The Image_Display_Geometry class should
+            have one instance if the primary data object is an Array object 
+            for which two of the dimensions are suitable for display in the
+            vertical (line) and horizontal (sample) dimensions of a display
+            device. 
+            Multiple instances of the Image_Display_Geometry class are only 
+            appropriate if the data product contains multiple Array objects 
+            and the orientations of the various objects are not the same.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>true</element_flag>
+        <DD_Association>
+            <identifier_reference>SPICE_Kernel_Files</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Expanded_Geometry</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Image_Display_Geometry</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Geometry_Orbiter</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Geometry_Lander</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+<!-- Schematron rules -->
+    
+    <!-- This is needed because of an instance of "pds.Local_Internal_Reference" in a choice list. This is used only by the Lander section within the Geom namespace -->
+    <DD_Rule>
+        <local_identifier>coord_space_0</local_identifier>  
+        <rule_context>//geom:Coordinate_Space_Reference/pds:Local_Internal_Reference</rule_context>
+        <DD_Rule_Statement>
+            <rule_type>Assert</rule_type>
+            <rule_test>pds:local_reference_type = 'to_reference_coordinate_space'
+            </rule_test>
+            <rule_message>For Local_Internal_Reference in geom:Coordinate_Space_Reference, local_reference_type must equal 'to_reference_coordinate_space'
+            </rule_message>
+        </DD_Rule_Statement>
+    </DD_Rule>
+    
+    
+</Ingest_LDD> 
