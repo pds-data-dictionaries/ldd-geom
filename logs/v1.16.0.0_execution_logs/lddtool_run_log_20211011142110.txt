@@ -1,14 +1,12 @@
 
->>  INFO The configured IM Versions are:[1G00, 1F00, 1E00, 1D00, 1C00, 1B10, 1B00]
->>  INFO The provided IM Version 1G00 is valid
->>  INFO LDDTOOL Version: 13.0.2
+>>  INFO LDDTOOL Version: 10.0.0
 >>  INFO IM Version Id: 1.16.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.0
->>  INFO Date: Tue Aug 03 19:19:59 UTC 2021
->>  INFO PARENT_DIR: /tmp/lddtool-13.0.2
->>  INFO SCRIPT_DIR: /tmp/lddtool-13.0.2/bin
->>  INFO LIB_DIR: /tmp/lddtool-13.0.2/lib
+>>  INFO IM Label Version Id: 1.22
+>>  INFO Date: Mon Oct 11 14:21:10 UTC 2021
+>>  INFO PARENT_DIR: /tmp/lddtool-13.1.0
+>>  INFO SCRIPT_DIR: /tmp/lddtool-13.1.0/bin
+>>  INFO LIB_DIR: /tmp/lddtool-13.1.0/lib
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:geom
 >>> INFO Init:  - Config.Properties Namespace Id Using:geom
@@ -202,5 +200,22 @@
      10 warning(s)
      0 error(s)
      0 fatal error(s)
+
+Input:
+
+     - IM Version: 1G00
+     - PDS4 Flag: true
+     - LDD Flag: true
+     - IM Version: true
+     - Export JSON Flag: true
+
+     - Ingest LDD(s): /home/runner/work/ldd-geom/ldd-geom/src/PDS4_GEOM_IngestLDD.xml
+
+Output:
+
+     - ./PDS4_GEOM_1G00_1930.xsd
+     - ./PDS4_GEOM_1G00_1930.sch
+     - ./PDS4_GEOM_1G00_1930.xml
+     - ./PDS4_GEOM_1G00_1930.JSON
 
 >>  INFO Exit(0)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:geom  Version:1.9.3.0 - Tue Aug 03 19:19:59 UTC 2021 -->
-  <!-- Generated from the PDS4 Information Model Version 1.15.0.0 - System Build 11a -->
+  <!-- PDS4 Schematron for Name Space Id:geom  Version:1.9.3.0 - Mon Oct 11 14:21:10 UTC 2021 -->
+  <!-- Generated from the PDS4 Information Model Version 1.16.0.0 - System Build 11.1 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
@@ -515,70 +515,70 @@
     <sch:rule context="geom:CAHVORE_Model/geom:cahvore_model_type">
       <sch:assert test=". = ('1', '2', '3')">
         <title>geom:CAHVORE_Model/geom:cahvore_model_type/geom:cahvore_model_type</title>
-        The attribute geom:cahvore_model_type must be equal to one of the following values '1', '2', '3'.</sch:assert>
+        The attribute geom:CAHVORE_Model/geom:cahvore_model_type must be equal to one of the following values '1', '2', '3'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Camera_Model_Parameters/geom:model_type">
       <sch:assert test=". = ('CAHV', 'CAHVOR', 'CAHVORE', 'PSPH')">
         <title>geom:Camera_Model_Parameters/geom:model_type/geom:model_type</title>
-        The attribute geom:model_type must be equal to one of the following values 'CAHV', 'CAHVOR', 'CAHVORE', 'PSPH'.</sch:assert>
+        The attribute geom:Camera_Model_Parameters/geom:model_type must be equal to one of the following values 'CAHV', 'CAHVOR', 'CAHVORE', 'PSPH'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Commanded_Geometry/geom:command_type">
       <sch:assert test=". = ('Angle_Absolute', 'Angle_Relative', 'Joint_Absolute', 'Joint_Relative', 'No_Motion', 'No_Motion_No_Arb', 'None', 'XYZ')">
         <title>geom:Commanded_Geometry/geom:command_type/geom:command_type</title>
-        The attribute geom:command_type must be equal to one of the following values 'Angle_Absolute', 'Angle_Relative', 'Joint_Absolute', 'Joint_Relative', 'No_Motion', 'No_Motion_No_Arb', 'None', 'XYZ'.</sch:assert>
+        The attribute geom:Commanded_Geometry/geom:command_type must be equal to one of the following values 'Angle_Absolute', 'Angle_Relative', 'Joint_Absolute', 'Joint_Relative', 'No_Motion', 'No_Motion_No_Arb', 'None', 'XYZ'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Coordinate_Space_Definition/geom:positive_azimuth_direction">
       <sch:assert test=". = ('CCW', 'CW', 'Clockwise', 'Counterclockwise')">
         <title>geom:Coordinate_Space_Definition/geom:positive_azimuth_direction/geom:positive_azimuth_direction</title>
-        The attribute geom:positive_azimuth_direction must be equal to one of the following values 'CCW', 'CW', 'Clockwise', 'Counterclockwise'.</sch:assert>
+        The attribute geom:Coordinate_Space_Definition/geom:positive_azimuth_direction must be equal to one of the following values 'CCW', 'CW', 'Clockwise', 'Counterclockwise'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Coordinate_Space_Definition/geom:positive_elevation_direction">
       <sch:assert test=". = ('Down', 'Nadir', 'Up', 'Zenith')">
         <title>geom:Coordinate_Space_Definition/geom:positive_elevation_direction/geom:positive_elevation_direction</title>
-        The attribute geom:positive_elevation_direction must be equal to one of the following values 'Down', 'Nadir', 'Up', 'Zenith'.</sch:assert>
+        The attribute geom:Coordinate_Space_Definition/geom:positive_elevation_direction must be equal to one of the following values 'Down', 'Nadir', 'Up', 'Zenith'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Coordinate_Space_Definition/geom:quaternion_measurement_method">
       <sch:assert test=". = ('Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown')">
         <title>geom:Coordinate_Space_Definition/geom:quaternion_measurement_method/geom:quaternion_measurement_method</title>
-        The attribute geom:quaternion_measurement_method must be equal to one of the following values 'Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown'.</sch:assert>
+        The attribute geom:Coordinate_Space_Definition/geom:quaternion_measurement_method must be equal to one of the following values 'Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Coordinate_Space_Indexed/geom:coordinate_space_frame_type">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'PIXL_TOOL', 'PIXL_Tool', 'ROVER_FRAME', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame', 'TOOL_FRAME', 'TURRET_FRAME', 'Tool_Frame', 'Turret_Frame', 'WHEEL_LF', 'WHEEL_LM', 'WHEEL_LR', 'WHEEL_RF', 'WHEEL_RM', 'WHEEL_RR', 'Wheel_LF', 'Wheel_LM', 'Wheel_LR', 'Wheel_RF', 'Wheel_RM', 'Wheel_RR')))) then false() else true()">
         <title>geom:Coordinate_Space_Indexed/geom:coordinate_space_frame_type/geom:coordinate_space_frame_type</title>
-        The attribute geom:coordinate_space_frame_type must be nulled or equal to one of the following values 'APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'PIXL_TOOL', 'PIXL_Tool', 'ROVER_FRAME', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame', 'TOOL_FRAME', 'TURRET_FRAME', 'Tool_Frame', 'Turret_Frame', 'WHEEL_LF', 'WHEEL_LM', 'WHEEL_LR', 'WHEEL_RF', 'WHEEL_RM', 'WHEEL_RR', 'Wheel_LF', 'Wheel_LM', 'Wheel_LR', 'Wheel_RF', 'Wheel_RM', 'Wheel_RR'.</sch:assert>
+        The attribute geom:Coordinate_Space_Indexed/geom:coordinate_space_frame_type must be nulled or equal to one of the following values 'APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'PIXL_TOOL', 'PIXL_Tool', 'ROVER_FRAME', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame', 'TOOL_FRAME', 'TURRET_FRAME', 'Tool_Frame', 'Turret_Frame', 'WHEEL_LF', 'WHEEL_LM', 'WHEEL_LR', 'WHEEL_RF', 'WHEEL_RM', 'WHEEL_RR', 'Wheel_LF', 'Wheel_LM', 'Wheel_LR', 'Wheel_RF', 'Wheel_RM', 'Wheel_RR'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Coordinate_Space_Quality/geom:attitude_propagation_duration">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr')">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
         <title>geom:Coordinate_Space_Quality/geom:attitude_propagation_duration/geom:attitude_propagation_duration</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Coordinate_Space_Quality/geom:quaternion_measurement_method">
       <sch:assert test=". = ('Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown')">
         <title>geom:Coordinate_Space_Quality/geom:quaternion_measurement_method/geom:quaternion_measurement_method</title>
-        The attribute geom:quaternion_measurement_method must be equal to one of the following values 'Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown'.</sch:assert>
+        The attribute geom:Coordinate_Space_Quality/geom:quaternion_measurement_method must be equal to one of the following values 'Bundle_Adjustment', 'Coarse', 'Fine', 'Sun_Find', 'Tilt_Only', 'Unknown'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Coordinate_System_Identification/geom:coordinate_system_type">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('Azimuth-Elevation', 'Cartesian', 'Planetocentric', 'Planetodetic', 'Planetographic', 'Spherical')))) then false() else true()">
         <title>geom:Coordinate_System_Identification/geom:coordinate_system_type/geom:coordinate_system_type</title>
-        The attribute geom:coordinate_system_type must be nulled or equal to one of the following values 'Azimuth-Elevation', 'Cartesian', 'Planetocentric', 'Planetodetic', 'Planetographic', 'Spherical'.</sch:assert>
+        The attribute geom:Coordinate_System_Identification/geom:coordinate_system_type must be nulled or equal to one of the following values 'Azimuth-Elevation', 'Cartesian', 'Planetocentric', 'Planetodetic', 'Planetographic', 'Spherical'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -662,14 +662,14 @@
     <sch:rule context="geom:Display_Direction/geom:horizontal_display_direction">
       <sch:assert test=". = ('Left to Right', 'Right to Left')">
         <title>geom:Display_Direction/geom:horizontal_display_direction/geom:horizontal_display_direction</title>
-        The attribute geom:horizontal_display_direction must be equal to one of the following values 'Left to Right', 'Right to Left'.</sch:assert>
+        The attribute geom:Display_Direction/geom:horizontal_display_direction must be equal to one of the following values 'Left to Right', 'Right to Left'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Display_Direction/geom:vertical_display_direction">
       <sch:assert test=". = ('Bottom to Top', 'Top to Bottom')">
         <title>geom:Display_Direction/geom:vertical_display_direction/geom:vertical_display_direction</title>
-        The attribute geom:vertical_display_direction must be equal to one of the following values 'Bottom to Top', 'Top to Bottom'.</sch:assert>
+        The attribute geom:Display_Direction/geom:vertical_display_direction must be equal to one of the following values 'Bottom to Top', 'Top to Bottom'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -996,9 +996,9 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Geometry_Orbiter/geom:geometry_reference_time_tdb">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr')">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
         <title>geom:Geometry_Orbiter/geom:geometry_reference_time_tdb/geom:geometry_reference_time_tdb</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1082,14 +1082,14 @@
     <sch:rule context="geom:Illumination_Specific/geom:reference_location">
       <sch:assert test=". = ('Boresight Intercept Point', 'Constant', 'Subspacecraft Point', 'Target Center')">
         <title>geom:Illumination_Specific/geom:reference_location/geom:reference_location</title>
-        The attribute geom:reference_location must be equal to one of the following values 'Boresight Intercept Point', 'Constant', 'Subspacecraft Point', 'Target Center'.</sch:assert>
+        The attribute geom:Illumination_Specific/geom:reference_location must be equal to one of the following values 'Boresight Intercept Point', 'Constant', 'Subspacecraft Point', 'Target Center'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Illumination_Specific/geom:reference_pixel_location">
       <sch:assert test=". = ('Center', 'Lower Left Corner', 'Lower Right Corner', 'Upper Left Corner', 'Upper Right Corner')">
         <title>geom:Illumination_Specific/geom:reference_pixel_location/geom:reference_pixel_location</title>
-        The attribute geom:reference_pixel_location must be equal to one of the following values 'Center', 'Lower Left Corner', 'Lower Right Corner', 'Upper Left Corner', 'Upper Right Corner'.</sch:assert>
+        The attribute geom:Illumination_Specific/geom:reference_pixel_location must be equal to one of the following values 'Center', 'Lower Left Corner', 'Lower Right Corner', 'Upper Left Corner', 'Upper Right Corner'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1278,7 +1278,7 @@
     <sch:rule context="geom:Object_Orientation_RA_Dec/geom:reference_pixel_location">
       <sch:assert test=". = ('Center', 'Lower Left Corner', 'Lower Right Corner', 'Upper Left Corner', 'Upper Right Corner')">
         <title>geom:Object_Orientation_RA_Dec/geom:reference_pixel_location/geom:reference_pixel_location</title>
-        The attribute geom:reference_pixel_location must be equal to one of the following values 'Center', 'Lower Left Corner', 'Lower Right Corner', 'Upper Left Corner', 'Upper Right Corner'.</sch:assert>
+        The attribute geom:Object_Orientation_RA_Dec/geom:reference_pixel_location must be equal to one of the following values 'Center', 'Lower Left Corner', 'Lower Right Corner', 'Upper Left Corner', 'Upper Right Corner'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1290,9 +1290,9 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Object_Orientation_RA_Dec/geom:right_ascension_hour_angle">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr')">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
         <title>geom:Object_Orientation_RA_Dec/geom:right_ascension_hour_angle/geom:right_ascension_hour_angle</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1306,7 +1306,7 @@
     <sch:rule context="geom:Pixel_Dimensions/geom:pixel_field_of_view_method">
       <sch:assert test=". = ('Average', 'Central Pixel', 'Constant')">
         <title>geom:Pixel_Dimensions/geom:pixel_field_of_view_method/geom:pixel_field_of_view_method</title>
-        The attribute geom:pixel_field_of_view_method must be equal to one of the following values 'Average', 'Central Pixel', 'Constant'.</sch:assert>
+        The attribute geom:Pixel_Dimensions/geom:pixel_field_of_view_method must be equal to one of the following values 'Average', 'Central Pixel', 'Constant'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1334,7 +1334,7 @@
     <sch:rule context="geom:Pixel_Intercept/geom:reference_pixel_location">
       <sch:assert test=". = ('Center', 'Lower Left Corner', 'Lower Right Corner', 'Upper Left Corner', 'Upper Right Corner')">
         <title>geom:Pixel_Intercept/geom:reference_pixel_location/geom:reference_pixel_location</title>
-        The attribute geom:reference_pixel_location must be equal to one of the following values 'Center', 'Lower Left Corner', 'Lower Right Corner', 'Upper Left Corner', 'Upper Right Corner'.</sch:assert>
+        The attribute geom:Pixel_Intercept/geom:reference_pixel_location must be equal to one of the following values 'Center', 'Lower Left Corner', 'Lower Right Corner', 'Upper Left Corner', 'Upper Right Corner'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1355,7 +1355,7 @@
     <sch:rule context="geom:Pixel_Size_Projected/geom:reference_location">
       <sch:assert test=". = ('Boresight Intercept Point', 'Constant', 'Subspacecraft Point', 'Target Center')">
         <title>geom:Pixel_Size_Projected/geom:reference_location/geom:reference_location</title>
-        The attribute geom:reference_location must be equal to one of the following values 'Boresight Intercept Point', 'Constant', 'Subspacecraft Point', 'Target Center'.</sch:assert>
+        The attribute geom:Pixel_Size_Projected/geom:reference_location must be equal to one of the following values 'Boresight Intercept Point', 'Constant', 'Subspacecraft Point', 'Target Center'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1369,35 +1369,35 @@
     <sch:rule context="geom:Quaternion_Plus_Direction/geom:rotation_direction">
       <sch:assert test=". = ('Forward', 'From Base', 'Present to Reference', 'Reference to Present', 'Reverse', 'Toward Base')">
         <title>geom:Quaternion_Plus_Direction/geom:rotation_direction/geom:rotation_direction</title>
-        The attribute geom:rotation_direction must be equal to one of the following values 'Forward', 'From Base', 'Present to Reference', 'Reference to Present', 'Reverse', 'Toward Base'.</sch:assert>
+        The attribute geom:Quaternion_Plus_Direction/geom:rotation_direction must be equal to one of the following values 'Forward', 'From Base', 'Present to Reference', 'Reference to Present', 'Reverse', 'Toward Base'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Reference_Pixel/geom:horizontal_coordinate_pixel">
-      <sch:assert test="@unit = ('DN', 'electron/DN', 'pixel')">
+      <sch:assert test="@unit = ('DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel')">
         <title>geom:Reference_Pixel/geom:horizontal_coordinate_pixel/geom:horizontal_coordinate_pixel</title>
-        The attribute @unit must be equal to one of the following values 'DN', 'electron/DN', 'pixel'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Reference_Pixel/geom:vertical_coordinate_pixel">
-      <sch:assert test="@unit = ('DN', 'electron/DN', 'pixel')">
+      <sch:assert test="@unit = ('DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel')">
         <title>geom:Reference_Pixel/geom:vertical_coordinate_pixel/geom:vertical_coordinate_pixel</title>
-        The attribute @unit must be equal to one of the following values 'DN', 'electron/DN', 'pixel'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'DN', 'W/m**2/sr/nm/(DN/s)', 'electron/DN', 'pixel'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:SPICE_Kernel_Identification/geom:kernel_provenance">
       <sch:assert test=". = ('Mixed', 'Predicted', 'Provenance Not Applicable', 'Reconstructed')">
         <title>geom:SPICE_Kernel_Identification/geom:kernel_provenance/geom:kernel_provenance</title>
-        The attribute geom:kernel_provenance must be equal to one of the following values 'Mixed', 'Predicted', 'Provenance Not Applicable', 'Reconstructed'.</sch:assert>
+        The attribute geom:SPICE_Kernel_Identification/geom:kernel_provenance must be equal to one of the following values 'Mixed', 'Predicted', 'Provenance Not Applicable', 'Reconstructed'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:SPICE_Kernel_Identification/pds:kernel_type">
       <sch:assert test=". = ('CK', 'DBK', 'DSK', 'EK', 'FK', 'IK', 'LSK', 'MK', 'PCK', 'SCLK', 'SPK')">
         <title>geom:SPICE_Kernel_Identification/pds:kernel_type/pds:kernel_type</title>
-        The attribute pds:kernel_type must be equal to one of the following values 'CK', 'DBK', 'DSK', 'EK', 'FK', 'IK', 'LSK', 'MK', 'PCK', 'SCLK', 'SPK'.</sch:assert>
+        The attribute geom:SPICE_Kernel_Identification/pds:kernel_type must be equal to one of the following values 'CK', 'DBK', 'DSK', 'EK', 'FK', 'IK', 'LSK', 'MK', 'PCK', 'SCLK', 'SPK'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1558,7 +1558,7 @@
     <sch:rule context="geom:Surface_Geometry_Start_Stop/geom:lat_long_method">
       <sch:assert test=". = ('Center', 'Mean', 'Median')">
         <title>geom:Surface_Geometry_Start_Stop/geom:lat_long_method/geom:lat_long_method</title>
-        The attribute geom:lat_long_method must be equal to one of the following values 'Center', 'Mean', 'Median'.</sch:assert>
+        The attribute geom:Surface_Geometry_Start_Stop/geom:lat_long_method must be equal to one of the following values 'Center', 'Mean', 'Median'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1698,14 +1698,14 @@
     <sch:rule context="geom:Vector_Cartesian_Acceleration_Extended_Base/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Acceleration_Extended_Base/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Acceleration_Extended_Base/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Acceleration_Generic/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Acceleration_Generic/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Acceleration_Generic/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1733,98 +1733,98 @@
     <sch:rule context="geom:Vector_Cartesian_Position_Central_Body_To_Spacecraft/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Position_Central_Body_To_Spacecraft/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Position_Central_Body_To_Spacecraft/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Position_Central_Body_To_Target/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Position_Central_Body_To_Target/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Position_Central_Body_To_Target/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Position_Earth_To_Central_Body/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Position_Earth_To_Central_Body/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Position_Earth_To_Central_Body/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Position_Earth_To_Spacecraft/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Position_Earth_To_Spacecraft/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Position_Earth_To_Spacecraft/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Position_Earth_To_Target/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Position_Earth_To_Target/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Position_Earth_To_Target/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Position_Extended_Base/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Position_Extended_Base/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Position_Extended_Base/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Position_Generic/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Position_Generic/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Position_Generic/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Position_SSB_To_Central_Body/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Position_SSB_To_Central_Body/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Position_SSB_To_Central_Body/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Position_SSB_To_Spacecraft/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Position_SSB_To_Spacecraft/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Position_SSB_To_Spacecraft/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Position_SSB_To_Target/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Position_SSB_To_Target/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Position_SSB_To_Target/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Position_Spacecraft_To_Target/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Position_Spacecraft_To_Target/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Position_Spacecraft_To_Target/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Position_Sun_To_Central_Body/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Position_Sun_To_Central_Body/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Position_Sun_To_Central_Body/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Position_Sun_To_Spacecraft/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Position_Sun_To_Spacecraft/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Position_Sun_To_Spacecraft/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Position_Sun_To_Target/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Position_Sun_To_Target/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Position_Sun_To_Target/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1852,84 +1852,84 @@
     <sch:rule context="geom:Vector_Cartesian_Velocity_Extended_Base/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Velocity_Extended_Base/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Velocity_Extended_Base/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Velocity_Generic/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Velocity_Generic/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Velocity_Generic/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Central_Body/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Central_Body/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Central_Body/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_SSB/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_SSB/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_SSB/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Target/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Target/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Target/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Velocity_Target_Relative_To_Central_Body/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Velocity_Target_Relative_To_Central_Body/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Velocity_Target_Relative_To_Central_Body/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Velocity_Target_Relative_To_Earth/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Velocity_Target_Relative_To_Earth/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Velocity_Target_Relative_To_Earth/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Velocity_Target_Relative_To_SSB/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Velocity_Target_Relative_To_SSB/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Velocity_Target_Relative_To_SSB/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Velocity_Target_Relative_To_Spacecraft/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Velocity_Target_Relative_To_Spacecraft/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Velocity_Target_Relative_To_Spacecraft/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Cartesian_Velocity_Target_Relative_To_Sun/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Cartesian_Velocity_Target_Relative_To_Sun/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Cartesian_Velocity_Target_Relative_To_Sun/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -1957,35 +1957,35 @@
     <sch:rule context="geom:Vector_Planetocentric_Position_Central_Body_To_Spacecraft/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Planetocentric_Position_Central_Body_To_Spacecraft/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Planetocentric_Position_Central_Body_To_Spacecraft/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Planetocentric_Position_Central_Body_To_Target/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Planetocentric_Position_Central_Body_To_Target/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Planetocentric_Position_Central_Body_To_Target/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Planetocentric_Position_Extended_Base/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Planetocentric_Position_Extended_Base/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Planetocentric_Position_Extended_Base/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Planetocentric_Position_Generic/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Planetocentric_Position_Generic/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Planetocentric_Position_Generic/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Planetocentric_Position_Spacecraft_To_Target/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Planetocentric_Position_Spacecraft_To_Target/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Planetocentric_Position_Spacecraft_To_Target/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -2013,35 +2013,35 @@
     <sch:rule context="geom:Vector_Planetocentric_Velocity_Extended_Base/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Planetocentric_Velocity_Extended_Base/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Planetocentric_Velocity_Extended_Base/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Planetocentric_Velocity_Generic/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Planetocentric_Velocity_Generic/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Planetocentric_Velocity_Generic/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Planetocentric_Velocity_Spacecraft_Relative_To_Target/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Planetocentric_Velocity_Spacecraft_Relative_To_Target/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Planetocentric_Velocity_Spacecraft_Relative_To_Target/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Planetocentric_Velocity_Target_Relative_To_Central_Body/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Planetocentric_Velocity_Target_Relative_To_Central_Body/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Planetocentric_Velocity_Target_Relative_To_Central_Body/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="geom:Vector_Planetocentric_Velocity_Target_Relative_To_Spacecraft/geom:light_time_correction_applied">
       <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb')))) then false() else true()">
         <title>geom:Vector_Planetocentric_Velocity_Target_Relative_To_Spacecraft/geom:light_time_correction_applied/geom:light_time_correction_applied</title>
-        The attribute geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
+        The attribute geom:Vector_Planetocentric_Velocity_Target_Relative_To_Spacecraft/geom:light_time_correction_applied must be nulled or equal to one of the following values 'None', 'Received_Light_Time', 'Received_Light_Time_Stellar_Abb', 'Transmitted_Light_Time', 'Transmitted_Light_Time_Stellar_Abb'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
