@@ -39,10 +39,6 @@ jobs:
           
           # Baseline: Set pds4 version to versions from file
           echo "::set-output name=matrix::{\"pds4_version\": $versions}"
-          
-          # Example of using development PDS4 Release for v1.16.0.0
-          # Update with appropriate version as needed
-          # echo "::set-output name=matrix::{\"pds4_version\": $versions, \"include\":[{\"pds4_version\":\"1.16.0.0\",\"pds4_development_release\":true}]}"
 
   build:
     name: 'LDD Build'
