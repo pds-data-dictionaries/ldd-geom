@@ -112,12 +112,12 @@
     - Changed the description and units of right_ascension_hour_angle to decimal hours.
     - Revised the definition of declination_angle.
     - In Object_Orientation_Clock_Angles, made Reference_Frame_Identification optional instead of required.
-    - Added or modified attributes minimum_*, maximum_*, start_*, stop_*; where * is any of target_geocentric_distance, target_heliocentric_distance, target_ssb_distance, spacecraft_geocentric_distance, spacecraft_heliocentric_distance, spacecraft_to_central_body_distance, spacecraft_to_target_center_distance, spacecraft_to_target_boresight_intercept_distance,  spacecraft_to_target_subspacecraft_distance, emission_angle, incidence_angle, phase_angle, solar_elongation, latitude, longitude, subspacecraft_azimuth, subspacecraft_latitude, subspacecraft_longitude, subsolar_azimuth, subsolar_latitude, or subsolar_longitude.
+    - Added or modified attributes minimum_\*, maximum_\*, start_\*, stop_\*; where * is any of target_geocentric_distance, target_heliocentric_distance, target_ssb_distance, spacecraft_geocentric_distance, spacecraft_heliocentric_distance, spacecraft_to_central_body_distance, spacecraft_to_target_center_distance, spacecraft_to_target_boresight_intercept_distance,  spacecraft_to_target_subspacecraft_distance, emission_angle, incidence_angle, phase_angle, solar_elongation, latitude, longitude, subspacecraft_azimuth, subspacecraft_latitude, subspacecraft_longitude, subsolar_azimuth, subsolar_latitude, or subsolar_longitude.
     - Added the attribute lat_long_description to support start_ and stop_ latitude and longitude.
     - Added the classes *_Specific, *_Min_Max, *_Start_Stop; where * is any of Distances, Illumination, or Surface_Geometry.
     - Removed the classes Illumination_FOV_Range_Values (replaced with the class Illumination_Min_Max), and Illumination_Single_Values (replaced with the class Illumination_Specific).
     - Removed the attribute illumination_range_designation.
-    - Changed the names of several specific distance classes from spacecraft_to_*_distance to spacecraft_*_distance.
+    - Changed the names of several specific distance classes from spacecraft_to_\*\_distance to spacecraft_*_distance.
     - Renamed Specific_Distances to Distances_Specific.
     - Renamed Surface_Geometry to Surface_Geometry_Specific.
     - Renamed Illumination_Single_Values to Illumination_Specific.
