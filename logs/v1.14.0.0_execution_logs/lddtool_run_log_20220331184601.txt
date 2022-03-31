@@ -1,12 +1,14 @@
 
->>  INFO LDDTOOL Version: 10.0.0
->>  INFO IM Version Id: 1.16.0.0
+>>  INFO LDDTOOL Version: 13.1.0
+>>  INFO IM Version Id: 1.14.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.22
->>  INFO Date: Thu Mar 31 17:14:48 UTC 2022
+>>  INFO IM Label Version Id: 1.20
+>>  INFO Date: Thu Mar 31 18:46:01 UTC 2022
 >>  INFO PARENT_DIR: /tmp/lddtool-13.1.0
 >>  INFO SCRIPT_DIR: /tmp/lddtool-13.1.0/bin
 >>  INFO LIB_DIR: /tmp/lddtool-13.1.0/lib
+>>  WARNING Class omitted from build - Class Identifier:0001_NASA_PDS_1.pds.Schematron_Rule
+>>  WARNING Class omitted from build - Class Identifier:0001_NASA_PDS_1.pds.Schematron_Assert
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:geom
 >>> INFO Init:  - Config.Properties Namespace Id Using:geom
@@ -30,6 +32,7 @@
 >>> INFO Attribute: <start_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360.0
 >>> INFO Attribute: <stop_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0.0
 >>> INFO Attribute: <stop_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+>>> INFO Attribute: <target_name> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <x> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <x_unit> - The default minimum value provided by the attribute's data type is being overridden with -1
 >>> INFO Attribute: <x_unit> - The default maximum value provided by the attribute's data type is being overridden with 1
@@ -203,6 +206,7 @@
 >>> INFO Attribute: <start_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360.0
 >>> INFO Attribute: <stop_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0.0
 >>> INFO Attribute: <stop_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+>>> INFO Attribute: <target_name> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <x> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <x_unit> - The default minimum value provided by the attribute's data type is being overridden with -1
 >>> INFO Attribute: <x_unit> - The default maximum value provided by the attribute's data type is being overridden with 1
@@ -376,6 +380,7 @@
 >>> INFO Attribute: <start_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360.0
 >>> INFO Attribute: <stop_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0.0
 >>> INFO Attribute: <stop_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+>>> INFO Attribute: <target_name> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <x> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <x_unit> - The default minimum value provided by the attribute's data type is being overridden with -1
 >>> INFO Attribute: <x_unit> - The default maximum value provided by the attribute's data type is being overridden with 1
@@ -549,6 +554,7 @@
 >>> INFO Attribute: <start_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360.0
 >>> INFO Attribute: <stop_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0.0
 >>> INFO Attribute: <stop_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+>>> INFO Attribute: <target_name> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <x> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <x_unit> - The default minimum value provided by the attribute's data type is being overridden with -1
 >>> INFO Attribute: <x_unit> - The default maximum value provided by the attribute's data type is being overridden with 1
@@ -712,7 +718,6 @@
 >>> INFO Attribute: <latitude_position> - The default maximum value provided by the attribute's data type is being overridden with 90
 >>> INFO Attribute: <longitude_position> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <longitude_position> - The default maximum value provided by the attribute's data type is being overridden with 360
->>> WARNING Attribute: <coordinate_space_frame_type> - The 'type' attribute must have at least one permissible value.
 >>> WARNING Attribute: <x_unit> - The terms 'unit', 'units', 'unit_of_measure' should not be used as the rightmost part of an attribute's name.
 >>> WARNING Attribute: <y_unit> - The terms 'unit', 'units', 'unit_of_measure' should not be used as the rightmost part of an attribute's name.
 >>> WARNING Attribute: <z_unit> - The terms 'unit', 'units', 'unit_of_measure' should not be used as the rightmost part of an attribute's name.
@@ -725,13 +730,13 @@
 >>> WARNING Class: <Coordinate_Space_Reference> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
 
  -- LDDTool Execution Summary --
-     11 warning(s)
+     12 warning(s)
      0 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1G00
+     - IM Version: 1E00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -741,9 +746,9 @@ Input:
 
 Output:
 
-     - ./PDS4_GEOM_1G00_1800.xsd
-     - ./PDS4_GEOM_1G00_1800.sch
-     - ./PDS4_GEOM_1G00_1800.xml
-     - ./PDS4_GEOM_1G00_1800.JSON
+     - ./PDS4_GEOM_1E00_1950.xsd
+     - ./PDS4_GEOM_1E00_1950.sch
+     - ./PDS4_GEOM_1E00_1950.xml
+     - ./PDS4_GEOM_1E00_1950.JSON
 
 >>  INFO Exit(0)

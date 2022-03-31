@@ -3,8 +3,8 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "IM Version": "1.16.0.0" ,
-      "LDD Version": "1.8.0.0" ,
-      "Date": "Thu Mar 31 17:14:48 UTC 2022" ,
+      "LDD Version": "1.9.5.0" ,
+      "Date": "Thu Mar 31 18:46:10 UTC 2022" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "namespaces": ["pds:", "geom:", "geom:", "geom:", "geom:"] ,
       "classDictionary": [
@@ -131,7 +131,9 @@
                   "0001_NASA_PDS_1.geom.Device_Angle",
                   "0001_NASA_PDS_1.geom.Device_Component_State",
                   "0001_NASA_PDS_1.geom.Device_Motor_Counts",
+                  "0001_NASA_PDS_1.geom.Device_Pose",
                   "0001_NASA_PDS_1.geom.Vector_Device_Gravity",
+                  "0001_NASA_PDS_1.geom.Vector_Device_Gravity_Magnitude",
                   "0001_NASA_PDS_1.geom.Device_Temperature",
                   "0001_NASA_PDS_1.geom.Coordinate_Space_Present",
                   "0001_NASA_PDS_1.geom.Coordinate_Space_Reference",
@@ -1653,6 +1655,22 @@
             "description": "The Derived_Geometry class is a container for surface based observations (lander or rover). It is used to provide some geometric quantities relative to a specific Reference Coordinate Space. "
               , "associationList": [
              {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Derived_Geometry.geom.target_name" ,
+                "title": "target_name" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Derived_Geometry.geom.target_name"
+                 ]
+              }
+            }
+           , {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Derived_Geometry.geom.incidence_angle" ,
                 "title": "incidence_angle" ,
                 "assocType": "attribute_of" ,
@@ -1662,7 +1680,7 @@
                 "groupName": "XSChoice#14" ,
                 "minimumCardinality": "1" ,
                 "maximumCardinality": "*" ,
-                "classOrder": "1020" ,
+                "classOrder": "1030" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.Derived_Geometry.geom.incidence_angle",
                   "0001_NASA_PDS_1.geom.Derived_Geometry.geom.emission_angle",
@@ -1672,7 +1690,9 @@
                   "0001_NASA_PDS_1.geom.Derived_Geometry.geom.solar_azimuth",
                   "0001_NASA_PDS_1.geom.Derived_Geometry.geom.solar_elevation",
                   "0001_NASA_PDS_1.geom.Derived_Geometry.geom.start_azimuth",
-                  "0001_NASA_PDS_1.geom.Derived_Geometry.geom.stop_azimuth"
+                  "0001_NASA_PDS_1.geom.Derived_Geometry.geom.stop_azimuth",
+                  "0001_NASA_PDS_1.geom.Derived_Geometry.geom.target_heliocentric_distance",
+                  "0001_NASA_PDS_1.geom.Derived_Geometry.geom.solar_image_clock_angle"
                  ]
               }
             }
@@ -1686,7 +1706,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1110" ,
+                "classOrder": "1140" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Vector_Solar_Direction"
                  ]
@@ -1702,7 +1722,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1120" ,
+                "classOrder": "1150" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Coordinate_Space_Reference"
                  ]
@@ -2041,6 +2061,69 @@
                 "classOrder": "1020" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.geom.List_Index_No_Units.geom.index_value_number"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.geom.Device_Pose" ,
+            "title": "Device_Pose" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": "Defines the pose of this articulation device. The name indicates what exactly is being measured and how, and disambiguates if there is more than one Device_Pose. For example, Mars 2020 has \"arm_attitude_reference\", which indicates the pose of the rover that was used to calculate gravity droop of the arm. The interpretation of the pose is mission-specific; see the mission documentation."
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Device_Pose.pds.name" ,
+                "title": "name" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Device_Pose.pds.name"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Device_Pose.geom.Quaternion_Plus_Direction" ,
+                "title": "Quaternion_Plus_Direction" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Quaternion_Plus_Direction"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Device_Pose.geom.Vector_Origin_Offset" ,
+                "title": "Vector_Origin_Offset" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "classId": [
+                  "0001_NASA_PDS_1.geom.Vector_Origin_Offset"
                  ]
               }
             }
@@ -3468,6 +3551,54 @@
             "description": "The Geometry_Lander class is a container for all geometric information in the label relating to a landed spacecraft, including rovers. "
               , "associationList": [
              {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Geometry_Lander.geom.geometry_state" ,
+                "title": "geometry_state" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Geometry_Lander.geom.geometry_state"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Geometry_Lander.pds.description" ,
+                "title": "description" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Geometry_Lander.pds.description"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Geometry_Lander.pds.local_identifier" ,
+                "title": "local_identifier" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Geometry_Lander.pds.local_identifier"
+                 ]
+              }
+            }
+           , {"association": {
                 "identifier": "0001_NASA_PDS_1.geom.Geometry_Lander.geom.Articulation_Device_Parameters" ,
                 "title": "Articulation_Device_Parameters" ,
                 "assocType": "component_of" ,
@@ -3477,7 +3608,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "*" ,
-                "classOrder": "1010" ,
+                "classOrder": "1040" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Articulation_Device_Parameters"
                  ]
@@ -3493,7 +3624,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "*" ,
-                "classOrder": "1020" ,
+                "classOrder": "1050" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Camera_Model_Parameters"
                  ]
@@ -3509,7 +3640,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "*" ,
-                "classOrder": "1030" ,
+                "classOrder": "1060" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Coordinate_Space_Definition"
                  ]
@@ -3525,7 +3656,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "*" ,
-                "classOrder": "1040" ,
+                "classOrder": "1070" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Derived_Geometry"
                  ]
@@ -3541,7 +3672,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "*" ,
-                "classOrder": "1050" ,
+                "classOrder": "1080" ,
                 "classId": [
                   "0001_NASA_PDS_1.geom.Motion_Counter"
                  ]
@@ -10800,6 +10931,69 @@
         }
       , {
           "class": {
+            "identifier": "0001_NASA_PDS_1.geom.Vector_Device_Gravity_Magnitude" ,
+            "title": "Vector_Device_Gravity_Magnitude" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": "The Vector_Device_Gravity_Magnitude class is a vector (with magnitude) that specifies the direction of an external force acting on the articulation device, in the spacecraft's coordinate system, at the time the pose was computed. "
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base.geom.x_acceleration" ,
+                "title": "x_acceleration" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base.geom.x_acceleration"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base.geom.y_acceleration" ,
+                "title": "y_acceleration" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base.geom.y_acceleration"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base.geom.z_acceleration" ,
+                "title": "z_acceleration" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.geom.Vector_Cartesian_Acceleration_Base.geom.z_acceleration"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
             "identifier": "0001_NASA_PDS_1.geom.Vector_Horizontal" ,
             "title": "Vector_Horizontal" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -13369,7 +13563,7 @@
             "versionId": "1.16" ,
             "description": "The coordinate_space_frame_type attribute identifies the type of frame being described, such as SITE, LOCAL_LEVEL, LANDER, ROVER, ARM, etc. When combined with Coordinate_Space_Index and the optional solution_id in the Coordinate_Space_Indexed class, this serves to fully name an instance of a coordinate space. " ,
             "isNillable": "true" ,
-            "isEnumerated": "false" ,
+            "isEnumerated": "true" ,
             "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
@@ -13382,6 +13576,554 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "APXS_Frame" ,
+                  "valueMeaning": "Frame defining the APXS instrument on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_CUSTOM_TCP_FRAME" ,
+                  "valueMeaning": "Frame describing a user-defined Tool Control Point for a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_DOCKING_POST_FRAME" ,
+                  "valueMeaning": "Frame describing the docking post on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_DRILL_FRAME" ,
+                  "valueMeaning": "Frame describing the drill on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_DRT_FRAME" ,
+                  "valueMeaning": "Frame describing the Dust Removal Tool on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_FCS_FRAME" ,
+                  "valueMeaning": "Frame describing the FCS (Facility Contact Switch) device on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_FRAME" ,
+                  "valueMeaning": "Frame describing a defined portion of a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_GDRT_FRAME" ,
+                  "valueMeaning": "Frame describing the GDRT (Gaseous Dust Removal Tool) device on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_MAHLI_FRAME" ,
+                  "valueMeaning": "Frame describing the MAHLI instrument on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_PIXL_FRAME" ,
+                  "valueMeaning": "Frame describing the PIXL instrument on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_PORTION_FRAME" ,
+                  "valueMeaning": "Frame describing the sample portioner device on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_SCOOP_TCP_FRAME" ,
+                  "valueMeaning": "Frame describing the Tool Control Point for the scoop on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_SCOOP_TIP_FRAME" ,
+                  "valueMeaning": "Frame describing the tip of a scoop on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_SHERLOC_FRAME" ,
+                  "valueMeaning": "Frame describing the SHERLOC instrument on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_TURRET_FRAME" ,
+                  "valueMeaning": "Frame describing the turret on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ARM_WATSON_FRAME" ,
+                  "valueMeaning": "Frame describing the Watson instrument component on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_Custom_TCP_Frame" ,
+                  "valueMeaning": "Frame describing a user-defined Tool Control Point for a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_DRT_Frame" ,
+                  "valueMeaning": "Frame describing the Dust Removal Tool on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_Docking_Post_Frame" ,
+                  "valueMeaning": "Frame describing the docking post on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_Drill_Frame" ,
+                  "valueMeaning": "Frame describing the drill on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_FCS_Frame" ,
+                  "valueMeaning": "Frame describing the FCS (Facility Contact Switch) device on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_Frame" ,
+                  "valueMeaning": "Frame describing a defined portion of a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_GDRT_Frame" ,
+                  "valueMeaning": "Frame describing the GDRT (Gaseous Dust Removal Tool) device on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_MAHLI_Frame" ,
+                  "valueMeaning": "Frame describing the MAHLI instrument on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_PIXL_Frame" ,
+                  "valueMeaning": "Frame describing the PIXL instrument on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_Portion_Frame" ,
+                  "valueMeaning": "Frame describing the sample portioner device on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_SHERLOC_Frame" ,
+                  "valueMeaning": "Frame describing the SHERLOC instrument on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_Scoop_TCP_Frame" ,
+                  "valueMeaning": "Frame describing the Tool Control Point for the scoop on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_Scoop_TIP_Frame" ,
+                  "valueMeaning": "Frame describing the tip of a scoop on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_Turret_Frame" ,
+                  "valueMeaning": "Frame describing the turret on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Arm_WATSON_Frame" ,
+                  "valueMeaning": "Frame describing the Watson instrument component on a movable arm." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "CINT_FRAME" ,
+                  "valueMeaning": "Frame describing the LVS camera during descent." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "CINT_Frame" ,
+                  "valueMeaning": "Frame describing the LVS camera during descent." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "DRILL_BIT_TIP" ,
+                  "valueMeaning": "Frame centered on the tip of the drill." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "HELI_G_FRAME" ,
+                  "valueMeaning": "Helicopter frame defined attached to the ground at takeoff." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "HELI_M_FRAME" ,
+                  "valueMeaning": "Helicopter frame roughly analogous to ROVER_MECH_FRAME." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "HELI_S1_FRAME" ,
+                  "valueMeaning": "Helicopter frame roughly analogous to ROVER_NAV_FRAME defined for IMU #1." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "HELI_S2_FRAME" ,
+                  "valueMeaning": "Helicopter frame roughly analogous to ROVER_NAV_FRAME defined for IMU #2." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Heli_G_Frame" ,
+                  "valueMeaning": "Helicopter frame defined attached to the ground at takeoff." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Heli_M_Frame" ,
+                  "valueMeaning": "Helicopter frame roughly analogous to ROVER_MECH_FRAME." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Heli_S1_Frame" ,
+                  "valueMeaning": "Helicopter frame roughly analogous to ROVER_NAV_FRAME defined for IMU #1." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Heli_S2_Frame" ,
+                  "valueMeaning": "Helicopter frame roughly analogous to ROVER_NAV_FRAME defined for IMU #2." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "LANDER_FRAME" ,
+                  "valueMeaning": "Analogous to ROVER_NAV_FRAME for non-mobile missions." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "LOCAL_LEVEL_FRAME" ,
+                  "valueMeaning": "Frame coincident with ROVER_NAV\/LANDER_FRAME that is oriented according to cartographic directions and gravity." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Lander_Frame" ,
+                  "valueMeaning": "Analogous to ROVER_NAV_FRAME for non-mobile missions." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Local_Level_Frame" ,
+                  "valueMeaning": "Frame coincident with ROVER_NAV\/LANDER_FRAME that is oriented according to cartographic directions and gravity." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "MB_Frame" ,
+                  "valueMeaning": "null" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "MCMF_FRAME" ,
+                  "valueMeaning": "Mars Centered Mars Fixed Frame defined with origin at the planet center." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "MCMF_Frame" ,
+                  "valueMeaning": "Mars Centered Mars Fixed Frame defined with origin at the planet center." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "MCZ_CAL_PRIMARY" ,
+                  "valueMeaning": "Primary Mastcam-Z calibration target." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "MEDA_RDS" ,
+                  "valueMeaning": "Radiation and Dust Sensor for the MEDA instruments." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "MI_Frame" ,
+                  "valueMeaning": "null" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Mast_Frame" ,
+                  "valueMeaning": "null" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ORBITAL" ,
+                  "valueMeaning": "A surface frame for use with orbital images, where the origin is defined relative to the equator and prime meridan or another orbital frame." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Orbital" ,
+                  "valueMeaning": "A surface frame for use with orbital images, where the origin is defined relative to the equator and prime meridan or another orbital frame." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "PIXL_BASE_FRAME" ,
+                  "valueMeaning": "Frame describing the base of the PIXL instrument." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "PIXL_Base_Frame" ,
+                  "valueMeaning": "Frame describing the base of the PIXL instrument." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "PIXL_SENSOR_FRAME" ,
+                  "valueMeaning": "Frame describing the movable sensor head of the PIXL instrument." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "PIXL_Sensor_Frame" ,
+                  "valueMeaning": "Frame describing the movable sensor head of the PIXL instrument." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "PIXL_TOOL" ,
+                  "valueMeaning": "Frame for PIXL instrument." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "PIXL_Tool" ,
+                  "valueMeaning": "Frame for PIXL instrument." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ROVER_FRAME" ,
+                  "valueMeaning": "Frame that is attached to the rover and moves with the rover (in both position and orientation). Often synonymous with ROVER_NAV_FRAME." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ROVER_MECH_FRAME" ,
+                  "valueMeaning": "Frame generally similar to ROVER_NAV_FRAME but with different origin and possibly axis orientation that is more conducive to mechanical operations (\"MECH\" for \"Mechanical\"). The origin is typically (but not necessarily) tied to a specific bit of hardware." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ROVER_NAV_FRAME" ,
+                  "valueMeaning": "Frame attached to the rover oriented with respect to the rover that moves with the rover (\"NAV\" for \"Navigation\"). The origin is generally in a location conducive to navigation (e.g. at the center of turning between the middle wheels at nominal ground level on MSL\/M20 type rovers) which may not be attached to any physical hardware." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "RSM_FRAME" ,
+                  "valueMeaning": "Frame defining a Remote Sensing Mast." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "RSM_Frame" ,
+                  "valueMeaning": "Frame defining a Remote Sensing Mast." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "RSM_HEAD_FRAME" ,
+                  "valueMeaning": "Frame defining a Remote Sensing Mast." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "RSM_Head_Frame" ,
+                  "valueMeaning": "Frame defining a Remote Sensing Mast." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Rat_Frame" ,
+                  "valueMeaning": "null" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Rover_Frame" ,
+                  "valueMeaning": "null" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Rover_Mech_Frame" ,
+                  "valueMeaning": "Frame generally similar to ROVER_NAV_FRAME but with different origin and possibly axis orientation that is more conducive to mechanical operations (\"MECH\" for \"Mechanical\"). The origin is typically (but not necessarily) tied to a specific bit of hardware." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Rover_Nav_Frame" ,
+                  "valueMeaning": "Frame attached to the rover oriented with respect to the rover that moves with the rover (\"NAV\" for \"Navigation\"). The origin is generally in a location conducive to navigation (e.g. at the center of turning between the middle wheels at nominal ground level on MSL\/M20 type rovers) which may not be attached to any physical hardware." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "SITE_FRAME" ,
+                  "valueMeaning": "Instance of LOCAL_LEVEL_FRAME that is fixed to the ground. Used for local operations to reduce error propagation due to position uncertainty." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "SUN" ,
+                  "valueMeaning": "Frame centered on the sun. Generally used for pointing instruments at the sun, rather than 3D position." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Site_Frame" ,
+                  "valueMeaning": "Instance of LOCAL_LEVEL_FRAME that is fixed to the ground. Used for local operations to reduce error propagation due to position uncertainty." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "TOOL_FRAME" ,
+                  "valueMeaning": "Tool frame is used to indicate the frame associated with the currently selected (or activated) \"tool\", in contexts where the specific frame is unknown or does not matter. \"Tools\" are typically devices on an arm such as a drill, microscopic imager, contact spectrometer, etc." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "TURRET_FRAME" ,
+                  "valueMeaning": "Frame based on a turret mechanism." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Tool_Frame" ,
+                  "valueMeaning": "Tool frame is used to indicate the frame associated with the currently selected (or activated) \"tool\", in contexts where the specific frame is unknown or does not matter. \"Tools\" are typically devices on an arm such as a drill, microscopic imager, contact spectrometer, etc." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Turret_Frame" ,
+                  "valueMeaning": "Frame based on a turret mechanism." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "WHEEL_LF" ,
+                  "valueMeaning": "Frame for left front wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "WHEEL_LM" ,
+                  "valueMeaning": "Frame for left middle wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "WHEEL_LR" ,
+                  "valueMeaning": "Frame for left rear wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "WHEEL_RF" ,
+                  "valueMeaning": "Frame for right front wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "WHEEL_RM" ,
+                  "valueMeaning": "Frame for right middle wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "WHEEL_RR" ,
+                  "valueMeaning": "Frame for right rear wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Wheel_LF" ,
+                  "valueMeaning": "Frame for left front wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Wheel_LM" ,
+                  "valueMeaning": "Frame for left middle wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Wheel_LR" ,
+                  "valueMeaning": "Frame for left rear wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Wheel_RF" ,
+                  "valueMeaning": "Frame for right front wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Wheel_RM" ,
+                  "valueMeaning": "Frame for right middle wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Wheel_RR" ,
+                  "valueMeaning": "Frame for right rear wheel." ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {
@@ -13421,12 +14163,12 @@
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
-            "dataType": "ASCII_Integer" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Integer" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
             "minimumCharacters": "Unbounded" ,
             "maximumCharacters": "Unbounded" ,
-            "minimumValue": "-9223372036854775808" ,
-            "maximumValue": "9223372036854775807" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
             "pattern": "null" ,
             "unitOfMeasure": "null" ,
             "unitOfMeasureId": "null" ,
@@ -13862,6 +14604,31 @@
         }
       , {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Derived_Geometry.geom.solar_image_clock_angle" ,
+            "title": "solar_image_clock_angle" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "Describes the direction of the sun in terms of the image plane, defined as a clock angle (clockwise) around the center of the image with 0 pointing to the top of the image, with respect to the display orientation (usually defined by disp:vertical_display_direction). " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Angle" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
+            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.geom.Derived_Geometry.geom.start_azimuth" ,
             "title": "start_azimuth" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -13907,6 +14674,56 @@
             "unitOfMeasure": "Units_of_Angle" ,
             "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
             "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Derived_Geometry.geom.target_heliocentric_distance" ,
+            "title": "target_heliocentric_distance" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "The target_heliocentric_distance attribute provides the scalar distance between the center of the target and the center of the Sun. " ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Length" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Length" ,
+            "unitId": "AU, Angstrom, cm, km, m, micrometer, mm, nm" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Derived_Geometry.geom.target_name" ,
+            "title": "target_name" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "Specifies the name of the target location for items in this class." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
             "defaultUnitId": "null"
           }
         }
@@ -13974,6 +14791,31 @@
             "isDeprecated": "false" ,
             "dataType": "ASCII_Local_Identifier" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Local_Identifier" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Device_Pose.pds.name" ,
+            "title": "name" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "pds" ,
+            "steward": "pds" ,
+            "versionId": "1.16" ,
+            "description": "The name attribute provides a word or combination of words by which the object is known." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "UTF8_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.UTF8_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
             "maximumCharacters": "255" ,
             "minimumValue": "Unbounded" ,
@@ -15440,6 +16282,81 @@
         }
       , {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Geometry_Lander.geom.geometry_state" ,
+            "title": "geometry_state" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "geom" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "Specifies the state or configuration of this instance of Geometry_Lander applies. Use of this attribute enables multiple instances of Geometry_Lander, describing the geometry under different conditions. Note that it is legal for more than one instance to have the same geometry_state, in which case the local_identifier should be used to differentiate the instances, along with description. If not present, the semantics of \"Telemetry\" should be assumed. It is not required that instances be retained; a derived product may have an Adjusted instance but remove the Telemetry one, for example." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Geometry_Lander.pds.description" ,
+            "title": "description" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "pds" ,
+            "steward": "pds" ,
+            "versionId": "1.16" ,
+            "description": "The description attribute provides a statement, picture in words, or account that describes or is otherwise relevant to the object." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "UTF8_Text_Preserved" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.UTF8_Text_Preserved" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.geom.Geometry_Lander.pds.local_identifier" ,
+            "title": "local_identifier" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "pds" ,
+            "steward": "pds" ,
+            "versionId": "1.16" ,
+            "description": "The local_identifier attribute provides a character string which uniquely identifies the containing object within the label." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Local_Identifier" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Local_Identifier" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.geom.Geometry_Orbiter.geom.geometry_reference_time_tdb" ,
             "title": "geometry_reference_time_tdb" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -16580,7 +17497,7 @@
             "steward": "geo" ,
             "versionId": "1.16" ,
             "description": "The celestial_north_clock_angle attribute specifies the direction of celestial north at the center of an image. It is measured from the 'upward' direction, clockwise to the direction toward celestial north, assuming the image is displayed as defined by the Display_Direction class. " ,
-            "isNillable": "false" ,
+            "isNillable": "true" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
             "dataType": "ASCII_Real" ,
@@ -16680,7 +17597,7 @@
             "steward": "geo" ,
             "versionId": "1.16" ,
             "description": "The ecliptic_north_clock_angle attribute specifies the direction of ecliptic north at the center of an image. It is measured from the 'upward' direction, clockwise to the direction toward ecliptic north, assuming the image is displayed as defined by the Display_Direction class. " ,
-            "isNillable": "false" ,
+            "isNillable": "true" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
             "dataType": "ASCII_Real" ,
@@ -16830,7 +17747,7 @@
             "steward": "geo" ,
             "versionId": "1.16" ,
             "description": "The celestial_north_clock_angle attribute specifies the direction of celestial north at the center of an image. It is measured from the 'upward' direction, clockwise to the direction toward celestial north, assuming the image is displayed as defined by the Display_Direction class. " ,
-            "isNillable": "false" ,
+            "isNillable": "true" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
             "dataType": "ASCII_Real" ,
@@ -16880,7 +17797,7 @@
             "steward": "geo" ,
             "versionId": "1.16" ,
             "description": "The ecliptic_north_clock_angle attribute specifies the direction of ecliptic north at the center of an image. It is measured from the 'upward' direction, clockwise to the direction toward ecliptic north, assuming the image is displayed as defined by the Display_Direction class. " ,
-            "isNillable": "false" ,
+            "isNillable": "true" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
             "dataType": "ASCII_Real" ,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:geom  Version:1.8.0.0 - Thu Mar 31 17:14:40 UTC 2022 -->
+  <!-- PDS4 Schematron for Name Space Id:geom  Version:1.9.5.0 - Thu Mar 31 18:46:01 UTC 2022 -->
   <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -451,6 +451,13 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:rule context="geom:Coordinate_Space_Indexed/geom:coordinate_space_frame_type">
+      <sch:assert test="if (not(@xsi:nil eq 'true') and (not(. = ('APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'ORBITAL', 'Orbital', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'PIXL_TOOL', 'PIXL_Tool', 'ROVER_FRAME', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame', 'TOOL_FRAME', 'TURRET_FRAME', 'Tool_Frame', 'Turret_Frame', 'WHEEL_LF', 'WHEEL_LM', 'WHEEL_LR', 'WHEEL_RF', 'WHEEL_RM', 'WHEEL_RR', 'Wheel_LF', 'Wheel_LM', 'Wheel_LR', 'Wheel_RF', 'Wheel_RM', 'Wheel_RR')))) then false() else true()">
+        <title>geom:Coordinate_Space_Indexed/geom:coordinate_space_frame_type/geom:coordinate_space_frame_type</title>
+        The attribute geom:Coordinate_Space_Indexed/geom:coordinate_space_frame_type must be nulled or equal to one of the following values 'APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'ORBITAL', 'Orbital', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'PIXL_TOOL', 'PIXL_Tool', 'ROVER_FRAME', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame', 'TOOL_FRAME', 'TURRET_FRAME', 'Tool_Frame', 'Turret_Frame', 'WHEEL_LF', 'WHEEL_LM', 'WHEEL_LR', 'WHEEL_RF', 'WHEEL_RM', 'WHEEL_RR', 'Wheel_LF', 'Wheel_LM', 'Wheel_LR', 'Wheel_RF', 'Wheel_RM', 'Wheel_RR'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:rule context="geom:Coordinate_Space_Quality/geom:attitude_propagation_duration">
       <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr')">
         <title>geom:Coordinate_Space_Quality/geom:attitude_propagation_duration/geom:attitude_propagation_duration</title>
@@ -528,6 +535,13 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:rule context="geom:Derived_Geometry/geom:solar_image_clock_angle">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
+        <title>geom:Derived_Geometry/geom:solar_image_clock_angle/geom:solar_image_clock_angle</title>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:rule context="geom:Derived_Geometry/geom:start_azimuth">
       <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
         <title>geom:Derived_Geometry/geom:start_azimuth/geom:start_azimuth</title>
@@ -539,6 +553,13 @@
       <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
         <title>geom:Derived_Geometry/geom:stop_azimuth/geom:stop_azimuth</title>
         The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="geom:Derived_Geometry/geom:target_heliocentric_distance">
+      <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
+        <title>geom:Derived_Geometry/geom:target_heliocentric_distance/geom:target_heliocentric_distance</title>
+        The attribute @unit must be equal to one of the following values 'AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
