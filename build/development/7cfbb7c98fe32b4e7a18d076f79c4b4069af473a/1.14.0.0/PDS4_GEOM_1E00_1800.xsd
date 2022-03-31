@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:geom  Version:1.8.0.0 - Mon Oct 11 16:20:17 UTC 2021 -->
+  <!-- PDS4 XML/Schema for Name Space Id:geom  Version:1.8.0.0 - Thu Mar 31 17:14:40 UTC 2022 -->
   <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.14.0.0 - pds: - Common Dictionary                                       -->
   <!-- 1.8.0.0 - geom: - Geometry Dictionary Full                                -->
-  <!--   file:/home/runner/work/ldd-geom/ldd-geom/src/GeomImageDisplay_IngestLDD -->
+  <!--   file:/home/runner/work/ldd-geom/ldd-geom/src/GeomLander_IngestLDD.xml   -->
   <!-- 1.8.0.0 - geom: - Geometry Dictionary Full                                -->
-  <!--   file:/home/runner/work/ldd-geom/ldd-geom/src/GeomMain_IngestLDD.xml     -->
+  <!--   file:/home/runner/work/ldd-geom/ldd-geom/src/GeomImageDisplay_IngestLDD -->
   <!-- 1.8.0.0 - geom: - Geometry Dictionary Full                                -->
   <!--   file:/home/runner/work/ldd-geom/ldd-geom/src/GeomOrbit_IngestLDD.xml    -->
   <!-- 1.8.0.0 - geom: - Geometry Dictionary Full                                -->
-  <!--   file:/home/runner/work/ldd-geom/ldd-geom/src/GeomLander_IngestLDD.xml   -->
+  <!--   file:/home/runner/work/ldd-geom/ldd-geom/src/GeomMain_IngestLDD.xml     -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://pds.nasa.gov/pds4/geom/v1"
@@ -28,24 +28,29 @@
     <xs:documentation>
 Cumulative comments removed to reduce annoyance...
         
-        GeomLander - Geometry Lander Section
+        GeomMain - Geometry Main Section
         
         The Geometry namespace is divided into four major sections:
-        Main         This section
-        ImageDisplay Geometry mapped to a (properly) displayed image
-        Orbit        Orbiter and flyby classes
-        Lander       Lander and Rover classes
-        
-        The Lander section of the Geometry namespace definition contains the definitions
-        of classes and attributes unique to the Geometry_Lander major subclass hierarchy.
-        It references common elements defined in the Main section.
-        
-        The Lander section deals with details of imaging and hardware positioning that 
-        are unique to landers and rovers operating on the surface of something other
-        than Earth.
-        
+           Main         This section
+           ImageDisplay Geometry mapped to a (properly) displayed image
+           Orbit        Orbiter and flyby classes
+           Lander       Lander and Rover classes
+           
+        The Main section of the Geometry namespace definition contains the definitions
+        of: 
+          o Classes and attributes comprising the exposed elements of the namespace;
+          o The Expanded_Geometry and SPICE_Kernel_Files major subclasses, which have 
+            very few attributes and subclasses of their own; 
+          o Definitions for abstract and base classes used in multiple sections of the
+            namespace; and
+          o Definitions of a handful of key scalar values that are either already 
+            referenced from multiple sections, or likely to be in future.
+    
         Attributes are in alphanetical order. Classes are listed in alphabetical order
-        within subcategories based on how deeply they are nested.
+        within subcategories based on how they are used. Anything defines in this file 
+        is available to other sections of the Geometry namespace
+        
+        This file should be listed LAST when building the Geometry namespace.
     
     </xs:documentation>
   </xs:annotation>

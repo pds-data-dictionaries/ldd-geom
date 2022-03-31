@@ -3,7 +3,7 @@
 >>  INFO IM Version Id: 1.16.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.22
->>  INFO Date: Mon Oct 11 16:20:19 UTC 2021
+>>  INFO Date: Thu Mar 31 17:14:48 UTC 2022
 >>  INFO PARENT_DIR: /tmp/lddtool-13.1.0
 >>  INFO SCRIPT_DIR: /tmp/lddtool-13.1.0/bin
 >>  INFO LIB_DIR: /tmp/lddtool-13.1.0/lib
@@ -20,6 +20,25 @@
 >>> INFO Init:  - Config.Properties Namespace Id Found:geom
 >>> INFO Init:  - Config.Properties Namespace Id Using:geom
 >>> INFO Init:  - LDD Dictionary_Type is Discipline
+>>> INFO Attribute: <interpolation_sequence> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <rotation_direction> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <solar_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <solar_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+>>> INFO Attribute: <solar_elevation> - The default minimum value provided by the attribute's data type is being overridden with -90.0
+>>> INFO Attribute: <solar_elevation> - The default maximum value provided by the attribute's data type is being overridden with 90.0
+>>> INFO Attribute: <start_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <start_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+>>> INFO Attribute: <stop_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <stop_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+>>> INFO Attribute: <x> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <x_unit> - The default minimum value provided by the attribute's data type is being overridden with -1
+>>> INFO Attribute: <x_unit> - The default maximum value provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <y> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <y_unit> - The default minimum value provided by the attribute's data type is being overridden with -1
+>>> INFO Attribute: <y_unit> - The default maximum value provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <z> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <z_unit> - The default minimum value provided by the attribute's data type is being overridden with -1
+>>> INFO Attribute: <z_unit> - The default maximum value provided by the attribute's data type is being overridden with 1
 >>> INFO Attribute: <celestial_east_clock_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <celestial_east_clock_angle> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <celestial_north_clock_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
@@ -46,16 +65,6 @@
 >>> INFO Attribute: <target_north_pole_clock_angle> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <target_positive_pole_clock_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <target_positive_pole_clock_angle> - The default maximum value provided by the attribute's data type is being overridden with 360
->>> INFO Attribute: <emission_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <emission_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
->>> INFO Attribute: <incidence_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <incidence_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
->>> INFO Attribute: <phase_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <phase_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
->>> INFO Attribute: <latitude_position> - The default minimum value provided by the attribute's data type is being overridden with -90
->>> INFO Attribute: <latitude_position> - The default maximum value provided by the attribute's data type is being overridden with 90
->>> INFO Attribute: <longitude_position> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <longitude_position> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <horizontal_pixel_field_of_view> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <horizontal_pixel_field_of_view> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <maximum_emission_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
@@ -174,6 +183,16 @@
 >>> INFO Attribute: <subspacecraft_longitude> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <vertical_pixel_field_of_view> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <vertical_pixel_field_of_view> - The default maximum value provided by the attribute's data type is being overridden with 360
+>>> INFO Attribute: <emission_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <emission_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
+>>> INFO Attribute: <incidence_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <incidence_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
+>>> INFO Attribute: <phase_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <phase_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
+>>> INFO Attribute: <latitude_position> - The default minimum value provided by the attribute's data type is being overridden with -90
+>>> INFO Attribute: <latitude_position> - The default maximum value provided by the attribute's data type is being overridden with 90
+>>> INFO Attribute: <longitude_position> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <longitude_position> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <interpolation_sequence> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <rotation_direction> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <solar_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0.0
@@ -219,16 +238,6 @@
 >>> INFO Attribute: <target_north_pole_clock_angle> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <target_positive_pole_clock_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <target_positive_pole_clock_angle> - The default maximum value provided by the attribute's data type is being overridden with 360
->>> INFO Attribute: <emission_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <emission_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
->>> INFO Attribute: <incidence_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <incidence_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
->>> INFO Attribute: <phase_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <phase_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
->>> INFO Attribute: <latitude_position> - The default minimum value provided by the attribute's data type is being overridden with -90
->>> INFO Attribute: <latitude_position> - The default maximum value provided by the attribute's data type is being overridden with 90
->>> INFO Attribute: <longitude_position> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <longitude_position> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <horizontal_pixel_field_of_view> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <horizontal_pixel_field_of_view> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <maximum_emission_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
@@ -347,6 +356,16 @@
 >>> INFO Attribute: <subspacecraft_longitude> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <vertical_pixel_field_of_view> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <vertical_pixel_field_of_view> - The default maximum value provided by the attribute's data type is being overridden with 360
+>>> INFO Attribute: <emission_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <emission_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
+>>> INFO Attribute: <incidence_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <incidence_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
+>>> INFO Attribute: <phase_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <phase_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
+>>> INFO Attribute: <latitude_position> - The default minimum value provided by the attribute's data type is being overridden with -90
+>>> INFO Attribute: <latitude_position> - The default maximum value provided by the attribute's data type is being overridden with 90
+>>> INFO Attribute: <longitude_position> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <longitude_position> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <interpolation_sequence> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <rotation_direction> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <solar_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0.0
@@ -392,16 +411,6 @@
 >>> INFO Attribute: <target_north_pole_clock_angle> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <target_positive_pole_clock_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <target_positive_pole_clock_angle> - The default maximum value provided by the attribute's data type is being overridden with 360
->>> INFO Attribute: <emission_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <emission_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
->>> INFO Attribute: <incidence_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <incidence_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
->>> INFO Attribute: <phase_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <phase_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
->>> INFO Attribute: <latitude_position> - The default minimum value provided by the attribute's data type is being overridden with -90
->>> INFO Attribute: <latitude_position> - The default maximum value provided by the attribute's data type is being overridden with 90
->>> INFO Attribute: <longitude_position> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <longitude_position> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <horizontal_pixel_field_of_view> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <horizontal_pixel_field_of_view> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <maximum_emission_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
@@ -520,6 +529,16 @@
 >>> INFO Attribute: <subspacecraft_longitude> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <vertical_pixel_field_of_view> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <vertical_pixel_field_of_view> - The default maximum value provided by the attribute's data type is being overridden with 360
+>>> INFO Attribute: <emission_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <emission_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
+>>> INFO Attribute: <incidence_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <incidence_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
+>>> INFO Attribute: <phase_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <phase_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
+>>> INFO Attribute: <latitude_position> - The default minimum value provided by the attribute's data type is being overridden with -90
+>>> INFO Attribute: <latitude_position> - The default maximum value provided by the attribute's data type is being overridden with 90
+>>> INFO Attribute: <longitude_position> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <longitude_position> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <interpolation_sequence> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <rotation_direction> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <solar_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0.0
@@ -565,16 +584,6 @@
 >>> INFO Attribute: <target_north_pole_clock_angle> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <target_positive_pole_clock_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <target_positive_pole_clock_angle> - The default maximum value provided by the attribute's data type is being overridden with 360
->>> INFO Attribute: <emission_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <emission_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
->>> INFO Attribute: <incidence_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <incidence_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
->>> INFO Attribute: <phase_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <phase_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
->>> INFO Attribute: <latitude_position> - The default minimum value provided by the attribute's data type is being overridden with -90
->>> INFO Attribute: <latitude_position> - The default maximum value provided by the attribute's data type is being overridden with 90
->>> INFO Attribute: <longitude_position> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <longitude_position> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <horizontal_pixel_field_of_view> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <horizontal_pixel_field_of_view> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <maximum_emission_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
@@ -693,25 +702,16 @@
 >>> INFO Attribute: <subspacecraft_longitude> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <vertical_pixel_field_of_view> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <vertical_pixel_field_of_view> - The default maximum value provided by the attribute's data type is being overridden with 360
->>> INFO Attribute: <interpolation_sequence> - The default minimum value provided by the attribute's data type is being overridden with 0
->>> INFO Attribute: <rotation_direction> - This local attribute has a duplicate in the PDS4 data dictionary.
->>> INFO Attribute: <solar_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0.0
->>> INFO Attribute: <solar_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360.0
->>> INFO Attribute: <solar_elevation> - The default minimum value provided by the attribute's data type is being overridden with -90.0
->>> INFO Attribute: <solar_elevation> - The default maximum value provided by the attribute's data type is being overridden with 90.0
->>> INFO Attribute: <start_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0.0
->>> INFO Attribute: <start_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360.0
->>> INFO Attribute: <stop_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0.0
->>> INFO Attribute: <stop_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360.0
->>> INFO Attribute: <x> - This local attribute has a duplicate in the PDS4 data dictionary.
->>> INFO Attribute: <x_unit> - The default minimum value provided by the attribute's data type is being overridden with -1
->>> INFO Attribute: <x_unit> - The default maximum value provided by the attribute's data type is being overridden with 1
->>> INFO Attribute: <y> - This local attribute has a duplicate in the PDS4 data dictionary.
->>> INFO Attribute: <y_unit> - The default minimum value provided by the attribute's data type is being overridden with -1
->>> INFO Attribute: <y_unit> - The default maximum value provided by the attribute's data type is being overridden with 1
->>> INFO Attribute: <z> - This local attribute has a duplicate in the PDS4 data dictionary.
->>> INFO Attribute: <z_unit> - The default minimum value provided by the attribute's data type is being overridden with -1
->>> INFO Attribute: <z_unit> - The default maximum value provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <emission_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <emission_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
+>>> INFO Attribute: <incidence_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <incidence_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
+>>> INFO Attribute: <phase_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <phase_angle> - The default maximum value provided by the attribute's data type is being overridden with 180
+>>> INFO Attribute: <latitude_position> - The default minimum value provided by the attribute's data type is being overridden with -90
+>>> INFO Attribute: <latitude_position> - The default maximum value provided by the attribute's data type is being overridden with 90
+>>> INFO Attribute: <longitude_position> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <longitude_position> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> WARNING Attribute: <coordinate_space_frame_type> - The 'type' attribute must have at least one permissible value.
 >>> WARNING Attribute: <x_unit> - The terms 'unit', 'units', 'unit_of_measure' should not be used as the rightmost part of an attribute's name.
 >>> WARNING Attribute: <y_unit> - The terms 'unit', 'units', 'unit_of_measure' should not be used as the rightmost part of an attribute's name.
@@ -737,7 +737,7 @@ Input:
      - IM Version: true
      - Export JSON Flag: true
 
-     - Ingest LDD(s): /home/runner/work/ldd-geom/ldd-geom/src/GeomImageDisplay_IngestLDD.xml, /home/runner/work/ldd-geom/ldd-geom/src/GeomMain_IngestLDD.xml, /home/runner/work/ldd-geom/ldd-geom/src/GeomOrbit_IngestLDD.xml, /home/runner/work/ldd-geom/ldd-geom/src/GeomLander_IngestLDD.xml
+     - Ingest LDD(s): /home/runner/work/ldd-geom/ldd-geom/src/GeomLander_IngestLDD.xml, /home/runner/work/ldd-geom/ldd-geom/src/GeomImageDisplay_IngestLDD.xml, /home/runner/work/ldd-geom/ldd-geom/src/GeomOrbit_IngestLDD.xml, /home/runner/work/ldd-geom/ldd-geom/src/GeomMain_IngestLDD.xml
 
 Output:
 
