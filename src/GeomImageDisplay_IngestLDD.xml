@@ -8,17 +8,17 @@
     https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd">
     
     <name>Geometry Dictionary Full</name>
-    <ldd_version_id>1.8.0.0</ldd_version_id>
+    <ldd_version_id>1.9.5.0</ldd_version_id>
     <dictionary_type>Discipline</dictionary_type>
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
     <namespace_id>geom</namespace_id>
-    <comment>Cumulative comments removed to reduce annoyance...</comment>
+    <comment>Cumulative comments are in GeomMain</comment>
     
-    <last_modification_date_time>2021-08-20</last_modification_date_time>
+    <last_modification_date_time>2021-10-25</last_modification_date_time>
     
     <!-- Attributes - Alphabetical-->
-    
+
     <DD_Attribute>
         <name>celestial_east_clock_angle</name>
         <version_id>1.0</version_id>
@@ -26,10 +26,10 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The celestial_east_clock_angle attribute specifies the 
-            direction of celestial east at the center of an image. 
-            It is measured from the 'upward' direction, clockwise to 
-            the direction toward celestial east, assuming 
-            the image is displayed as defined by the Display_Direction class.
+                    direction of celestial east at the center of an image. 
+                    It is measured from the 'upward' direction, clockwise to 
+                    the direction toward celestial east, assuming 
+                    the image is displayed as defined by the Display_Direction class.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -40,18 +40,18 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>celestial_north_clock_angle</name>
         <version_id>1.0</version_id>
         <local_identifier>celestial_north_clock_angle</local_identifier>
-        <nillable_flag>false</nillable_flag>
+        <nillable_flag>true</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The celestial_north_clock_angle attribute specifies the 
-            direction of celestial north at the center of an image. 
-            It is measured from the 'upward' direction, clockwise to 
-            the direction toward celestial north, assuming 
-            the image is displayed as defined by the Display_Direction class.
+                    direction of celestial north at the center of an image. 
+                    It is measured from the 'upward' direction, clockwise to 
+                    the direction toward celestial north, assuming 
+                    the image is displayed as defined by the Display_Direction class.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -87,7 +87,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>central_body_positive_pole_clock_angle</name>
         <version_id>1.0</version_id>
@@ -119,11 +119,11 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The declination_angle (Dec) attribute provides the value of an angle  
-            on the celestial sphere, measured north from the celestial equator 
-            to the point in question. (For points south of the celestial 
-            equator, negative values are used.) Declination is used in 
-            conjunction with right ascension (right_ascension_angle or
-            right_ascension_hour_angle) to specify a point on the sky.
+                    on the celestial sphere, measured north from the celestial equator 
+                    to the point in question. (For points south of the celestial 
+                    equator, negative values are used.) Declination is used in 
+                    conjunction with right ascension (right_ascension_angle or
+                    right_ascension_hour_angle) to specify a point on the sky.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -142,11 +142,11 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>Assuming the image is displayed as defined by the Display_Direction 
-            class, the east_azimuth attribute provides the value of the angle 
-            between a line from the image center to the east and a reference 
-            line in the image plane. The reference line is a horizontal line 
-            from the image center to the middle right edge of the image. This angle 
-            is measured from the reference line and increases in a clockwise direction.
+                  class, the east_azimuth attribute provides the value of the angle 
+                  between a line from the image center to the east and a reference 
+                  line in the image plane. The reference line is a horizontal line 
+                  from the image center to the middle right edge of the image. This angle 
+                  is measured from the reference line and increases in a clockwise direction.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -158,17 +158,17 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
-    <DD_Attribute>
+   <DD_Attribute>
         <name>ecliptic_east_clock_angle</name>
         <version_id>1.0</version_id>
         <local_identifier>ecliptic_east_clock_angle</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The ecliptic_east_clock_angle attribute specifies the 
-            direction of ecliptic east at the center of an image. 
-            It is measured from the 'upward' direction, clockwise to 
-            the direction toward ecliptic east, assuming 
-            the image is displayed as defined by the Display_Direction class.
+                    direction of ecliptic east at the center of an image. 
+                    It is measured from the 'upward' direction, clockwise to 
+                    the direction toward ecliptic east, assuming 
+                    the image is displayed as defined by the Display_Direction class.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -179,18 +179,18 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
-    <DD_Attribute>
+
+   <DD_Attribute>
         <name>ecliptic_north_clock_angle</name>
         <version_id>1.0</version_id>
         <local_identifier>ecliptic_north_clock_angle</local_identifier>
-        <nillable_flag>false</nillable_flag>
+        <nillable_flag>true</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The ecliptic_north_clock_angle attribute specifies the 
-            direction of ecliptic north at the center of an image. 
-            It is measured from the 'upward' direction, clockwise to 
-            the direction toward ecliptic north, assuming 
-            the image is displayed as defined by the Display_Direction class.
+                    direction of ecliptic north at the center of an image. 
+                    It is measured from the 'upward' direction, clockwise to 
+                    the direction toward ecliptic north, assuming 
+                    the image is displayed as defined by the Display_Direction class.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -201,7 +201,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>horizontal_display_axis</name>
         <version_id>1.0</version_id>
@@ -209,18 +209,18 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The horizontal_display_axis attribute
-            identifies, by name, the axis of an Array (or Array subclass)
-            that is intended to be displayed in the horizontal or "sample"
-            dimension on a display device. The value of this attribute must
-            match the value of one, and only one, axis_name attribute in an
-            Axis_Array class of the associated Array.
+        identifies, by name, the axis of an Array (or Array subclass)
+        that is intended to be displayed in the horizontal or "sample"
+        dimension on a display device. The value of this attribute must
+        match the value of one, and only one, axis_name attribute in an
+        Axis_Array class of the associated Array.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>horizontal_display_direction</name>
         <version_id>1.0</version_id>
@@ -237,13 +237,13 @@
             <DD_Permissible_Value>
                 <value>Left to Right</value>
                 <value_meaning>Data along the horizontal axis of an array should
-                    be displayed from left to right.
-                </value_meaning>
+                	be displayed from left to right.
+                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Right to Left</value>
                 <value_meaning>Data along the horizontal axis of an array should
-                    be displayed from right to left.
+                	be displayed from right to left.
                 </value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
@@ -256,12 +256,12 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>Assuming the image is displayed as defined by the Display_Direction 
-            class, the north_azimuth attribute provides the value of the angle 
-            between a line from the image center to the north pole and 
-            a reference line in the image plane. The reference line is 
-            a horizontal line from the image center to the middle right 
-            edge of the image. This angle is measured from the 
-            reference line and increases in a clockwise direction.
+                    class, the north_azimuth attribute provides the value of the angle 
+                    between a line from the image center to the north pole and 
+                    a reference line in the image plane. The reference line is 
+                    a horizontal line from the image center to the middle right 
+                    edge of the image. This angle is measured from the 
+                    reference line and increases in a clockwise direction.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -320,18 +320,18 @@
             <specified_unit_id>hr</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
-    <DD_Attribute>
+
+   <DD_Attribute>
         <name>sun_direction_clock_angle</name>
         <version_id>1.0</version_id>
         <local_identifier>sun_direction_clock_angle</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The sun_direction_clock_angle attribute specifies the 
-            direction of the sun as an angle measured from a line 'upward'   
-            from the center of the field of view, clockwise to 
-            the direction toward sun, assuming 
-            the image is displayed as defined by the Display_Direction class. 
+                    direction of the sun as an angle measured from a line 'upward'   
+                    from the center of the field of view, clockwise to 
+                    the direction toward sun, assuming 
+                    the image is displayed as defined by the Display_Direction class. 
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -342,7 +342,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>target_north_pole_clock_angle</name>
         <version_id>1.0</version_id>
@@ -367,7 +367,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>target_positive_pole_clock_angle</name>
         <version_id>1.0</version_id>
@@ -391,7 +391,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>vertical_display_axis</name>
         <version_id>1.0</version_id>
@@ -399,18 +399,18 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The vertical_display_axis attribute
-            identifies, by name, the axis of an Array (or Array subclass)
-            that is intended to be displayed in the vertical or "line"
-            dimension on a display device. The value of this attribute must
-            match the value of one, and only one, axis_name attribute in an
-            Axis_Array class of the associated Array.
+        identifies, by name, the axis of an Array (or Array subclass)
+        that is intended to be displayed in the vertical or "line"
+        dimension on a display device. The value of this attribute must
+        match the value of one, and only one, axis_name attribute in an
+        Axis_Array class of the associated Array.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>vertical_display_direction</name>
         <version_id>1.0</version_id>
@@ -427,13 +427,13 @@
             <DD_Permissible_Value>
                 <value>Top to Bottom</value>
                 <value_meaning>Data along the vertical axis of an array should
-                    be displayed from the top to the bottom of the display device.
-                </value_meaning>
+                	be displayed from the top to the bottom of the display device.
+                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Bottom to Top</value>
                 <value_meaning>Data along the vertical axis of an array should
-                    be displayed from the bottom to the top of the display device.
+                	be displayed from the bottom to the top of the display device.
                 </value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
@@ -511,28 +511,28 @@
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>*</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Quaternion_Plus_To_From</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>*</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
     </DD_Class>
     
     <!-- Nesting Level 2 -->
-    
+
     <DD_Class>
         <name>Display_Direction</name>
         <version_id>1.0</version_id>
         <local_identifier>Display_Direction</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Display_Direction class specifies which two 
-            of the dimensions of an Array object should be displayed and how
-            they should be displayed in the vertical (line) and horizontal 
-            (sample) dimensions of a display device. This class is essentially 
-            the same as the class of the same name in the Display Dictionary, and  
-            is redefined here for convenience. 
+        of the dimensions of an Array object should be displayed and how
+        they should be displayed in the vertical (line) and horizontal 
+        (sample) dimensions of a display device. This class is essentially 
+        the same as the class of the same name in the Display Dictionary, and  
+        is redefined here for convenience. 
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -567,45 +567,45 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Object_Orientation_Clock_Angles</name>
         <version_id>1.0</version_id>
         <local_identifier>Object_Orientation_Clock_Angles</local_identifier>
         <submitter_name>Anne Raugh</submitter_name>
         <definition>The Object_Orientation_Clock_Angles class provides several 
-            clock angles which can be used to describe the orientation 
-            of the field of view with respect to various external references 
-            such as Celestial or Equatorial North.
+                    clock angles which can be used to describe the orientation 
+                    of the field of view with respect to various external references 
+                    such as Celestial or Equatorial North.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>XSChoice#</identifier_reference>
-            <identifier_reference>celestial_north_clock_angle</identifier_reference>
-            <identifier_reference>celestial_east_clock_angle</identifier_reference>
-            <identifier_reference>ecliptic_north_clock_angle</identifier_reference>
-            <identifier_reference>ecliptic_east_clock_angle</identifier_reference>
-            <identifier_reference>central_body_north_pole_clock_angle</identifier_reference>
-            <identifier_reference>central_body_positive_pole_clock_angle</identifier_reference>
-            <identifier_reference>target_north_pole_clock_angle</identifier_reference>
-            <identifier_reference>target_positive_pole_clock_angle</identifier_reference>
-            <identifier_reference>sun_direction_clock_angle</identifier_reference>
+       <DD_Association>
+           <identifier_reference>XSChoice#</identifier_reference>
+           <identifier_reference>celestial_north_clock_angle</identifier_reference>
+           <identifier_reference>celestial_east_clock_angle</identifier_reference>
+           <identifier_reference>ecliptic_north_clock_angle</identifier_reference>
+           <identifier_reference>ecliptic_east_clock_angle</identifier_reference>
+           <identifier_reference>central_body_north_pole_clock_angle</identifier_reference>
+           <identifier_reference>central_body_positive_pole_clock_angle</identifier_reference>
+           <identifier_reference>target_north_pole_clock_angle</identifier_reference>
+           <identifier_reference>target_positive_pole_clock_angle</identifier_reference>
+           <identifier_reference>sun_direction_clock_angle</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
-    </DD_Class>
-    
-    <DD_Class>
+   </DD_Class>
+
+   <DD_Class>
         <name>Object_Orientation_North_East</name>
         <version_id>1.0</version_id>
         <local_identifier>Object_Orientation_North_East</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Object_Orientation_North_East class provides the parameters 
-            needed to describe the orientation of an external coordinate 
-            system relative to the image coordinate frame as described by the 
-            Display_Direction class.
+                    needed to describe the orientation of an external coordinate 
+                    system relative to the image coordinate frame as described by the 
+                    Display_Direction class.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -628,16 +628,16 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+        
     <DD_Class>
         <name>Object_Orientation_RA_Dec</name>
         <version_id>1.0</version_id>
         <local_identifier>Object_Orientation_RA_Dec</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Object_Orientation_RA_Dec class provides the 
-            parameters needed to describe the orientation of 
-            the celestial reference frame relative to the image 
-            coordinate frame as described by the Display_Direction class.
+                    parameters needed to describe the orientation of 
+                    the celestial reference frame relative to the image 
+                    coordinate frame as described by the Display_Direction class.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -689,10 +689,10 @@
         <local_identifier>Quaternion_Plus_To_From</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>Quaternion_Plus_To_From provides the four
-            elements of a quaternion, plus attributes which identify the initial
-            (Rotate_From) and final (Rotate_To) frames of the rotation. See
-            the defintion of Quaternion_Base for more details on the
-            quaternion classes in this dictionary.
+        elements of a quaternion, plus attributes which identify the initial
+        (Rotate_From) and final (Rotate_To) frames of the rotation. See
+        the defintion of Quaternion_Base for more details on the
+        quaternion classes in this dictionary.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -724,7 +724,7 @@
         <local_identifier>Rotate_From</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>A quaternion rotates one reference frame to another 
-            reference frame. The Rotate_From class identifies the initial frame.
+         reference frame. The Rotate_From class identifies the initial frame.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -742,7 +742,7 @@
         <local_identifier>Rotate_To</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>A quaternion rotates a one reference frame to another  
-            reference frame. The Rotate_To class identifies the destination frame.
+          reference frame. The Rotate_To class identifies the destination frame.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -765,7 +765,7 @@
             <rule_message>At least one of the following must be present: geom:frame_spice_name, geom:name, pds:Internal_Reference.</rule_message>
         </DD_Rule_Statement>
     </DD_Rule>
-    
+
     <DD_Rule>
         <local_identifier>Rotate_To_0</local_identifier>
         <rule_context>//geom:Rotate_To</rule_context>

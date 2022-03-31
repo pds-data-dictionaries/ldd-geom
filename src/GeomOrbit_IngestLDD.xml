@@ -8,12 +8,12 @@
                      https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd">
 
     <name>Geometry Dictionary Full</name>
-    <ldd_version_id>1.8.0.0</ldd_version_id>
+    <ldd_version_id>1.9.5.0</ldd_version_id>
     <dictionary_type>Discipline</dictionary_type>
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
     <namespace_id>geom</namespace_id>
-    <comment>Cumulative comments removed to reduce annoyance...
+    <comment>Cumulative comments are in the GeomMain file.
         
         GeomOrbit - Geometry Orbiter/Flyby Section
         
@@ -32,7 +32,7 @@
         within subcategories based on how deeply they are nested when the first appear.
     </comment>
 
-    <last_modification_date_time>2021-08-20</last_modification_date_time>
+    <last_modification_date_time>2021-10-25</last_modification_date_time>
 
     <!-- Attributes - Alphabetical -->
 
@@ -43,8 +43,8 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>M. Gordon</submitter_name>
         <definition>The coordinate_system_time_utc provides the instantiation 
-            time for the coordinate system.
-        </definition>
+          time for the coordinate system.
+         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Date_Time_YMD_UTC</value_data_type>
@@ -58,8 +58,8 @@
         <nillable_flag>true</nillable_flag>
         <submitter_name>M. Gordon</submitter_name>
         <definition>The coordinate_system_type distinguishes between options such as
-            rectangular, spherical, planetocentric, etc.
-        </definition>
+           rectangular, spherical, planetocentric, etc.
+         </definition>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -71,17 +71,17 @@
             <DD_Permissible_Value>
                 <value>Azimuth-Elevation</value>
                 <value_meaning>The coordinate system uses azimuth-elevation coordinates. 
-                    Azimuth: angle from +X axis to projection of position vector on x-y 
-                    plane increases in clockwise direction (-180 to +180).
-                    Elevation: angle between position vector and x-y plane (-90 to +90).
+                  Azimuth: angle from +X axis to projection of position vector on x-y 
+                  plane increases in clockwise direction (-180 to +180).
+                  Elevation: angle between position vector and x-y plane (-90 to +90).
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Spherical</value>
                 <value_meaning>The coordinate system uses spherical coordinates.
-                    Longitude: angle from +X axis to projection of position vector on 
-                    X-Y plane increases in clockwise direction (0 to 360).
-                    Colatitude: angle between +Z axis and position vector (0 to 180).
+                  Longitude: angle from +X axis to projection of position vector on 
+                  X-Y plane increases in clockwise direction (0 to 360).
+                  Colatitude: angle between +Z axis and position vector (0 to 180).
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
@@ -103,35 +103,35 @@
             <DD_Permissible_Value>
                 <value>Planetodetic</value>
                 <value_meaning>The coordinate system uses planetodetic coordinates.
-                    For planets and their satellites the +Z axis (+90 latitude) always 
-                    points to the north side of the invariable plane (the plane whose 
-                    normal vector is the angular momentum vector of the solar system).
-                    Planetodetic longitude increases positively eastward (-180 to +180).
-                    Planetodetic latitude is tied to a reference ellipsoid. For a point, 
-                    P, on a reference ellipsoid, angle measured from X-Y plane to the 
-                    surface normal at the point of interest. For other points, equals 
-                    latitude at the nearest point on the reference ellipsoid. Increases 
-                    positively northward (-90 to +90).
+                   For planets and their satellites the +Z axis (+90 latitude) always 
+                   points to the north side of the invariable plane (the plane whose 
+                   normal vector is the angular momentum vector of the solar system).
+                   Planetodetic longitude increases positively eastward (-180 to +180).
+                   Planetodetic latitude is tied to a reference ellipsoid. For a point, 
+                   P, on a reference ellipsoid, angle measured from X-Y plane to the 
+                   surface normal at the point of interest. For other points, equals 
+                   latitude at the nearest point on the reference ellipsoid. Increases 
+                   positively northward (-90 to +90).
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Planetographic</value>
                 <value_meaning>The coordinate system uses planetographic coordinates. 
-                    For planet and satellite planetographic coordinate systems: 
-                    Planetographic longitude is usually defined such that the sub-observer 
-                    longitude increases with time as seen by a distant, fixed observer 
-                    (0 to 360). The earth, moon and sun are exceptions; planetographic 
-                    longitude is positive east by default (0 to 360). Planetographic 
-                    latitude is planetodetic latitude (-90 to +90).
-                    For dwarf planets, asteroids and comets: there are multiple, inconsistent 
-                    standards. Currently, for these objects, PDS permits planetographic 
-                    coordinates to be provided in addition to, not in lieu of, either 
-                    planetocentric or planetodetic coordinates.
+                  For planet and satellite planetographic coordinate systems: 
+                  Planetographic longitude is usually defined such that the sub-observer 
+                  longitude increases with time as seen by a distant, fixed observer 
+                  (0 to 360). The earth, moon and sun are exceptions; planetographic 
+                  longitude is positive east by default (0 to 360). Planetographic 
+                  latitude is planetodetic latitude (-90 to +90).
+                  For dwarf planets, asteroids and comets: there are multiple, inconsistent 
+                  standards. Currently, for these objects, PDS permits planetographic 
+                  coordinates to be provided in addition to, not in lieu of, either 
+                  planetocentric or planetodetic coordinates.
                 </value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>distance</name>
         <version_id>1.0</version_id>
@@ -139,7 +139,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The distance attribute provides the scalar distance 
-            between to objects or points.
+                    between to objects or points.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -155,10 +155,10 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The geometry reference time given in the 'Barycentric Dynamical Time' 
-            system, as a number of elapsed seconds since the J2000 epoch. This is consistent 
-            with the definition of 'ephemeris time' as used in the SPICE toolkit. The value 
-            must correspond to the time specified in the geometry_reference_time_utc attribute.
-        </definition>
+        	  system, as a number of elapsed seconds since the J2000 epoch. This is consistent 
+        	  with the definition of 'ephemeris time' as used in the SPICE toolkit. The value 
+        	  must correspond to the time specified in the geometry_reference_time_utc attribute.
+         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -173,28 +173,28 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>For some observations, geometric parameters are given as instantaneous 
-            values at a specific time. Another set of instantaneous parameters are the 
-            parameters which give the minimum and maximum values in the product. 
-            In some cases, these range values are all calculated for the same time. 
-            If the label includes single valued geometric parameters or min/max range parameters 
-            determined for a specific time, geometry_reference_time_utc gives the time for which 
-            these values were calculated and must be given in the label.   	
-            
-            For some instruments, particularly those with relatively large exposure durations, 
-            (e.g., push broom cameras, many imaging spectrometers), many geometric quantities 
-            are given as ranges. If those range parameters are associated with the beginning 
-            and end of the observation (start_parameter/stop_parameter), geometry_start_time_utc/stop_time 
-            must be given. 
-            
-            Comments within the label should be used to ensure the parameter vs. time association 
-            is unambiguous.
-        </definition>
+        	values at a specific time. Another set of instantaneous parameters are the 
+        	parameters which give the minimum and maximum values in the product. 
+        	In some cases, these range values are all calculated for the same time. 
+        	If the label includes single valued geometric parameters or min/max range parameters 
+        	determined for a specific time, geometry_reference_time_utc gives the time for which 
+        	these values were calculated and must be given in the label.   	
+        	
+          For some instruments, particularly those with relatively large exposure durations, 
+          (e.g., push broom cameras, many imaging spectrometers), many geometric quantities 
+          are given as ranges. If those range parameters are associated with the beginning 
+          and end of the observation (start_parameter/stop_parameter), geometry_start_time_utc/stop_time 
+          must be given. 
+                    
+          Comments within the label should be used to ensure the parameter vs. time association 
+          is unambiguous.
+         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Date_Time_YMD_UTC</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>geometry_start_time_utc</name>
         <version_id>1.0</version_id>
@@ -202,24 +202,24 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The pair of geometry_start_time_utc/geometry_stop_time_utc may be given in the 
-            label for any observation. The pair is generally used for fairly long duration 
-            observations (a substantial portion of an hour to several hours). geometry_start_time_utc 
-            gives the time at the beginning of the observation.	When either geometry_start_time_utc 
-            or geometry_stop_time_utc is given, both must be provided. 
-            
-            Within the Geometry discipline, there are two options for providing geometric parameters
-            as a range of values. A parameter may be given as a pair where the parameter values are 
-            those at the beginning and end of the observation (start_parameter, stop_parameter). 
-            If a (start_parameter, stop_parameter) pair is used for any geometric parameter, the pair 
-            (geometry_start_time_utc/geometry_stop_time_utc) must be given.
-            
-            Another option to provide geometric parameters as a pair is (minimum_parameter, maximum_parameter)
-            defining a range of values where the values are the minimum and maximum values of that 
-            parameter for the entire observation.  
-            
-            Comments within the label should be used to ensure the parameter vs. time association 
-            is unambiguous.
-        </definition>
+        	label for any observation. The pair is generally used for fairly long duration 
+        	observations (a substantial portion of an hour to several hours). geometry_start_time_utc 
+        	gives the time at the beginning of the observation.	When either geometry_start_time_utc 
+        	or geometry_stop_time_utc is given, both must be provided. 
+
+          Within the Geometry discipline, there are two options for providing geometric parameters
+          as a range of values. A parameter may be given as a pair where the parameter values are 
+          those at the beginning and end of the observation (start_parameter, stop_parameter). 
+          If a (start_parameter, stop_parameter) pair is used for any geometric parameter, the pair 
+          (geometry_start_time_utc/geometry_stop_time_utc) must be given.
+          
+          Another option to provide geometric parameters as a pair is (minimum_parameter, maximum_parameter)
+          defining a range of values where the values are the minimum and maximum values of that 
+          parameter for the entire observation.  
+          
+          Comments within the label should be used to ensure the parameter vs. time association 
+          is unambiguous.
+         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Date_Time_YMD_UTC</value_data_type>
@@ -233,30 +233,30 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The pair of geometry_start_time_utc/geometry_stop_time_utc may be given in the 
-            label for any observation. The pair is generally used for fairly long duration  
-            observations (a substantial portion of an hour to several hours). geometry_stop_time_utc 
-            gives the time at the end of the observation.	When either geometry_start_time_utc 
-            or geometry_stop_time_utc is given, both must be provided.
-            
-            Within the Geometry discipline, there are two options for providing geometric parameters
-            as a range of values. A parameter may be given as a pair where the parameter values are 
-            those at the beginning and end of the observation (start_parameter, stop_parameter). 
-            If a (start_parameter, stop_parameter) pair is used for any geometric parameter, the pair 
-            (geometry_start_time_utc/geometry_stop_time_utc) must be given.
-            
-            Another option to provide geometric parameters as a pair is (minimum_parameter, maximum_parameter)
-            defining a range of values where the values are the minimum and maximum values of that 
-            parameter for the entire observation.  
-            
-            Comments within the label should be used to ensure the parameter vs. time association 
-            is unambiguous.          
-        </definition>
+        	label for any observation. The pair is generally used for fairly long duration  
+          observations (a substantial portion of an hour to several hours). geometry_stop_time_utc 
+        	gives the time at the end of the observation.	When either geometry_start_time_utc 
+        	or geometry_stop_time_utc is given, both must be provided.
+
+          Within the Geometry discipline, there are two options for providing geometric parameters
+          as a range of values. A parameter may be given as a pair where the parameter values are 
+          those at the beginning and end of the observation (start_parameter, stop_parameter). 
+          If a (start_parameter, stop_parameter) pair is used for any geometric parameter, the pair 
+          (geometry_start_time_utc/geometry_stop_time_utc) must be given.
+          
+          Another option to provide geometric parameters as a pair is (minimum_parameter, maximum_parameter)
+          defining a range of values where the values are the minimum and maximum values of that 
+          parameter for the entire observation.  
+          
+          Comments within the label should be used to ensure the parameter vs. time association 
+          is unambiguous.          
+         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Date_Time_YMD_UTC</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>horizontal_pixel_field_of_view</name>
         <version_id>1.0</version_id>
@@ -264,10 +264,10 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The horizontal_pixel_field_of_view provides the angular measure of 
-            the horizontal field of view of a single pixel, and is sometimes referred to as 
-            the instantaneous field of view. The pixel_field_of_view_method attribute will 
-            designate the method used to determine this value. If the pixel_field_of_view_method 
-            attribute is not specified, see the camera documentation for more details.
+      the horizontal field of view of a single pixel, and is sometimes referred to as 
+      the instantaneous field of view. The pixel_field_of_view_method attribute will 
+      designate the method used to determine this value. If the pixel_field_of_view_method 
+      attribute is not specified, see the camera documentation for more details.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -278,7 +278,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>horizontal_pixel_footprint</name>
         <version_id>1.0</version_id>
@@ -295,7 +295,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>lat_long_method</name>
         <version_id>1.0</version_id>
@@ -303,39 +303,39 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell Gordon</submitter_name>
         <definition>The lat_long_method is used with the attributes start_latitude, stop_latitude,
-            start_longitude and stop_longitude. For most observations these parameters would be multivalued. 
-            lat_long_method is used to characterize the start and stop latitude and longitude. The 
-            possible values are: 'center' indicating the latitude and longitude values are those at
-            the center of the field of view at the beginning and end of the observation. 'median' 
-            indicating the latitude and longitude values are the median values at the beginning and 
-            end of the observation. 'mean' indicating the latitude and longitude values are the mean
-            values at the beginning and end of the observation.
+        	start_longitude and stop_longitude. For most observations these parameters would be multivalued. 
+        	lat_long_method is used to characterize the start and stop latitude and longitude. The 
+        	possible values are: 'center' indicating the latitude and longitude values are those at
+        	the center of the field of view at the beginning and end of the observation. 'median' 
+        	indicating the latitude and longitude values are the median values at the beginning and 
+        	end of the observation. 'mean' indicating the latitude and longitude values are the mean
+        	values at the beginning and end of the observation.
         </definition>
         <DD_Value_Domain>
-            <enumeration_flag>true</enumeration_flag>
-            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-            <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-            <DD_Permissible_Value>
-                <value>Center</value>
-                <value_meaning>The latitude and longitude values given using start_ and stop_ latitude and longitude 
-                    are those at the center of the field of view at the beginning and end of the observation.
-                </value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Median</value>
-                <value_meaning>The latitude and longitude values given using start_ and stop_ latitude and longitude 
-                    are the median values at the beginning and end of the observation.
-                </value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Mean</value>
-                <value_meaning>The latitude and longitude values given using start_ and stop_ latitude and longitude
-                    are the mean values at the beginning and end of the observation.
-                </value_meaning>
-            </DD_Permissible_Value>
+          <enumeration_flag>true</enumeration_flag>
+          <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+          <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+          <DD_Permissible_Value>
+            <value>Center</value>
+            <value_meaning>The latitude and longitude values given using start_ and stop_ latitude and longitude 
+            	are those at the center of the field of view at the beginning and end of the observation.
+            </value_meaning>
+          </DD_Permissible_Value>
+          <DD_Permissible_Value>
+            <value>Median</value>
+            <value_meaning>The latitude and longitude values given using start_ and stop_ latitude and longitude 
+            	are the median values at the beginning and end of the observation.
+            </value_meaning>
+          </DD_Permissible_Value>
+          <DD_Permissible_Value>
+            <value>Mean</value>
+            <value_meaning>The latitude and longitude values given using start_ and stop_ latitude and longitude
+            	are the mean values at the beginning and end of the observation.
+            </value_meaning>
+          </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+  
     <DD_Attribute>
         <name>light_time_correction_applied</name>
         <version_id>1.0</version_id>
@@ -355,36 +355,36 @@
             <DD_Permissible_Value>
                 <value>None</value>
                 <value_meaning>Neither light travel time nor stellar aberration was used when 
-                    calculating the values in the enclosing class.
+                  calculating the values in the enclosing class.
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Received_Light_Time</value>
                 <value_meaning>Received light travel time, but not stellar aberration was used 
-                    when calculating the values in the enclosing class.
+                  when calculating the values in the enclosing class.
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Received_Light_Time_Stellar_Abb</value>
                 <value_meaning>Received light travel time and stellar aberration were used 
-                    when calculating the values in the enclosing class.
+                  when calculating the values in the enclosing class.
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Transmitted_Light_Time</value>
                 <value_meaning>Transmitted light travel time, but not stellar aberration was used 
-                    when calculating the values in the enclosing class.
+                  when calculating the values in the enclosing class.
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Transmitted_Light_Time_Stellar_Abb</value>
                 <value_meaning>Transmitted light travel time and stellar aberration were used 
-                    when calculating the values in the enclosing class.
+                  when calculating the values in the enclosing class.
                 </value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_emission_angle</name>
         <version_id>1.0</version_id>
@@ -404,7 +404,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_incidence_angle</name>
         <version_id>1.0</version_id>
@@ -424,7 +424,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_latitude</name>
         <version_id>1.0</version_id>
@@ -432,7 +432,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The maximum_latitude attribute identifies the final 
-            end of the range of values for Planetocentric latitude in an image.
+        	end of the range of values for Planetocentric latitude in an image.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -443,7 +443,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_longitude</name>
         <version_id>1.0</version_id>
@@ -451,10 +451,10 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The maximum_longitude attribute identifies the final 
-            end of the range of values for Planetocentric longitude in an image.
-            Note that since Planetocentric longitude has values in [0,360], if 
-            the range in the product crosses the prime meridian, the value of 
-            minimum_longitude will be greater than the value of the maximum_longitude.
+        	end of the range of values for Planetocentric longitude in an image.
+        	Note that since Planetocentric longitude has values in [0,360], if 
+        	the range in the product crosses the prime meridian, the value of 
+        	minimum_longitude will be greater than the value of the maximum_longitude.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -465,7 +465,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_phase_angle</name>
         <version_id>1.0</version_id>
@@ -485,7 +485,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_solar_elongation</name>
         <version_id>1.0</version_id>
@@ -504,7 +504,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_spacecraft_central_body_distance</name>
         <version_id>1.0</version_id>
@@ -522,7 +522,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_spacecraft_geocentric_distance</name>
         <version_id>1.0</version_id>
@@ -539,7 +539,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_spacecraft_heliocentric_distance</name>
         <version_id>1.0</version_id>
@@ -556,7 +556,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_spacecraft_target_boresight_intercept_distance</name>
         <version_id>1.0</version_id>
@@ -574,7 +574,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_spacecraft_target_center_distance</name>
         <version_id>1.0</version_id>
@@ -609,7 +609,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_subsolar_azimuth</name>
         <version_id>1.0</version_id>
@@ -617,11 +617,11 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The maximum_subsolar_azimuth attribute identifies the final 
-            end of the range of values for subsolar azimuth in an image.
-            Note that since subsolar azimuth has values in [0,360], if 
-            the range in the image crosses the horizontal reference corresponding 
-            to zero, the value of minimum_subsolar_azimuth will be greater than 
-            the value of the maximum_subsolar_azimuth.
+        	end of the range of values for subsolar azimuth in an image.
+        	Note that since subsolar azimuth has values in [0,360], if 
+        	the range in the image crosses the horizontal reference corresponding 
+        	to zero, the value of minimum_subsolar_azimuth will be greater than 
+        	the value of the maximum_subsolar_azimuth.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -632,7 +632,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_subsolar_latitude</name>
         <version_id>1.0</version_id>
@@ -640,7 +640,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The maximum_subsolar_latitude attribute identifies the final 
-            end of the range of values for subsolar latitude in an image.
+        	end of the range of values for subsolar latitude in an image.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -651,7 +651,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_subsolar_longitude</name>
         <version_id>1.0</version_id>
@@ -659,11 +659,11 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The maximum_subsolar_longitude attribute identifies the final 
-            end of the range of values for subsolar longitude in an image.
-            Note that since subsolar longitude has values in [0,360], if 
-            the range in the product crosses the prime meridian, the value of 
-            minimum_subsolar_longitude will be greater than the value of the 
-            maximum_subsolar_longitude.
+        	end of the range of values for subsolar longitude in an image.
+        	Note that since subsolar longitude has values in [0,360], if 
+        	the range in the product crosses the prime meridian, the value of 
+        	minimum_subsolar_longitude will be greater than the value of the 
+        	maximum_subsolar_longitude.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -682,11 +682,11 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The maximum_subspacecraft_azimuth attribute identifies the final 
-            end of the range of values for subspacecraft azimuth in an image.
-            Note that since subspacecraft azimuth has values in [0,360], if 
-            the range in the image crosses the horizontal reference corresponding 
-            to zero, the value of minimum_subspacecraft_azimuth will be greater than 
-            the value of the maximum_subspacecraft_azimuth.
+        	end of the range of values for subspacecraft azimuth in an image.
+        	Note that since subspacecraft azimuth has values in [0,360], if 
+        	the range in the image crosses the horizontal reference corresponding 
+        	to zero, the value of minimum_subspacecraft_azimuth will be greater than 
+        	the value of the maximum_subspacecraft_azimuth.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -697,7 +697,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_subspacecraft_latitude</name>
         <version_id>1.0</version_id>
@@ -705,7 +705,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The maximum_subspacecraft_latitude attribute identifies the final 
-            end of the range of values for subspacecraft latitude in an image.
+        	end of the range of values for subspacecraft latitude in an image.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -716,7 +716,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_subspacecraft_longitude</name>
         <version_id>1.0</version_id>
@@ -724,11 +724,11 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The maximum_subspacecraft_longitude attribute identifies the final 
-            end of the range of values for subspacecraft longitude in an image.
-            Note that since subspacecraft longitude has values in [0,360], if 
-            the range in the product crosses the prime meridian, the value of 
-            minimum_subspacecraft_longitude will be greater than the value of the 
-            maximum_subspacecraft_longitude.
+        	end of the range of values for subspacecraft longitude in an image.
+        	Note that since subspacecraft longitude has values in [0,360], if 
+        	the range in the product crosses the prime meridian, the value of 
+        	minimum_subspacecraft_longitude will be greater than the value of the 
+        	maximum_subspacecraft_longitude.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -739,7 +739,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_target_geocentric_distance</name>
         <version_id>1.0</version_id>
@@ -756,7 +756,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_target_heliocentric_distance</name>
         <version_id>1.0</version_id>
@@ -773,7 +773,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>maximum_target_ssb_distance</name>
         <version_id>1.0</version_id>
@@ -790,7 +790,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_emission_angle</name>
         <version_id>1.0</version_id>
@@ -810,7 +810,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_incidence_angle</name>
         <version_id>1.0</version_id>
@@ -830,7 +830,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_latitude</name>
         <version_id>1.0</version_id>
@@ -838,7 +838,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The minimum_latitude attribute identifies the initial 
-            end of the range of values for Planetocentric latitude in an image.
+        	end of the range of values for Planetocentric latitude in an image.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -849,7 +849,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_longitude</name>
         <version_id>1.0</version_id>
@@ -857,10 +857,10 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The minimum_longitude attribute identifies the initial 
-            end of the range of values for Planetocentric longitude.
-            Note that since Planetocentric longitude has values in [0,360], if 
-            the range in the product crosses the prime meridian, the value of 
-            minimum_longitude will be greater than the value of the maximum_longitude.
+        	end of the range of values for Planetocentric longitude.
+        	Note that since Planetocentric longitude has values in [0,360], if 
+        	the range in the product crosses the prime meridian, the value of 
+        	minimum_longitude will be greater than the value of the maximum_longitude.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -871,7 +871,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_phase_angle</name>
         <version_id>1.0</version_id>
@@ -891,7 +891,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_solar_elongation</name>
         <version_id>1.0</version_id>
@@ -910,7 +910,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_spacecraft_central_body_distance</name>
         <version_id>1.0</version_id>
@@ -928,7 +928,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_spacecraft_geocentric_distance</name>
         <version_id>1.0</version_id>
@@ -945,7 +945,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_spacecraft_heliocentric_distance</name>
         <version_id>1.0</version_id>
@@ -962,7 +962,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_spacecraft_target_boresight_intercept_distance</name>
         <version_id>1.0</version_id>
@@ -980,7 +980,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_spacecraft_target_center_distance</name>
         <version_id>1.0</version_id>
@@ -997,7 +997,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_spacecraft_target_subspacecraft_distance</name>
         <version_id>1.0</version_id>
@@ -1015,19 +1015,19 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
-    <DD_Attribute>
+
+     <DD_Attribute>
         <name>minimum_subsolar_azimuth</name>
         <version_id>1.0</version_id>
         <local_identifier>minimum_subsolar_azimuth</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The minimum_subsolar_azimuth attribute identifies the initial 
-            end of the range of values for subsolar azimuth in an image.
-            Note that since subsolar azimuth has values in [0,360], if 
-            the range in the image crosses the horizontal reference corresponding 
-            to zero, the value of minimum_subsolar_azimuth will be greater than 
-            the value of the maximum_subsolar_azimuth.
+        	end of the range of values for subsolar azimuth in an image.
+        	Note that since subsolar azimuth has values in [0,360], if 
+        	the range in the image crosses the horizontal reference corresponding 
+        	to zero, the value of minimum_subsolar_azimuth will be greater than 
+        	the value of the maximum_subsolar_azimuth.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1038,7 +1038,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_subsolar_latitude</name>
         <version_id>1.0</version_id>
@@ -1046,7 +1046,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The minimum_subsolar_latitude attribute identifies the initial 
-            end of the range of values for subsolar latitude in an image.
+        	end of the range of values for subsolar latitude in an image.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1057,7 +1057,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_subsolar_longitude</name>
         <version_id>1.0</version_id>
@@ -1065,11 +1065,11 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The minimum_subsolar_longitude attribute identifies the initial 
-            end of the range of values for subsolar longitude.
-            Note that since subsolar longitude has values in [0,360], if 
-            the range in the product crosses the prime meridian, the value of 
-            minimum_subsolar_longitude will be greater than the value of the 
-            maximum_subsolar_longitude.
+        	end of the range of values for subsolar longitude.
+        	Note that since subsolar longitude has values in [0,360], if 
+        	the range in the product crosses the prime meridian, the value of 
+        	minimum_subsolar_longitude will be greater than the value of the 
+        	maximum_subsolar_longitude.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1080,7 +1080,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_subspacecraft_azimuth</name>
         <version_id>1.0</version_id>
@@ -1088,11 +1088,11 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The minimum_subspacecraft_azimuth attribute identifies the initial 
-            end of the range of values for subspacecraft azimuth in an image.
-            Note that since subspacecraft azimuth has values in [0,360], if 
-            the range in the image crosses the horizontal reference corresponding 
-            to zero, the value of minimum_subspacecraft_azimuth will be greater than 
-            the value of the maximum_subspacecraft_azimuth.
+        	end of the range of values for subspacecraft azimuth in an image.
+        	Note that since subspacecraft azimuth has values in [0,360], if 
+        	the range in the image crosses the horizontal reference corresponding 
+        	to zero, the value of minimum_subspacecraft_azimuth will be greater than 
+        	the value of the maximum_subspacecraft_azimuth.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1103,7 +1103,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_subspacecraft_latitude</name>
         <version_id>1.0</version_id>
@@ -1111,7 +1111,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The minimum_subspacecraft_latitude attribute identifies the initial 
-            end of the range of values for subspacecraft latitude in an image.
+        	end of the range of values for subspacecraft latitude in an image.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1122,7 +1122,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_subspacecraft_longitude</name>
         <version_id>1.0</version_id>
@@ -1130,11 +1130,11 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The minimum_subspacecraft_longitude attribute identifies the initial 
-            end of the range of values for subspacecraft longitude.
-            Note that since subspacecraft longitude has values in [0,360], if 
-            the range in the product crosses the prime meridian, the value of 
-            minimum_subspacecraft_longitude will be greater than the value of the 
-            maximum_subspacecraft_longitude.
+        	end of the range of values for subspacecraft longitude.
+        	Note that since subspacecraft longitude has values in [0,360], if 
+        	the range in the product crosses the prime meridian, the value of 
+        	minimum_subspacecraft_longitude will be greater than the value of the 
+        	maximum_subspacecraft_longitude.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1145,7 +1145,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_target_geocentric_distance</name>
         <version_id>1.0</version_id>
@@ -1162,7 +1162,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>minimum_target_heliocentric_distance</name>
         <version_id>1.0</version_id>
@@ -1204,30 +1204,30 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jordan Padams</submitter_name>
         <definition>The pixel_field_of_view_method provides the method used
-            to get the values of the horizontal/vertical_pixel_field_view attributes. If the pixel
-            field of view does not vary across the camera field of view, then this value is 'constant'.
-            If the pixel field of view does vary across the camera field of view, the pixel field of
-            view can be determined either by the center pixel of the camera or the average field of view
-            of the pixel. See the camera documentation for more details.
+          to get the values of the horizontal/vertical_pixel_field_view attributes. If the pixel
+          field of view does not vary across the camera field of view, then this value is 'constant'.
+          If the pixel field of view does vary across the camera field of view, the pixel field of
+          view can be determined either by the center pixel of the camera or the average field of view
+          of the pixel. See the camera documentation for more details.
         </definition>
         <DD_Value_Domain>
-            <enumeration_flag>true</enumeration_flag>
-            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-            <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-            <DD_Permissible_Value>
-                <value>Constant</value>
-                <value_meaning>Pixel field of view does not vary across the camera field of view</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Central Pixel</value>
-                <value_meaning>Pixel field of view varies across the camera field of view and represents 
-                    the FOV of the central pixel of the camera</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Average</value>
-                <value_meaning>Pixel field of view varies across the camera field of view and represents 
-                    the average FOV of the pixel</value_meaning>
-            </DD_Permissible_Value>
+          <enumeration_flag>true</enumeration_flag>
+          <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+          <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+          <DD_Permissible_Value>
+            <value>Constant</value>
+            <value_meaning>Pixel field of view does not vary across the camera field of view</value_meaning>
+          </DD_Permissible_Value>
+          <DD_Permissible_Value>
+            <value>Central Pixel</value>
+            <value_meaning>Pixel field of view varies across the camera field of view and represents 
+                the FOV of the central pixel of the camera</value_meaning>
+          </DD_Permissible_Value>
+          <DD_Permissible_Value>
+            <value>Average</value>
+            <value_meaning>Pixel field of view varies across the camera field of view and represents 
+                the average FOV of the pixel</value_meaning>
+          </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
     
@@ -1250,7 +1250,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+   
     <DD_Attribute>
         <name>pixel_longitude</name>
         <version_id>1.0</version_id>
@@ -1270,7 +1270,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>reference_location</name>
         <version_id>1.0</version_id>
@@ -1278,8 +1278,8 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>M. Gordon</submitter_name>
         <definition>The reference_location indicates the position to which 
-            values in the containing class apply. If the reference location is on 
-            a target, the target is the one specified in the parent Geometry_Orbiter class.
+          values in the containing class apply. If the reference location is on 
+          a target, the target is the one specified in the parent Geometry_Orbiter class.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
@@ -1287,13 +1287,13 @@
             <DD_Permissible_Value>
                 <value>Boresight Intercept Point</value>
                 <value_meaning>Values were determined for the point where the 
-                    boresight vector intersects the designated target. 
+                               boresight vector intersects the designated target. 
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Subspacecraft Point</value>
                 <value_meaning>Values were determined for the subspacecraft point 
-                    on the designated target. 
+                               on the designated target. 
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
@@ -1302,15 +1302,15 @@
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
-                <value>Constant</value>
-                <value_meaning>Constant is used when the pixel scale does not vary, e.g., 
-                    for telecentric lenses, maps, or cameras that look at constant, fixed targets, 
-                    such as microscope stages.
-                </value_meaning>
+              <value>Constant</value>
+              <value_meaning>Constant is used when the pixel scale does not vary, e.g., 
+              	for telecentric lenses, maps, or cameras that look at constant, fixed targets, 
+              	such as microscope stages.
+              </value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>solar_elongation</name>
         <version_id>1.0</version_id>
@@ -1318,9 +1318,9 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Edward A. Guinness</submitter_name>
         <definition>The solar_elongation element gives the angle between the 
-            line of sight of observation and the direction of the Sun. 
-            Note: For IRAS: The line of sight of observation is the 
-            boresight of the telescope as measured by the satellite sun sensor. 
+           line of sight of observation and the direction of the Sun. 
+           Note: For IRAS: The line of sight of observation is the 
+           boresight of the telescope as measured by the satellite sun sensor. 
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1331,7 +1331,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>spacecraft_central_body_distance</name>
         <version_id>1.0</version_id>
@@ -1348,7 +1348,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>spacecraft_geocentric_distance</name>
         <version_id>1.0</version_id>
@@ -1356,7 +1356,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The spacecraft_geocentric_distance attribute provides 
-            the scalar distance between the spacecraft and the center of Earth.
+                    the scalar distance between the spacecraft and the center of Earth.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1364,7 +1364,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>spacecraft_heliocentric_distance</name>
         <version_id>1.0</version_id>
@@ -1379,8 +1379,8 @@
             <value_data_type>ASCII_Real</value_data_type>
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
-    </DD_Attribute>
-    
+    </DD_Attribute>    
+
     <DD_Attribute>
         <name>spacecraft_target_boresight_intercept_distance</name>
         <version_id>1.0</version_id>
@@ -1398,7 +1398,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>spacecraft_target_center_distance</name>
         <version_id>1.0</version_id>
@@ -1415,7 +1415,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>spacecraft_target_subspacecraft_distance</name>
         <version_id>1.0</version_id>
@@ -1432,7 +1432,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_emission_angle</name>
         <version_id>1.0</version_id>
@@ -1453,7 +1453,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_incidence_angle</name>
         <version_id>1.0</version_id>
@@ -1482,10 +1482,10 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The start_latitude attribute identifies the value of
-            the Planetocentric latitude at the beginning of the observation 
-            (geometry_start_time_utc). When either start_latitude or stop_latitude 
-            is used, both must be used. In addition the attribute 
-            lat_long_method must be used.
+        	the Planetocentric latitude at the beginning of the observation 
+        	(geometry_start_time_utc). When either start_latitude or stop_latitude 
+        	is used, both must be used. In addition the attribute 
+        	lat_long_method must be used.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1496,7 +1496,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_longitude</name>
         <version_id>1.0</version_id>
@@ -1504,7 +1504,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The start_longitude attribute identifies the value of
-            the Planetocentric longitude at the beginning of the observation (geometry_start_time_utc).
+        	the Planetocentric longitude at the beginning of the observation (geometry_start_time_utc).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1515,7 +1515,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_phase_angle</name>
         <version_id>1.0</version_id>
@@ -1535,7 +1535,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_solar_elongation</name>
         <version_id>1.0</version_id>
@@ -1555,7 +1555,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_spacecraft_central_body_distance</name>
         <version_id>1.0</version_id>
@@ -1573,7 +1573,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_spacecraft_geocentric_distance</name>
         <version_id>1.0</version_id>
@@ -1590,7 +1590,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_spacecraft_heliocentric_distance</name>
         <version_id>1.0</version_id>
@@ -1625,7 +1625,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_spacecraft_target_center_distance</name>
         <version_id>1.0</version_id>
@@ -1643,7 +1643,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_spacecraft_target_subspacecraft_distance</name>
         <version_id>1.0</version_id>
@@ -1669,7 +1669,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The start_subsolar_azimuth attribute identifies the value of
-            the subsolar azimuth at the beginning of the observation (geometry_start_time_utc).
+        	the subsolar azimuth at the beginning of the observation (geometry_start_time_utc).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1688,7 +1688,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The start_subsolar_latitude attribute identifies the value of
-            the subsolar latitude at the beginning of the observation (geometry_start_time_utc).
+        	the subsolar latitude at the beginning of the observation (geometry_start_time_utc).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1699,7 +1699,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_subsolar_longitude</name>
         <version_id>1.0</version_id>
@@ -1707,7 +1707,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The start_subsolar_longitude attribute identifies the value of
-            the subsolar longitude at the beginning of the observation (geometry_start_time_utc).
+        	the subsolar longitude at the beginning of the observation (geometry_start_time_utc).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1718,7 +1718,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_subspacecraft_azimuth</name>
         <version_id>1.0</version_id>
@@ -1726,7 +1726,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The start_subspacecraft_azimuth attribute identifies the value of
-            the subspacecraft azimuth at the beginning of the observation (geometry_start_time_utc).
+        	the subspacecraft azimuth at the beginning of the observation (geometry_start_time_utc).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1737,7 +1737,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_subspacecraft_latitude</name>
         <version_id>1.0</version_id>
@@ -1745,7 +1745,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The start_subspacecraft_latitude attribute identifies the value of
-            the subspacecraft latitude at the beginning of the observation (geometry_start_time_utc).
+        	the subspacecraft latitude at the beginning of the observation (geometry_start_time_utc).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1764,7 +1764,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The start_subspacecraft_longitude attribute identifies the value of
-            the subspacecraft longitude at the beginning of the observation (geometry_start_time_utc).
+        	the subspacecraft longitude at the beginning of the observation (geometry_start_time_utc).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1775,7 +1775,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_target_geocentric_distance</name>
         <version_id>1.0</version_id>
@@ -1792,7 +1792,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_target_heliocentric_distance</name>
         <version_id>1.0</version_id>
@@ -1809,7 +1809,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>start_target_ssb_distance</name>
         <version_id>1.0</version_id>
@@ -1826,7 +1826,6 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
     <DD_Attribute>
         <name>stop_emission_angle</name>
         <version_id>1.0</version_id>
@@ -1847,7 +1846,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_incidence_angle</name>
         <version_id>1.0</version_id>
@@ -1868,7 +1867,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_latitude</name>
         <version_id>1.0</version_id>
@@ -1876,10 +1875,10 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The stop_latitude attribute identifies the value of
-            the Planetocentric latitude at the end of the observation 
-            (geometry_stop_time_utc). When either start_latitude or stop_latitude 
-            is used, both must be used. In addition the attribute 
-            lat_long_method must be used.
+        	the Planetocentric latitude at the end of the observation 
+        	(geometry_stop_time_utc). When either start_latitude or stop_latitude 
+        	is used, both must be used. In addition the attribute 
+        	lat_long_method must be used.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1890,7 +1889,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_longitude</name>
         <version_id>1.0</version_id>
@@ -1898,7 +1897,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The stop_longitude attribute identifies the value of
-            the Planetocentric longitude at the end of the observation (geometry_stop_time_utc).
+        	the Planetocentric longitude at the end of the observation (geometry_stop_time_utc).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -1909,7 +1908,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_phase_angle</name>
         <version_id>1.0</version_id>
@@ -1929,7 +1928,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_solar_elongation</name>
         <version_id>1.0</version_id>
@@ -1949,7 +1948,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_spacecraft_central_body_distance</name>
         <version_id>1.0</version_id>
@@ -1967,7 +1966,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_spacecraft_geocentric_distance</name>
         <version_id>1.0</version_id>
@@ -1984,7 +1983,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_spacecraft_heliocentric_distance</name>
         <version_id>1.0</version_id>
@@ -2001,7 +2000,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_spacecraft_target_boresight_intercept_distance</name>
         <version_id>1.0</version_id>
@@ -2019,7 +2018,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_spacecraft_target_center_distance</name>
         <version_id>1.0</version_id>
@@ -2037,7 +2036,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_spacecraft_target_subspacecraft_distance</name>
         <version_id>1.0</version_id>
@@ -2055,7 +2054,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_subsolar_azimuth</name>
         <version_id>1.0</version_id>
@@ -2063,7 +2062,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The stop_subsolar_azimuth attribute identifies the value of
-            the subsolar azimuth at the end of the observation (geometry_stop_time_utc).
+        	the subsolar azimuth at the end of the observation (geometry_stop_time_utc).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -2074,7 +2073,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_subsolar_latitude</name>
         <version_id>1.0</version_id>
@@ -2082,7 +2081,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The stop_subsolar_latitude attribute identifies the value of
-            the subsolar latitude at the end of the observation (geometry_stop_time_utc).
+        	the subsolar latitude at the end of the observation (geometry_stop_time_utc).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -2093,7 +2092,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_subsolar_longitude</name>
         <version_id>1.0</version_id>
@@ -2101,7 +2100,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The stop_subsolar_longitude attribute identifies the value of
-            the subsolar longitude at the end of the observation (geometry_stop_time_utc).
+        	the subsolar longitude at the end of the observation (geometry_stop_time_utc).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -2112,7 +2111,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_subspacecraft_azimuth</name>
         <version_id>1.0</version_id>
@@ -2120,7 +2119,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The stop_subspacecraft_azimuth attribute identifies the value of
-            the subspacecraft azimuth at the end of the observation (geometry_stop_time_utc).
+        	the subspacecraft azimuth at the end of the observation (geometry_stop_time_utc).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -2131,7 +2130,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_subspacecraft_latitude</name>
         <version_id>1.0</version_id>
@@ -2139,7 +2138,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The stop_subspacecraft_latitude attribute identifies the value of
-            the subspacecraft latitude at the end of the observation (geometry_stop_time_utc).
+        	the subspacecraft latitude at the end of the observation (geometry_stop_time_utc).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -2150,7 +2149,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_subspacecraft_longitude</name>
         <version_id>1.0</version_id>
@@ -2158,7 +2157,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The stop_subspacecraft_longitude attribute identifies the value of
-            the subspacecraft longitude at the end of the observation (geometry_stop_time_utc).
+        	the subspacecraft longitude at the end of the observation (geometry_stop_time_utc).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -2169,7 +2168,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_target_geocentric_distance</name>
         <version_id>1.0</version_id>
@@ -2186,7 +2185,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_target_heliocentric_distance</name>
         <version_id>1.0</version_id>
@@ -2203,7 +2202,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>stop_target_ssb_distance</name>
         <version_id>1.0</version_id>
@@ -2220,7 +2219,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>subsolar_azimuth</name>
         <version_id>1.0</version_id>
@@ -2242,7 +2241,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>subsolar_latitude</name>
         <version_id>1.0</version_id>
@@ -2261,7 +2260,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>subsolar_longitude</name>
         <version_id>1.0</version_id>
@@ -2280,7 +2279,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>subspacecraft_azimuth</name>
         <version_id>1.0</version_id>
@@ -2302,7 +2301,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>subspacecraft_latitude</name>
         <version_id>1.0</version_id>
@@ -2321,7 +2320,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>subspacecraft_longitude</name>
         <version_id>1.0</version_id>
@@ -2340,7 +2339,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>target_geocentric_distance</name>
         <version_id>1.0</version_id>
@@ -2356,7 +2355,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>target_heliocentric_distance</name>
         <version_id>1.0</version_id>
@@ -2372,7 +2371,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>target_ssb_distance</name>
         <version_id>1.0</version_id>
@@ -2396,10 +2395,10 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The vertical_pixel_field_of_view provides the angular measure of  
-            the vertical field of view of a single pixel, and is sometimes referred to as 
-            the instantaneous field of view. The pixel_field_of_view_method attribute will 
-            designate the method used to determine this value. If the pixel_field_of_view_method 
-            attribute is not specified, see the camera documentation for more details. 
+      the vertical field of view of a single pixel, and is sometimes referred to as 
+      the instantaneous field of view. The pixel_field_of_view_method attribute will 
+      designate the method used to determine this value. If the pixel_field_of_view_method 
+      attribute is not specified, see the camera documentation for more details. 
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -2410,7 +2409,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>vertical_pixel_footprint</name>
         <version_id>1.0</version_id>
@@ -2432,29 +2431,41 @@
     
     <!-- Nesting Level 1 -->
     
+<!--      If any of the contained classes or attributes used in the label have central body, 
+          and or target in the attribute or class name (e.g., spacecraft_to_central_body_distance, 
+          Vector_Planetocentric_Position_Spacecraft_To_Target), then the central body and or target must
+          be identified in this class. 
+          
+          If more than one target or central body need to be identified to fully describe the data,
+          use multiple instances of the Geometry_Orbiter class.
+          
+          Only use coordinate system at this level if only one coordinate system is used in the label.
+          Otherwise, specify coordinate system in each of the subordinate classes where it is appropriate. 
+    -->
+
     <DD_Class>
         <name>Geometry_Orbiter</name>
         <version_id>1.0</version_id>
         <local_identifier>Geometry_Orbiter</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Geometry_Orbiter class is a container for geometric information 
-            (positions, velocities, orientations, etc.) relevant to orbiter or flyby 
-            spacecraft observations. 
-            
-            If any of the contained classes or attributes have central body, 
-            and or target in the class or attribute name
-            (e.g., spacecraft_to_central_body_distance,
-            Vector_Planetocentric_Position_Spacecraft_To_Target), then the
-            central body and or target must be identified in this class. 
-            
-            If more than one geometry_reference_time_utc, target or central body need 
-            to be identified to fully describe the data, use multiple instances of 
-            the Geometry_Orbiter class.
-            
-            Do not use Coordinate_System at this level if more than one coordinate 
-            system is used in the contained classes. If more than one coordinate system
-            is used, specify Coordinate_System in each of the subordinate classes
-            where it is appropriate. 
+          (positions, velocities, orientations, etc.) relevant to orbiter or flyby 
+          spacecraft observations. 
+          
+          If any of the contained classes or attributes have central body, 
+          and or target in the class or attribute name
+          (e.g., spacecraft_to_central_body_distance,
+          Vector_Planetocentric_Position_Spacecraft_To_Target), then the
+          central body and or target must be identified in this class. 
+          
+          If more than one geometry_reference_time_utc, target or central body need 
+          to be identified to fully describe the data, use multiple instances of 
+          the Geometry_Orbiter class.
+          
+          Do not use Coordinate_System at this level if more than one coordinate 
+          system is used in the contained classes. If more than one coordinate system
+          is used, specify Coordinate_System in each of the subordinate classes
+          where it is appropriate. 
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -2533,25 +2544,25 @@
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Distances_Min_Max</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Distances_Start_Stop</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Distance_Generic</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>*</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
     </DD_Class>
     
     <DD_Class>
@@ -2560,7 +2571,7 @@
         <local_identifier>Illumination_Geometry</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Illumination_Geometry class is a container for 
-            illumination geometry classes.</definition>
+        	illumination geometry classes.</definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
         <DD_Association>
@@ -2574,28 +2585,28 @@
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Illumination_Min_Max</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Illumination_Start_Stop</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Orbiter_Identification</name>
         <version_id>1.0</version_id>
         <local_identifier>Orbiter_Identification</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Orbiter_Identification class is a container of classes 
-            used to establish global identifications for the Geometry_Orbiter class.
+        	used to establish global identifications for the Geometry_Orbiter class.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -2604,21 +2615,21 @@
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Geometry_Target_Identification</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Coordinate_System_Identification</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Pixel_Dimensions</name>
         <version_id>2.0</version_id>
@@ -2630,9 +2641,9 @@
         <element_flag>false</element_flag>
         <DD_Association>
             <identifier_reference>pixel_field_of_view_method</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
+          <reference_type>attribute_of</reference_type>
+          <minimum_occurrences>1</minimum_occurrences>
+          <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
             <identifier_reference>horizontal_pixel_field_of_view</identifier_reference>
@@ -2674,23 +2685,21 @@
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Surface_Geometry_Min_Max</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Surface_Geometry_Start_Stop</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
     </DD_Class>
-    
-    
-    
+
     <DD_Class>
         <name>Vectors</name>
         <version_id>1.0</version_id>
@@ -2711,38 +2720,36 @@
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Vectors_Planetocentric_Specific</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Generic_Vectors</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
     </DD_Class>
     
-    
-    
     <!-- Nesting Level 3 -->
-    
+
     <DD_Class>
         <name>Coordinate_System_Identification</name>
         <version_id>1.0</version_id>
         <local_identifier>Coordinate_System_Identification</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Coordinate_System_Identification class fully describes a
-            coordinate system. This class is typically used for orbiter/flyby geometry 
-            while the Coordinate_Space construction is used for lander/rover geometry. 
-            Coordinate_System_Identification provides the reference frame, coordinate 
-            system type (cartesian, planetocentric, etc.), origin, and the instantiation 
-            time of the system when appropriate. The instantiation time (coordinate_system_time_utc)
-            is used when a rotating frame has been 'frozen' at a particular epoch. Instantiation
-            time is not needed for inertial or rotating frames.
+        coordinate system. This class is typically used for orbiter/flyby geometry 
+        while the Coordinate_Space construction is used for lander/rover geometry. 
+        Coordinate_System_Identification provides the reference frame, coordinate 
+        system type (cartesian, planetocentric, etc.), origin, and the instantiation 
+        time of the system when appropriate. The instantiation time (coordinate_system_time_utc)
+        is used when a rotating frame has been 'frozen' at a particular epoch. Instantiation
+        time is not needed for inertial or rotating frames.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -2776,8 +2783,8 @@
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-    </DD_Class>    
-    
+    </DD_Class>
+ 
     <DD_Class>
         <name>Distance_Generic</name>
         <version_id>1.0</version_id>
@@ -2792,13 +2799,13 @@
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Geometry_Target_Identification</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>distance</identifier_reference>
             <reference_type>attribute_of</reference_type>
@@ -2813,8 +2820,8 @@
         <local_identifier>Distances_Min_Max</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Distances_Min_Max class is a container class for 
-            named distances given as minimum-maximum pairs. For distance, if
-            either the minimum or maximum parameter is given, both must be provided.
+        	named distances given as minimum-maximum pairs. For distance, if
+        	either the minimum or maximum parameter is given, both must be provided.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -2934,7 +2941,7 @@
         <local_identifier>Distances_Specific</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Distances_Specific class is a container class for 
-            specific distances defined in this dictionary.
+        	specific distances defined in this dictionary.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -2961,12 +2968,12 @@
         <local_identifier>Distances_Start_Stop</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Distances_Start_Stop class is a container class for 
-            named distances given as pairs corresponding to the beginning and 
-            end of the observation. For a distance, if either the start or 
-            stop parameter is given, both must be provided. 
-            If any values from this class are included in the label, the 
-            parameters geometry_start_time_utc and geometry_stop_time_utc must be 
-            given in the enclosing Geometry_Orbiter class.
+        	named distances given as pairs corresponding to the beginning and 
+        	end of the observation. For a distance, if either the start or 
+        	stop parameter is given, both must be provided. 
+        	If any values from this class are included in the label, the 
+        	parameters geometry_start_time_utc and geometry_stop_time_utc must be 
+        	given in the enclosing Geometry_Orbiter class.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -3078,7 +3085,7 @@
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-    </DD_Class>
+    </DD_Class>  
     
     <DD_Class>
         <name>Footprint_Vertices</name>
@@ -3102,7 +3109,7 @@
             <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+  
     <DD_Class>
         <name>Generic_Vectors</name>
         <version_id>1.0</version_id>
@@ -3119,33 +3126,33 @@
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
-        <DD_Association>
-            <identifier_reference>XSChoice#</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Position_Generic</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Velocity_Generic</identifier_reference>
-            <identifier_reference>Vector_Cartesian_Acceleration_Generic</identifier_reference>
-            <identifier_reference>Vector_Planetocentric_Position_Generic</identifier_reference>
-            <identifier_reference>Vector_Planetocentric_Velocity_Generic</identifier_reference>
+         <DD_Association>
+             <identifier_reference>XSChoice#</identifier_reference>
+             <identifier_reference>Vector_Cartesian_Position_Generic</identifier_reference>
+             <identifier_reference>Vector_Cartesian_Velocity_Generic</identifier_reference>
+             <identifier_reference>Vector_Cartesian_Acceleration_Generic</identifier_reference>
+             <identifier_reference>Vector_Planetocentric_Position_Generic</identifier_reference>
+             <identifier_reference>Vector_Planetocentric_Velocity_Generic</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Illumination_Min_Max</name>
         <version_id>1.0</version_id>
         <local_identifier>Illumination_Min_Max</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Illumination_Min_Max class contains attributes 
-            providing illumination parameters as minimum/maximum pairs. 
-            For any given illumination parameter if one of minimum or 
-            maximum is given, both must be given.
-            If a target is specified using the Geometry_Target_Identification class in the 
-            Orbiter_Identification class under the same parent Geometry_Orbiter class,
-            the min-max pairs for each illumination parameter provide the range of that 
-            parameter in the observation on that target. Otherwise the pair provides the 
-            range for the entire field of view.            
+          providing illumination parameters as minimum/maximum pairs. 
+          For any given illumination parameter if one of minimum or 
+          maximum is given, both must be given.
+          If a target is specified using the Geometry_Target_Identification class in the 
+          Orbiter_Identification class under the same parent Geometry_Orbiter class,
+          the min-max pairs for each illumination parameter provide the range of that 
+          parameter in the observation on that target. Otherwise the pair provides the 
+          range for the entire field of view.            
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -3198,21 +3205,21 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+ 
     <DD_Class>
         <name>Illumination_Specific</name>
         <version_id>1.0</version_id>
         <local_identifier>Illumination_Specific</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Illumination_Specific class contains attributes 
-            providing illumination parameters at a single location in 
-            the field of view. That location is specified by using one,
-            and only one of reference_location, reference_pixel_location,
-            or Reference_Pixel, If reference_location is used, and indicates 
-            a point on a target, the target must be the one specified using 
-            Geometry_Target_Identification in the parent Geometry_Orbiter class. 
-            The provided value for each illumination attribute must correspond 
-            to the time given by geometry_reference_time_utc.
+           providing illumination parameters at a single location in 
+           the field of view. That location is specified by using one,
+           and only one of reference_location, reference_pixel_location,
+           or Reference_Pixel, If reference_location is used, and indicates 
+           a point on a target, the target must be the one specified using 
+           Geometry_Target_Identification in the parent Geometry_Orbiter class. 
+           The provided value for each illumination attribute must correspond 
+           to the time given by geometry_reference_time_utc.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -3252,17 +3259,17 @@
         <local_identifier>Illumination_Start_Stop</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Illumination_Start_Stop class contains attributes 
-            providing illumination parameters as pairs  corresponding to 
-            the beginning and end of the observation. If either the start or 
-            stop parameter is given, both must be provided. 
-            If any values from this class are included in the label, the 
-            parameters geometry_start_time_utc and geometry_stop_time_utc must be 
-            given in the enclosing Geometry_Orbiter class. 
-            If a target is specified using the Geometry_Target_Identification class 
-            in the Orbiter_Identification class under the parent Geometry_Orbiter 
-            class, the start-stop pairs for each illumination parameter provide 
-            the range of that parameter in the observation on that target. Otherwise 
-            the pair provides the range for the entire field of view.            
+          providing illumination parameters as pairs  corresponding to 
+          the beginning and end of the observation. If either the start or 
+        	stop parameter is given, both must be provided. 
+        	If any values from this class are included in the label, the 
+        	parameters geometry_start_time_utc and geometry_stop_time_utc must be 
+        	given in the enclosing Geometry_Orbiter class. 
+          If a target is specified using the Geometry_Target_Identification class 
+          in the Orbiter_Identification class under the parent Geometry_Orbiter 
+          class, the start-stop pairs for each illumination parameter provide 
+          the range of that parameter in the observation on that target. Otherwise 
+          the pair provides the range for the entire field of view.            
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -3354,7 +3361,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Pixel_Size_Projected</name>
         <version_id>2.0</version_id>
@@ -3372,12 +3379,12 @@
             <identifier_reference>XSChoice#</identifier_reference>
             <identifier_reference>reference_location</identifier_reference>
             <identifier_reference>distance</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>horizontal_pixel_footprint</identifier_reference>
+           <reference_type>attribute_of</reference_type>
+           <minimum_occurrences>1</minimum_occurrences>
+           <maximum_occurrences>1</maximum_occurrences>
+         </DD_Association>
+         <DD_Association>
+             <identifier_reference>horizontal_pixel_footprint</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
@@ -3396,13 +3403,13 @@
         <local_identifier>Surface_Geometry_Min_Max</local_identifier>
         <submitter_name>Edward A. Guinness</submitter_name>
         <definition>The Surface_Geometry_Min_Max class contains attributes 
-            providing surface geometry parameters as minimum/maximum pairs. 
-            For any given parameter if one of minimum or maximum is given, 
-            both must be given.
-            The min-max pairs for each parameter provide the range of that 
-            parameter in the observation for the target specified using 
-            the Geometry_Target_Identification class in the Orbiter_Identification 
-            class under the parent Geometry_Orbiter class.
+          providing surface geometry parameters as minimum/maximum pairs. 
+          For any given parameter if one of minimum or maximum is given, 
+          both must be given.
+          The min-max pairs for each parameter provide the range of that 
+          parameter in the observation for the target specified using 
+          the Geometry_Target_Identification class in the Orbiter_Identification 
+          class under the parent Geometry_Orbiter class.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -3571,12 +3578,12 @@
         <local_identifier>Surface_Geometry_Start_Stop</local_identifier>
         <submitter_name>Edward A. Guinness</submitter_name>
         <definition>The Surface_Geometry_Start_Stop class contains attributes 
-            providing surface geometry parameters given as pairs corresponding to 
-            the beginning and end of the observation. For a parameter, if either 
-            the start or stop parameter is given, both must be provided. 
-            If any values from this class are included in the label, the 
-            parameters geometry_start_time_utc and geometry_stop_time_utc must be 
-            given in the enclosing Geometry_Orbiter class.            
+          providing surface geometry parameters given as pairs corresponding to 
+          the beginning and end of the observation. For a parameter, if either 
+          the start or stop parameter is given, both must be provided. 
+        	If any values from this class are included in the label, the 
+        	parameters geometry_start_time_utc and geometry_stop_time_utc must be 
+        	given in the enclosing Geometry_Orbiter class.            
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -3758,11 +3765,11 @@
         <local_identifier>Coordinate_System_Origin_Identification</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Coordinate_System_Origin_Identification class uniquely identifies
-            the "body" that is the origin of a coordinate system. Typically body centered 
-            coordinate systems place the origin at the center of mass of the body. In addition 
-            to physical bodies, the origin may be defined at a point in space such as a system 
-            barycenter. Note that the origin of coordinate system does not necessarily correspond 
-            to either end point of a vector.
+          the "body" that is the origin of a coordinate system. Typically body centered 
+          coordinate systems place the origin at the center of mass of the body. In addition 
+          to physical bodies, the origin may be defined at a point in space such as a system 
+          barycenter. Note that the origin of coordinate system does not necessarily correspond 
+          to either end point of a vector.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -3773,7 +3780,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Acceleration_Generic</name>
         <version_id>1.0</version_id>
@@ -3806,7 +3813,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Position_Central_Body_To_Spacecraft</name>
         <version_id>1.0</version_id>
@@ -3827,7 +3834,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Position_Central_Body_To_Target</name>
         <version_id>1.0</version_id>
@@ -3849,7 +3856,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Position_Earth_To_Central_Body</name>
         <version_id>1.0</version_id>
@@ -3870,7 +3877,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Position_Earth_To_Spacecraft</name>
         <version_id>1.0</version_id>
@@ -3891,7 +3898,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Position_Earth_To_Target</name>
         <version_id>1.0</version_id>
@@ -3912,7 +3919,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Position_Generic</name>
         <version_id>1.0</version_id>
@@ -3931,13 +3938,13 @@
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Geometry_Target_Identification</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+         </DD_Association>
         <DD_Association>
             <identifier_reference>Vector_Cartesian_Position_Extended_Base</identifier_reference>
             <reference_type>parent_of</reference_type>
@@ -3945,7 +3952,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-        
+
     <DD_Class>
         <name>Vector_Cartesian_Position_Spacecraft_To_Target</name>
         <version_id>1.0</version_id>
@@ -3966,7 +3973,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Position_SSB_To_Central_Body</name>
         <version_id>1.0</version_id>
@@ -3987,7 +3994,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Position_SSB_To_Spacecraft</name>
         <version_id>1.0</version_id>
@@ -4008,7 +4015,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Position_SSB_To_Target</name>
         <version_id>1.0</version_id>
@@ -4030,7 +4037,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Position_Sun_To_Central_Body</name>
         <version_id>1.0</version_id>
@@ -4051,7 +4058,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Position_Sun_To_Spacecraft</name>
         <version_id>1.0</version_id>
@@ -4072,7 +4079,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Position_Sun_To_Target</name>
         <version_id>1.0</version_id>
@@ -4093,7 +4100,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Velocity_Generic</name>
         <version_id>1.0</version_id>
@@ -4126,7 +4133,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Central_Body</name>
         <version_id>1.0</version_id>
@@ -4148,7 +4155,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Earth</name>
         <version_id>1.0</version_id>
@@ -4169,7 +4176,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Velocity_Spacecraft_Relative_To_SSB</name>
         <version_id>1.0</version_id>
@@ -4191,7 +4198,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun</name>
         <version_id>1.0</version_id>
@@ -4214,7 +4221,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Velocity_Spacecraft_Relative_To_Target</name>
         <version_id>1.0</version_id>
@@ -4236,7 +4243,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Velocity_Target_Relative_To_Central_Body</name>
         <version_id>1.0</version_id>
@@ -4258,7 +4265,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Velocity_Target_Relative_To_Earth</name>
         <version_id>1.0</version_id>
@@ -4279,7 +4286,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Velocity_Target_Relative_To_Spacecraft</name>
         <version_id>1.0</version_id>
@@ -4323,8 +4330,8 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
-    <DD_Class>
+
+     <DD_Class>
         <name>Vector_Cartesian_Velocity_Target_Relative_To_Sun</name>
         <version_id>1.0</version_id>
         <local_identifier>Vector_Cartesian_Velocity_Target_Relative_To_Sun</local_identifier>
@@ -4338,15 +4345,15 @@
             here if the coordinate system has not been specified in the enclosing class.            
         </definition>
         <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>Vector_Cartesian_Velocity_Extended_Base</identifier_reference>
+         <element_flag>false</element_flag>
+         <DD_Association>
+             <identifier_reference>Vector_Cartesian_Velocity_Extended_Base</identifier_reference>
             <reference_type>parent_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Planetocentric_Position_Central_Body_To_Spacecraft</name>
         <version_id>1.0</version_id>
@@ -4368,7 +4375,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Planetocentric_Position_Central_Body_To_Target</name>
         <version_id>1.0</version_id>
@@ -4426,7 +4433,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Planetocentric_Position_Spacecraft_To_Target</name>
         <version_id>1.0</version_id>
@@ -4448,7 +4455,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Planetocentric_Velocity_Generic</name>
         <version_id>1.0</version_id>
@@ -4484,7 +4491,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+  
     <DD_Class>
         <name>Vector_Planetocentric_Velocity_Spacecraft_Relative_To_Target</name>
         <version_id>1.0</version_id>
@@ -4506,7 +4513,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+  
     <DD_Class>
         <name>Vector_Planetocentric_Velocity_Target_Relative_To_Central_Body</name>
         <version_id>1.0</version_id>
@@ -4527,7 +4534,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+  
     <DD_Class>
         <name>Vector_Planetocentric_Velocity_Target_Relative_To_Spacecraft</name>
         <version_id>1.0</version_id>
@@ -4548,7 +4555,6 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
 
     <!-- Nesting Level 5 -->
     
@@ -4569,7 +4575,6 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-
 
     <!-- Nesting Level 6 -->
     
@@ -4744,9 +4749,8 @@
         </DD_Association>
     </DD_Class>
     
-    
     <!-- Schematron Rules -->
-    
+
     <DD_Rule>
         <local_identifier>Illumination_Specific_0</local_identifier>
         <rule_context>//geom:Illumination_Geometry/geom:Illumination_Specific</rule_context>
@@ -4806,7 +4810,7 @@
             <rule_message>At least one of the following must be present: geom:frame_spice_name, geom:name, pds:Internal_Reference.</rule_message>
         </DD_Rule_Statement>
     </DD_Rule>
-
+    
     <DD_Rule>
         <local_identifier>Pixel_Intercept_0</local_identifier>
         <rule_context>geom:Pixel_Intercept</rule_context>
@@ -5313,6 +5317,5 @@
             <rule_message>geom:start_time and geom:stop_time, are a pair; if you use one, you must use both.</rule_message>
         </DD_Rule_Statement>
     </DD_Rule>
-    
 
 </Ingest_LDD> 

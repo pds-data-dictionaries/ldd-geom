@@ -8,12 +8,12 @@
                      https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd">
 
     <name>Geometry Dictionary Full</name>
-    <ldd_version_id>1.8.0.0</ldd_version_id>
+    <ldd_version_id>1.9.5.0</ldd_version_id>
     <dictionary_type>Discipline</dictionary_type>
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
     <namespace_id>geom</namespace_id>
-    <comment>Cumulative comments removed to reduce annoyance...
+    <comment>
         
         GeomMain - Geometry Main Section
         
@@ -38,9 +38,237 @@
         is available to other sections of the Geometry namespace
         
         This file should be listed LAST when building the Geometry namespace.
+        
+        Modification History - comments from the 1.9.3.0 version copied here to preserve them.
+            	version 1.0.0 2015-04-30
+        - Initial release.
+        version 1.1.0 2015-08-17 
+        - Updated to IM version 1.4.1.0
+        - Removed attributes body_spice_id and frame_spice_id. body_spice_name and frame_spice_name are the supported attributes.
+        - Geometry_Identification_Base was replaced by Body_Identification_Base and Frame_Identification_Base. 
+          -- The preceding two changes affect these classes: Central_Body_Identification, 
+             Coordinate_System_Origin_Identification, Observer_Identification, Target_Identification.
+        - Added the class Coordinate_Space_SPICE. 
+        - SPICE_Kernel_Identification was replaced with the new class Coordinate_Space_SPICE in Coordinate_Space_Identification. 
+        - Replaced local_spice_kernel_name with spice_kernel_file_name.
+        - Changed kernel_type to pds:kernel_type.
+          -- The preceding four changes affect Coordinate_Space_Present and Coordinate_Space_Reference.
+        - horizontal/vertical_pixel_scale_factor now have unit of measure type Units_of_Map_scale (these are all of the
+          form "[length]/pixel").
+        - In Geometry_Orbiter class, expanded description to include class use. 
+        - Quaternion_non_SPICE_Style contained a double underscore in the class name. That typo has been corrected.
+        - Updated a number of the attribute and class definitions/descriptions 
+        - In the Geometry_Orbiter class, Reference_Frame_Identification was removed. 
+        - Added class Coordinate_Space_Indexed
+        - Moved solution_id attribute from Coordinate_Space_Index to Coordinate_Space_Indexed
+        - Removed model_desc_file_name from Camera_Model_Parameters
+        - Replaced Coordinate_Space_Index with Coordinate_Space_Indexed in Coordinate_Space_Identification
+        - Added Local_Internal_Reference to Coordinate_Space_Index
+        - Added attribute coordinate_space_frame_type
+        - Renamed Device_Motor_Clicks* to Device_Motor_Counts*
+        - Renamed Device_Position_Vector to Vector_Device_Gravity
+        - Renamed index_value_no_units to index_value_number.
+        - Completely revised quaternions, removed all four existing quaternion classes,
+          Quaternion_SPICE, Quaternion_non_SPICE, Rotation_Quaternion, and Device_Orientation_Quaternion. 
+          Introduced three new quaternion classes, Quaternion_Base, Quaternion_1, and Quaternion_2. The latter 
+          two are extensions of Quaternion_Base. 
+        - Revised the definitions of the four components of quaternions.
+        - Added the classes Rotate_From, Rotate_To, and the attribute rotation_direction to 
+          support the new quaternion classes.
+        - Added Coordinate_Space_Present to the Articulation_Device_Parameters class.
+        - Renamed Coordinate_System to Coordinate_System_Identification.
+        - In Coordinate_Space_Indexed changed Coordinate_Space_Index from parent_of to component_of
+        - Removed pds:Local_Internal_Reference from Coordinate_Space_Index, Body_Identification_Base, Frame_Identification_Base.
+        - Removed the quaternions from the Articulation_Device_Parameters class.
+        - Cleaned up some more definitions.
+        version 1.2.0   2015-10-15
+        - Updated to IM version 1.5.0.0
+        - Redefined the Display_Direction class and removed the import of the 
+          Display dictionary.
+        - Designated Body_Identification_Base as 'abstract'
+        - Renamed Target_Identification to Geometry_Target_Identification
+        - Renamed horizontal/vertical_pixel_size_angular to horizontal/vertical_pixel_field_of_view
+        - Renamed horizontal/vertical_pixel_size_projected to horizontal/vertical_pixel_footprint
+        - Removed Body_Identification_Base from Image_Display
+        - removed body_positive_pole_clock_angle
+        - added central_body_positive_pole_clock_angle
+        - Removed Local_Internal_Reference from several classes
+        - Removed horizontal/vertical_pixel_scale_factor
+        - Updated horizontal/vertical_pixel_field_of_view descriptions
+        - Added new, required attribute pixel_field_of_view_method attribute to Pixel_Dimensions
+        - Allow for multiple Pixel_Size_Projected classes to be specified in the Pixel_Dimensions class.
+        - Revised the definition of Footprint_Vertices and set the minimum number of vertices to two.
+        - Added choice between reference_location and new distance attribute in Pixel_Size_Projected class.
+        - Added 'Constant' (or some other applicable term per rationale) as a permissible value to Pixel_Size_Projected and reference_location.
+        - Require horizontal_pixel_footprint and vertical_pixel_footprint to be specified in Pixel_Size_Projected class.
+        - added cahvore_model_type and cahvore_model_parameter attributes to CAHVORE_Model 
+        - added new positive_azimuth_direction and positive_elevation_direction attributes to Coordinate_Space_Definition class
+        - added new instrument_azimuth, instrument_elevation attributes to Derived_Geometry
+        - added new selected_instrument_id attribute to Articulation_Device_Parameters for currently selected instrument
+        - added new device_phase attribute to Articulation_Device_Parameters
+        - added new Quaternion_Model_Transform and Vector_Model_Transform classes to the Camera_Model_Parameters class
+        - fixed bug with Vector_Cartesian_No_Units class - local identifier was Vector_Cartesian_Unit and overwriting that class
+        - changed parent_of Vector_Axis class to Vector_Cartesian_No_Units
+        - changed parent_of Vector_Device_Gravity class to Vector_Cartesian_Unit instead of Position_Cartesion_Vector_Base since it is a unit vector
+        - added pds:Local_Internal_Reference to Coordinate_Space_Identification class, specifically for properly defining a Coordinate_Space_Reference. 
+        - updated the definition for coordinate_space_frame_type
+        - changed ordering of Coordinate_Space_Indexed to make more logical sense
+        - changed local_identifier attribute in Coordinate_Space_Definition class to allow for mutliple identifiers for a Coordinate Space
+        - removed units from x_pixel, y_pixel, z_pixel
+        - changed x_no_units, y_no_units, z_no_units to x,y,z
+        - removed Coordinate_Space_Reference from CAHV_Model class. It only needs to be in the Camera_Model_Parameters class
+        - north/east_azimuth - expanded definition to clarify direction of measurement.
+        - renamed the Distances class to Specific_Distances, removed the Distance_Generic class 
+          from that class and added it to Geometry_Orbiter. 
+        - removed the Specific_Position_Vectors and Specific_Velocity_Vectors classes. The remaining Vector aggragating classss
+          are Specific_Cartesian_Vectors and Specific_Planetocentric_Vectors.
+        - Renamed 59 classes for clarity or to make the order of the class name segments consistent with SR requirements. See 
+          the separate class-rename-20151016.txt document for the complete list.
+        version 1.2.1   2015-11-12 (this version not released for review)
+        - Inserted a missing ")" in Schematron file to correct a typo.
+        - changed several instances of a double underscore to a single underscore.
+        - Removed Local_Reference_Type from geom:Display_Direction.
+        - Added Schematron rule for Image_Display_Geometry/Local_Internal_Reference/Reference_Type to verify 
+          use of the enumerated value "display_to_data_object".
+        - In Geometry_Orbiter, moved the class Geometry_Target_Identification ahead of the class Coordinate_System Identification. 
+          This results in placing at the beginning of the class, the items most likely to have multiple  
+          values and hence result in multiple instances of the Geometry_Orbiter class.
+        version 1.3.0.0   2016-07-15
+        - Updated to IM version 1.6.0.0
+        - Changed to four place version number.
+        - Added geometry_start_time and geometry_stop_time, and expanded the definitions for the three variations
+          of geometry_*_time.
+        - Made geom:Display_Direction required even if the disp:Display_Direction is in the label.
+        - Removed the option to use Quaternion_1 from the Image_Display_Geometry class since there is no way to identify 
+          the relevant end points in the enclosing class.
+        - Revised the definition of right_ascension_angle.
+        - Changed the description and units of right_ascension_hour_angle to decimal hours.
+        - Revised the definition of declination_angle.
+        - In Object_Orientation_Clock_Angles, made Reference_Frame_Identification optional instead of required.
+        - Added or modified attributes minimum_*, maximum_*, start_*, stop_*; where * is any of target_geocentric_distance,  
+          target_heliocentric_distance, target_ssb_distance, spacecraft_geocentric_distance, spacecraft_heliocentric_distance, 
+          spacecraft_to_central_body_distance, spacecraft_to_target_center_distance, spacecraft_to_target_boresight_intercept_distance, 
+          spacecraft_to_target_subspacecraft_distance, emission_angle, incidence_angle, phase_angle, solar_elongation, latitude, 
+          longitude, subspacecraft_azimuth, subspacecraft_latitude, subspacecraft_longitude, subsolar_azimuth, subsolar_latitude, 
+          or subsolar_longitude.
+        - Added the attribute lat_long_description to support start_ and stop_ latitude and longitude.
+        - Added the classes *_Specific, *_Min_Max, *_Start_Stop; where * is any of Distances, Illumination, or Surface_Geometry.
+        - Removed the classes Illumination_FOV_Range_Values (replaced with the class Illumination_Min_Max), and 
+          Illumination_Single_Values (replaced with the class Illumination_Specific).
+        - Removed the attribute illumination_range_designation.
+        - Changed the names of several specific distance classes from spacecraft_to_*_distance to spacecraft_*_distance.
+        - Renamed Specific_Distances to Distances_Specific.
+        - Renamed Surface_Geometry to Surface_Geometry_Specific.
+        - Renamed Illumination_Single_Values to Illumination_Specific.
+        - Renamed Specific_Cartesian_Vectors to Vectors_Cartesian_Specific.
+        - Renamed Specific_Planetocentric_Vectors to Vectors_Planetocentric_Specific.
+        - Added or redefined several classes for grouping: Orbiter_Identification, Distances, Surface_Geometry, 
+          Illumination_Geometry, Vectors.
+        - Reorganized the contents of Geometry_Orbiter.
+        - Provided Schematron rules to ensure if one member of a min-max or start-stop pair is used, both are used.
+        - Renamed lat_long_description to lat_long_method
+        - Renamed Quaternion_1 to Quaternion_Plus_Direction
+        - Renamed Quaternion_2 to Quaternion_Plus_To_From
+        - In List_Index_Base removed Local_Internal_Reference and made the cardinality of the choice to require at 
+          least one of the options.
+        - Updated the definitions of several attributes supporting the Lander portion of the dictionary.
+        - Changed pds:Internal_Reference to geom:Internal_Reference
+        - Changed pds:Local_Internal_Reference to geom:Local_Internal_Reference
+        - In the Geometry class, removed the choice statement which made one of Geometry_Orbiter and Geometry_Lander required. Now both are optional.
+        version 1.3.1.0   2016-07-29
+        - Added the optional attribute kernel_provenance to the SPICE_Kernel_Identification class.
+        - Renamed geometry_reference_time, geometry_start/stop_time, and coordinate_system_time, by appending _utc to the attribute name.
+        - Added the optional attribute geometry_reference_time_tdb
+        - Changed the cardinality of Quaternion_Plus_To_From in the Image_Display_Geometry to allow multiple instances.
+        - Added the optional Expanded_Geometry class to the Geometry class
+        version 1.4.0.0   2016-09-26
+        - Verified that Internal_Reference and Local_Internal_Reference refer to the PDS namespace in class definitions
+        - Edited Schematron rules to change geom:Internal_Reference to pds:Internal_Reference
+        - Edited Schematron rules to match Internal_Reference contexts with reference_type rule_test
+        - Edited Schematron messages to be more user-friendly
+        - Remove reference_type and local_reference_type from Schematron rule contexts
+        - Edited Schematron rules to change geom:Local_Internal_Reference to pds:Local_Internal_Reference
+        - Edited Schematron rules to match Local_Internal_Reference contexts with local_reference_type rule_text
+        version 1.4.0.1  2016-11-10
+        - Changed pds:name to geom:name in the schematron rules 
+        version 1.5.0.0  2017-06-19
+        - Regenerated the schema and other files because of a bug in the LDDTool - This changed the classes:
+               Coordinate_Space_Identification, Coordinate_Space_Present, Coordinate_Space_Reference
+        - Changed the maxoccurs to unbounded for Coordinate_Space_Index in Coordinate_Space_Indexed
+        - Changed the choice in Derived_Geometry to include all optional attributes. This was done to ensure that the class contained at least one
+               attribute when included in a label.
+        version 1.5.1.0  2017-09-20
+        - Added index_value_number to List_Index_Temperature to specify DN temperature counts in addition to the EU temperature
+        - Updated the definition for List_Index_Temperature to include that
+        - Fixed bug with Vector_Entrance to use Vector_Cartesian_Unit instead of Vector_Cartesian_Position_Base
+        - Updated for PDS model 1.9.0.0
+        version 1.5.2.0  2018-07-25
+        - Updated for PDS information model 1.10.0.0
+        - In Image_Display_Geometry, moved Object_Orientation_Clock_Angles into the choice statement.
+        version 1.5.3.0  2018-07-25
+        - Updated for PDS information model 1.10.1.0
+        version 1.6.0.0  2018-07-27
+        - Changed Optical_Terms to Vector_Optical, reparented it to Vector_Cartesian_Unit, and fixed the definition.
+        - Changed Vector_Entrance to Entrance_Terms, reparented it to Polynomial_Coefficients_3, and fixed the definition.
+        - Rewrote definitions for CAHV_Model, CAHVOR_Model, CAHVORE_Model, Vector_Center, Vector_Horizontal, Vector_Vertical, and Radial_Terms.
+        - Minor revisions to definitions for Camera_Model_Parameters, Coordinate_Space_Present, Coordinate_Space_Reference, instrument_azimuth,
+                instrument_elevation, Quaternion_Plus_Direction, solar_azimuth, geometry_start_time_utc, and geometry_stop_time_utc.
+        - Minor changes to definitions of incidence_angle and phase_angle.
+        version 1.6.1.0 2018-12-05
+        - Changed the cardinality (maxoccurs) of Object_Orientation_RA_Dec in Image_Display_Geometry from 3 to unlimited to support 
+                request for MESSENGER MDIS migration to PDS4.
+        version 1.7.0.0 2019-04-19     
+        - Set the element_flag to "true" for the Coordinate_Space_Reference class so that the class is exposed for others to use.
+        version 1.7.1.0 2019-05-06
+        - Added attribute quaternion_measurement_method and included it in the Coordinate_Space_Definition class.
+        - Added local_identifier to the Articulation_Device_Parameters
+        version 1.7.2.0 2020-05-04; 2020-07-10
+        - Modified definitions for quaternion_measurment_method.
+        - Added the Interpolation class to support documentation of camera model interpolation. Included in the 
+               Camera_Model_Parameters class.
+        - Added PSPH camera model (5 classes and 2 attributes); added enumerated list for model_type relative
+               to camera models.
+        version 1.8.0.0 2020-07-31
+        - Added Vector_Solar_Direction class to Derived_Geometry; made Vector_Axis_X/Y classes a restriction of the
+               Vector_Cartesian_Unit class.
+        - Added Coordinate_Space_Quality to Coordinate_Space_Definition.
+        - Added Commanded_Geometry to Articulation_Device_Parameters 
+        - have to edit schema to fix the "choice bug"
+        version 1.8.1.0 2020-08-14 thru 2020-08-28
+        - Added target_name, target_heliocentric_distance, and solar_image_clock_angle to the 
+               Derived_Geometry class in the Geometry_Lander section. 
+        - Changed attitude_propagation_counter data type from integer to real for M2020.
+        - Added new attribute geometry_state, pds:description, pds:local_identifier to the start
+               of the Geometry_Lander class
+        - Added a Vector_Device_Gravity_Magnitude class to Articulation_Device_Parameters to support M2020.
+        version 1.9.0.0 2020-10-16 thru 2020-12-09
+        - Made  celestial_north_clock_angle and ecliptic_north_clock_angle nillable. 
+               Added enumerated values for reference_type in Body_Identification_Base and Frame_Identification_Base.
+               Added enumerated values for coordinate_space_frame_type.
+               Changed enumerated flag to true for coordinate_space_frame_type
+        Version 1.9.1.0?? 2020-12-16
+        - Added enumerated value to coordinate_space_frame_type to support Mars2020.
+        - Added class Device_Pose to Articulation_Device_Parameters to support Mars 2020.
+        Version 1.9.2.0 2021-03-30
+        - Added enumerated value to coordinate_space_frame_type to support Mars2020.
+        Version 1.9.x.0 2021-04-22
+        - Added three enumerated values (ROVER_FRAME, TOOL_FRAME, and Tool_Frame)
+               to coordinate_space_frame_type to support Mars2020.
+        Version 1.9.3.0 2021-07-13
+        - Added yet another enumerated value (TURRET_FRAME and title case version)
+               to coordinate_space_frame_type to support Mars2020.
+        Version 1.9.3.0 2021-04-27
+        - Added seven enumerated values in upper/lower case (PIXL_TOOL, WHEEL_RF, WHEEL_LF, WHEEL_RR, 
+               WHEEL_LR, WHEEL_RM, WHEEL_LM) to coordinate_space_frame_type for Mars2020.
+        - fixed typo traget -> target
+       Version 1.9.4.0 2021-10-25
+        - This version is the first version where ingest to separated into 4 files. 
+       Version 1.9.5.0 2022-01-06
+        - Added ORBITAL (upper and title case) to coordinate_space_frame_type for Mars2020.
     </comment>
     
-    <last_modification_date_time>2021-08-20</last_modification_date_time>
+    <last_modification_date_time>2022-01-06</last_modification_date_time>
+    
 
 <!-- Attributes -->
     
@@ -68,7 +296,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>incidence_angle</name>
         <version_id>2.0</version_id>
@@ -91,7 +319,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>phase_angle</name>
         <version_id>2.0</version_id>
@@ -131,10 +359,11 @@
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
+<!-- EAG: I am not sure why this is in the main and not lander -->    
     <DD_Attribute>
         <name>coordinate_space_frame_type</name>
-        <version_id>1.0</version_id>
+        <version_id>1.1</version_id>
         <local_identifier>coordinate_space_frame_type</local_identifier>
         <nillable_flag>true</nillable_flag>
         <submitter_name>Jordan Padams</submitter_name>
@@ -143,12 +372,502 @@
             Coordinate_Space_Index and the optional solution_id in the Coordinate_Space_Indexed class,
             this serves to fully name an instance of a coordinate space. 
         </definition>
+        
+<!-- PDS3 styled names  -->
+
         <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
+            <enumeration_flag>true</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+             <value>APXS_Frame</value>
+             <value_meaning>Frame defining the APXS instrument on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_CUSTOM_TCP_FRAME</value>
+             <value_meaning>Frame describing a user-defined Tool Control Point for a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_DOCKING_POST_FRAME</value>
+             <value_meaning>Frame describing the docking post on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_DRILL_FRAME</value>
+             <value_meaning>Frame describing the drill on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_DRT_FRAME</value>
+             <value_meaning>Frame describing the Dust Removal Tool on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_FCS_FRAME</value>
+             <value_meaning>Frame describing the FCS (Facility Contact Switch) device on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_FRAME</value>
+             <value_meaning>Frame describing a defined portion of a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_GDRT_FRAME</value>
+             <value_meaning>Frame describing the GDRT (Gaseous Dust Removal Tool) device on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_MAHLI_FRAME</value>
+             <value_meaning>Frame describing the MAHLI instrument on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_PIXL_FRAME</value>
+             <value_meaning>Frame describing the PIXL instrument on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_PORTION_FRAME</value>
+             <value_meaning>Frame describing the sample portioner device on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_SCOOP_TCP_FRAME</value>
+             <value_meaning>Frame describing the Tool Control Point for the scoop on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_SCOOP_TIP_FRAME</value>
+             <value_meaning>Frame describing the tip of a scoop on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_SHERLOC_FRAME</value>
+             <value_meaning>Frame describing the SHERLOC instrument on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_TURRET_FRAME</value>
+             <value_meaning>Frame describing the turret on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ARM_WATSON_FRAME</value>
+             <value_meaning>Frame describing the Watson instrument component on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>CINT_FRAME</value>
+             <value_meaning>Frame describing the LVS camera during descent.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>DRILL_BIT_TIP</value>
+             <value_meaning>Frame centered on the tip of the drill.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>HELI_G_FRAME</value>
+             <value_meaning>Helicopter frame defined attached to the ground at takeoff.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>HELI_M_FRAME</value>
+             <value_meaning>Helicopter frame roughly analogous to ROVER_MECH_FRAME.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>HELI_S1_FRAME</value>
+             <value_meaning>Helicopter frame roughly analogous to ROVER_NAV_FRAME defined for IMU #1.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>HELI_S2_FRAME</value>
+             <value_meaning>Helicopter frame roughly analogous to ROVER_NAV_FRAME defined for IMU #2.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>LANDER_FRAME</value>
+             <value_meaning>Analogous to ROVER_NAV_FRAME for non-mobile missions.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>LOCAL_LEVEL_FRAME</value>
+             <value_meaning>Frame coincident with ROVER_NAV/LANDER_FRAME that is oriented according to 
+             	cartographic directions and gravity.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>MCMF_FRAME</value>
+             <value_meaning>Mars Centered Mars Fixed Frame defined with origin at the planet center.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>MCZ_CAL_PRIMARY</value>
+             <value_meaning>Primary Mastcam-Z calibration target.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>MEDA_RDS</value>
+             <value_meaning>Radiation and Dust Sensor for the MEDA instruments.</value_meaning>
+            </DD_Permissible_Value>
+            
+           <DD_Permissible_Value>
+                <value>ORBITAL</value>
+                <value_meaning>A surface frame for use with orbital images, where the origin is defined
+                    relative to the equator and prime meridan or another orbital frame.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>PIXL_BASE_FRAME</value>
+             <value_meaning>Frame describing the base of the PIXL instrument.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>PIXL_SENSOR_FRAME</value>
+             <value_meaning>Frame describing the movable sensor head of the PIXL instrument.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>PIXL_TOOL</value>
+             <value_meaning>Frame for PIXL instrument.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>ROVER_FRAME</value>
+             <value_meaning>Frame that is attached to the rover and moves with the rover (in both position 
+             	and orientation). Often synonymous with ROVER_NAV_FRAME.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>ROVER_MECH_FRAME</value>
+             <value_meaning>Frame generally similar to ROVER_NAV_FRAME  but with different origin and 
+             	possibly axis orientation that is more conducive to mechanical operations ("MECH" for "Mechanical").
+             	The origin is typically (but not necessarily) tied to a specific bit of hardware.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>ROVER_NAV_FRAME</value>
+             <value_meaning>Frame attached to the rover oriented with respect to the rover that moves 
+             	with the rover ("NAV" for "Navigation").  The origin is generally in a location conducive 
+             	to navigation (e.g. at the center of turning between the middle wheels at nominal ground 
+             	level on MSL/M20 type rovers) which may not be attached to any physical hardware.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>RSM_FRAME</value>
+             <value_meaning>Frame defining a Remote Sensing Mast.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>RSM_HEAD_FRAME</value>
+             <value_meaning>Frame defining a Remote Sensing Mast.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>SITE_FRAME</value>
+             <value_meaning>Instance of LOCAL_LEVEL_FRAME that is fixed to the ground. Used for local 
+             	operations to reduce error propagation due to position uncertainty.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>SUN</value>
+             <value_meaning>Frame centered on the sun. Generally used for pointing instruments at the sun,
+                    rather than 3D position.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>TOOL_FRAME</value>
+             <value_meaning>Tool frame is used to indicate the frame associated with the currently 
+             	selected (or activated) "tool", in contexts where the specific frame is unknown or 
+             	does not matter.  "Tools" are typically devices on an arm such as a drill, microscopic 
+             	imager, contact spectrometer, etc.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>TURRET_FRAME</value>
+             <value_meaning>Frame based on a turret mechanism.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>WHEEL_RF</value>
+             <value_meaning>Frame for right front wheel.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>WHEEL_LF</value>
+             <value_meaning>Frame for left front wheel.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>WHEEL_RR</value>
+             <value_meaning>Frame for right rear wheel.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>WHEEL_LR</value>
+             <value_meaning>Frame for left rear wheel.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>WHEEL_RM</value>
+             <value_meaning>Frame for right middle wheel.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>WHEEL_LM</value>
+             <value_meaning>Frame for left middle wheel.</value_meaning>
+            </DD_Permissible_Value>
+
+            <!-- Title case value names  -->
+
+            <DD_Permissible_Value>
+             <value>APXS_Frame</value>
+             <value_meaning>Frame defining the APXS instrument on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_Custom_TCP_Frame</value>
+             <value_meaning>Frame describing a user-defined Tool Control Point for a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_Docking_Post_Frame</value>
+             <value_meaning>Frame describing the docking post on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_Drill_Frame</value>
+             <value_meaning>Frame describing the drill on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_DRT_Frame</value>
+             <value_meaning>Frame describing the Dust Removal Tool on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_FCS_Frame</value>
+             <value_meaning>Frame describing the FCS (Facility Contact Switch) device on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_Frame</value>
+             <value_meaning>Frame describing a defined portion of a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_GDRT_Frame</value>
+             <value_meaning>Frame describing the GDRT (Gaseous Dust Removal Tool) device on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_MAHLI_Frame</value>
+             <value_meaning>Frame describing the MAHLI instrument on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_PIXL_Frame</value>
+             <value_meaning>Frame describing the PIXL instrument on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_Portion_Frame</value>
+             <value_meaning>Frame describing the sample portioner device on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_Scoop_TCP_Frame</value>
+             <value_meaning>Frame describing the Tool Control Point for the scoop on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_Scoop_TIP_Frame</value>
+             <value_meaning>Frame describing the tip of a scoop on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_SHERLOC_Frame</value>
+             <value_meaning>Frame describing the SHERLOC instrument on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_Turret_Frame</value>
+             <value_meaning>Frame describing the turret on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Arm_WATSON_Frame</value>
+             <value_meaning>Frame describing the Watson instrument component on a movable arm.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>CINT_Frame</value>
+             <value_meaning>Frame describing the LVS camera during descent.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Heli_G_Frame</value>
+             <value_meaning>Helicopter frame defined attached to the ground at takeoff.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Heli_M_Frame</value>
+             <value_meaning>Helicopter frame roughly analogous to ROVER_MECH_FRAME.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Heli_S1_Frame</value>
+             <value_meaning>Helicopter frame roughly analogous to ROVER_NAV_FRAME defined for IMU #1.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Heli_S2_Frame</value>
+             <value_meaning>Helicopter frame roughly analogous to ROVER_NAV_FRAME defined for IMU #2.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Lander_Frame</value>
+             <value_meaning>Analogous to ROVER_NAV_FRAME for non-mobile missions.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Local_Level_Frame</value>
+             <value_meaning>Frame coincident with ROVER_NAV/LANDER_FRAME that is oriented according to 
+             	cartographic directions and gravity.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Mast_Frame</value>
+             <value_meaning>TBD</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>MB_Frame</value>
+             <value_meaning>TBD</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>MCMF_Frame</value>
+             <value_meaning>Mars Centered Mars Fixed Frame defined with origin at the planet center.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>MI_Frame</value>
+             <value_meaning>TBD</value_meaning>
+            </DD_Permissible_Value>
+            
+           <DD_Permissible_Value>
+                <value>Orbital</value>
+                <value_meaning>A surface frame for use with orbital images, where the origin is defined
+                    relative to the equator and prime meridan or another orbital frame.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>PIXL_Base_Frame</value>
+             <value_meaning>Frame describing the base of the PIXL instrument.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>PIXL_Sensor_Frame</value>
+             <value_meaning>Frame describing the movable sensor head of the PIXL instrument.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>PIXL_Tool</value>
+             <value_meaning>Frame for PIXL instrument.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Rat_Frame</value>
+             <value_meaning>TBD</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Rover_Frame</value>
+             <value_meaning>TBD</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Rover_Mech_Frame</value>
+             <value_meaning>Frame generally similar to ROVER_NAV_FRAME  but with different origin and 
+             	possibly axis orientation that is more conducive to mechanical operations ("MECH" for "Mechanical").  
+             	The origin is typically (but not necessarily) tied to a specific bit of hardware.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Rover_Nav_Frame</value>
+             <value_meaning>Frame attached to the rover oriented with respect to the rover that moves with the 
+             	rover ("NAV" for "Navigation").  The origin is generally in a location conducive to navigation 
+             	(e.g. at the center of turning between the middle wheels at nominal ground level on MSL/M20 
+             	type rovers) which may not be attached to any physical hardware.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>RSM_Frame</value>
+             <value_meaning>Frame defining a Remote Sensing Mast.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>RSM_Head_Frame</value>
+             <value_meaning>Frame defining a Remote Sensing Mast.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Site_Frame</value>
+             <value_meaning>Instance of LOCAL_LEVEL_FRAME that is fixed to the ground. Used for local operations 
+             	to reduce error propagation due to position uncertainty.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>Tool_Frame</value>
+             <value_meaning>Tool frame is used to indicate the frame associated with the currently selected 
+             	(or activated) "tool", in contexts where the specific frame is unknown or does not matter.  
+             	"Tools" are typically devices on an arm such as a drill, microscopic imager, contact 
+             	spectrometer, etc.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>Turret_Frame</value>
+             <value_meaning>Frame based on a turret mechanism.</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>Wheel_RF</value>
+             <value_meaning>Frame for right front wheel.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Wheel_LF</value>
+             <value_meaning>Frame for left front wheel.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Wheel_RR</value>
+             <value_meaning>Frame for right rear wheel.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Wheel_LR</value>
+             <value_meaning>Frame for left rear wheel.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Wheel_RM</value>
+             <value_meaning>Frame for right middle wheel.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+             <value>Wheel_LM</value>
+             <value_meaning>Frame for left middle wheel.</value_meaning>
+            </DD_Permissible_Value>
+
         </DD_Value_Domain>
+
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>frame_spice_name</name>
         <version_id>1.0</version_id>
@@ -186,7 +905,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The index_id attribute supplies a short name (identifier) 
-            for the associated value in a group of related values. 
+          for the associated value in a group of related values. 
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -201,7 +920,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The index_name attribute supplies the formal name 
-            for the associated value in a group of related values. 
+          for the associated value in a group of related values. 
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -216,14 +935,14 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The index_sequence_number attribute supplies the sequence 
-            identifier for the associated value in a group of related values. 
+          identifier for the associated value in a group of related values. 
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+        
     <DD_Attribute>
         <name>index_value_angle</name>
         <version_id>1.0</version_id>
@@ -231,8 +950,8 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The index_value_angle attribute provides the value 
-            of an angle as named by the associated index_id, index_name, 
-            or index_sequence_number. 
+          of an angle as named by the associated index_id, index_name, 
+          or index_sequence_number. 
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -248,7 +967,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The index_value_length attribute provides the value 
-            of a length as named by the associated index_id or index_name. 
+          of a length as named by the associated index_id or index_name. 
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -264,7 +983,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The index_value_number attribute provides the value with 
-            no applicable units as named by the associated index_id or index_name. 
+          no applicable units as named by the associated index_id or index_name. 
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -272,7 +991,7 @@
             <unit_of_measure_type>Units_of_None</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>index_value_string</name>
         <version_id>1.0</version_id>
@@ -280,7 +999,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The index_value attribute provides the string value as 
-            named by the associated index_id or index_name. 
+          named by the associated index_id or index_name. 
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -295,7 +1014,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The index_value_temperature attribute provides the value 
-            of a temperature as named by the associated index_id or index_name. 
+          of a temperature as named by the associated index_id or index_name. 
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -311,8 +1030,8 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>M. Gordon</submitter_name>
         <definition>The kernel_provenance attribute indicates whether a kernel file is a 
-            predict kernel, a reconstructed kernel, some combination of the two, or
-            a kernel for which the distinction is not applicable.
+        	predict kernel, a reconstructed kernel, some combination of the two, or
+        	a kernel for which the distinction is not applicable.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
@@ -320,31 +1039,31 @@
             <DD_Permissible_Value>
                 <value>Predicted</value>
                 <value_meaning>This kernel is a predict kernel (e.g. a pre-encounter 
-                    predicted spacecraft trajectory SPK ).
+                	predicted spacecraft trajectory SPK ).
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Reconstructed</value>
                 <value_meaning>This kernel is reconstructed based on improved information 
-                    (e.g. a post-encounter reconstructed spacecraft trajectory SPK based on 
-                    improved navigation information).
+                	(e.g. a post-encounter reconstructed spacecraft trajectory SPK based on 
+                	improved navigation information).
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Mixed</value>
                 <value_meaning>This kernel contains both reconstructed and predicted portions 
-                    (e.g. a reconstructed spacecraft trajectory SPK with a run-out predicted tail).
+                	(e.g. a reconstructed spacecraft trajectory SPK with a run-out predicted tail).
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Provenance Not Applicable</value>
                 <value_meaning>This kernel does not fit into any of the other categories 
-                    (e.g., LSKs, SCLKs, text PCKs).
+                	(e.g., LSKs, SCLKs, text PCKs).
                 </value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>latitude_position</name>
         <version_id>1.0</version_id>
@@ -365,7 +1084,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>latitude_velocity</name>
         <version_id>1.0</version_id>
@@ -383,7 +1102,7 @@
             <unit_of_measure_type>Units_of_Angular_Velocity</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>longitude_position</name>
         <version_id>1.0</version_id>
@@ -391,8 +1110,8 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The longitudinal component of a Planetocentric position vector. 
-            Planetocentric longitude is measured from the IAU approved prime 
-            meridian for the body and increases toward the east.
+                    Planetocentric longitude is measured from the IAU approved prime 
+                    meridian for the body and increases toward the east.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -403,7 +1122,7 @@
             <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>longitude_velocity</name>
         <version_id>1.0</version_id>
@@ -411,8 +1130,8 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The longitudinal component of a Planetocentric velocity vector.  
-            Planetocentric longitude is measured from the IAU approved prime 
-            meridian for the body and increases toward the east.
+                    Planetocentric longitude is measured from the IAU approved prime 
+                    meridian for the body and increases toward the east.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -428,14 +1147,14 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>qcos is the scalar component of a quaternion. 
-            qcos = cos(theta/2), where theta is the angle of rotation.
+        qcos = cos(theta/2), where theta is the angle of rotation.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>qsin1</name>
         <version_id>1.0</version_id>
@@ -443,15 +1162,15 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>qsin1 is the first element of the vector component
-            of a quaternion. qsin1 = x*sin(theta/2) where theta is the angle of 
-            rotation and (x,y,z) is the unit vector around which the rotation occurs.
+          of a quaternion. qsin1 = x*sin(theta/2) where theta is the angle of 
+          rotation and (x,y,z) is the unit vector around which the rotation occurs.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>qsin2</name>
         <version_id>1.0</version_id>
@@ -459,15 +1178,15 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>qsin2 is the second element of the vector component
-            of a quaternion. qsin2 = y*sin(theta/2) where theta is the angle of 
-            rotation and (x,y,z) is the unit vector around which the rotation occurs.
+          of a quaternion. qsin2 = y*sin(theta/2) where theta is the angle of 
+          rotation and (x,y,z) is the unit vector around which the rotation occurs.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>qsin3</name>
         <version_id>1.0</version_id>
@@ -475,15 +1194,15 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>qsin3 is the third element of the vector component
-            of a quaternion. qsin3 = z*sin(theta/2) where theta is the angle of 
-            rotation and (x,y,z) is the unit vector around which the rotation occurs.
+          of a quaternion. qsin3 = z*sin(theta/2) where theta is the angle of 
+          rotation and (x,y,z) is the unit vector around which the rotation occurs.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>radial_velocity</name>
         <version_id>1.0</version_id>
@@ -497,7 +1216,7 @@
             <unit_of_measure_type>Units_of_Velocity</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>radius_position</name>
         <version_id>1.0</version_id>
@@ -505,7 +1224,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The radial component of a spherical or cylindrical position vector
-            (e.g., the radius coordinate in Planetocentric coordinates).
+                    (e.g., the radius coordinate in Planetocentric coordinates).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -513,7 +1232,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>reference_pixel_location</name>
         <version_id>1.0</version_id>
@@ -521,7 +1240,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>M. Gordon</submitter_name>
         <definition>The reference_pixel_location indicates the position 
-            of the pixel to which values in the containing class apply.
+                    of the pixel to which values in the containing class apply.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
@@ -529,41 +1248,41 @@
             <DD_Permissible_Value>
                 <value>Center</value>
                 <value_meaning>Values were determined for the intersection of a 
-                    vector through the center of the field of view 
-                    with the specified target.
+                               vector through the center of the field of view 
+                               with the specified target.
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Upper Left Corner</value>
                 <value_meaning>Values were determined for the intersection of a 
-                    vector through the upper left corner of the field 
-                    of view with the specified target.
+                               vector through the upper left corner of the field 
+                               of view with the specified target.
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Lower Left Corner</value>
                 <value_meaning>Values were determined for the intersection of a 
-                    vector through the lower left corner of the field  
-                    of view with the specified target.
+                               vector through the lower left corner of the field  
+                               of view with the specified target.
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Upper Right Corner</value>
                 <value_meaning>Values were determined for the intersection of a 
-                    vector through the upper right corner of the field 
-                    of view with the specified target.
+                               vector through the upper right corner of the field 
+                               of view with the specified target.
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Lower Right Corner</value>
                 <value_meaning>Values were determined for the intersection of a 
-                    vector through the lower right corner of the field 
-                    of view with the specified target.
+                               vector through the lower right corner of the field 
+                               of view with the specified target.
                 </value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>solution_id</name>
         <version_id>1.0</version_id>
@@ -571,26 +1290,26 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The solution_id attribute specifies the unique identifier 
-            for the solution set to which the values in the group belong. For 
-            certain kinds of information, such as pointing correction (pointing 
-            models) and rover localization (coordinate system definitions), the 
-            "true" value is unknown and only estimates of the true value exist. 
-            Thus, more than one set of estimates may exist simultaneously, each 
-            valid for its intended purpose. Each of these sets is called a 
-            "solution" to the unknown true value. The solution_id attribute is 
-            used to identify which solution is being expressed by the containing 
-            group. No specific naming convention is defined here, however it is 
-            recommended that projects adopt one. The intent is to be able to 
-            identify who created the solution, and why. Possible components of 
-            the naming convention include user, institution, purpose, request ID, 
-            version, program, date/time. 
+          for the solution set to which the values in the group belong. For 
+          certain kinds of information, such as pointing correction (pointing 
+          models) and rover localization (coordinate system definitions), the 
+          "true" value is unknown and only estimates of the true value exist. 
+          Thus, more than one set of estimates may exist simultaneously, each 
+          valid for its intended purpose. Each of these sets is called a 
+          "solution" to the unknown true value. The solution_id attribute is 
+          used to identify which solution is being expressed by the containing 
+          group. No specific naming convention is defined here, however it is 
+          recommended that projects adopt one. The intent is to be able to 
+          identify who created the solution, and why. Possible components of 
+          the naming convention include user, institution, purpose, request ID, 
+          version, program, date/time. 
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>spice_kernel_file_name</name>
         <version_id>1.0</version_id>
@@ -598,15 +1317,15 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The spice_kernel_file_name attribute provides the file name of a SPICE 
-            kernel file used to process the data or to produce geometric quantities given 
-            in the label. 
+          kernel file used to process the data or to produce geometric quantities given 
+          in the label. 
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_File_Name</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>vertical_coordinate_pixel</name>
         <version_id>1.0</version_id>
@@ -621,7 +1340,7 @@
             <unit_of_measure_type>Units_of_Misc</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>x_acceleration</name>
         <version_id>1.0</version_id>
@@ -635,7 +1354,7 @@
             <unit_of_measure_type>Units_of_Acceleration</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>x_position</name>
         <version_id>1.0</version_id>
@@ -649,7 +1368,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>x_velocity</name>
         <version_id>1.0</version_id>
@@ -663,7 +1382,7 @@
             <unit_of_measure_type>Units_of_Velocity</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>y_acceleration</name>
         <version_id>1.0</version_id>
@@ -677,7 +1396,7 @@
             <unit_of_measure_type>Units_of_Acceleration</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>y_position</name>
         <version_id>1.0</version_id>
@@ -691,7 +1410,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>y_velocity</name>
         <version_id>1.0</version_id>
@@ -705,7 +1424,7 @@
             <unit_of_measure_type>Units_of_Velocity</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>z_acceleration</name>
         <version_id>1.0</version_id>
@@ -719,7 +1438,7 @@
             <unit_of_measure_type>Units_of_Acceleration</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>z_position</name>
         <version_id>1.0</version_id>
@@ -733,7 +1452,7 @@
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>z_velocity</name>
         <version_id>1.0</version_id>
@@ -786,7 +1505,8 @@
                 <attribute_relative_xpath>pds:Internal_Reference/pds:reference_type</attribute_relative_xpath>
                 <DD_Permissible_Value>
                     <value>geometry_to_body</value>
-                    <value_meaning>The product describes a solar system body that is a reference point for the associated geometric value(s).</value_meaning>
+                    <value_meaning>The product describes a solar system body that is a reference 
+                    	 for the associated geometric value(s).</value_meaning>
                 </DD_Permissible_Value>
             </DD_Context_Value_List>
         </DD_Associate_External_Class>
@@ -830,12 +1550,13 @@
                 <attribute_relative_xpath>pds:Internal_Reference/pds:reference_type</attribute_relative_xpath>
                 <DD_Permissible_Value>
                     <value>geometry_to_reference_frame</value>
-                    <value_meaning>The product indicated defines a reference frame for the associated geometric value(s).</value_meaning>
+                    <value_meaning>The product indicated defines a reference frame for the associated 
+                    	geometric value(s).</value_meaning>
                 </DD_Permissible_Value>
             </DD_Context_Value_List>
         </DD_Associate_External_Class>
     </DD_Class>
-    
+
     <DD_Class> <!-- ABSTRACT [T] Vector_Cartesian_Acceleration_Base -->
         <name>Vector_Cartesian_Acceleration_Base</name>
         <version_id>1.0</version_id>
@@ -897,7 +1618,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class> <!-- ABSTRACT [T] Vector_Cartesian_Velocity_Base -->
         <name>Vector_Cartesian_Velocity_Base</name>
         <version_id>1.0</version_id>
@@ -929,7 +1650,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class> <!-- ABSTRACT [T] Vector_Planetocentric_Position_Base -->
         <name>Vector_Planetocentric_Position_Base</name>
         <version_id>1.0</version_id>
@@ -999,7 +1720,7 @@
     </DD_Class>
     
     <!-- Base Classes (not defined as "Abstract") -->
-    
+        
     <DD_Class>
         <name>List_Index_Base</name>
         <version_id>1.0</version_id>
@@ -1021,7 +1742,7 @@
             <maximum_occurrences>3</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>List_Index_Angle</name>
         <version_id>1.0</version_id>
@@ -1140,34 +1861,34 @@
             <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Quaternion_Base</name>
         <version_id>1.0</version_id>
         <local_identifier>Quaternion_Base</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Quaternion_Base class defines a quaternion that represents
-            rotation between two right-handed reference frames. In this dictionary, quaternions 
-            are always constructed so that the application of the quaternion describes the 
-            rotation of one frame to a second frame. The two frames and the direction of 
-            rotation must be identified unambiguously in the enclosing classes.
-            
-            Quaternions are expressed as a set of four numbers in the order  
-            (qcos, qsin1, qsin2, qsin3), where qcos = cos(theta/2) and 
-            qsin(n) = sin(theta/2)*a(n). Theta is the angle of rotation and a is the
-            unit vector (x,y,z) around which the rotation occurs.
-            
-            A document providing the full mathematical basis for this construction, 
-            along with examples, and a summary of common pitfalls, is in preparation.
-            The current version can be obtained by contacting the PDS Engineering Node.
-            
-            In application you need to know the four elements of the quaternion, the two end 
-            point frames, and the direction of the rotation. This dictionary provides two 
-            extensions to this Base class. In the Quaternion_Plus_Direction class we require the direction of 
-            rotation. This class can only be used if the two end point frames are identified in 
-            the enclosing class. This is generally the case in the Lander section.
-            The Quaternion_Plus_To_From class requires the two frames be identified explicitly with one 
-            designated as the "from frame" and the other as the "to frame". 
+          rotation between two right-handed reference frames. In this dictionary, quaternions 
+          are always constructed so that the application of the quaternion describes the 
+          rotation of one frame to a second frame. The two frames and the direction of 
+          rotation must be identified unambiguously in the enclosing classes.
+          
+          Quaternions are expressed as a set of four numbers in the order  
+          (qcos, qsin1, qsin2, qsin3), where qcos = cos(theta/2) and 
+           qsin(n) = sin(theta/2)*a(n). Theta is the angle of rotation and a is the
+           unit vector (x,y,z) around which the rotation occurs.
+          
+          A document providing the full mathematical basis for this construction, 
+          along with examples, and a summary of common pitfalls, is in preparation.
+          The current version can be obtained by contacting the PDS Engineering Node.
+                    
+          In application you need to know the four elements of the quaternion, the two end 
+          point frames, and the direction of the rotation. This dictionary provides two 
+          extensions to this Base class. In the Quaternion_Plus_Direction class we require the direction of 
+          rotation. This class can only be used if the two end point frames are identified in 
+          the enclosing class. This is generally the case in the Lander section.
+          The Quaternion_Plus_To_From class requires the two frames be identified explicitly with one 
+          designated as the "from frame" and the other as the "to frame". 
         </definition>
         <abstract_flag>true</abstract_flag>
         <element_flag>false</element_flag>
@@ -1198,7 +1919,7 @@
     </DD_Class>
     
     <!-- Common classes used in multiple Geometry namespace sections -->
-
+    
     <DD_Class>
         <name>Central_Body_Identification</name>
         <version_id>2.0</version_id>
@@ -1217,7 +1938,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Coordinate_Space_Identification</name>
         <version_id>2.0</version_id>
@@ -1239,7 +1960,7 @@
             <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Coordinate_Space_Index</name>
         <version_id>2.0</version_id>
@@ -1263,7 +1984,7 @@
         <local_identifier>Coordinate_Space_Indexed</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Coordinate_Space_Indexed class contains the attributes and 
-            classes identifying the indexed coordinate space.
+        classes identifying the indexed coordinate space.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -1293,8 +2014,8 @@
         <local_identifier>Geometry_Target_Identification</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The object to which the associated set of geometric parameters 
-            are given. Within the Geometry dictionary context, a "Target" is the body 
-            on the "to" end of a vector, or other translation through space.
+        	  are given. Within the Geometry dictionary context, a "Target" is the body 
+        	  on the "to" end of a vector, or other translation through space.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -1325,7 +2046,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Reference_Pixel</name>
         <version_id>1.0</version_id>
@@ -1430,15 +2151,15 @@
     </DD_Class>
     
 <!-- Major sub-classes  -->
-    
+
     <DD_Class>
         <name>Expanded_Geometry</name>
         <version_id>1.0</version_id>
         <local_identifier>Expanded_Geometry</local_identifier>
         <submitter_name>Mitch Gordon</submitter_name>
         <definition>The Expanded_Geometry class provides a mechanism 
-            to reference additional geometric metadata contained in a separate 
-            object or product (e.g., a table of metadata).
+        	to reference additional geometric metadata contained in a separate 
+        	object or product (e.g., a table of metadata).
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -1504,8 +2225,8 @@
         <local_identifier>Coordinate_Space_Reference</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Coordinate_Space_Reference class includes the attributes 
-            that identify the coordinate space being used to express coordinates in
-            the class in which it appears.
+          that identify the coordinate space being used to express coordinates in
+          the class in which it appears.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>true</element_flag>
@@ -1516,21 +2237,21 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Geometry</name>
         <version_id>1.0</version_id>
         <local_identifier>Geometry</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Geometry class is a container for all geometric 
-            information in the label. The Image_Display_Geometry class should
-            have one instance if the primary data object is an Array object 
-            for which two of the dimensions are suitable for display in the
-            vertical (line) and horizontal (sample) dimensions of a display
-            device. 
-            Multiple instances of the Image_Display_Geometry class are only 
-            appropriate if the data product contains multiple Array objects 
-            and the orientations of the various objects are not the same.
+        	information in the label. The Image_Display_Geometry class should
+        	have one instance if the primary data object is an Array object 
+        	for which two of the dimensions are suitable for display in the
+          vertical (line) and horizontal (sample) dimensions of a display
+          device. 
+          Multiple instances of the Image_Display_Geometry class are only 
+          appropriate if the data product contains multiple Array objects 
+          and the orientations of the various objects are not the same.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>true</element_flag>
@@ -1580,6 +2301,5 @@
             </rule_message>
         </DD_Rule_Statement>
     </DD_Rule>
-    
     
 </Ingest_LDD> 

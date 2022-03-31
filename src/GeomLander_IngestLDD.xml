@@ -8,12 +8,12 @@
     https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd">
     
     <name>Geometry Dictionary Full</name>
-    <ldd_version_id>1.8.0.0</ldd_version_id>
+    <ldd_version_id>1.9.5.0</ldd_version_id>
     <dictionary_type>Discipline</dictionary_type>
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
     <namespace_id>geom</namespace_id>
-    <comment>Cumulative comments removed to reduce annoyance...
+    <comment>Cumulative comments are in the GeomMain file
         
         GeomLander - Geometry Lander Section
         
@@ -35,7 +35,7 @@
         within subcategories based on how deeply they are nested.
     </comment>
     
-    <last_modification_date_time>2021-08-20</last_modification_date_time>
+    <last_modification_date_time>2021-10-25</last_modification_date_time>
     
     <!-- Attributes -->
     
@@ -44,12 +44,12 @@
         <version_id>1.0</version_id>
         <local_identifier>attitude_propagation_counter</local_identifier>
         <nillable_flag>false</nillable_flag>
-        <submitter_name>Bob Dean</submitter_name>
+        <submitter_name>Bob Deen</submitter_name>
         <definition>Count in clock units of how long it has been since the last IMU reset,
             which relates to how good the attitude measurement is due to IMU drift.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Integer</value_data_type>
+            <value_data_type>ASCII_Real</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
     
@@ -58,7 +58,7 @@
         <version_id>1.0</version_id>
         <local_identifier>attitude_propagation_duration</local_identifier>
         <nillable_flag>false</nillable_flag>
-        <submitter_name>Bob Dean</submitter_name>
+        <submitter_name>Bob Deen</submitter_name>
         <definition>The number of seconds for how long it has been since the last IMU reset,
             which relates to how good the attitude measurement is due to IMU drift.</definition>
         <DD_Value_Domain>
@@ -95,7 +95,7 @@
             <value_data_type>ASCII_Real</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-
+    
     <DD_Attribute>
         <name>c2</name>
         <version_id>1.0</version_id>
@@ -109,7 +109,7 @@
             <value_data_type>ASCII_Real</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>cahvore_model_type</name>
         <version_id>1.0</version_id>
@@ -117,32 +117,32 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The cahvore_model_type attribute indicates which variant of the CAHVORE model to
-            use. Type 1 is a perspective-projection model, similar to CAHV and CAHVOR except for the
-            moving entrance pupil. Type 2 is a fish-eye lens model reflecting fundamentally
-            different geometry. Type 3 is a generalization that includes the first two, and is used for most
-            fisheye-type lenses (see cahvore_model_parameter).
+          use. Type 1 is a perspective-projection model, similar to CAHV and CAHVOR except for the
+          moving entrance pupil. Type 2 is a fish-eye lens model reflecting fundamentally
+          different geometry. Type 3 is a generalization that includes the first two, and is used for most
+          fisheye-type lenses (see cahvore_model_parameter).
         </definition>
         <DD_Value_Domain>
-            <enumeration_flag>true</enumeration_flag>
-            <value_data_type>ASCII_Integer</value_data_type>
-            <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-            <DD_Permissible_Value>
-                <value>1</value>
-                <value_meaning>A perspective-projection model, similar to CAHV and
-                    CAHVOR except for the moving entrance pupil</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>2</value>
-                <value_meaning>A fish-eye lens model reflecting fundamentally different geometry</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>3</value>
-                <value_meaning>A generalization that includes the first two, and is used for most
-                    fisheye-type lenses</value_meaning>
-            </DD_Permissible_Value>
+          <enumeration_flag>true</enumeration_flag>
+          <value_data_type>ASCII_Integer</value_data_type>
+          <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+          <DD_Permissible_Value>
+            <value>1</value>
+            <value_meaning>A perspective-projection model, similar to CAHV and
+              CAHVOR except for the moving entrance pupil</value_meaning>
+          </DD_Permissible_Value>
+          <DD_Permissible_Value>
+            <value>2</value>
+            <value_meaning>A fish-eye lens model reflecting fundamentally different geometry</value_meaning>
+          </DD_Permissible_Value>
+          <DD_Permissible_Value>
+            <value>3</value>
+            <value_meaning>A generalization that includes the first two, and is used for most
+              fisheye-type lenses</value_meaning>
+          </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>cahvore_model_parameter</name>
         <version_id>1.0</version_id>
@@ -155,9 +155,9 @@
             in between.
         </definition>
         <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+          <enumeration_flag>false</enumeration_flag>
+          <value_data_type>ASCII_Real</value_data_type>
+          <unit_of_measure_type>Units_of_None</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
     
@@ -181,7 +181,7 @@
         <version_id>1.0</version_id>
         <local_identifier>command_type</local_identifier>
         <nillable_flag>false</nillable_flag>
-        <submitter_name>Bob Dean</submitter_name>
+        <submitter_name>Bob Deen</submitter_name>
         <definition>
             Specifies how the device was commanded.
         </definition>
@@ -243,7 +243,7 @@
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>device_id</name>
         <version_id>1.0</version_id>
@@ -251,7 +251,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The device_id attribute specifies the abbreviated 
-            identification of an articulation device.
+          identification of an articulation device.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -276,7 +276,7 @@
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>device_name</name>
         <version_id>1.0</version_id>
@@ -284,14 +284,14 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The device_name attribute specifies the common 
-            name of an articulation device.  
+          name of an articulation device.  
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>device_phase</name>
         <version_id>1.0</version_id>
@@ -299,8 +299,28 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jordan Padams</submitter_name>
         <definition>The device_phase attribute specifies the current phase of the mission, 
-            from an articulation-device-centric point of view.
+          from an articulation-device-centric point of view.
         </definition>
+        <DD_Value_Domain>
+          <enumeration_flag>false</enumeration_flag>
+          <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- New -->
+        <name>geometry_state</name>
+        <version_id>1.0</version_id>
+        <local_identifier>geometry_state</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Bob Deen</submitter_name>
+        <definition>Specifies the state or configuration of this instance of Geometry_Lander applies. 
+            Use of this attribute enables multiple instances of Geometry_Lander, describing the 
+            geometry under different conditions. Note that it is legal for more than one instance
+            to have the same geometry_state, in which case the local_identifier should be used 
+            to differentiate the instances, along with description. If not present, the semantics
+            of "Telemetry" should be assumed. It is not required that instances be retained; 
+            a derived product may have an Adjusted instance but remove the Telemetry one, 
+            for example.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -351,9 +371,9 @@
             mostly as an approximation, e.g. identifying scenes that might contain a given object.
         </definition>
         <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+          <enumeration_flag>false</enumeration_flag>
+          <value_data_type>ASCII_Real</value_data_type>
+          <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
         </DD_Value_Domain>
     </DD_Attribute>
     
@@ -420,7 +440,7 @@
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>model_type</name>
         <version_id>1.0</version_id>
@@ -459,7 +479,7 @@
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>positive_azimuth_direction</name>
         <version_id>1.0</version_id>
@@ -473,28 +493,28 @@
             'counterclockwise' indicates that azimuth increases positively counter-clockwise.
         </definition>
         <DD_Value_Domain>
-            <enumeration_flag>true</enumeration_flag>
-            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-            <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-            <DD_Permissible_Value>
-                <value>Clockwise</value>
-                <value_meaning>Indicates that azimuth is measured positively Clockwise.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Counterclockwise</value>
-                <value_meaning>Indicates that azimuth is measured positively Counter-clockwise.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>CW</value>
-                <value_meaning>Indicates that azimuth is measured positively Clockwise.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>CCW</value>
-                <value_meaning>Indicates that azimuth is measured positively Counter-clockwise.</value_meaning>
-            </DD_Permissible_Value>
+          <enumeration_flag>true</enumeration_flag>
+          <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+          <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+          <DD_Permissible_Value>
+            <value>Clockwise</value>
+            <value_meaning>Indicates that azimuth is measured positively Clockwise.</value_meaning>
+          </DD_Permissible_Value>
+          <DD_Permissible_Value>
+            <value>Counterclockwise</value>
+            <value_meaning>Indicates that azimuth is measured positively Counter-clockwise.</value_meaning>
+          </DD_Permissible_Value>
+          <DD_Permissible_Value>
+            <value>CW</value>
+            <value_meaning>Indicates that azimuth is measured positively Clockwise.</value_meaning>
+          </DD_Permissible_Value>
+          <DD_Permissible_Value>
+            <value>CCW</value>
+            <value_meaning>Indicates that azimuth is measured positively Counter-clockwise.</value_meaning>
+          </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>positive_elevation_direction</name>
         <version_id>1.0</version_id>
@@ -502,36 +522,36 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jordan Padams</submitter_name>
         <definition>The positive_elevation_direction attribute provides the direction in which elevation is 
-            measured in positive degrees for an observer on the surface of a body. The elevation is measured 
-            with respect to the azimuthal reference plane. A value of UP or ZENITH indicates that elevation is 
-            measured positively upwards, i.e., the zenith point would be at +90 degrees and the nadir point at 
-            -90 degrees. DOWN or NADIR indicates that the elevation is measured positively downwards; the 
-            zenith point would be at -90 degrees and the nadir point at +90 degrees.
+          measured in positive degrees for an observer on the surface of a body. The elevation is measured 
+          with respect to the azimuthal reference plane. A value of UP or ZENITH indicates that elevation is 
+          measured positively upwards, i.e., the zenith point would be at +90 degrees and the nadir point at 
+          -90 degrees. DOWN or NADIR indicates that the elevation is measured positively downwards; the 
+          zenith point would be at -90 degrees and the nadir point at +90 degrees.
         </definition>
         <DD_Value_Domain>
-            <enumeration_flag>true</enumeration_flag>
-            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-            <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-            <DD_Permissible_Value>
-                <value>Up</value>
-                <value_meaning>Indicates that elevation is measured positively upwards, i.e., the zenith point would
-                    be at +90 degrees and the nadir point at -90 degrees.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Zenith</value>
-                <value_meaning>Indicates that elevation is measured positively upwards, i.e., the zenith point would
-                    be at +90 degrees and the nadir point at -90 degrees.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Down</value>
-                <value_meaning>Indicates that the elevation is measured positively downwards, i.e. the 
-                    zenith point would be at -90 degrees and the nadir point at +90 degrees.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>Nadir</value>
-                <value_meaning>Indicates that the elevation is measured positively downwards, i.e. the 
-                    zenith point would be at -90 degrees and the nadir point at +90 degrees.</value_meaning>
-            </DD_Permissible_Value>
+          <enumeration_flag>true</enumeration_flag>
+          <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+          <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+          <DD_Permissible_Value>
+            <value>Up</value>
+            <value_meaning>Indicates that elevation is measured positively upwards, i.e., the zenith point would
+              be at +90 degrees and the nadir point at -90 degrees.</value_meaning>
+          </DD_Permissible_Value>
+          <DD_Permissible_Value>
+            <value>Zenith</value>
+            <value_meaning>Indicates that elevation is measured positively upwards, i.e., the zenith point would
+              be at +90 degrees and the nadir point at -90 degrees.</value_meaning>
+          </DD_Permissible_Value>
+          <DD_Permissible_Value>
+            <value>Down</value>
+            <value_meaning>Indicates that the elevation is measured positively downwards, i.e. the 
+              zenith point would be at -90 degrees and the nadir point at +90 degrees.</value_meaning>
+          </DD_Permissible_Value>
+          <DD_Permissible_Value>
+            <value>Nadir</value>
+            <value_meaning>Indicates that the elevation is measured positively downwards, i.e. the 
+              zenith point would be at -90 degrees and the nadir point at +90 degrees.</value_meaning>
+          </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
     
@@ -608,7 +628,7 @@
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>rotation_direction</name>
         <version_id>1.0</version_id>
@@ -616,9 +636,9 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The rotation_direction attribute identifies the 
-            direction of the rotation for a specific quaternion. This is 
-            used when the two frames involved are unambiguously identifed
-            in the enclosing classes. 
+          direction of the rotation for a specific quaternion. This is 
+          used when the two frames involved are unambiguously identifed
+          in the enclosing classes. 
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>true</enumeration_flag>
@@ -626,49 +646,49 @@
             <DD_Permissible_Value>
                 <value>Present to Reference</value>
                 <value_meaning>The quaternion rotates the frame identifed by 
-                    Coordinate_Space_Present to the frame identified by
-                    Coordinate_Space_Reference.
-                </value_meaning>
+                  Coordinate_Space_Present to the frame identified by
+                  Coordinate_Space_Reference.
+                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Reference to Present</value>
                 <value_meaning>The quaternion rotates the frame identifed by 
-                    Coordinate_Space_Reference to the frame identified by
-                    Coordinate_Space_Present.
+                  Coordinate_Space_Reference to the frame identified by
+                  Coordinate_Space_Present.
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Forward</value>
                 <value_meaning>Reference frames are generally defined sequentially 
-                    from a base reference frame (e.g., base frames might be ICRF, IAU 
-                    Mars, or the landing site from which a rover begins its exploration).
-                    rotation_direction = Forward corresponds to rotation in the 'direction' 
-                    from the base frame.
+                  from a base reference frame (e.g., base frames might be ICRF, IAU 
+                  Mars, or the landing site from which a rover begins its exploration).
+                  rotation_direction = Forward corresponds to rotation in the 'direction' 
+                  from the base frame.
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Reverse</value>
                 <value_meaning>Reference frames are generally defined sequentially 
-                    from a base reference frame (e.g., base frames might be ICRF, IAU 
-                    Mars, or the landing site from which a rover begins its exploration).
-                    rotation_direction = Reverse corresponds to rotation toward the base frame.
+                  from a base reference frame (e.g., base frames might be ICRF, IAU 
+                  Mars, or the landing site from which a rover begins its exploration).
+                  rotation_direction = Reverse corresponds to rotation toward the base frame.
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>From Base</value>
                 <value_meaning>Reference frames are generally defined sequentially 
-                    from a base reference frame (e.g., base frames might be ICRF, IAU 
-                    Mars, or the landing site from which a rover begins its exploration).
-                    rotation_direction = Away From Base corresponds to rotation in the 'direction' 
-                    from the base frame.
+                  from a base reference frame (e.g., base frames might be ICRF, IAU 
+                  Mars, or the landing site from which a rover begins its exploration).
+                  rotation_direction = Away From Base corresponds to rotation in the 'direction' 
+                  from the base frame.
                 </value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>Toward Base</value>
                 <value_meaning>Reference frames are generally defined sequentially 
-                    from a base reference frame (e.g., base frames might be ICRF, IAU 
-                    Mars, or the landing site from which a rover begins its exploration).
-                    rotation_direction = Toward Base corresponds to rotation toward the base frame.
+                  from a base reference frame (e.g., base frames might be ICRF, IAU 
+                  Mars, or the landing site from which a rover begins its exploration).
+                  rotation_direction = Toward Base corresponds to rotation toward the base frame.
                 </value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
@@ -681,14 +701,14 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>Jordan Padams</submitter_name>
         <definition>The selected_instrument_id attribute specifies an abbreviated name or acronym 
-            that identifies the selected instrument mounted on the articulation device.
+        	that identifies the selected instrument mounted on the articulation device.
         </definition>
         <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+          <enumeration_flag>false</enumeration_flag>
+          <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>solar_azimuth</name>
         <version_id>1.0</version_id>
@@ -704,15 +724,15 @@
             spin axis of the planet (i.e., the north pole) defining the zero reference.
         </definition>
         <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>0.0</minimum_value>
-            <maximum_value>360.0</maximum_value>
-            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-            <specified_unit_id>deg</specified_unit_id>
+          <enumeration_flag>false</enumeration_flag>
+          <value_data_type>ASCII_Real</value_data_type>
+          <minimum_value>0.0</minimum_value>
+          <maximum_value>360.0</maximum_value>
+          <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+          <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>solar_elevation</name>
         <version_id>1.0</version_id>
@@ -727,39 +747,57 @@
             between the surface point and the planet's center of mass, and that intersects the surface point.
         </definition>
         <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>-90.0</minimum_value>
-            <maximum_value>90.0</maximum_value>
-            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-            <specified_unit_id>deg</specified_unit_id>
+          <enumeration_flag>false</enumeration_flag>
+          <value_data_type>ASCII_Real</value_data_type>
+          <minimum_value>-90.0</minimum_value>
+          <maximum_value>90.0</maximum_value>
+          <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+          <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
-    <DD_Attribute>
-        <name>start_azimuth</name>
+        
+    <DD_Attribute> <!-- New -->
+        <name>solar_image_clock_angle</name>
         <version_id>1.0</version_id>
-        <local_identifier>start_azimuth</local_identifier>
+        <local_identifier>solar_image_clock_angle</local_identifier>
         <nillable_flag>false</nillable_flag>
-        <submitter_name>Jordan Padams</submitter_name>
-        <definition>The start_azimuth attribute specifies the angular distance from a fixed
-            reference position at which an image or observation starts. Azimuth is measured
-            in a spherical coordinate system, in a plane normal to the principal axis. Azimuth
-            values increase according to the right hand rule relative to the positive direction
-            of the principal axis of the spherical coordinate system. When applied to a site
-            or surface projection coordinate space, specifies the azimuth of the left edge of
-            the output map. Applies to Cylindrical and Cylindrical-Perspective projections only.
+        <submitter_name>Bob Deen</submitter_name>
+        <definition>Describes the direction of the sun in terms of 
+            the image plane, defined as a clock angle (clockwise) around the center 
+            of the image with 0 pointing to the top of the image, with respect to 
+            the display orientation (usually defined by disp:vertical_display_direction).
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>0.0</minimum_value>
-            <maximum_value>360.0</maximum_value>
             <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-            <specified_unit_id>deg</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
+    <DD_Attribute>
+      <name>start_azimuth</name>
+      <version_id>1.0</version_id>
+      <local_identifier>start_azimuth</local_identifier>
+      <nillable_flag>false</nillable_flag>
+      <submitter_name>Jordan Padams</submitter_name>
+      <definition>The start_azimuth attribute specifies the angular distance from a fixed
+          reference position at which an image or observation starts. Azimuth is measured
+          in a spherical coordinate system, in a plane normal to the principal axis. Azimuth
+          values increase according to the right hand rule relative to the positive direction
+          of the principal axis of the spherical coordinate system. When applied to a site
+          or surface projection coordinate space, specifies the azimuth of the left edge of
+          the output map. Applies to Cylindrical and Cylindrical-Perspective projections only.
+      </definition>
+      <DD_Value_Domain>
+        <enumeration_flag>false</enumeration_flag>
+        <value_data_type>ASCII_Real</value_data_type>
+        <minimum_value>0.0</minimum_value>
+        <maximum_value>360.0</maximum_value>
+        <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+        <specified_unit_id>deg</specified_unit_id>
+      </DD_Value_Domain>
+    </DD_Attribute>
+
     <DD_Attribute>
         <name>stop_azimuth</name>
         <version_id>1.0</version_id>
@@ -775,12 +813,25 @@
             output map. Applies to Cylindrical and Cylindrical-Perspective projections only.
         </definition>
         <DD_Value_Domain>
+          <enumeration_flag>false</enumeration_flag>
+          <value_data_type>ASCII_Real</value_data_type>
+          <minimum_value>0.0</minimum_value>
+          <maximum_value>360.0</maximum_value>
+          <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+          <specified_unit_id>deg</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- New -->
+        <name>target_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>target_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Bob Deen</submitter_name>
+        <definition>Specifies the name of the target location for items in this class.</definition>
+        <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>0.0</minimum_value>
-            <maximum_value>360.0</maximum_value>
-            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-            <specified_unit_id>deg</specified_unit_id>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
     
@@ -797,7 +848,7 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
-    <DD_Attribute>
+   <DD_Attribute>
         <name>x_pixel</name>
         <version_id>1.0</version_id>
         <local_identifier>x_pixel</local_identifier>
@@ -811,7 +862,7 @@
             <value_data_type>ASCII_Real</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>x_unit</name>
         <version_id>1.0</version_id>
@@ -826,7 +877,7 @@
             <maximum_value>1</maximum_value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>y</name>
         <version_id>1.0</version_id>
@@ -839,7 +890,7 @@
             <value_data_type>ASCII_Real</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>y_pixel</name>
         <version_id>1.0</version_id>
@@ -854,7 +905,7 @@
             <value_data_type>ASCII_Real</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>y_unit</name>
         <version_id>1.0</version_id>
@@ -869,7 +920,7 @@
             <maximum_value>1</maximum_value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>z</name>
         <version_id>1.0</version_id>
@@ -882,7 +933,7 @@
             <value_data_type>ASCII_Real</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>z_pixel</name>
         <version_id>1.0</version_id>
@@ -897,7 +948,7 @@
             <value_data_type>ASCII_Real</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute>
         <name>z_unit</name>
         <version_id>1.0</version_id>
@@ -919,14 +970,32 @@
     
     <DD_Class>
         <name>Geometry_Lander</name>
-        <version_id>1.0</version_id>
+        <version_id>1.1</version_id>
         <local_identifier>Geometry_Lander</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Geometry_Lander class is a container for all geometric information in the label
-            relating to a landed spacecraft, including rovers.
+          relating to a landed spacecraft, including rovers.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>geometry_state</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>pds.description</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>pds.local_identifier</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
         <DD_Association>
             <identifier_reference>Articulation_Device_Parameters</identifier_reference>
             <reference_type>component_of</reference_type>
@@ -961,16 +1030,17 @@
     
     <!-- Nesting Level 2 -->
     
+    
     <DD_Class>
         <name>Articulation_Device_Parameters</name>
         <version_id>3.0</version_id>
         <local_identifier>Articulation_Device_Parameters</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Articulation_Device_Parameters class contains those 
-            attributes and sub-classes that describe an articulation device. 
-            An articulation device is anything that can move independently 
-            of the spacecraft to which it is attached. Examples include mast 
-            heads, wheel bogies, arms, filter wheel, scan platforms.
+          attributes and sub-classes that describe an articulation device. 
+          An articulation device is anything that can move independently 
+          of the spacecraft to which it is attached. Examples include mast 
+          heads, wheel bogies, arms, filter wheel, scan platforms.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -1015,7 +1085,9 @@
             <identifier_reference>Device_Angle</identifier_reference>
             <identifier_reference>Device_Component_State</identifier_reference>
             <identifier_reference>Device_Motor_Counts</identifier_reference>
+            <identifier_reference>Device_Pose</identifier_reference>
             <identifier_reference>Vector_Device_Gravity</identifier_reference>
+            <identifier_reference>Vector_Device_Gravity_Magnitude</identifier_reference>
             <identifier_reference>Device_Temperature</identifier_reference>
             <identifier_reference>Coordinate_Space_Present</identifier_reference>
             <identifier_reference>Coordinate_Space_Reference</identifier_reference>
@@ -1025,7 +1097,7 @@
             <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Camera_Model_Parameters</name>
         <version_id>2.0</version_id>
@@ -1107,7 +1179,7 @@
             <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Coordinate_Space_Definition</name>
         <version_id>3.0</version_id>
@@ -1174,7 +1246,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Derived_Geometry</name>
         <version_id>4.0</version_id>
@@ -1187,6 +1259,12 @@
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
         <DD_Association>
+            <identifier_reference>target_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
             <identifier_reference>XSChoice#</identifier_reference>
             <identifier_reference>incidence_angle</identifier_reference>
             <identifier_reference>emission_angle</identifier_reference>
@@ -1197,6 +1275,8 @@
             <identifier_reference>solar_elevation</identifier_reference>
             <identifier_reference>start_azimuth</identifier_reference>
             <identifier_reference>stop_azimuth</identifier_reference>
+            <identifier_reference>target_heliocentric_distance</identifier_reference>
+            <identifier_reference>solar_image_clock_angle</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>*</maximum_occurrences>
@@ -1382,7 +1462,7 @@
         <name>Commanded_Geometry</name>
         <version_id>1.0</version_id>
         <local_identifier>Commanded_Geometry</local_identifier>
-        <submitter_name>Bob Dean</submitter_name>
+        <submitter_name>Bob Deen</submitter_name>
         <definition>
             Specifies how the device was commanded in order to achieve the state
             represented in the enclosing Articulation_Device_Parameters. Commands
@@ -1427,7 +1507,7 @@
         <local_identifier>Coordinate_Space_Present</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Coordinate_Space_Present class  includes the attributes 
-            that identifies the coordinate space presently being defined.
+          that identifies the coordinate space presently being defined.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -1438,12 +1518,12 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Coordinate_Space_Quality</name>
         <version_id>1.0</version_id>
         <local_identifier>Coordinate_Space_Quality</local_identifier>
-        <submitter_name>Bob Dean</submitter_name>
+        <submitter_name>Bob Deen</submitter_name>
         <definition>Parameters that indicate the quality of the coordinate
             space knowledge.
         </definition>
@@ -1475,7 +1555,7 @@
         <local_identifier>Device_Angle</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Device_Angle class is a container for the set of
-            angles between the various components or devices of the spacecraft.
+          angles between the various components or devices of the spacecraft.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -1541,14 +1621,47 @@
         </DD_Association>
     </DD_Class>
     
+    <DD_Class> <!-- New -->
+        <name>Device_Pose</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Device_Pose</local_identifier>
+        <submitter_name>Bob Deen</submitter_name>
+        <definition>Defines the pose of this articulation device. The name indicates 
+            what exactly is being measured and how, and disambiguates if there is more 
+            than one Device_Pose. For example, Mars 2020 has "arm_attitude_reference", 
+            which indicates the pose of the rover that was used to calculate gravity droop
+            of the arm. The interpretation of the pose is mission-specific; see the 
+            mission documentation.</definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>pds.name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Quaternion_Plus_Direction</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Vector_Origin_Offset</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
     <DD_Class>
         <name>Device_Temperature</name>
         <version_id>1.0</version_id>
         <local_identifier>Device_Temperature</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Device_Temperature class is a container for all 
-            available device temperatures of an articulated device and/or 
-            part(s) of a device.
+          available device temperatures of an articulated device and/or 
+          part(s) of a device.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -1628,7 +1741,7 @@
         <name>PSPH_Model</name>
         <version_id>1.0</version_id>
         <local_identifier>PSPH_Model</local_identifier>
-        <submitter_name>Bob Dean</submitter_name>
+        <submitter_name>Bob Deen</submitter_name>
         <definition>
             A new camera model designed to perform better fisheye-image rectification
             prior to 1D stereo correlation. The primary innovation is the use of a 
@@ -1703,21 +1816,21 @@
         <element_flag>false</element_flag>
         <DD_Association>
             <identifier_reference>Quaternion_Base</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
+          <reference_type>parent_of</reference_type>
+          <minimum_occurrences>1</minimum_occurrences>
+          <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Quaternion_Plus_Direction</name>
         <version_id>1.0</version_id>
         <local_identifier>Quaternion_Plus_Direction</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>Quaternion_Plus_Direction provides the four elements of a quaternion and its  
-            direction of rotation. The two end point frames must be identified in 
-            the enclosing class. See the definition of Quaternion_Base for more details 
-            on the quaternion classes in this dictionary.
+          direction of rotation. The two end point frames must be identified in 
+          the enclosing class. See the definition of Quaternion_Base for more details 
+          on the quaternion classes in this dictionary.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -1754,6 +1867,43 @@
         </DD_Association>
     </DD_Class>
     
+    <DD_Class> <!-- New -->
+        <name>Vector_Device_Gravity_Magnitude</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Vector_Device_Gravity_Magnitude</local_identifier>
+        <submitter_name>Bob Deen</submitter_name>
+        <definition>The Vector_Device_Gravity_Magnitude class is a vector (with magnitude) that specifies 
+            the direction of an external force acting on the articulation 
+            device, in the spacecraft's coordinate system, at the time the pose was computed.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>Vector_Cartesian_Acceleration_Base</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <DD_Class>
+        <name>Device_Temperature_Index</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Device_Temperature_Index</local_identifier>
+        <submitter_name>Elizabeth Rye</submitter_name>
+        <definition>The Device_Temperature_Index class specifies the 
+        	attributes describing the temperature of one device or some part of a device.
+        </definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>List_Index_Temperature</identifier_reference>
+            <reference_type>parent_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
     <DD_Class>
         <name>Vector_Model_Transform</name>
         <version_id>1.0</version_id>
@@ -1771,9 +1921,9 @@
         <element_flag>false</element_flag>
         <DD_Association>
             <identifier_reference>Vector_Cartesian_No_Units</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
+          <reference_type>parent_of</reference_type>
+          <minimum_occurrences>1</minimum_occurrences>
+          <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
     
@@ -1801,7 +1951,7 @@
         <name>Vector_Solar_Direction</name>
         <version_id>1.0</version_id>
         <local_identifier>Vector_Solar_Direction</local_identifier>
-        <submitter_name>Bob Dean</submitter_name>
+        <submitter_name>Bob Deen</submitter_name>
         <definition>
             Unit vector pointing in the direction of the Sun at the time of the observation.
         </definition>
@@ -1821,7 +1971,7 @@
         <name>Commanded_Position</name>
         <version_id>1.0</version_id>
         <local_identifier>Commanded_Position</local_identifier>
-        <submitter_name>Bob Dean</submitter_name>
+        <submitter_name>Bob Deen</submitter_name>
         <definition>
             Specifies a Cartesian position used in commanding the device.
         </definition>
@@ -1841,8 +1991,8 @@
         <local_identifier>Device_Angle_Index</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Device_Angle class is a container for the set of
-            angles the spacecraft device specified in the parent 
-            Articulation_Device_Parameters class.
+          angles the spacecraft device specified in the parent 
+          Articulation_Device_Parameters class.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -1860,7 +2010,7 @@
         <local_identifier>Device_Component_State_Index</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Device_Component_State_Index class is a container 
-            for one state of a component of the articulation device.
+          for one state of a component of the articulation device.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -1871,15 +2021,15 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+     
     <DD_Class>
         <name>Device_Motor_Counts_Index</name>
         <version_id>1.0</version_id>
         <local_identifier>Device_Motor_Counts_Index</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Device_Motor_Counts_Index class is a container 
-            for the attributes that describe the motor step count information 
-            for a single motor on a device.
+          for the attributes that describe the motor step count information 
+          for a single motor on a device.
         </definition>
         <abstract_flag>false</abstract_flag>
         <element_flag>false</element_flag>
@@ -1890,25 +2040,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
-    <DD_Class>
-        <name>Device_Temperature_Index</name>
-        <version_id>1.0</version_id>
-        <local_identifier>Device_Temperature_Index</local_identifier>
-        <submitter_name>Elizabeth Rye</submitter_name>
-        <definition>The Device_Temperature_Index class specifies the 
-            attributes describing the temperature of one device or some part of a device.
-        </definition>
-        <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
-        <DD_Association>
-            <identifier_reference>List_Index_Temperature</identifier_reference>
-            <reference_type>parent_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-    </DD_Class>
-    
+
     <DD_Class>
         <name>Entrance_Terms</name>
         <version_id>1.0</version_id>
@@ -1944,7 +2076,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Axis</name>
         <version_id>2.0</version_id>
@@ -1967,7 +2099,7 @@
         <name>Vector_Axis_X</name>
         <version_id>1.0</version_id>
         <local_identifier>Vector_Axis_X</local_identifier>
-        <submitter_name>Bob Dean</submitter_name>
+        <submitter_name>Bob Deen</submitter_name>
         <definition>
             Unit column-plane rotation axis, passing through the sphere center,
             typically vertical and pointing down so that positive rotations
@@ -1989,7 +2121,7 @@
         <name>Vector_Axis_Y</name>
         <version_id>1.0</version_id>
         <local_identifier>Vector_Axis_Y</local_identifier>
-        <submitter_name>Bob Dean</submitter_name>
+        <submitter_name>Bob Deen</submitter_name>
         <definition>
             Unit row-plane rotation axis, passing through the sphere center,
             typically horizontal and pointing left so that positive rotations
@@ -2036,7 +2168,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class> <!-- Vector_Cartesian_Unit used as base class -->
         <name>Vector_Cartesian_Unit</name>
         <version_id>1.0</version_id>
@@ -2086,7 +2218,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Horizontal</name>
         <version_id>2.0</version_id>
@@ -2114,7 +2246,7 @@
         <name>Vector_Normal_X</name>
         <version_id>1.0</version_id>
         <local_identifier>Vector_Normal_X</local_identifier>
-        <submitter_name>Bob Dean</submitter_name>
+        <submitter_name>Bob Deen</submitter_name>
         <definition>
             Unit normal vector to the column plane when x equals zero,
             pointing in the same direction as the cross product of axis x
@@ -2134,7 +2266,7 @@
         <name>Vector_Normal_Y</name>
         <version_id>1.0</version_id>
         <local_identifier>Vector_Normal_Y</local_identifier>
-        <submitter_name>Bob Dean</submitter_name>
+        <submitter_name>Bob Deen</submitter_name>
         <definition>
             Unit normal vector to the row plane when y equals zero,
             pointing in the same direction as the cross product of
@@ -2150,7 +2282,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Optical</name>
         <version_id>1.0</version_id>
@@ -2168,7 +2300,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Vertical</name>
         <version_id>2.0</version_id>
@@ -2193,7 +2325,7 @@
     </DD_Class>
     
     <!-- Nesting Level 5 -->
-    
+
     <DD_Class>
         <name>Polynomial_Coefficients_3</name>
         <version_id>1.0</version_id>
@@ -2222,7 +2354,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
     </DD_Class>
-    
+
     <DD_Class>
         <name>Vector_Cartesian_Pixel</name>
         <version_id>1.0</version_id>
