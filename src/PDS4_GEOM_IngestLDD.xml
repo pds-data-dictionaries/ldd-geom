@@ -8,7 +8,7 @@
                      https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd">
 
     <name>Geometry Dictionary Full</name>
-    <ldd_version_id>1.9.5.0</ldd_version_id>
+    <ldd_version_id>1.9.6.0</ldd_version_id>
     <dictionary_type>Discipline</dictionary_type>
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
@@ -252,6 +252,8 @@
         - fixed typo traget -> target
         Version 1.9.5.0 2022-01-06
         - Added ORBITAL (upper and title case) to coordinate_space_frame_type for Mars2020.
+        Version 1.9.6.0 2022-05-20
+        - Added AEGIS_* (1 to 5) to coordinate_space_frame_type for Mars2020.
     </comment>
     
     <last_modification_date_time>2022-01-06</last_modification_date_time>
@@ -2828,7 +2830,41 @@
             </DD_Permissible_Value>
 
             <!-- Title case value names  -->
-
+            <DD_Permissible_Value>
+                <value>AEGIS_1</value>
+                <value_meaning>AEGIS target number 1. AEGIS is a component of rover software
+                    that selects targets for further investigation based on user defined
+                    parameters.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+                <value>AEGIS_2</value>
+                <value_meaning>AEGIS target number 2. AEGIS is a component of rover software
+                    that selects targets for further investigation based on user defined
+                    parameters.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+                <value>AEGIS_3</value>
+                <value_meaning>AEGIS target number 3. AEGIS is a component of rover software
+                    that selects targets for further investigation based on user defined
+                    parameters.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+                <value>AEGIS_4</value>
+                <value_meaning>AEGIS target number 4. AEGIS is a component of rover software
+                    that selects targets for further investigation based on user defined
+                    parameters.</value_meaning>
+            </DD_Permissible_Value>
+            
+            <DD_Permissible_Value>
+                <value>AEGIS_5</value>
+                <value_meaning>AEGIS target number 5. AEGIS is a component of rover software
+                    that selects targets for further investigation based on user defined
+                    parameters.</value_meaning>
+            </DD_Permissible_Value>
+            
             <DD_Permissible_Value>
              <value>APXS_Frame</value>
              <value_meaning>Frame defining the APXS instrument on a movable arm.</value_meaning>
