@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:geom  Version:1.9.5.0 - Fri Jan 07 17:00:09 UTC 2022 -->
+  <!-- PDS4 XML/Schema for Name Space Id:geom  Version:1.9.6.0 - Fri May 20 15:39:35 UTC 2022 -->
   <!-- Generated from the PDS4 Information Model Version 1.17.0.0 - System Build 12.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.17.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.9.5.0 - geom: - Geometry Dictionary Full                                -->
-  <!--   file:/home/runner/work/ldd-geom/ldd-geom/src/PDS4_GEOM_IngestLDD.xml    -->
+  <!-- 1.9.6.0 - geom: - Geometry Dictionary Full                                -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://pds.nasa.gov/pds4/geom/v1"
@@ -14,7 +13,7 @@
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.9.5.0">
+    version="1.9.6.0">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd"/>
  
@@ -259,6 +258,8 @@
         - fixed typo traget -> target
         Version 1.9.5.0 2022-01-06
         - Added ORBITAL (upper and title case) to coordinate_space_frame_type for Mars2020.
+        Version 1.9.6.0 2022-05-20
+        - Added AEGIS_* (1 to 5) to coordinate_space_frame_type for Mars2020.
     
     </xs:documentation>
   </xs:annotation>
@@ -542,7 +543,7 @@
       <xs:element name="solution_id" type="geom:solution_id" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
-    <!-- <xs:assert test="geom:coordinate_space_frame_type = ('APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'ORBITAL', 'Orbital', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'PIXL_TOOL', 'PIXL_Tool', 'ROVER_FRAME', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame', 'TOOL_FRAME', 'TURRET_FRAME', 'Tool_Frame', 'Turret_Frame', 'WHEEL_LF', 'WHEEL_LM', 'WHEEL_LR', 'WHEEL_RF', 'WHEEL_RM', 'WHEEL_RR', 'Wheel_LF', 'Wheel_LM', 'Wheel_LR', 'Wheel_RF', 'Wheel_RM', 'Wheel_RR')"/> -->
+    <!-- <xs:assert test="geom:coordinate_space_frame_type = ('AEGIS_1', 'AEGIS_2', 'AEGIS_3', 'AEGIS_4', 'AEGIS_5', 'APXS_Frame', 'APXS_Frame', 'ARM_CUSTOM_TCP_FRAME', 'ARM_DOCKING_POST_FRAME', 'ARM_DRILL_FRAME', 'ARM_DRT_FRAME', 'ARM_FCS_FRAME', 'ARM_FRAME', 'ARM_GDRT_FRAME', 'ARM_MAHLI_FRAME', 'ARM_PIXL_FRAME', 'ARM_PORTION_FRAME', 'ARM_SCOOP_TCP_FRAME', 'ARM_SCOOP_TIP_FRAME', 'ARM_SHERLOC_FRAME', 'ARM_TURRET_FRAME', 'ARM_WATSON_FRAME', 'Arm_Custom_TCP_Frame', 'Arm_DRT_Frame', 'Arm_Docking_Post_Frame', 'Arm_Drill_Frame', 'Arm_FCS_Frame', 'Arm_Frame', 'Arm_GDRT_Frame', 'Arm_MAHLI_Frame', 'Arm_PIXL_Frame', 'Arm_Portion_Frame', 'Arm_SHERLOC_Frame', 'Arm_Scoop_TCP_Frame', 'Arm_Scoop_TIP_Frame', 'Arm_Turret_Frame', 'Arm_WATSON_Frame', 'CINT_FRAME', 'CINT_Frame', 'DRILL_BIT_TIP', 'HELI_G_FRAME', 'HELI_M_FRAME', 'HELI_S1_FRAME', 'HELI_S2_FRAME', 'Heli_G_Frame', 'Heli_M_Frame', 'Heli_S1_Frame', 'Heli_S2_Frame', 'LANDER_FRAME', 'LOCAL_LEVEL_FRAME', 'Lander_Frame', 'Local_Level_Frame', 'MB_Frame', 'MCMF_FRAME', 'MCMF_Frame', 'MCZ_CAL_PRIMARY', 'MEDA_RDS', 'MI_Frame', 'Mast_Frame', 'ORBITAL', 'Orbital', 'PIXL_BASE_FRAME', 'PIXL_Base_Frame', 'PIXL_SENSOR_FRAME', 'PIXL_Sensor_Frame', 'PIXL_TOOL', 'PIXL_Tool', 'ROVER_FRAME', 'ROVER_MECH_FRAME', 'ROVER_NAV_FRAME', 'RSM_FRAME', 'RSM_Frame', 'RSM_HEAD_FRAME', 'RSM_Head_Frame', 'Rat_Frame', 'Rover_Frame', 'Rover_Mech_Frame', 'Rover_Nav_Frame', 'SITE_FRAME', 'SUN', 'Site_Frame', 'TOOL_FRAME', 'TURRET_FRAME', 'Tool_Frame', 'Turret_Frame', 'WHEEL_LF', 'WHEEL_LM', 'WHEEL_LR', 'WHEEL_RF', 'WHEEL_RM', 'WHEEL_RR', 'Wheel_LF', 'Wheel_LM', 'Wheel_LR', 'Wheel_RF', 'Wheel_RM', 'Wheel_RR')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
