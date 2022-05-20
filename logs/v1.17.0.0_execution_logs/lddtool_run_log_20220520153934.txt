@@ -1,12 +1,12 @@
 
->>  INFO LDDTOOL Version: 13.1.0
->>  INFO IM Version Id: 1.15.0.0
+>>  INFO LDDTOOL Version: 10.0.0
+>>  INFO IM Version Id: 1.17.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.21
->>  INFO Date: Fri Jan 07 17:00:13 UTC 2022
->>  INFO PARENT_DIR: /tmp/lddtool-13.1.0
->>  INFO SCRIPT_DIR: /tmp/lddtool-13.1.0/bin
->>  INFO LIB_DIR: /tmp/lddtool-13.1.0/lib
+>>  INFO IM Label Version Id: 1.23
+>>  INFO Date: Fri May 20 15:39:35 UTC 2022
+>>  INFO PARENT_DIR: /tmp/lddtool-14.0.1
+>>  INFO SCRIPT_DIR: /tmp/lddtool-14.0.1/bin
+>>  INFO LIB_DIR: /tmp/lddtool-14.0.1/lib
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:geom
 >>> INFO Init:  - Config.Properties Namespace Id Using:geom
@@ -188,8 +188,6 @@
 >>> WARNING Attribute: <x_unit> - The terms 'unit', 'units', 'unit_of_measure' should not be used as the rightmost part of an attribute's name.
 >>> WARNING Attribute: <y_unit> - The terms 'unit', 'units', 'unit_of_measure' should not be used as the rightmost part of an attribute's name.
 >>> WARNING Attribute: <z_unit> - The terms 'unit', 'units', 'unit_of_measure' should not be used as the rightmost part of an attribute's name.
->>> WARNING Header:  - New steward has been specified:geo
->>> WARNING Header:  - New namespace id has been specified:geom
 >>> WARNING Class: <Coordinate_Space_Reference> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
 >>> WARNING Class: <Coordinate_Space_Reference> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
 >>> WARNING Class: <Coordinate_Space_Reference> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
@@ -197,13 +195,13 @@
 >>> WARNING Class: <Coordinate_Space_Reference> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
 
  -- LDDTool Execution Summary --
-     10 warning(s)
+     8 warning(s)
      0 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1F00
+     - IM Version: 1H00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -213,9 +211,9 @@ Input:
 
 Output:
 
-     - ./PDS4_GEOM_1F00_1950.xsd
-     - ./PDS4_GEOM_1F00_1950.sch
-     - ./PDS4_GEOM_1F00_1950.xml
-     - ./PDS4_GEOM_1F00_1950.JSON
+     - ./PDS4_GEOM_1H00_1960.xsd
+     - ./PDS4_GEOM_1H00_1960.sch
+     - ./PDS4_GEOM_1H00_1960.xml
+     - ./PDS4_GEOM_1H00_1960.JSON
 
 >>  INFO Exit(0)

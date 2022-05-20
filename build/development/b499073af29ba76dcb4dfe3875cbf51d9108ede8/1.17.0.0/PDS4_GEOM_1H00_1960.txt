@@ -1,13 +1,13 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        13.1.0
-   LDD Version Id:        1.9.5.0
+   LDDTool Version        10.0.0
+   LDD Version Id:        1.9.6.0
    LDD Label Version Id:  1.23
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Fri Jan 07 17:00:09 UTC 2022
+   Time                   Fri May 20 15:39:35 UTC 2022
    Common Schema          [PDS4_PDS_1H00.xsd]
    Common Schematron      [PDS4_PDS_1H00.sch]
    IM Version Id:         1.17.0.0
@@ -40,7 +40,7 @@ Detailed validation messages
 
 Parsed Input - Header:
    LDD Name               Geometry Dictionary Full
-   LDD Version            1.9.5.0
+   LDD Version            1.9.6.0
    Full Name              Edward A. Guinness
    Steward                geo
    Namespace Id           geom
@@ -283,6 +283,8 @@ Parsed Input - Header:
         - fixed typo traget -> target
         Version 1.9.5.0 2022-01-06
         - Added ORBITAL (upper and title case) to coordinate_space_frame_type for Mars2020.
+        Version 1.9.6.0 2022-05-20
+        - Added AEGIS_* (1 to 5) to coordinate_space_frame_type for Mars2020.
     
    Last Modification Time 2022-01-06
    PDS4 Merge Flag        false
