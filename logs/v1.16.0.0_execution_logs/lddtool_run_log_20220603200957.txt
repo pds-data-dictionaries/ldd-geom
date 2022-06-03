@@ -1,9 +1,9 @@
 
->>  INFO LDDTOOL Version: 14.0.1
->>  INFO IM Version Id: 1.18.0.0
+>>  INFO LDDTOOL Version: 10.0.0
+>>  INFO IM Version Id: 1.16.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.24
->>  INFO Date: Fri Jun 03 17:58:30 UTC 2022
+>>  INFO IM Label Version Id: 1.22
+>>  INFO Date: Fri Jun 03 20:09:57 UTC 2022
 >>  INFO PARENT_DIR: /tmp/lddtool-14.0.1
 >>  INFO SCRIPT_DIR: /tmp/lddtool-14.0.1/bin
 >>  INFO LIB_DIR: /tmp/lddtool-14.0.1/lib
@@ -201,18 +201,19 @@
 
 Input:
 
-     - IM Version: 1I00
+     - IM Version: 1G00
      - PDS4 Flag: true
      - LDD Flag: true
+     - IM Version: true
      - Export JSON Flag: true
 
      - Ingest LDD(s): /home/runner/work/ldd-geom/ldd-geom/src/PDS4_GEOM_IngestLDD.xml
 
 Output:
 
-     - ./PDS4_GEOM_1I00_1960.xsd
-     - ./PDS4_GEOM_1I00_1960.sch
-     - ./PDS4_GEOM_1I00_1960.xml
-     - ./PDS4_GEOM_1I00_1960.JSON
+     - ./PDS4_GEOM_1G00_1960.xsd
+     - ./PDS4_GEOM_1G00_1960.sch
+     - ./PDS4_GEOM_1G00_1960.xml
+     - ./PDS4_GEOM_1G00_1960.JSON
 
 >>  INFO Exit(0)

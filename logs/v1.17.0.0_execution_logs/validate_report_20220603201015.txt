@@ -3,13 +3,13 @@ PDS Validate Tool Report
 
 Configuration:
    Version                       2.2.0
-   Date                          2022-06-03T17:58:41Z
+   Date                          2022-06-03T20:10:17Z
 
 Parameters:
-   Targets                       [file:/home/runner/work/ldd-geom/ldd-geom/build/development/0c8e6fbd3b73a34252eaeaf9a91a52728722b00f/1.18.0.0/PDS4_GEOM_1I00_1960.xml]
+   Targets                       [file:/home/runner/work/ldd-geom/ldd-geom/build/development/c28ad462dd3698040b86096ff7e9a4d579afbe6c/1.17.0.0/PDS4_GEOM_1H00_1960.xml]
    Rule Type                     pds4.label
-   User Specified Schemas        [file:/home/runner/work/ldd-geom/ldd-geom/build/development/0c8e6fbd3b73a34252eaeaf9a91a52728722b00f/1.18.0.0/PDS4_GEOM_1I00_1960.xsd, file:/tmp/PDS4_PDS_1I00.xsd]
-   User Specified Schematrons    [file:/home/runner/work/ldd-geom/ldd-geom/build/development/0c8e6fbd3b73a34252eaeaf9a91a52728722b00f/1.18.0.0/PDS4_GEOM_1I00_1960.sch, file:/tmp/PDS4_PDS_1I00.sch]
+   User Specified Schemas        [file:/home/runner/work/ldd-geom/ldd-geom/build/development/c28ad462dd3698040b86096ff7e9a4d579afbe6c/1.17.0.0/PDS4_GEOM_1H00_1960.xsd, file:/tmp/PDS4_PDS_1H00.xsd]
+   User Specified Schematrons    [file:/home/runner/work/ldd-geom/ldd-geom/build/development/c28ad462dd3698040b86096ff7e9a4d579afbe6c/1.17.0.0/PDS4_GEOM_1H00_1960.sch, file:/tmp/PDS4_PDS_1H00.sch]
    Severity Level                WARNING
    Recurse Directories           true
    File Filters Used             [*.xml, *.XML]
@@ -22,7 +22,7 @@ Parameters:
 
 Product Level Validation Results
 
-  PASS: file:/home/runner/work/ldd-geom/ldd-geom/build/development/0c8e6fbd3b73a34252eaeaf9a91a52728722b00f/1.18.0.0/PDS4_GEOM_1I00_1960.xml
+  PASS: file:/home/runner/work/ldd-geom/ldd-geom/build/development/c28ad462dd3698040b86096ff7e9a4d579afbe6c/1.17.0.0/PDS4_GEOM_1H00_1960.xml
         1 product validation(s) completed
 
 Summary:
@@ -42,5 +42,5 @@ Summary:
 
 
 End of Report
-Completed execution in 8100 ms
+Completed execution in 6812 ms
 
