@@ -8,7 +8,7 @@
                      https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd">
 
     <name>Geometry Dictionary Full</name>
-    <ldd_version_id>1.9.6.0</ldd_version_id>
+    <ldd_version_id>1.9.7.0</ldd_version_id>
     <dictionary_type>Discipline</dictionary_type>
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
@@ -254,9 +254,13 @@
         - Added ORBITAL (upper and title case) to coordinate_space_frame_type for Mars2020.
         Version 1.9.6.0 2022-05-20
         - Added AEGIS_* (1 to 5) to coordinate_space_frame_type for Mars2020.
+        Version 1.9.7.0 2023-10-12
+        - Made the Display_Direction class optional and updated the definition. Added the 
+        Quaternion_Plus_To_From class to the main Geometry_Orbiter class to support
+           migration of NEAR data.
     </comment>
     
-    <last_modification_date_time>2022-01-06</last_modification_date_time>
+    <last_modification_date_time>2023-10-12</last_modification_date_time>
 
 <!-- Attributes -->
     
@@ -6008,7 +6012,13 @@
         <version_id>1.0</version_id>
         <local_identifier>Display_Direction</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
-        <definition>The Display_Direction class specifies which two 
+        <definition>Note: For all image objects, the expectation is that the 
+        image orientation will be given using the disp:Display_Direction 
+        class. In the unusual case where an image object does not have 
+        an associated disp:Display_Direction class, then, and only then,    
+        Display_Direction class defined here should be present.
+        	
+        The Display_Direction class specifies which two 
         of the dimensions of an Array object should be displayed and how
         they should be displayed in the vertical (line) and horizontal 
         (sample) dimensions of a display device. This class is essentially 
@@ -6201,9 +6211,16 @@
         <local_identifier>Image_Display_Geometry</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>Image_Display_Geometry class provides an unambiguous description 
-            of the orientation of the image contents. Given an image, displayed as 
-            described by the Display_Direction class, any one of the Object_Orientation_* 
-            classes should allow unambiguous orientation of the contents of the image. 
+            of the orientation of the image contents. This class assumes an image 
+            is displayed as described by a disp:Display_Direction class elsewhere 
+            in the label. In the unusual case where an image object does not have 
+            an associated disp:Display_Direction class, then, and only then, the   
+            optionalgeom:Display_Direction class in this class should be present.
+            
+            Coupled with the information in the associated Display_Direction class, 
+            any one of the Object_Orientation_* classes should allow unambiguous 
+            orientation of the contents of the image. 
+            
             The Local_Internal_Reference class is used to identify the object to which this
             instance of the Image_Display_Geometry class applies, and must be used if 
             there is more than one instance of Image_Display_Geometry in the label. The 
@@ -6232,7 +6249,7 @@
         <DD_Association>
             <identifier_reference>Display_Direction</identifier_reference>
             <reference_type>component_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
+            <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
@@ -8794,7 +8811,7 @@
 
     <DD_Class>
         <name>Geometry_Orbiter</name>
-        <version_id>1.0</version_id>
+        <version_id>2.0</version_id>
         <local_identifier>Geometry_Orbiter</local_identifier>
         <submitter_name>Mitchell K. Gordon</submitter_name>
         <definition>The Geometry_Orbiter class is a container for geometric information 
@@ -8865,6 +8882,12 @@
         </DD_Association>
         <DD_Association>
             <identifier_reference>Vectors</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Quaternion_Plus_To_From</identifier_reference>
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
