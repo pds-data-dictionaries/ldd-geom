@@ -8,7 +8,7 @@
                      https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd">
 
     <name>Geometry Dictionary Full</name>
-    <ldd_version_id>1.9.7.0</ldd_version_id>
+    <ldd_version_id>1.9.8.0</ldd_version_id>
     <dictionary_type>Discipline</dictionary_type>
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
@@ -258,6 +258,8 @@
         - Made the Display_Direction class optional and updated the definition. Added the 
         Quaternion_Plus_To_From class to the main Geometry_Orbiter class to support
            migration of NEAR data.
+        Version 1.9.8.0 2024-11-01
+        - Added two enumerated values (SAM1 and SAM2) to coordinate_space_frame_type to support MSL.
     </comment>
     
     <last_modification_date_time>2023-10-12</last_modification_date_time>
@@ -2782,6 +2784,16 @@
              <value_meaning>Frame defining a Remote Sensing Mast.</value_meaning>
             </DD_Permissible_Value>
             
+            <DD_Permissible_Value>
+             <value>SAM1</value>
+             <value_meaning>Sample Analysis at Mars frame 1 (used by MSL)</value_meaning>
+            </DD_Permissible_Value>
+
+            <DD_Permissible_Value>
+             <value>SAM2</value>
+             <value_meaning>Sample Analysis at Mars frame 2 (used by MSL)</value_meaning>
+            </DD_Permissible_Value>
+
             <DD_Permissible_Value>
              <value>SITE_FRAME</value>
              <value_meaning>Instance of LOCAL_LEVEL_FRAME that is fixed to the ground. Used for local operations to reduce error propagation due to position uncertainty.</value_meaning>
