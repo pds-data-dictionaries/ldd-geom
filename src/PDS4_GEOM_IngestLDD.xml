@@ -3322,7 +3322,7 @@
 
     <DD_Attribute>
         <name>emission_angle</name>
-        <version_id>1.1</version_id>
+        <version_id>1.0</version_id>
         <local_identifier>emission_angle</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
@@ -3331,9 +3331,7 @@
             spacecraft. The emission_angle varies from 0 degrees when the spacecraft is viewing the
             subspacecraft point (nadir viewing) to 90 degrees when the intercept is tangent to the
             surface of the target body. Thus, higher values of emission_angle indicate more oblique
-	    viewing of the target. For ring data, values in the range of 90 to 180 degrees indicate
-	    viewing on the unlit side from oblique or edge-on at 90 degrees to the unlit nadir at
-	    180 degrees.
+            viewing of the target. Values in the range of 90 to 180 degrees are possible for ring data.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
