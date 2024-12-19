@@ -8,7 +8,7 @@
                      https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd">
 
     <name>Geometry Dictionary Full</name>
-    <ldd_version_id>1.9.8.0</ldd_version_id>
+    <ldd_version_id>1.9.9.0</ldd_version_id>
     <dictionary_type>Discipline</dictionary_type>
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
@@ -260,6 +260,8 @@
            migration of NEAR data.
         Version 1.9.8.0 2024-11-01
         - Added two enumerated values (SAM1 and SAM2) to coordinate_space_frame_type to support MSL.
+        Version 1.9.9.0 2024-12-19
+        - Updated the definition of the emission_angle attribute to match that of the Rings LDD.
     </comment>
     
     <last_modification_date_time>2023-10-12</last_modification_date_time>
