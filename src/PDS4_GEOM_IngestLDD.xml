@@ -8,7 +8,7 @@
                      https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd">
 
     <name>Geometry Dictionary Full</name>
-    <ldd_version_id>1.9.9.0</ldd_version_id>
+    <ldd_version_id>1.9.10.0</ldd_version_id>
     <dictionary_type>Discipline</dictionary_type>
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
@@ -261,7 +261,12 @@
         Version 1.9.8.0 2024-11-01
         - Added two enumerated values (SAM1 and SAM2) to coordinate_space_frame_type to support MSL.
         Version 1.9.9.0 2024-12-19
-        - Updated the definition of the emission_angle attribute to match that of the Rings LDD.
+        - Updated the definition of the emission_angle attribute to include valid ranges for ring observations
+        Version 1.9.10.0 2025-01-29
+        - Set element_flag = true in Body_Identification_Base, Reference_Frame_Identification, and
+	Central_Body_Identification, so that other LDDs can use them (supports Rings LDD).
+	- Corrected Frame_Identification_Base to have abstract_flag = true, since it is only used as a parent.
+	- Added an optional local_identifier to Body_Identification_Base and Frame_Identification_Base.
     </comment>
     
     <last_modification_date_time>2023-10-12</last_modification_date_time>
@@ -5247,7 +5252,7 @@
 
     <DD_Class>
         <name>Body_Identification_Base</name>
-        <version_id>1.0</version_id>
+        <version_id>1.1</version_id>
         <local_identifier>Body_Identification_Base</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Body_Identification_Base class provides multiple attributes
@@ -5255,7 +5260,13 @@
             instrument, transmitter, system barycenter, etc.). At least one must be used.
         </definition>
         <abstract_flag>true</abstract_flag>
-        <element_flag>false</element_flag>
+        <element_flag>true</element_flag>
+        <DD_Association>
+            <identifier_reference>pds.local_identifier</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
         <DD_Association>
             <identifier_reference>body_spice_name</identifier_reference>
             <reference_type>attribute_of</reference_type>
@@ -5278,14 +5289,20 @@
     
     <DD_Class>
         <name>Frame_Identification_Base</name>
-        <version_id>1.0</version_id>
+        <version_id>2.0</version_id>
         <local_identifier>Frame_Identification_Base</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Frame_Identification_Base class provides multiple attributes
             that can be used to identify a reference frame. At least one must be used.
         </definition>
-        <abstract_flag>false</abstract_flag>
+        <abstract_flag>true</abstract_flag>
         <element_flag>false</element_flag>
+        <DD_Association>
+            <identifier_reference>pds.local_identifier</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
         <DD_Association>
             <identifier_reference>frame_spice_name</identifier_reference>
             <reference_type>attribute_of</reference_type>
@@ -5314,7 +5331,7 @@
     
     <DD_Class>
         <name>Central_Body_Identification</name>
-        <version_id>2.0</version_id>
+        <version_id>2.1</version_id>
         <local_identifier>Central_Body_Identification</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Central_Body_Identification class uniquely
@@ -5322,7 +5339,7 @@
             with an observation (e.g., Saturn for Saturn system observations).
         </definition>
         <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
+        <element_flag>true</element_flag>
         <DD_Association>
             <identifier_reference>Body_Identification_Base</identifier_reference>
             <reference_type>parent_of</reference_type>
@@ -5373,7 +5390,7 @@
     
     <DD_Class>
         <name>Reference_Frame_Identification</name>
-        <version_id>2.0</version_id>
+        <version_id>2.1</version_id>
         <local_identifier>Reference_Frame_Identification</local_identifier>
         <submitter_name>Elizabeth Rye</submitter_name>
         <definition>The Reference_Frame_Identification class is
@@ -5382,7 +5399,7 @@
             axes with a specified orientation, but without a fixed origin.
         </definition>
         <abstract_flag>false</abstract_flag>
-        <element_flag>false</element_flag>
+        <element_flag>true</element_flag>
         <DD_Association>
             <identifier_reference>Frame_Identification_Base</identifier_reference>
             <reference_type>parent_of</reference_type>
