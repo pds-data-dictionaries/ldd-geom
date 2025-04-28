@@ -1,10 +1,10 @@
 
->>  INFO LDDTOOL Version: 15.2.4
+>>  INFO LDDTOOL Version: 15.3.0
 >>  INFO IM Version Id: 1.22.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.0
->>  INFO Date: Thu Jan 30 16:37:16 UTC 2025
->>  INFO PARENT_DIR: /tmp/lddtool-15.2.4/Data/
+>>  INFO Date: Mon Apr 28 19:43:26 UTC 2025
+>>  INFO PARENT_DIR: /tmp/lddtool-15.3.0/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:geom
 >>> INFO Init:  - Config.Properties Namespace Id Using:geom
