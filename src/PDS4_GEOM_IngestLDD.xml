@@ -8,7 +8,7 @@
                      https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd">
 
     <name>Geometry Dictionary Full</name>
-    <ldd_version_id>1.9.10.0</ldd_version_id>
+    <ldd_version_id>1.9.11.0</ldd_version_id>
     <dictionary_type>Discipline</dictionary_type>
     <full_name>Edward A. Guinness</full_name>
     <steward_id>geo</steward_id>
@@ -267,6 +267,8 @@
 	Central_Body_Identification, so that other LDDs can use them (supports Rings LDD).
 	- Corrected Frame_Identification_Base to have abstract_flag = true, since it is only used as a parent.
 	- Added an optional local_identifier to Body_Identification_Base and Frame_Identification_Base.
+	Version 1.9.11.0 2025-07-31
+	- Updated definitions for emission_angle, incidence_angle, and phase_angle
     </comment>
     
     <last_modification_date_time>2023-10-12</last_modification_date_time>
@@ -3329,18 +3331,11 @@
 
     <DD_Attribute>
         <name>emission_angle</name>
-        <version_id>1.1</version_id>
+        <version_id>1.2</version_id>
         <local_identifier>emission_angle</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The emission_angle element provides the value of the angle between the surface
-            normal vector at the intercept point and a vector from the intercept point to the
-            spacecraft. The emission_angle varies from 0 degrees when the spacecraft is viewing the
-            subspacecraft point (nadir viewing) to 90 degrees when the intercept is tangent to the
-            surface of the target body. Thus, higher values of emission_angle indicate more oblique
-            viewing of the target. For ring data, values in the range of 90 to 180 degrees indicate
-	    viewing on the unlit side from oblique or edge-on at 90 degrees to the unlit nadir at
-	    180 degrees.
+        <definition>The emission_angle element provides a measure of the relationship between the instrument viewing position and the surface normal vector at the intercept point. Specifically, it is the angle, measured at the intercept point, between the local surface normal vector and a vector in the direction of the outgoing photon to the observing instrument. The emission_angle varies from 0 degrees when the spacecraft is viewing the subspacecraft point (nadir viewing) to 90 degrees when the intercept is tangent to the surface of the target body. Thus, higher values of emission_angle indicate more oblique viewing of the target. In the context of planetary rings, the local surface normal vector is always on the side of the ring plane illuminated by the light source. Thus, the emission_angle varies from 0 degrees when the spacecraft is viewing the illuminated side of the rings face-on, to 90 degrees when viewing the rings edge-on (that is, the spacecraft is in the ring plane), to 180 degrees when the spacecraft is viewing the unlit side of the rings face-on.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -3436,16 +3431,11 @@
 
     <DD_Attribute>
         <name>incidence_angle</name>
-        <version_id>2.0</version_id>
+        <version_id>2.1</version_id>
         <local_identifier>incidence_angle</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The incidence_angle element provides a measure of the lighting condition at
-            the intercept point. Incidence angle is the angle between the local vertical at the
-            intercept point (surface) and a vector from the intercept point to the sun. The incidence_angle
-            varies from 0 degrees when the intercept point coincides with the subsolar point to 90 degrees
-            when the intercept point is at the terminator (i.e., in the shadowed or dark portion of
-            the target body).
+        <definition>The incidence_angle element provides a measure of the lighting condition at the intercept point. Specifically, it is the angle, measured at the intercept point, between a vector in the direction of an incoming photon from the illumination source and the local surface normal vector. The incidence_angle varies from 0 degrees when the intercept point coincides with the subsolar point to 90 degrees when the intercept is tangent to the surface of the target body. In the context of planetary rings, the local surface normal vector is always on the side of the ring plane illuminated by the light source. Thus, the incidence_angle varies from 0 degrees if the light source illuminates the rings face-on, to 90 degrees if the light source illuminates the rings edge-on.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -3541,15 +3531,11 @@
 
     <DD_Attribute>
         <name>phase_angle</name>
-        <version_id>2.0</version_id>
+        <version_id>2.1</version_id>
         <local_identifier>phase_angle</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>Mitchell K. Gordon</submitter_name>
-        <definition>The phase_angle element provides a measure of the relationship between 
-            the instrument viewing position and incident illumination (such as solar 
-            light). Phase angle is measured at the target; it is the angle between 
-            a vector to the illumination source and a vector to the instrument. If 
-            illumination is from behind the instrument, phase_angle will be small.
+        <definition>The phase_angle element provides a measure of the relationship between the instrument viewing position and incident illumination (such as solar light). Specifically, it is the angle, measured at the intercept point, between a vector in the direction of an incoming photon from the illumination source and a vector in the direction of an outgoing photon to the observing instrument. If illumination is from behind the instrument, phase_angle will be small.
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
