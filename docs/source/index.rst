@@ -3,10 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Example Namespace Documentation
+Geometry Discipline Dictionary Documentation
 ===================================
-
-.. include:: intro.md
 
              
 .. toctree::
@@ -16,8 +14,3 @@ Example Namespace Documentation
     user/user-guide
 
     
-.. toctree::
-    :maxdepth: 3
-    :caption: Detailed Documentation
-
-    detailed/example
